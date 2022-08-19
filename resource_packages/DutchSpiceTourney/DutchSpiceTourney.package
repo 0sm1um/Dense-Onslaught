@@ -1,0 +1,11 @@
+mod = [
+	"DutchSpiceTourney"
+]
+
+package = [
+	"resource_packages/DutchSpiceTourney/DutchSpiceTourney"
+]
+
+lua = [
+	"scripts/mods/DutchSpiceTourney/*"
+]
