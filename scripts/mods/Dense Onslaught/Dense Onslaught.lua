@@ -26828,7 +26828,7 @@ mutator.stop = function()
 	mutator.active = false
 end
 
-local JOIN_MESSAGE = "Dutch Spice Active"
+local JOIN_MESSAGE = "Dense Onslaught Active"
 
 mod:hook(MatchmakingManager, "rpc_matchmaking_request_join_lobby", function (func, self, channel_id, lobby_id, friend_join, client_dlc_unlocked_array)
 	local peer_id = CHANNEL_TO_PEER_ID[channel_id]
@@ -26883,12 +26883,12 @@ mutator.toggle = function()
 		mutator.start()
 		mod:network_send("rpc_enable_white_sv", "all", true)
 
-		mod:chat_broadcast("Dutch Spice ENABLED.")
+		mod:chat_broadcast("Dense Onslaught ENABLED.")
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)
 
-		mod:chat_broadcast("Thats FUCKING cringe")
+		mod:chat_broadcast("Dense Onslaught DISABLED.")
 	end
 end
 
@@ -26900,7 +26900,7 @@ end
 mod.on_game_state_changed = function(status, state)
 	if not Managers.player.is_server and mutator.active and Managers.state.game_mode ~= nil then
 		mutator.stop()
-		mod:echo("The Dutch Spice mutator was disabled because you are no longer the server.")
+		mod:echo("The Dense Onslaught mutator was disabled because you are no longer the server.")
 	end
 	return
 end
@@ -26908,7 +26908,7 @@ end
 --[[
 	Execution
 --]]
-mod:command("dutch_spice_tourney", "Toggle Dutch Spice. Must be host and in the keep.", function() mutator.toggle() end)
+mod:command("density", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
 if not mutator.active then
 	mod:disable_all_hooks()
 end
