@@ -1,4 +1,4 @@
-local mod = get_mod("DutchSpiceTourney")
+local mod = get_mod("Dense Onslaught")
 
 local mutator = mod:persistent_table("DutchSpiceTourney")
 

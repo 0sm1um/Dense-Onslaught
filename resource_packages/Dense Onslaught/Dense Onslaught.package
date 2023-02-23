@@ -1,0 +1,11 @@
+mod = [
+	"Dense Onslaught"
+]
+
+package = [
+	"resource_packages/Dense Onslaught/Dense Onslaught"
+]
+
+lua = [
+	"scripts/mods/Dense Onslaught/*"
+]
