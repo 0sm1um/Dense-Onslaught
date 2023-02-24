@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-local mutator = mod:persistent_table("DutchSpiceTourney")
+local mutator = mod:persistent_table("DenseOnslaught")
 
 --[[
 	Functions
@@ -426,25 +426,18 @@ mod:hook_origin(DoorSystem, "update", function(self, context, t)
 end)
 
 --UI fluff
---mod:hook(IngamePlayerListUI, "_update_difficulty", function (func, self)
---	local difficulty_settings = Managers.state.difficulty:get_difficulty_settings()
---	local base_difficulty_name = difficulty_settings.display_name
---	local deathwish_enabled = get_mod("catas") and Managers.vmf.persistent_tables.catas.catas.active
---	local difficulty_name = (deathwish_enabled and base_difficulty_name .. "Dutch Deathwish Spice") or base_difficulty_name .. "_DutchSpice"
---
---	if mutator.active and difficulty_name ~= self.current_difficulty_name then
---		self:set_difficulty_name((deathwish_enabled and "Deathwish Dutch Spice") or Localize(base_difficulty_name) .. " DutchSpice")
---
---		self.current_difficulty_name = difficulty_name
---	end
---
---	if difficulty_name ~= self.current_difficulty_name then
---		self:set_difficulty_name(Localize(difficulty_name))
---
---		self.current_difficulty_name = difficulty_name
---	end
---end)
+mod:hook(IngamePlayerListUI, "_update_difficulty", function (func, self)
+	local difficulty_settings = Managers.state.difficulty:get_difficulty_settings()
+	local base_difficulty_name = difficulty_settings.display_name
+	local deathwish_enabled = get_mod("Deathwish") and Managers.vmf.persistent_tables.Deathwish.Deathwish.active and (base_difficulty_name == "harder" or base_difficulty_name == "hardest")
+	local difficulty_name = deathwish_enabled and "deathwish_onslaught" or base_difficulty_name .. "_Dense Onslaught"
 
+	if difficulty_name ~= self.current_difficulty_name then
+		self:_set_difficulty_name(deathwish_enabled and "Deathwish Dense Onslaught" or Localize(base_difficulty_name) .. " Dense Onslaught")
+
+		self.current_difficulty_name = difficulty_name
+	end
+end)
 --Make game always private when starting matchmaking, and adds tags in the lobby browser.
 --mod:hook(MatchmakingStateHostGame, "_start_hosting_game", function (func, self)
 --	if EAC.state() == "trusted" then
@@ -26908,7 +26901,7 @@ end
 --[[
 	Execution
 --]]
-mod:command("density", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
+mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
 if not mutator.active then
 	mod:disable_all_hooks()
 end
