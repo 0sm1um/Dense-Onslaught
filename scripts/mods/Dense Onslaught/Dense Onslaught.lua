@@ -426,18 +426,18 @@ mod:hook_origin(DoorSystem, "update", function(self, context, t)
 end)
 
 --UI fluff
-mod:hook(IngamePlayerListUI, "_update_difficulty", function (func, self)
-	local difficulty_settings = Managers.state.difficulty:get_difficulty_settings()
-	local base_difficulty_name = difficulty_settings.display_name
-	local deathwish_enabled = get_mod("Deathwish") and Managers.vmf.persistent_tables.Deathwish.Deathwish.active and (base_difficulty_name == "harder" or base_difficulty_name == "hardest")
-	local difficulty_name = deathwish_enabled and "deathwish_onslaught" or base_difficulty_name .. "_Dense Onslaught"
-
-	if difficulty_name ~= self.current_difficulty_name then
-		self:_set_difficulty_name(deathwish_enabled and "Deathwish Dense Onslaught" or Localize(base_difficulty_name) .. " Dense Onslaught")
-
-		self.current_difficulty_name = difficulty_name
-	end
-end)
+--mod:hook(IngamePlayerListUI, "_update_difficulty", function (func, self)
+--	local difficulty_settings = Managers.state.difficulty:get_difficulty_settings()
+--	local base_difficulty_name = difficulty_settings.display_name
+--	local deathwish_enabled = get_mod("Deathwish") and Managers.vmf.persistent_tables.Deathwish.Deathwish.active and (base_difficulty_name == "harder" or base_difficulty_name == "hardest")
+--	local difficulty_name = deathwish_enabled and "deathwish_onslaught" or base_difficulty_name .. "_Dense Onslaught"
+--
+--	if difficulty_name ~= self.current_difficulty_name then
+--		self:_set_difficulty_name(deathwish_enabled and "Deathwish Dense Onslaught" or Localize(base_difficulty_name) .. " Dense Onslaught")
+--
+--		self.current_difficulty_name = difficulty_name
+--	end
+--end)
 --Make game always private when starting matchmaking, and adds tags in the lobby browser.
 --mod:hook(MatchmakingStateHostGame, "_start_hosting_game", function (func, self)
 --	if EAC.state() == "trusted" then
