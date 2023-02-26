@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Garden of Morr
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		{
 			"disable_kick"
@@ -16,14 +17,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"play_stinger",
 			stinger_name = "enemy_horde_stinger"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_entrance",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
 		},
 		{
 			"delay",
@@ -45,24 +38,12 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium",
-		},
-		{
 			"delay",
 			duration = 5
 		},
 		{
 			"event_horde",
-			composition_type = "event_extra_spice_medium",
+			composition_type = "event_extra_spice_medium"
 		},
 		{
 			"delay",
@@ -72,69 +53,29 @@ local mod = get_mod("Dense Onslaught")
 			}
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_entrance",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_shields_small"
 		},
 		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small",
+			composition_type = "onslaught_storm_vermin_shields_small"
 		},
 		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium",
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium",
+			composition_type = "onslaught_storm_vermin_shields_small"
 		},
 		{
 			"delay",
 			duration = 5
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "cemetery_brew_event_specials",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
+		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_b = {
 		{
 			"disable_kick"
@@ -152,11 +93,10 @@ local mod = get_mod("Dense Onslaught")
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_entrance",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
+			"delay",
+			duration = {
+				3,
+				5
 			}
 		},
 		{
@@ -164,30 +104,10 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = {
 				8,
 				10
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_entrance",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
 			}
 		},
 		{
@@ -225,17 +145,9 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = 5
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_entrance",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
+		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_2_a = {
 		{
 			"disable_kick"
@@ -247,26 +159,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_2",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
 		},
 		{
 			"play_stinger",
@@ -318,26 +210,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_2",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -351,7 +223,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_2_b = {
 		{
 			"disable_kick"
@@ -363,26 +235,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_2",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
 		},
 		{
 			"play_stinger",
@@ -429,30 +281,10 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_2",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
-		},
-		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
 			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
@@ -468,7 +300,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_3_a = {
 		{
 			"disable_kick"
@@ -480,26 +312,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
 		},
 		{
 			"play_stinger",
@@ -529,22 +341,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
 			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
-		{
-			"event_horde",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			composition_type = "event_extra_spice_medium"
 		},
 		{
 			"delay",
@@ -564,14 +360,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
-		{
 			"delay",
 			duration = {
 				8,
@@ -579,7 +367,7 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_3_b = {
 		{
 			"disable_kick"
@@ -617,14 +405,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
-		{
 			"delay",
 			duration = {
 				8,
@@ -632,14 +412,6 @@ local mod = get_mod("Dense Onslaught")
 			}
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
-		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
@@ -656,31 +428,13 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
 			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
 			duration = 5
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_3",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
+		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_4_a = {
 		{
 			"disable_kick"
@@ -694,7 +448,7 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_4_b = {
 		{
 			"disable_kick"
@@ -708,7 +462,7 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		}
 	}
-
+	
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_exit_event = {
 		{
 			"play_stinger",
@@ -735,46 +489,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_warriors"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_4",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"delay",
-			duration = 2
-		},
-		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_4",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
 			"delay",
 			duration = 2
 		},
@@ -784,26 +498,8 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium_chaos"
 		},
 		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "cemetery_brew_event_chaos",
-			composition_type = "event_maulers_medium"
-		},
-		{
 			"delay",
 			duration = 10
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_cemetery_chain_4",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
 		},
 		{
 			"continue_when",

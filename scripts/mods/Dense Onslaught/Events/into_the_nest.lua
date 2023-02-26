@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Into the Nest
+	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_pacing_off = {
 		{
 			"text",
@@ -8,6 +9,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 0
 		}
 	}
+	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_pacing_on = {
 		{
 			"text",
@@ -15,6 +17,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 0
 		}
 	}
+	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_horde_water_wheels = {
 		{
 			"set_master_event_running",
@@ -40,41 +43,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_stormvermin_shielders"
 		},
 		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -85,7 +53,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 8 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_storm_vermin") < 8 and count_breed("skaven_storm_vermin_commander") < 6
+				return count_event_breed("skaven_slave") < 6 and count_event_breed("skaven_clan_rat_with_shield") < 3 and count_event_breed("skaven_storm_vermin_with_shield") < 2
 			end
 		},
 		{
@@ -93,7 +61,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "stronghold_horde_water_wheels_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_boss = {
 		{
 			"control_pacing",
@@ -113,11 +81,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "stronghold_boss",
-			breed_name = "skaven_storm_vermin_warlord",
-			optional_data = {
-				max_health_modifier = 1.5,
-				enhancements = enhancement_4
-			}
+			breed_name = "skaven_storm_vermin_warlord"
 		},
 		{
 			"continue_when",
@@ -149,7 +113,7 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-
+	
 	HordeCompositions.stronghold_boss_event_defensive = {
 		{
 			name = "plain",
@@ -157,26 +121,26 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					5,
-					7
+					15,
+					17
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					22
+					10,
+					14
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					15,
-					20
+					12,
+					17
 				},
 				"skaven_plague_monk",
 				{
-					6,
-					8
+					2,
+					3
 				},
 				"skaven_storm_vermin_with_shield",
-				4,
+				2,
 			}
 		},
 		{
@@ -185,25 +149,25 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_clan_rat",
 				{
-					10,
-					12
+					14,
+					16
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					22,
-					24
+					17,
+					20
 				},
 				"skaven_plague_monk",
 				{
-					9,
-					10
+					5,
+					6
 				},
 				"skaven_storm_vermin_with_shield",
-				4,
+				2,
 			}
 		}
 	}
-
+	
 	HordeCompositions.stronghold_boss_trickle = {
 		{
 			name = "plain",
@@ -211,18 +175,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					8,
-					10
+					5,
+					6
 				},
 				"skaven_clan_rat",
 				{
-					7,
-					8
+					2,
+					3
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					5,
-					6
+					4,
+					5
 				}
 			}
 		},
@@ -237,8 +201,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat",
 				{
-					5,
-					6
+					2,
+					3
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -246,29 +210,29 @@ local mod = get_mod("Dense Onslaught")
 					5
 				},
 				"skaven_storm_vermin_commander",
-				3
+				1
 			}
 		}
 	}
-
+	
 	HordeCompositions.stronghold_boss_initial_wave = {
 		{
 			name = "plain",
 			weight = 6,
 			breeds = {
 				"skaven_storm_vermin",
-				14,
-				"skaven_plague_monk",
 				8,
+				"skaven_plague_monk",
+				4,
 				"skaven_clan_rat",
 				{
-					15,
-					17
+					6,
+					8
 				}
 			}
 		}
 	}
-
+	
 	BreedActions.skaven_storm_vermin_warlord.spawn_allies.difficulty_spawn_list = {
 			easy = {
 				"skaven_storm_vermin"
@@ -293,19 +257,14 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
-				"skaven_storm_vermin",
 				"skaven_storm_vermin"
 			},
 			survival_harder = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin"
 			},
 			hardest = {
 				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vzermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin"
@@ -316,11 +275,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
 				"skaven_storm_vermin"
 			}
 	}
+	--See hooks for Skarrik behaviour changes
 	BreedActions.skaven_storm_vermin_warlord.spawn_sequence.considerations.time_since_last.max_value = 800
-	--See hooks for boss behaviour changes.

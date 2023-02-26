@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 	
 	--Athel Yenlui
+
 	TerrorEventBlueprints.elven_ruins.elven_ruins_end_event = {
 		{
 			"set_freeze_condition",
@@ -44,18 +45,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "end_event_chaos",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "end_event_chaos",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = {
 				3,
@@ -64,24 +53,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_specials_heavy_denial"
-		},
-		{
-			"delay",
-			duration = 1
-		},
-		{
-			"event_horde",
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "end_event_chaos",
-			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"spawn_special",
@@ -102,9 +76,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 10,
+			duration = 20,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -119,36 +93,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				3,
-				4
-			}
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_specials_heavy_denial"
 		},
 		{
 			"delay",
@@ -167,18 +111,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
@@ -191,7 +123,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -216,12 +148,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -230,9 +156,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -240,38 +166,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "event_extra_spice_large"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
@@ -284,7 +178,27 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_large"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -311,9 +225,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -335,23 +249,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_large"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_specials_heavy_denial"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -360,9 +257,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -393,9 +290,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -423,9 +320,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -437,6 +334,26 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "event_extra_spice_large"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
 		},
 		{
 			"event_horde",
@@ -454,32 +371,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_specials_heavy_denial"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -499,18 +391,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_large"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -521,7 +401,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -543,9 +423,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -560,12 +440,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_custom_special_denial"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -574,9 +448,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -584,12 +458,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"event_horde",
@@ -605,9 +473,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -626,18 +494,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_custom_special_denial"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -646,9 +502,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -663,18 +519,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_custom_special_denial"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = {
 				5,
@@ -683,9 +527,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		},
 		{
@@ -693,450 +537,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_bottomtier",
 			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 20,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 35,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "onslaught_custom_special_denial"
-		},
-		{
-			"delay",
-			duration = {
-				5,
-				7
-			}
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_bottomtier",
-			composition_type = "event_extra_spice_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"event_horde",
@@ -1154,7 +554,307 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 45,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_commander") < 9 and count_event_breed("skaven_storm_vermin_with_shield") < 9
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "elven_ruins_bottomtier",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "elven_ruins_toptier",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"delay",
+			duration = {
+				5,
+				7
+			}
+		},
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 4 and count_event_breed("skaven_storm_vermin_with_shield") < 4
 			end
 		}
 	}
@@ -1207,18 +907,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = {
 				3,
@@ -1245,18 +933,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "elven_ruins_toptier",
 			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_mines_horde_front",
-			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
@@ -1303,4 +979,3 @@ local mod = get_mod("Dense Onslaught")
 			breed_name = "skaven_clan_rat"
 		}
 	}
-

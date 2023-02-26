@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Righteous Stand
+
 	TerrorEventBlueprints.military.military_courtyard_event_01 = {
 		{
 			"set_master_event_running",
@@ -26,9 +27,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 50,
 			condition = function (t)
-				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 20 and count_event_breed("chaos_fanatic") < 26
+				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 12 and count_event_breed("chaos_fanatic") < 16
 			end
 		},
 		{
@@ -49,9 +50,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 50,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 27 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_slave") < 40
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 16 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 25
 			end
 		},
 		{
@@ -83,27 +84,11 @@ local mod = get_mod("Dense Onslaught")
 			duration = 8
 		},
 		{
-			"event_horde",
-			limit_spawners = 8,
-			spawner_id = "courtyard",
-			composition_type = "event_medium"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
 			"continue_when",
-			duration = 15,
+			duration = 20,
 			condition = function (t)
-				return count_event_breed("skaven_plague_monk") < 10
+				return count_event_breed("skaven_plague_monk") < 6
 			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "courtyard_hidden",
-			composition_type = "event_large_chaos"
 		},
 		{
 			"event_horde",
@@ -116,20 +101,10 @@ local mod = get_mod("Dense Onslaught")
 			duration = 8
 		},
 		{
-			"event_horde",
-			limit_spawners = 8,
-			spawner_id = "courtyard",
-			composition_type = "event_medium"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
 			"continue_when",
-			duration = 40,
+			duration = 50,
 			condition = function (t)
-				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 24 and count_event_breed("chaos_fanatic") < 32
+				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 12 and count_event_breed("chaos_fanatic") < 16
 			end
 		},
 		{
@@ -150,55 +125,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 50,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 30 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-				{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard",
-			composition_type = "onslaught_event_military_courtyard_plague_monks"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard",
-			composition_type = "event_extra_spice_unshielded"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"continue_when",
-			duration = 40,
-			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 30 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 8,
-			spawner_id = "courtyard",
-			composition_type = "event_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard",
-			composition_type = "event_extra_spice_unshielded"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"continue_when",
-			duration = 40,
-			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 30 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_plague_monk") < 12
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 16 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_plague_monk") < 6
 			end
 		},
 		{
@@ -206,7 +135,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_courtyard_event_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_courtyard_event_02 = TerrorEventBlueprints.military.military_courtyard_event_01
 
 	TerrorEventBlueprints.military.military_courtyard_event_specials_01 = {
@@ -217,12 +146,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"set_freeze_condition",
 			max_active_enemies = 100
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard_hidden",
-			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"event_horde",
@@ -278,13 +201,7 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 2,
 			spawner_id = "onslaught_courtyard_roof_right",
 			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard_hidden",
-			composition_type = "onslaught_chaos_warriors"
-		},
+		},	
 		{
 			"delay",
 			duration = 15
@@ -341,18 +258,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "skaven_shields"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "onslaught_courtyard_roof_right",
-			composition_type = "onslaught_chaos_berzerkers_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "courtyard",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = 15
 		},
@@ -375,7 +280,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "onslaught_courtyard_roof_left",
-			composition_type = "onslaught_custom_specials_heavy_disabler"
+			composition_type = "onslaught_custom_specials_heavy_denial"
 		},
 		{
 			"delay",
@@ -401,7 +306,7 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 2,
 			spawner_id = "onslaught_courtyard_roof_right",
 			composition_type = "onslaught_custom_specials_heavy_disabler"
-		},
+		},		
 		{
 			"delay",
 			duration = 15
@@ -417,26 +322,18 @@ local mod = get_mod("Dense Onslaught")
 	--03	Mixed Shielders
 	--04	Extra Denial
 	--05	Extra Disablers
-
+	
 	HordeCompositions.onslaught_military_mauler_assault = {
 		{
 			name = "plain",
 			weight = 1,
 			breeds = {
 				"chaos_raider",
-				{
-				15,
-				16
-				},
-				"chaos_warrior",
-				{
-				5,
-				6
-				},
+				15
 			}
 		}
 	}
-
+	
 	HordeCompositions.military_end_event_chaos_01 = {
 		{
 			name = "plain",
@@ -444,18 +341,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_raider",
 				{
-					10,
-					13,
+					6,
+					7,
 				},
 				"chaos_marauder",
 				{
-					20,
-					22
+					10,
+					11
 				},
 				"chaos_fanatic",
 				{
-					20,
-					22
+					10,
+					11
 				}
 			}
 		},
@@ -465,41 +362,41 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_raider",
 				{
-					10,
-					13,
+					6,
+					7,
 				},
 				"chaos_marauder_with_shield",
 				{
-					10,
-					12
+					4,
+					5
 				},
 				"chaos_marauder",
 				{
-					8,
-					9
+					4,
+					5
 				},
 				"chaos_fanatic",
 				{
-					18,
-					19
+					10,
+					11
 				}
 			}
 		}
 	}
-
+	
 	HordeCompositions.military_end_event_berzerkers = {
 		{
 			name = "plain",
 			weight = 7,
 			breeds = {
 				"chaos_berzerker",
-				15,
+				10,
 				"chaos_marauder_with_shield",
-				20
+				12
 			}
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_temple_guards = {
 		{
 			"disable_kick"
@@ -536,7 +433,7 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_military_mauler_assault"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_start = {
 		{
 			"set_master_event_running",
@@ -561,24 +458,24 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "end_event_back_hidden",
-			composition_type = "event_maulers_medium"
+			spawner_id = "end_event_start",
+			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"event_horde",
 			limit_spawners = 4,
-			spawner_id = "end_event_back_hidden",
-			composition_type = "event_maulers_medium"
+			spawner_id = "end_event_back",
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"event_horde",
 			limit_spawners = 4,
-			spawner_id = "end_event_back_hidden",
-			composition_type = "event_maulers_medium"
+			spawner_id = "end_event_back",
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
-			duration = 3
+			duration = 10
 		},
 		{
 			"event_horde",
@@ -591,9 +488,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 25 and count_event_breed("skaven_clan_rat_with_shield") < 24 and count_event_breed("skaven_slave") < 30 and count_event_breed("skaven_storm_vermin_commander") < 10
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 12 and count_event_breed("skaven_slave") < 18 and count_event_breed("skaven_storm_vermin_commander") < 6
 			end
 		},
 		{
@@ -601,7 +498,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_start_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_01_back = {
 		{
 			"set_master_event_running",
@@ -643,7 +540,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_01_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_01_right = {
 		{
 			"set_master_event_running",
@@ -685,7 +582,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_01_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_02_left = {
 		{
 			"set_master_event_running",
@@ -732,15 +629,6 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"event_horde",
-			spawner_id = "end_event_back_hidden",
-			composition_type = "onslaught_custom_boss_spawn"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
 			"continue_when",
 			duration = 80,
 			condition = function (t)
@@ -752,7 +640,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_02_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_02_right = {
 		{
 			"set_master_event_running",
@@ -799,15 +687,6 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"event_horde",
-			spawner_id = "end_event_back_hidden",
-			composition_type = "onslaught_custom_boss_spawn"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
 			"continue_when",
 			duration = 80,
 			condition = function (t)
@@ -819,7 +698,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_02_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_02_middle = {
 		{
 			"set_master_event_running",
@@ -866,15 +745,6 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"event_horde",
-			spawner_id = "end_event_back_hidden",
-			composition_type = "onslaught_custom_boss_spawn"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
 			"continue_when",
 			duration = 80,
 			condition = function (t)
@@ -886,7 +756,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_02_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_02_back = {
 		{
 			"set_master_event_running",
@@ -927,15 +797,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 2,
 			spawner_id = "end_event_back_hidden",
 			composition_type = "military_end_event_chaos_01"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"event_horde",
-			spawner_id = "end_event_back_hidden",
-			composition_type = "onslaught_custom_boss_spawn"
 		},
 		{
 			"delay",
@@ -997,7 +858,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 25 and count_event_breed("skaven_slave") < 28 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 8
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 15 and count_event_breed("skaven_slave") < 18 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_storm_vermin_with_shield") < 5 and count_event_breed("skaven_plague_monk") < 5
 			end
 		},
 		{
@@ -1005,7 +866,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_03_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_03_right = {
 		{
 			"set_master_event_running",
@@ -1032,12 +893,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_military_end_event_plague_monks"
 		},
 		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "end_event_right",
-			composition_type = "onslaught_military_end_event_plague_monks"
-		},
-		{
 			"delay",
 			duration = 10
 		},
@@ -1055,7 +910,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 25 and count_event_breed("skaven_slave") < 28 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 8
+				return(count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 15 and count_event_breed("skaven_slave") < 18 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_storm_vermin_with_shield") < 5 and count_event_breed("skaven_plague_monk") < 5
 			end
 		},
 		{
@@ -1063,7 +918,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_03_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_03_middle = {
 		{
 			"set_master_event_running",
@@ -1090,12 +945,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_military_end_event_plague_monks"
 		},
 		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "end_event_right",
-			composition_type = "onslaught_military_end_event_plague_monks"
-		},
-		{
 			"delay",
 			duration = 10
 		},
@@ -1113,7 +962,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 25 and count_event_breed("skaven_slave") < 28 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 8
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 15 and count_event_breed("skaven_slave") < 18 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_storm_vermin_with_shield") < 5 and count_event_breed("skaven_plague_monk") < 5
 			end
 		},
 		{
@@ -1121,7 +970,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_03_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_03_back = {
 		{
 			"set_master_event_running",
@@ -1145,12 +994,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "end_event_back",
-			composition_type = "onslaught_military_end_event_plague_monks"
-		},
-		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "end_event_right",
 			composition_type = "onslaught_military_end_event_plague_monks"
 		},
 		{
@@ -1179,7 +1022,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_03_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_04_left = {
 		{
 			"set_master_event_running",
@@ -1221,7 +1064,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_04_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_04_right = {
 		{
 			"set_master_event_running",
@@ -1263,7 +1106,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_04_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_04_middle = {
 		{
 			"set_master_event_running",
@@ -1305,7 +1148,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_04_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_04_back = {
 		{
 			"set_master_event_running",
@@ -1347,7 +1190,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_04_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_05_left = {
 		{
 			"set_master_event_running",
@@ -1415,7 +1258,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_05_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_05_right = {
 		{
 			"set_master_event_running",
@@ -1483,7 +1326,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_05_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_05_middle = {
 		{
 			"set_master_event_running",
@@ -1551,7 +1394,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_05_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_05_back = {
 		{
 			"set_master_event_running",
@@ -1673,7 +1516,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_06_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_06_middle = {
 		{
 			"set_master_event_running",
@@ -1727,7 +1570,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_06_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_06_back = {
 		{
 			"set_master_event_running",
@@ -1781,7 +1624,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_06_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_01 = {
 		{
 			"set_master_event_running",
@@ -1808,9 +1651,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1818,7 +1661,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_02 = {
 		{
 			"set_master_event_running",
@@ -1845,9 +1688,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1855,7 +1698,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_03 = {
 		{
 			"set_master_event_running",
@@ -1882,9 +1725,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1892,7 +1735,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_04 = {
 		{
 			"set_master_event_running",
@@ -1919,9 +1762,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1929,7 +1772,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_05 = {
 		{
 			"set_master_event_running",
@@ -1946,9 +1789,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1956,7 +1799,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.military.military_end_event_specials_06 = {
 		{
 			"set_master_event_running",
@@ -1983,9 +1826,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and count_event_breed("skaven_ratling_gunner") < 2 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 2 and count_event_breed("chaos_vortex_sorcerer") < 3 and count_event_breed("chaos_corruptor_sorcerer") < 2
+				return count_event_breed("skaven_gutter_runner") < 1 and count_event_breed("skaven_pack_master") < 1 and count_event_breed("skaven_ratling_gunner") < 1 and count_event_breed("skaven_warpfire_thrower") and count_event_breed("skaven_poison_wind_globadier") < 1 and count_event_breed("chaos_vortex_sorcerer") < 1 and count_event_breed("chaos_corruptor_sorcerer") < 1
 			end
 		},
 		{
@@ -1993,14 +1836,14 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_specials_done"
 		}
 	}
-
+	
 	--01 2x denial 1x skaven
 	--02 2x denial 1x disabler
 	--03 2x disabler 1x denial
 	--04 2x disabler 1x skaven
 	--05 Mass denial
 	--06 3x skaven
-
+	
 	TerrorEventBlueprints.military.military_end_event_survival_escape = {
 		{
 			"set_master_event_running",
@@ -2036,4 +1879,3 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "military_end_event_survival_escape_done"
 		}
 	}
-	

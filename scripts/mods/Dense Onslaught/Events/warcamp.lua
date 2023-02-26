@@ -1,7 +1,16 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Warcamp
+
 	HordeCompositions.event_warcamp_elites = {
+		{
+			name = "warrior",
+			weight = 5,
+			breeds = {
+				"chaos_warrior",
+				4
+			}
+		},
 		{
 			name = "zerker",
 			weight = 3,
@@ -11,7 +20,7 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_berzerker",
 				{
 					4,
-					5
+					6
 				}
 			}
 		},
@@ -20,32 +29,14 @@ local mod = get_mod("Dense Onslaught")
 			weight = 2,
 			breeds = {
 				"chaos_warrior",
-				2,
+				3,
 				"chaos_raider",
-				{
-					2,
-					3
-				},
-				"chaos_berzerker",
 				{
 					2,
 					3
 				}
 			}
-		},
-		{
-			name = "mauler",
-			weight = 5,
-			breeds = {
-				"chaos_warrior",
-				2,
-				"chaos_raider",
-				{
-					4,
-					5
-				}
-			}
-		},
+		}
 	}
 
 	TerrorEventBlueprints.warcamp.warcamp_payload = {
@@ -72,18 +63,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium_chaos"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_l",
-			composition_type = "chaos_warriors"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_l",
-			composition_type = "chaos_warriors"
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -97,23 +76,17 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_l",
-			composition_type = "onslaught_chaos_berzerkers_medium"
+			composition_type = "onslaught_chaos_shields"
 		},
 		{
 			"delay",
-			duration = 20
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_marauder") < 9 and count_event_breed("chaos_marauder_with_shield") < 8
 			end
 		},
 		{
@@ -125,24 +98,12 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
 			spawner_id = "payload_event_r",
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
 			"delay",
-			duration = 6
+			duration = 12
 		},
 		{
 			"play_stinger",
@@ -155,12 +116,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium_chaos"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -169,12 +124,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 2,
 			spawner_id = "payload_event_r",
 			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
 		},
 		{
 			"delay",
@@ -187,9 +136,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_marauder") < 9 and count_event_breed("chaos_marauder_with_shield") < 8
 			end
 		},
 		{
@@ -213,32 +162,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_maulers_small"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_marauder") < 9 and count_event_breed("chaos_marauder_with_shield") < 8
 			end
 		},
 		{
@@ -256,12 +187,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_medium_chaos"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -276,30 +201,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 1,
 			spawner_id = "payload_event_r",
 			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_l",
-			composition_type = "chaos_warriors"
 		},
 		{
 			"spawn_special",
@@ -310,14 +211,10 @@ local mod = get_mod("Dense Onslaught")
 			}
 		},
 		{
-			"delay",
-			duration = 10
-		},
-		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_marauder") < 9 and count_event_breed("chaos_marauder_with_shield") < 8
 			end
 		},
 		{
@@ -349,38 +246,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_marauder") < 9 and count_event_breed("chaos_marauder_with_shield") < 8
 			end
 		},
 		{
@@ -399,27 +272,15 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "payload_event_r",
-			composition_type = "event_maulers_medium"
+			composition_type = "event_maulers_small"
 		},
 		{
 			"continue_when",
-			duration = 50,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_marauder") < 18 and count_event_breed("chaos_marauder_with_shield") < 18
+				return count_event_breed("chaos_berzerker") < 3 and count_event_breed("chaos_raider") < 3 and count_event_breed("chaos_marauder") < 3 and count_event_breed("chaos_marauder_with_shield") < 2
 			end
 		},
 		{
@@ -484,21 +345,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "payload_event_l",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "camp_event",
-			composition_type = "event_warcamp_elites"
+			composition_type = "event_small_chaos"
 		},
 		{
 			"event_horde",
@@ -508,13 +357,13 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 4
+			duration = 8
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 10 and count_event_breed("chaos_raider") < 10 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 25) and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 15) and count_event_breed("chaos_warrior") < 3
 			end
 		},
 		{
@@ -539,8 +388,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_berzerker",
 				{
-					6,
-					7
+					1,
+					2
 				}
 			}
 		},
@@ -555,13 +404,13 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_raider",
 				{
-					2,
-					3
+					1,
+					2
 				},
 				"chaos_berzerker",
 				{
-					5,
-					6
+					1,
+					2
 				}
 			}
 		}
@@ -579,23 +428,18 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_marauder_with_shield",
 				{
-					10,
+					9,
 					12
-				},
-				"chaos_berzerker",
-				{
-					5,
-					6
 				},
 				"chaos_raider",
 				{
-					5,
-					6
+					2,
+					3
 				},
 				"chaos_warrior",
 				{
-					2,
-					3
+					1,
+					2
 				}
 			}
 		},
@@ -610,13 +454,13 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_marauder",
 				{
-					10,
-					11
+					7,
+					9
 				},
 				"chaos_berzerker",
 				{
-					10,
-					12
+					4,
+					5
 				}
 			}
 		},
@@ -626,85 +470,20 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_warrior",
 				{
-					4,
-					5
+					3,
+					4
 				},
-				"chaos_berzerker",
+				"chaos_marauder",
 				{
 					6,
 					7
 				},
 				"chaos_marauder_with_shield",
 				{
-					13,
-					15
+					3,
+					4
 				}
 			}
 		}
 	}
-
-	TerrorEventBlueprints.warcamp.warcamp_chaos_boss = {
-		{
-			"set_master_event_running",
-			name = "warcamp_chaos_boss"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "warcamp_chaos_boss",
-			breed_name = "chaos_exalted_champion_warcamp",
-			optional_data = {
-				max_health_modifier = 1.5,
-				enhancements = enhancement_4
-			}
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_exalted_champion_warcamp") == 1
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "onslaught_camp_boss_top",
-			composition_type = "chaos_warriors"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "onslaught_camp_boss_top_behind",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "onslaught_camp_boss_top_left",
-			composition_type = "event_small_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "onslaught_camp_boss_top_right",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"continue_when",
-			condition = function (t)
-				return count_event_breed("chaos_exalted_champion_warcamp") < 1
-			end
-		},
-		{
-			"flow_event",
-			flow_event_name = "warcamp_chaos_boss_dead"
-		},
-		{
-			"control_pacing",
-			enable = true
-		},
-		{
-			"control_specials",
-			enable = true
-		}
-	}
-	--See hooks for warcamp boss behaviour changes.
+	-- See hooks for Bodvar logic.

@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--The Pit
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_pacing_off = {
 		{
 			"text",
@@ -8,7 +9,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 0
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_pacing_off = {
 		{
 			"text",
@@ -16,7 +17,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 0
 		}
 	}
-
+	
 	HordeCompositions.chaos_elites = {
 		{
 			name = "zerker",
@@ -41,25 +42,14 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
-	HordeCompositions.slum_cw = {
-		{
-			name = "chaos_warrior",
-			weight = 2,
-			breeds = {
-				"chaos_warrior",
-					2
-			}
-		}
-	}
-
+	
 	HordeCompositions.slum_specials = {
 		{
 			name = "leech",
 			weight = 2,
 			breeds = {
 				"chaos_corruptor_sorcerer",
-				3,
+				2,
 			}
 		},
 		{
@@ -67,7 +57,7 @@ local mod = get_mod("Dense Onslaught")
 			weight = 2,
 			breeds = {
 				"skaven_warpfire_thrower",
-				3,
+				2,
 			}
 		},
 		{
@@ -75,13 +65,13 @@ local mod = get_mod("Dense Onslaught")
 			weight = 3,
 			breeds = {
 				"chaos_corruptor_sorcerer",
-				2,
+				1,
 				"skaven_warpfire_thrower",
 				1,
 			}
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_start = {
 		{
 			"set_master_event_running",
@@ -102,7 +92,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_mid_01",
-			composition_type = "event_large_chaos"
+			composition_type = "event_medium_chaos"
 		},
 		{
 			"event_horde",
@@ -117,45 +107,23 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_left_01",
-			composition_type = "event_maulers_medium"
+			composition_type = "event_maulers_small"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_right_01",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "bogenhafen_slum_event_front_right_01",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "bogenhafen_slum_event_front_right_01",
-			composition_type = "slum_cw"
+			composition_type = "event_maulers_small"
 		},
 		{
 			"delay",
 			duration = 15
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_slum_boss_event",
-			breed_name = "chaos_troll",
-			optional_data = {
-				enhancements = enhancement_6
-			}
-		},
-		{
-			"delay",
-			duration = 12
-		},
-		{
 			"flow_event",
 			flow_event_name = "dlc_bogenhafen_slum_event_start_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_loop = {
 		{
 			"set_freeze_condition",
@@ -183,18 +151,23 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_right_01",
-			composition_type = "slum_cw"
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_front_right_01",
+			composition_type = "chaos_elites"
 		},
 		{
 			"delay",
-			duration = 48
+			duration = 41
 		},
 		{
 			"flow_event",
 			flow_event_name = "dlc_bogenhafen_slum_event_loop_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_spice_mid = {
 		{
 			"set_freeze_condition",
@@ -212,19 +185,15 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_mid_01",
-			composition_type = "slum_specials"
-		},
-		{
-			"delay",
-			duration = 5
+			composition_type = "onslaught_chaos_berzerkers_small"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_mid_01",
-			composition_type = "onslaught_custom_special_disabler"
-		},
+			composition_type = "slum_specials"
+		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_spice_left = {
 		{
 			"set_freeze_condition",
@@ -247,15 +216,15 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_left_01",
-			composition_type = "onslaught_chaos_berzerkers_medium"
+			composition_type = "onslaught_chaos_berzerkers_small"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_left_01",
-			composition_type = "event_maulers_medium"
+			composition_type = "event_maulers_small"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_spice_right = {
 		{
 			"set_freeze_condition",
@@ -278,15 +247,15 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_left_01",
-			composition_type = "onslaught_chaos_berzerkers_medium"
+			composition_type = "onslaught_chaos_berzerkers_small"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_left_01",
-			composition_type = "event_maulers_medium"
-		},
+			composition_type = "event_maulers_small"
+		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_end_loop = {
 		{
 			"set_freeze_condition",
@@ -310,12 +279,12 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_roof_01",
-			composition_type = "onslaught_storm_vermin_medium"
+			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_roof_01",
-			composition_type = "onslaught_storm_vermin_medium"
+			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"delay",
@@ -323,16 +292,16 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return (count_event_breed("chaos_marauder_with_shield") + count_event_breed("chaos_marauder")) < 14
+				return (count_event_breed("chaos_marauder_with_shield") + count_event_breed("chaos_marauder")) < 8
 			end
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 20 and count_event_breed("skaven_slave") < 12 and count_event_breed("skaven_storm_vermin_commander") < 5
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 10 and count_event_breed("skaven_slave") < 12 and count_event_breed("skaven_storm_vermin_commander") < 4
 			end
 		},
 		{
@@ -344,7 +313,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_slum_event_end_loop"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_gauntlet_part_01 = {
 		{
 			"set_master_event_running",
@@ -383,6 +352,11 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
+			"event_horde",
+			spawner_id = "onslaught_slum_gauntlet_cutoff",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
 			"spawn_special",
 			spawner_id = "dlc_bogenhafen_slum_gauntlet_part_01",
 			breed_name = "skaven_ratling_gunner"
@@ -396,29 +370,10 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_special",
 			amount = 1,
 			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"delay",
-			duration = 2
 		},
 		{
 			"delay",
 			duration = 3
-		},
-		{
-			"spawn_special",
-			spawner_id = "dlc_bogenhafen_slum_gauntlet_part_01",
-			breed_name = "skaven_pack_master"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_pack_master"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_pack_master"
 		},
 		{
 			"event_horde",
@@ -428,7 +383,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "onslaught_slum_gauntlet_behind",
-			composition_type = "onslaught_chaos_berzerkers_medium"
+			composition_type = "onslaught_chaos_berzerkers_small"
 		},
 		{
 			"event_horde",
@@ -445,7 +400,7 @@ local mod = get_mod("Dense Onslaught")
 			breed_name = "skaven_pack_master"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_gauntlet_wall = {
 		{
 			"set_master_event_running",
@@ -479,14 +434,9 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "bogenhafen_slum_gauntlet_wall",
 			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "bogenhafen_slum_gauntlet_wall",
-			composition_type = "onslaught_chaos_warriors"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_gauntlet_part_02 = {
 		{
 			"set_master_event_running",
@@ -523,7 +473,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 30
+			duration = 10
 		},
 		{
 			"continue_when",

@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 	
---Fort Brachshit
+	--Fort Brachshit
+
 	HordeCompositions.event_fort_pestilen = {
 		{
 			name = "mixed",
@@ -8,23 +9,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					17,
-					19
-				},
-				"skaven_clan_rat",
-				{
-					23,
-					25
+					37,
+					39
 				},
 				"skaven_plague_monk",
 				{
-					8,
-					9
+					10,
+					13
 				}
 			}
 		}
 	}
-
+	
 	HordeCompositions.event_fort_savagery = {
 		{
 			name = "mixed",
@@ -32,18 +28,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_fanatic",
 				{
-					19,
-					23
-				},
-				"chaos_marauder",
-				{
-					10,
-					11
+					29,
+					33
 				},
 				"chaos_berzerker",
 				{
-					6,
-					7
+					11,
+					13
 				}
 			}
 		}
@@ -81,7 +72,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 18 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 6
+				return count_event_breed("skaven_slave") < 12 and count_event_breed("skaven_clan_rat") < 6 and count_event_breed("skaven_clan_rat_with_shield") < 5 and count_event_breed("skaven_storm_vermin_commander") < 2
 			end
 		},
 		{
@@ -115,9 +106,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 24 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 6 and count_event_breed("skaven_storm_vermin_commander") < 6
+				return count_event_breed("skaven_slave") < 12 and count_event_breed("skaven_clan_rat") < 6 and count_event_breed("skaven_clan_rat_with_shield") < 5 and count_event_breed("skaven_storm_vermin_commander") < 2
 			end
 		},
 		{
@@ -125,7 +116,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "fort_terror_event_inner_yard_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.fort.fort_terror_event_inner_yard_chaos = {
 		{
 			"set_freeze_condition",
@@ -155,9 +146,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_marauder") < 10 and count_event_breed("chaos_marauder_with_shield") < 7
+				return count_event_breed("chaos_fanatic") < 8 and count_event_breed("chaos_raider") < 2 and count_event_breed("chaos_marauder") < 5 and count_event_breed("chaos_marauder_with_shield") < 4
 			end
 		},
 		{
@@ -176,7 +167,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_pacing",
-			enable = true
+			enable = false
 		},
 		{
 			"control_specials",
@@ -189,7 +180,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "fort_horde_gate",
-			composition_type = "event_small_chaos"
+			composition_type = "event_large_chaos"
 		},
 		{
 			"event_horde",
@@ -197,144 +188,21 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_small"
 		},
 		{
-			"event_horde",
-			spawner_id = "fort_horde_gate",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_gate",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Fort_Big_SV",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				max_health_modifier = 2.5,
-				size_variation_range = {
-				    1.773,
-				    1.774
-				},
-				spawned_func = tzeentch_buff_spawn_function
-			}
-		},
-		{
 			"delay",
-			duration = 5
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "siege_2",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				enhancements = relentless
-			}
-		},
-		{
-			"delay",
-			duration = 30
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_gate",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_gate",
-			composition_type = "onslaught_chaos_berzerkers_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_gate",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"delay",
-			duration = 5
+			duration = 10
 		},
 		{
 			"continue_when",
 			duration = 50,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 16 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("skaven_storm_vermin") < 6
+				return count_event_breed("chaos_marauder") < 4 and count_event_breed("chaos_berzerker") < 2
 			end
 		},
 		{
 			"flow_event",
 			flow_event_name = "fort_horde_gate_done"
 		}
-	}
-
-	-- TerrorEventBlueprints.fort.fort_horde_cannon = {
-		-- {
-			-- "set_master_event_running",
-			-- name = "fort_horde_cannon"
-		-- },
-		-- {
-			-- "set_freeze_condition",
-			-- max_active_enemies = 100
-		-- },
-		-- {
-			-- "control_pacing",
-			-- enable = false
-		-- },
-		-- {
-			-- "control_specials",
-			-- enable = false
-		-- },
-		-- {
-			-- "event_horde",
-			-- spawner_id = "fort_horde_cannon",
-			-- composition_type = "event_fort_pestilen"
-		-- },
-		-- {
-			-- "delay",
-			-- duration = 5
-		-- },
-		-- {
-			-- "spawn_at_raw",
-			-- spawner_id = "siege_1",
-			-- breed_name = "skaven_warpfire_thrower"
-		-- },
-		-- {
-			-- "spawn_at_raw",
-			-- spawner_id = "siege_2",
-			-- breed_name = "skaven_poison_wind_globadier"
-		-- },
-		-- {
-			-- "delay",
-			-- duration = {
-				-- 5,
-				-- 9
-			-- }
-		-- },
-		-- {
-			-- "spawn_at_raw",
-			-- spawner_id = "siege_4",
-			-- breed_name = "skaven_poison_wind_globadier"
-		-- },
-		-- {
-			-- "spawn_at_raw",
-			-- spawner_id = "siege_6",
-			-- breed_name = "skaven_ratling_gunner"
-		-- },
-		-- {
-			-- "continue_when",
-			-- condition = function (t)
-				-- return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_plague_monk") < 6 and count_event_breed("skaven_poison_wind_globadier") < 4 and count_event_breed("skaven_warpfire_thrower") < 4 and count_event_breed("skaven_ratling_gunner") < 4
-			-- end
-		-- },
-		-- {
-			-- "delay",
-			-- duration = 7
-		-- },
-		-- {
-			-- "flow_event",
-			-- flow_event_name = "fort_horde_cannon_done"
-		-- }
-	-- }
+	}	
 
 	TerrorEventBlueprints.fort.fort_horde_cannon_skaven = {
 		{
@@ -355,16 +223,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_fort_pestilen"
 		},
 		{
-			"event_horde",
-			spawner_id = "fort_horde_cannon",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_cannon",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"spawn_at_raw",
 			spawner_id = "manual_special_spawners",
 			breed_name = {
@@ -373,7 +231,7 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_gutter_runner",
 				"skaven_ratling_gunner",
 				"skaven_warpfire_thrower"
-			},
+			}
 		},
 		{
 			"delay",
@@ -408,7 +266,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
+			duration = 8
 		},
 		{
 			"event_horde",
@@ -418,7 +276,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 15
+			duration = 20
 		},
 		{
 			"spawn_at_raw",
@@ -432,24 +290,10 @@ local mod = get_mod("Dense Onslaught")
 			},
 		},
 		{
-			"delay",
-			duration = 30
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "fort_horde_cannon",
-			composition_type = "event_fort_pestilen"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
 			"continue_when",
-			duration = 70,
+			duration = 120,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 15 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_plague_monk") < 6 and count_event_breed("skaven_poison_wind_globadier") < 10 and count_event_breed("skaven_warpfire_thrower") < 6 and count_event_breed("skaven_ratling_gunner") < 6
+				return count_event_breed("skaven_slave") < 25 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 15 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_plague_monk") < 6 and count_event_breed("skaven_poison_wind_globadier") < 4 and count_event_breed("skaven_warpfire_thrower") < 4 and count_event_breed("skaven_ratling_gunner") < 4
 			end
 		},
 		{
@@ -457,7 +301,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "fort_horde_cannon_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.fort.fort_horde_cannon_chaos = {
 		{
 			"set_master_event_running",
@@ -477,20 +321,11 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_fort_savagery"
 		},
 		{
-			"event_horde",
-			spawner_id = "fort_horde_cannon",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_cannon",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
 			"spawn_at_raw",
 			spawner_id = "manual_special_spawners",
 			breed_name = {
 				"chaos_corruptor_sorcerer",
+				"chaos_vortex_sorcerer",
 				"skaven_gutter_runner",
 				"skaven_ratling_gunner",
 				"skaven_warpfire_thrower"
@@ -525,7 +360,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "siege_6",
-			breed_name = "skaven_ratling_gunner"
+			breed_name = "chaos_vortex_sorcerer"
 		},
 		{
 			"delay",
@@ -546,29 +381,17 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "manual_special_spawners",
 			breed_name = {
 				"chaos_corruptor_sorcerer",
+				"chaos_vortex_sorcerer",
 				"skaven_gutter_runner",
 				"skaven_ratling_gunner",
 				"skaven_warpfire_thrower"
 			}
 		},
 		{
-			"delay",
-			duration = 45
-		},
-		{
-			"event_horde",
-			spawner_id = "fort_horde_cannon",
-			composition_type = "event_fort_savagery"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
 			"continue_when",
-			duration = 70,
+			duration = 120,
 			condition = function (t)
-				return count_event_breed("chaos_fanatic") < 15 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 10 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("chaos_warrior") < 4 and count_event_breed("skaven_poison_wind_globadier") < 10 and count_event_breed("skaven_warpfire_thrower") < 6 and count_event_breed("chaos_vortex_sorcerer") < 6
+				return count_event_breed("chaos_fanatic") < 20 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 12 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("skaven_poison_wind_globadier") < 4 and count_event_breed("skaven_warpfire_thrower") < 4 and count_event_breed("chaos_vortex_sorcerer") < 4
 			end
 		},
 		{

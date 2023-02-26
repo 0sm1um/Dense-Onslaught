@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
-	-- Enchanter's lair
+	--Enchanter's lair
+	
 	TerrorEventBlueprints.dlc_castle.castle_catacombs_welcome_committee = {
 		{
 			"play_stinger",
@@ -10,16 +11,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "catacombs_welcome_committee",
 			composition_type = "event_large_chaos"
-		},
-		{
-			"event_horde",
-			spawner_id = "catacombs_welcome_committee",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "catacombs_welcome_committee",
-			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
 			"event_horde",
@@ -43,15 +34,10 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "catacombs_special_welcome",
-			composition_type = "chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "catacombs_special_welcome",
 			composition_type = "onslaught_chaos_warriors"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_castle.castle_chaos_boss = {
 		{
 			"control_pacing",
@@ -100,7 +86,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "castle_chaos_boss_dead"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_castle.castle_catacombs_end_event_loop = {
 		{
 			"set_master_event_running",
@@ -120,7 +106,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 50,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 18 and count_event_breed("skaven_slave") < 16
+				return count_event_breed("skaven_clan_rat") < 9 and count_event_breed("skaven_slave") < 10
 			end
 		},
 		{
@@ -132,7 +118,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "castle_catacombs_end_event_loop_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_castle.castle_catacombs_end_event_loop_extra_spice = {
 		{
 			"set_master_event_running",
@@ -164,7 +150,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 50,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_storm_vermin_commander") < 6
+				return count_event_breed("skaven_clan_rat") < 9 and count_event_breed("skaven_storm_vermin_commander") < 3
 			end
 		},
 		{
@@ -189,8 +175,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_marauder",
 				{
-					21,
-					23
+					15,
+					17
 				},
 				"chaos_marauder_with_shield",
 				{
@@ -199,8 +185,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_berzerker",
 				{
-					6,
-					7
+					3,
+					4
 				}
 			}
 		},
@@ -222,250 +208,6 @@ local mod = get_mod("Dense Onslaught")
 				{
 					18,
 					20
-				},
-				"chaos_raider",
-				{
-					4,
-					5
-				},
-				"chaos_berzerker",
-				{
-					4,
-					5
-				},
-				"chaos_warrior",
-				2
-			}
-		},
-		{
-			name = "wave_c",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					22,
-					24
-				},
-				"chaos_marauder",
-				{
-					22,
-					23
-				},
-				"chaos_marauder_with_shield",
-				{
-					20,
-					22
-				},
-				"chaos_raider",
-				{
-					23,
-					25
-				}
-			}
-		},
-		{
-			name = "wave_d",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					22,
-					24
-				},
-				"chaos_marauder",
-				{
-					15,
-					17
-				},
-				"chaos_marauder_with_shield",
-				{
-					18,
-					20
-				},
-				"chaos_berzerker",
-				{
-					23,
-					25
-				}
-			}
-		},
-		{
-			name = "wave_e",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					18,
-					20
-				},
-				"chaos_marauder",
-				{
-					22,
-					23
-				},
-				"chaos_marauder_with_shield",
-				{
-					20,
-					25
-				},
-				"chaos_warrior",
-				10
-			}
-		},
-		end_time = 9999,
-		start_time = 0
-	}
-
-	HordeCompositions.chaos_event_defensive_intense = {
-		{
-			name = "wave_a",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					45,
-					51
-				},
-				"chaos_marauder",
-				{
-					25,
-					27
-				},
-				"chaos_marauder_with_shield",
-				{
-					30,
-					31
-				},
-				"chaos_berzerker",
-				{
-					8,
-					9
-				}
-			}
-		},
-		{
-			name = "wave_b",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					22,
-					24
-				},
-				"chaos_marauder",
-				{
-					20,
-					24
-				},
-				"chaos_marauder_with_shield",
-				{
-					30,
-					32
-				},
-				"chaos_raider",
-				{
-					5,
-					6
-				},
-				"chaos_berzerker",
-				{
-					5,
-					6
-				},
-				"chaos_warrior",
-				2
-			}
-		},
-		{
-			name = "wave_c",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					22,
-					24
-				},
-				"chaos_marauder",
-				{
-					15,
-					17
-				},
-				"chaos_marauder_with_shield",
-				{
-					20,
-					22
-				},
-				"chaos_raider",
-				{
-					25,
-					27
-				}
-			}
-		},
-		{
-			name = "wave_d",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					22,
-					24
-				},
-				"chaos_marauder",
-				{
-					20,
-					22
-				},
-				"chaos_marauder_with_shield",
-				{
-					20,
-					22
-				},
-				"chaos_berzerker",
-				{
-					25,
-					27
-				}
-			}
-		},
-		{
-			name = "wave_e",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					18,
-					20
-				},
-				"chaos_marauder",
-				{
-					22,
-					24
-				},
-				"chaos_marauder_with_shield",
-				15,
-				"chaos_warrior",
-				10
-			}
-		},
-		end_time = 9999,
-		start_time = 0
-	}
-
-	HordeCompositions.chaos_event_offensive_small = {
-		{
-			name = "wave_a",
-			weight = 4,
-			breeds = {
-				"chaos_marauder",
-				{
-					10,
-					12
-				},
-				"chaos_fanatic",
-				{
-					8,
-					10
 				},
 				"chaos_raider",
 				{
@@ -481,10 +223,242 @@ local mod = get_mod("Dense Onslaught")
 				1
 			}
 		},
+		{
+			name = "wave_c",
+			weight = 2,
+			breeds = {
+				"chaos_fanatic",
+				{
+					22,
+					24
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					10,
+					12
+				},
+				"chaos_raider",
+				{
+					15,
+					17
+				}
+			}
+		},
+		{
+			name = "wave_d",
+			weight = 2,
+			breeds = {
+				"chaos_fanatic",
+				{
+					22,
+					24
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					10,
+					12
+				},
+				"chaos_berzerker",
+				{
+					15,
+					17
+				}
+			}
+		},
+		{
+			name = "wave_e",
+			weight = 2,
+			breeds = {
+				"chaos_fanatic",
+				{
+					18,
+					20
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					9,
+					10
+				},
+				"chaos_warrior",
+				8
+			}
+		},
 		end_time = 9999,
 		start_time = 0
 	}
-
+	
+	HordeCompositions.chaos_event_defensive_intense = {
+		{
+			name = "wave_a",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					45,
+					51
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					22,
+					24
+				},
+				"chaos_berzerker",
+				{
+					3,
+					4
+				}
+			}
+		},
+		{
+			name = "wave_b",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					22,
+					24
+				},
+				"chaos_marauder",
+				{
+					20,
+					24
+				},
+				"chaos_marauder_with_shield",
+				{
+					18,
+					20
+				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					2,
+					3
+				},
+				"chaos_warrior",
+				1
+			}
+		},
+		{
+			name = "wave_c",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					22,
+					24
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					10,
+					12
+				},
+				"chaos_raider",
+				{
+					15,
+					17
+				}
+			}
+		},
+		{
+			name = "wave_d",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					22,
+					24
+				},
+				"chaos_marauder",
+				{
+					15,
+					17
+				},
+				"chaos_marauder_with_shield",
+				{
+					10,
+					12
+				},
+				"chaos_berzerker",
+				{
+					15,
+					17
+				}
+			}
+		},
+		{
+			name = "wave_e",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					18,
+					20
+				},
+				"chaos_marauder",
+				{
+					13,
+					14
+				},
+				"chaos_marauder_with_shield",
+				7,
+				"chaos_warrior",
+				8
+			}
+		},
+		end_time = 9999,
+		start_time = 0
+	}
+	
+	HordeCompositions.chaos_event_offensive_small = {
+		{
+			name = "wave_a",
+			weight = 4,
+			breeds = {
+				"chaos_marauder",
+				{
+					10,
+					11
+				},
+				"chaos_fanatic",
+				{
+					4,
+					5
+				}
+			}
+		},
+		end_time = 9999,
+		start_time = 0
+	}
+	
 	HordeCompositions.chaos_event_offensive = {
 		{
 			name = "wave_a",
@@ -492,16 +466,16 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_marauder",
 				{
-					25,
-					30
+					15,
+					17
 				},
 				"chaos_fanatic",
 				{
-					25,
-					30
+					15,
+					17
 				},
 				"chaos_berzerker",
-				8
+				3
 			}
 		},
 		{
@@ -510,16 +484,16 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_marauder",
 				{
-					25,
-					30
+					15,
+					17
 				},
 				"chaos_fanatic",
 				{
-					25,
-					30
+					15,
+					17
 				},
 				"chaos_raider",
-				7
+				3
 			}
 		},
 		end_time = 9999,

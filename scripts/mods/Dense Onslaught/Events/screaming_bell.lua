@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 	
 	--Screaming Bell
+
 	HordeCompositions.event_bell_monks = {
 		{
 			name = "plain",
@@ -8,20 +9,9 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_plague_monk",
 				{
-					4,
-					5
+					3,
+					4
 				}
-			}
-		}
-	}
-
-	HordeCompositions.event_bell_warriors = {
-		{
-			name = "plain",
-			weight = 7,
-			breeds = {
-				"chaos_warrior",
-				10
 			}
 		}
 	}
@@ -54,7 +44,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
+			composition_type = "event_extra_spice_small"
 		},
 		{
 			"delay",
@@ -74,18 +64,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_bell_monks"
 		},
 		{
-			"event_horde",
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
 			"delay",
 			duration = 5
 		},
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
+				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_clan_rat_with_shield") < 8 and count_event_breed("skaven_storm_vermin_commander") < 3 and count_event_breed("skaven_plague_monk") < 4
 			end
 		},
 		{
@@ -97,7 +82,7 @@ local mod = get_mod("Dense Onslaught")
 	TerrorEventBlueprints.bell.canyon_ogre_boss = {
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"control_pacing",
@@ -106,15 +91,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "canyon_ogre_boss",
-			breed_name = "chaos_troll"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_second_ogre",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
+			breed_name = "skaven_rat_ogre"
 		},
 		{
 			"delay",
@@ -122,144 +99,8 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"spawn_at_raw",
-			spawner_id = "canyon_ogre_boss",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
 			spawner_id = "onslaught_second_ogre",
 			breed_name = "skaven_rat_ogre"
-		},
-		{
-			"delay",
-			duration = 40
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 60,
-			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 60,
-			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 60,
-			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 60,
-			condition = function (t)
-				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_large"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_bell_event",
-			composition_type = "event_bell_monks"
-		},
-		{
-			"delay",
-			duration = 10
 		}
 	}
 
@@ -271,12 +112,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"set_freeze_condition",
 			max_active_enemies = 100
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "canyon_escape_event",
-			composition_type = "onslaught_custom_specials_heavy_disabler"
 		},
 		{
 			"event_horde",
@@ -293,7 +128,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_pacing",
-			enable = true
+			enable = false
 		},
 		{
 			"continue_when",

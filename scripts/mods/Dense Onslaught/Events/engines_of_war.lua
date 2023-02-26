@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Engines of War
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_loop = {
 		{
 			"enable_bots_in_carry_event"
@@ -57,18 +58,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "skaven_camp_loop",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "skaven_camp_loop",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"delay",
 			duration = {
 				2,
@@ -107,7 +96,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_skaven_camp_loop_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_resistance_loop = {
 		{
 			"enable_bots_in_carry_event"
@@ -123,12 +112,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_camp_specials",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_camp_specials",
-			composition_type = "onslaught_plague_monks_medium"
+			composition_type = "onslaught_plague_monks_small"
 		},
 		{
 			"spawn_special",
@@ -160,13 +144,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "skaven_camp_loop",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "skaven_camp_loop",
-			composition_type = "onslaught_storm_vermin_medium"
+			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"delay",
@@ -194,9 +172,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 60,
 			condition = function (t)
-				return count_event_breed("skaven_plague_monk") < 10 and count_event_breed("skaven_slave") < 24 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 16 and (count_event_breed("skaven_storm_vermin_commander") + count_event_breed("skaven_storm_vermin_with_shield")) < 10
+				return count_event_breed("skaven_plague_monk") < 5 and count_event_breed("skaven_slave") < 12 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 8 and (count_event_breed("skaven_storm_vermin_commander") + count_event_breed("skaven_storm_vermin_with_shield")) < 5
 			end
 		},
 		{
@@ -209,7 +187,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_camp_specials",
-			composition_type = "onslaught_plague_monks_medium"
+			composition_type = "onslaught_plague_monks_small"
 		},
 		{
 			"spawn_special",
@@ -240,7 +218,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "skaven_camp_loop",
-			composition_type = "onslaught_storm_vermin_medium"
+			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"delay",
@@ -272,7 +250,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 60,
 			condition = function (t)
-				return count_event_breed("skaven_plague_monk") < 10 and count_event_breed("skaven_slave") < 24 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 16 and (count_event_breed("skaven_storm_vermin_commander") + count_event_breed("skaven_storm_vermin_with_shield")) < 10
+				return count_event_breed("skaven_plague_monk") < 5 and count_event_breed("skaven_slave") < 12 and (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 8 and (count_event_breed("skaven_storm_vermin_commander") + count_event_breed("skaven_storm_vermin_with_shield")) < 5
 			end
 		},
 		{
@@ -287,7 +265,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_skaven_camp_resistance_loop_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_a = {
 		{
 			"enable_bots_in_carry_event"
@@ -317,23 +295,13 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
 			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
 			"continue_when",
 			duration = 15,
 			condition = function (t)
-				return count_event_breed("skaven_storm_vermin_commander") < 12
+				return count_event_breed("skaven_storm_vermin_commander") < 6
 			end
 		},
 		{
@@ -359,15 +327,10 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_small"
 		},
 		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_storm_vermin_commander") < 10
+				return count_event_breed("skaven_storm_vermin_commander") < 4 
 			end
 		},
 		{
@@ -375,7 +338,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_skaven_camp_a_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_b = {
 		{
 			"enable_bots_in_carry_event"
@@ -413,15 +376,10 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_plague_monk") < 12
+				return count_event_breed("skaven_plague_monk") < 4 
 			end
 		},
 		{
@@ -436,7 +394,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_skaven_camp_b_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_c = {
 		{
 			"enable_bots_in_carry_event"
@@ -471,16 +429,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
 			composition_type = "skaven_shields"
 		},
 		{
@@ -492,7 +440,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 15,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat_with_shield") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 10
+				return count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_with_shield") < 5
 			end
 		},
 		{
@@ -515,16 +463,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
 			composition_type = "skaven_shields"
 		},
 		{
@@ -534,9 +472,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+				return count_event_breed("skaven_clan_rat_with_shield") < 5 and count_event_breed("skaven_storm_vermin_with_shield") < 2
 			end
 		},
 		{
@@ -544,7 +482,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_skaven_camp_c_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_finale = {
 		{
 			"set_master_event_running",
@@ -574,16 +512,6 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "forest_door_a",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_skaven_camp",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
 			spawner_id = "forest_skaven_camp",
 			composition_type = "event_smaller"
 		},
@@ -594,9 +522,9 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_doomwheel_boss",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-			    enhancements = enhancement_5
+			breed_name = {
+				"skaven_rat_ogre",
+				"skaven_stormfiend"
 			}
 		},
 		{
@@ -621,7 +549,7 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_end_event_loop = {
 		{
 			"set_master_event_running",
@@ -656,7 +584,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_end_event_loop_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_end_event_a = {
 		{
 			"set_master_event_running",
@@ -697,11 +625,6 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "forest_end_event_specials",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
 			spawner_id = "forest_end_event",
 			composition_type = "onslaught_storm_vermin_shields_small"
 		},
@@ -744,11 +667,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "forest_end_event_specials",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = {
 				30,
@@ -760,7 +678,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_end_event_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_end_event_b = {
 		{
 			"set_master_event_running",
@@ -791,16 +709,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "forest_end_event_chaos",
 			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"delay",
@@ -848,16 +756,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
 			composition_type = "event_maulers_small"
 		},
 		{
@@ -872,7 +770,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_end_event_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_end_event_c = {
 		{
 			"set_master_event_running",
@@ -928,11 +826,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_custom_boss_spawn"
-		},
-		{
 			"delay",
 			duration = 15
 		},
@@ -968,7 +861,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "forest_end_event_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.forest_ambush.forest_end_finale = {
 		{
 			"set_master_event_running",
@@ -1009,11 +902,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "forest_end_event_chaos",
 			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "forest_end_event_chaos",
-			composition_type = "onslaught_custom_boss_minotaur"
 		},
 		{
 			"delay",

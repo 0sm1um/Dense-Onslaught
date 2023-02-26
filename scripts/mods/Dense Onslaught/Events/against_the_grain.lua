@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
-	-- Against the Grain
+	--Against the Grain
+	
 	TerrorEventBlueprints.farmlands.farmlands_rat_ogre = {
 		{
 			"set_master_event_running",
@@ -9,10 +10,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "farmlands_rat_ogre",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				enhancements = enhancement_1
-			}
+			breed_name = "skaven_rat_ogre"
 		},
 		{
 			"delay",
@@ -41,12 +39,10 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_farmlands_extra_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"beastmen_minotaur",
-				"chaos_troll"
-			},
-			optional_data = {
-				enhancements = relentless
-			}
+				"skaven_stormfiend",
+				"chaos_troll",
+				"chaos_spawn"
+			}		
 		},
 		{
 			"delay",
@@ -55,7 +51,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("beastmen_minotaur") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
 			end
 		},
 		{
@@ -63,7 +59,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "farmlands_barn_boss_dead"
 		}
 	}
-
+	
 	TerrorEventBlueprints.farmlands.farmlands_storm_fiend = {
 		{
 			"set_master_event_running",
@@ -72,10 +68,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "farmlands_rat_ogre",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				enhancements = enhancement_1
-			}
+			breed_name = "skaven_stormfiend"
 		},
 		{
 			"delay",
@@ -104,12 +97,10 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_farmlands_extra_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"beastmen_minotaur",
-				"chaos_troll"
-			},
-			optional_data = {
-				enhancements = relentless
-			}
+				"skaven_stormfiend",
+				"chaos_troll",
+				"chaos_spawn"
+			}		
 		},
 		{
 			"delay",
@@ -118,7 +109,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("beastmen_minotaur") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
 			end
 		},
 		{
@@ -126,7 +117,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "farmlands_barn_boss_dead"
 		}
 	}
-
+	
 	TerrorEventBlueprints.farmlands.farmlands_chaos_troll = {
 		{
 			"set_master_event_running",
@@ -135,10 +126,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "farmlands_rat_ogre",
-			breed_name = "chaos_troll",
-			optional_data = {
-				enhancements = enhancement_1
-			}
+			breed_name = "chaos_troll"
 		},
 		{
 			"delay",
@@ -167,12 +155,10 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_farmlands_extra_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"beastmen_minotaur",
-				"chaos_troll"
-			},
-			optional_data = {
-				enhancements = relentless
-			}
+				"skaven_stormfiend",
+				"chaos_troll",
+				"chaos_spawn"
+			}		
 		},
 		{
 			"delay",
@@ -181,7 +167,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("beastmen_minotaur") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
 			end
 		},
 		{
@@ -189,7 +175,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "farmlands_barn_boss_dead"
 		}
 	}
-
+	
 	TerrorEventBlueprints.farmlands.farmlands_chaos_spawn = {
 		{
 			"set_master_event_running",
@@ -198,10 +184,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "farmlands_rat_ogre",
-			breed_name = "beastmen_minotaur",
-			optional_data = {
-				enhancements = enhancement_1
-			}
+			breed_name = "chaos_spawn"
 		},
 		{
 			"delay",
@@ -230,12 +213,10 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_farmlands_extra_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"beastmen_minotaur",
-				"chaos_troll"
-			},
-			optional_data = {
-				enhancements = relentless
-			}
+				"skaven_stormfiend",
+				"chaos_troll",
+				"chaos_spawn"
+			}		
 		},
 		{
 			"delay",
@@ -244,7 +225,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("beastmen_minotaur") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
 			end
 		},
 		{
@@ -280,10 +261,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_wall_guard_extra_1",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = tzeentch_buff_spawn_function
-			}
+			breed_name = "chaos_warrior"
 		},
 		{
 			"spawn_at_raw",
@@ -319,29 +297,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "square_front",
-			composition_type = "event_large"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_1st_event",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function,
-				size_variation_range = {
-				    1.4,
-				    1.45
-				}
-			}
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "skaven_shields"
+			composition_type = "event_medium"
 		},
 		{
 			"event_horde",
@@ -355,7 +311,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "event_large_chaos"
+			composition_type = "event_small_chaos"
 		},
 		{
 			"event_horde",
@@ -366,26 +322,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "hay_barn_bridge_invis",
 			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_specials_heavy_disabler"
 		},
 		{
 			"delay",
@@ -406,83 +342,31 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
 			"continue_when",
-			duration = 30,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 25 and count_event_breed("skaven_slave") < 50
+				return count_event_breed("chaos_marauder") < 10 and count_event_breed("skaven_slave") < 40
 			end
 		},
 		{
 			"event_horde",
 			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_medium_chaos"
+			composition_type = "event_small_chaos"
 		},
 		{
 			"event_horde",
 			spawner_id = "sawmill_yard_invis",
 			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_1st_event",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function,
-				size_variation_range = {
-				    1.2,
-				    1.25
-				}
-			}
 		},
 		{
 			"delay",
-			duration = 5
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 25,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 35 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		},
 		{
@@ -496,157 +380,8 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "skaven_shields"
 		},
 		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_specials_heavy_disabler"
-		},
-		{
 			"delay",
 			duration = 5
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 35 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
-			end
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "event_large"
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "square_front",
-			composition_type = "skaven_shields"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "event_large_chaos"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_bridge_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_1st_event",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function,
-				size_variation_range = {
-				    1.2,
-				    1.25
-				}
-			}
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_specials_heavy_disabler"
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 35 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
-			end
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
 		},
 		{
 			"continue_when",
@@ -661,7 +396,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "hay_barn_bridge_guards",
-			breed_name = "chaos_warrior",
+			breed_name = "chaos_warrior"
 		},
 		{
 			"spawn_at_raw",
@@ -671,14 +406,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_hay_barn_bridge_guards_extra_2",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function,
-				size_variation_range = {
-				    1.2,
-				    1.25
-				}
-			}
+			breed_name = "chaos_warrior"
 		},
 		{
 			"spawn_at_raw",
@@ -694,26 +422,6 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_at_raw",
 			spawner_id = "onslaught_hay_barn_bridge_guards_extra_5",
 			breed_name = "chaos_berzerker"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_custom_special_skaven"
 		},
 		{
 			"event_horde",
@@ -791,28 +499,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "hay_barn_cellar_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_cellar_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_2nd_event",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function,
-				size_variation_range = {
-				    1.2,
-				    1.25
-				}
-			}
-		},
-		{
 			"delay",
 			duration = 10
 		},
@@ -820,16 +506,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "hay_barn_front_invis",
 			composition_type = "event_small_chaos"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_front_invis",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "hay_barn_front_invis",
-			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"event_horde",
@@ -856,31 +532,13 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 1
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_poison_wind_globadier"
-		},
-		{
-			"delay",
-			duration = 1
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_poison_wind_globadier"
-		},
-		{
-			"delay",
 			duration = 5
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 30 and count_event_breed("chaos_warrior") < 8
+				return count_event_breed("chaos_marauder") < 15 and count_event_breed("chaos_warrior") < 3
 			end
 		},
 		{
@@ -902,95 +560,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_2nd_event",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function,
-				size_variation_range = {
-				    1.4,
-				    1.45
-				}
-			}
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
-			"continue_when",
-			duration = 20,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_storm_vermin_commander") < 16
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_stormvermin_shielders"
-		},		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_2nd_event",
-			breed_name = "skaven_storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function,
-				size_variation_range = {
-				    1.4,
-				    1.45
-				}
-			}
 		},
 		{
 			"delay",
@@ -998,9 +567,40 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 35,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 45 and count_event_breed("skaven_storm_vermin_commander") < 16 and count_event_breed("skaven_storm_vermin_with_shield") < 10
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 8
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_small"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_stormvermin_shielders"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_stormvermin_shielders"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 7 and count_event_breed("skaven_storm_vermin_with_shield") < 5
 			end
 		},
 		{
@@ -1025,13 +625,13 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("skaven_storm_vermin_commander") < 16
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 8
 			end
 		},
 		{
@@ -1102,28 +702,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "skaven_shields"
 		},
 		{
-			"event_horde",
-			spawner_id = "square_center",
-			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "square_center",
-			composition_type = "skaven_shields"
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "Against_the_Grain_2nd_event",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function,
-				size_variation_range = {
-				    1.4,
-				    1.45
-				}
-			}
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -1143,23 +721,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"event_horde",
 			spawner_id = "sawmill_yard",
-			composition_type = "event_large"
+			composition_type = "event_small"
 		},
 		{
 			"event_horde",
@@ -1170,16 +738,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "sawmill_yard",
 			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard",
-			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"event_horde",
@@ -1192,9 +750,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 30 and count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("chaos_marauder") < 15 and count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		},
 		{
@@ -1213,24 +771,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard_invis",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40 and count_event_breed("chaos_marauder") < 30
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20 and count_event_breed("chaos_marauder") < 15
 			end
 		},
 		{
@@ -1254,22 +802,12 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_stormvermin_shielders"
 		},
 		{
-			"event_horde",
-			spawner_id = "sawmill_creek",
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_creek",
-			composition_type = "event_stormvermin_shielders"
-		},
-		{
 			"delay",
 			duration = 5
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
 				return count_event_breed("skaven_clan_rat") < 5 and count_event_breed("skaven_slave") < 5
 			end
@@ -1316,21 +854,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "sawmill_interior",
 			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_interior",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_interior",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_interior",
-			composition_type = "onslaught_event_military_courtyard_plague_monks"
 		},
 		{
 			"event_horde",
@@ -1402,24 +925,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			spawner_id = "sawmill_interior_invis",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_interior_invis",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		},
 		{
@@ -1432,9 +945,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		},
 		{
@@ -1462,18 +975,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 3,
-			spawner_id = "elven_ruins_toptier",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
 			"delay",
 			duration = 5
 		},
@@ -1493,30 +994,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "skaven_shields"
-		},
-		{
-			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 40,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		},
 		{
@@ -1537,7 +1017,28 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 30 and count_event_breed("skaven_clan_rat_with_shield") < 30 and count_event_breed("skaven_slave") < 40
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "skaven_shields"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
 			end
 		}
 	}
@@ -1592,4 +1093,3 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-

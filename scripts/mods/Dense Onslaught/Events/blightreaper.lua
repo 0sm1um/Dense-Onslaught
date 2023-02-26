@@ -1,5 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
+	--Blightreaper
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_disable_pacing = {
 		{
 			"text",
@@ -17,7 +19,7 @@ local mod = get_mod("Dense Onslaught")
 			"set_freeze_condition",
 			max_active_enemies = 100
 		},
-		{
+		{	
 			"play_stinger",
 			stinger_name = "enemy_horde_stinger"
 		},
@@ -41,21 +43,6 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "sewer_start",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sewer_start",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "sewer_start",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
 			spawner_id = "onslaught_sewer_backspawn",
 			composition_type = "event_small_chaos"
 		},
@@ -66,9 +53,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 45,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_slave") < 18
+				return count_event_breed("skaven_clan_rat") < 3 and count_event_breed("skaven_slave") < 4
 			end
 		},
 		{
@@ -99,26 +86,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_shields_small"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "sewer_spice",
-			composition_type = "onslaught_storm_vermin_shields_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "sewer_spice",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 40,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_slave") < 18
+				return count_event_breed("skaven_clan_rat") < 3 and count_event_breed("skaven_slave") < 4
 			end
 		},
 		{
@@ -126,7 +101,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_sewer_spice_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_sewer_mid01 = {
 		{
 			"set_master_event_running",
@@ -151,15 +126,10 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_large_chaos"
 		},
 		{
-			"event_horde",
-			spawner_id = "onslaught_sewer_backspawn",
-			composition_type = "event_large_chaos"
-		},
-		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 16 and count_event_breed("skaven_slave") < 25
+				return count_event_breed("skaven_clan_rat") < 8 and count_event_breed("skaven_slave") < 15
 			end
 		},
 		{
@@ -176,18 +146,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 2,
 			spawner_id = "sewer_mid",
 			composition_type = "event_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "sewer_mid",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "sewer_mid",
-			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"event_horde",
@@ -215,9 +173,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_plague_monk") < 8 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 15
+				return count_event_breed("skaven_plague_monk") < 2 and count_event_breed("skaven_clan_rat") < 3 and count_event_breed("skaven_storm_vermin_commander") < 2 and count_event_breed("skaven_slave") < 3
 			end
 		},
 		{
@@ -229,7 +187,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_sewer_mid01_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_sewer_end = {
 		{
 			"set_master_event_running",
@@ -252,7 +210,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "sewer_end_chaos",
-			composition_type = "event_large_chaos"
+			composition_type = "event_medium_chaos"
 		},
 		{
 			"delay",
@@ -260,9 +218,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 20 and count_event_breed("chaos_marauder_with_shield") < 20
+				return count_event_breed("chaos_marauder") < 10 and count_event_breed("chaos_marauder_with_shield") < 10
 			end
 		},
 		{
@@ -297,7 +255,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_sewer_end_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_sewer_escape = {
 		{
 			"set_master_event_running",
@@ -339,9 +297,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 8 and count_event_breed("chaos_marauder_with_shield") < 8
+				return count_event_breed("chaos_marauder") < 2 and count_event_breed("chaos_marauder_with_shield") < 2
 			end
 		},
 		{
@@ -349,7 +307,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_sewer_escape_done"
 		}
 	}
-
+	
 	HordeCompositions.onslaught_blightreaper_temple_easy = {
 		{
 			name = "skaven_offensive",
@@ -357,13 +315,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_storm_vermin_commander",
 				{
-					4,
-					5
+					5,
+					6
 				},
 				"skaven_plague_monk",
 				{
-					4,
-					5
+					5,
+					6
 				}
 			}
 		},
@@ -372,11 +330,11 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"skaven_storm_vermin_with_shield",
-				5,
+				3,
 				"skaven_plague_monk",
 				{
 					5,
-					5
+					6
 				}
 			}
 		},
@@ -385,11 +343,11 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"skaven_storm_vermin_with_shield",
-				5,
+				3,
 				"skaven_storm_vermin_commander",
 				{
-					4,
-					5
+					5,
+					6
 				}
 			}
 		},
@@ -403,7 +361,7 @@ local mod = get_mod("Dense Onslaught")
 					7
 				},
 				"chaos_marauder_with_shield",
-				16,
+				8,
 			}
 		},
 		{
@@ -411,12 +369,9 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				3,
+				2,
 				"chaos_raider",
-				{
-					5,
-					6
-				},
+				5,
 			}
 		},
 		{
@@ -424,11 +379,11 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				3,
+				2,
 				"chaos_berzerker",
 				{
-					5,
-					6
+					6,
+					7
 				},
 			}
 		},
@@ -438,11 +393,11 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_raider",
 				{
-					6,
-					7
+					5,
+					6
 				},
 				"chaos_marauder_with_shield",
-				16,
+				8,
 			}
 		},
 		{
@@ -450,16 +405,16 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				2,
+				1,
 				"chaos_raider",
 				{
-					3,
-					4
+					2,
+					3
 				},
 				"chaos_marauder_with_shield",
 				{
-					8,
-					10
+					4,
+					5
 				},
 				"chaos_berzerker",
 				{
@@ -469,18 +424,18 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
+	
 	HordeCompositions.onslaught_blightreaper_temple_hard = {
 		{
 			name = "chaos_defensive",
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				6,
+				7,
 				"chaos_marauder_with_shield",
 				{
-					10,
-					12
+					4,
+					5
 				}
 			}
 		},
@@ -489,11 +444,11 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				4,
+				6,
 				"chaos_raider",
 				{
-					5,
-					6
+					6,
+					7
 				}
 			}
 		},
@@ -502,11 +457,11 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				4,
+				6,
 				"chaos_berzerker",
 				{
-					6,
-					7
+					7,
+					8
 				}
 			}
 		},
@@ -515,26 +470,26 @@ local mod = get_mod("Dense Onslaught")
 			weight = 1,
 			breeds = {
 				"chaos_warrior",
-				2,
+				3,
 				"chaos_marauder_with_shield",
 				{
-					8,
-					10
+					4,
+					5
 				},
 				"chaos_raider",
 				{
-					4,
-					6
+					6,
+					7
 				},
 				"chaos_berzerker",
 				{
-					4,
-					6
+					7,
+					8
 				}
 			}
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_loop = {
 		{
 			"set_master_event_running",
@@ -548,104 +503,53 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "temple_event_loop",
-			composition_type = "event_large"
+			composition_type = "event_smaller"
 		},
 		{
 			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_button5",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 30
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 32 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_plague_monk") < 5 and count_event_breed("chaos_fanatic") < 24 and count_event_breed("chaos_marauder") < 16 and count_event_breed("chaos_warrior") < 3 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("skaven_gutter_runner") < 4 and count_event_breed("skaven_pack_master") < 4 and (count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_ratling_gunner")) < 7
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_button5",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_button5",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 30
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 32 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_plague_monk") < 5 and count_event_breed("chaos_fanatic") < 24 and count_event_breed("chaos_marauder") < 16 and count_event_breed("chaos_warrior") < 3 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("skaven_gutter_runner") < 4 and count_event_breed("skaven_pack_master") < 4 and (count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_ratling_gunner")) < 7
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_button5",
-			composition_type = "event_large_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
 			spawner_id = "temple_event_button2",
-			composition_type = "storm_vermin_medium"
+			composition_type = "onslaught_custom_special_skaven"
+		},
+		{
+			"spawn_at_raw",
+			spawner_id = "temple_rawspawner01",
+			breed_name = {
+				"skaven_poison_wind_globadier",
+				"skaven_ratling_gunner",
+				"skaven_warpfire_thrower",
+			}
 		},
 		{
 			"delay",
-			duration = 30
-		},
-		{
-			"continue_when",
-			duration = 30,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 32 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_plague_monk") < 5 and count_event_breed("chaos_fanatic") < 24 and count_event_breed("chaos_marauder") < 16 and count_event_breed("chaos_warrior") < 3 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("skaven_gutter_runner") < 4 and count_event_breed("skaven_pack_master") < 4 and (count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_ratling_gunner")) < 7
-			end
+			duration = 5
 		},
 		{
 			"event_horde",
 			limit_spawners = 2,
-			spawner_id = "temple_event_button2",
-			composition_type = "plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_loop",
-			composition_type = "event_medium_shield"
+			spawner_id = "temple_event_button5",
+			composition_type = "event_small_chaos"
 		},
 		{
 			"delay",
-			duration = 30
+			duration = 5
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_slave") < 32 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_plague_monk") < 5 and count_event_breed("chaos_fanatic") < 24 and count_event_breed("chaos_marauder") < 16 and count_event_breed("chaos_warrior") < 3 and count_event_breed("chaos_raider") < 6 and count_event_breed("chaos_berzerker") < 6 and count_event_breed("skaven_gutter_runner") < 4 and count_event_breed("skaven_pack_master") < 4 and (count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_ratling_gunner")) < 7
+				return count_event_breed("skaven_clan_rat") < 7 and count_event_breed("skaven_slave") < 8 and count_event_breed("skaven_storm_vermin_commander") < 2 and count_event_breed("chaos_fanatic") < 6 and count_event_breed("chaos_marauder") < 4 and count_event_breed("skaven_gutter_runner") < 2 and count_event_breed("skaven_pack_master") < 2 and (count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_ratling_gunner")) < 4
 			end
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 12
 		},
 		{
 			"flow_event",
 			flow_event_name = "dlc_bogenhafen_city_temple_loop_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_start = {
 		{
 			"set_master_event_running",
@@ -664,7 +568,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"control_pacing",
@@ -688,7 +592,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 20
+			duration = 10
 		},
 		{
 			"event_horde",
@@ -702,9 +606,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -724,9 +628,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -734,7 +638,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_start_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_button1 = {
 		{
 			"set_master_event_running",
@@ -765,17 +669,17 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "temple_event_button2",
-			composition_type = "onslaught_custom_specials_heavy_disabler"
+			composition_type = "onslaught_custom_specials_heavy_denial"
 		},
 		{
 			"delay",
-			duration = 30
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 20,
+			duration = 30,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -785,13 +689,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_unshielded"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "temple_rawspawner01",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				max_health_modifier = 0.6,
-			    enhancements = enhancement_5
-			}
+			"event_horde",
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_blightreaper_temple_easy"
+		},
+		{
+			"event_horde",
+			spawner_id = "temple_event_button4",
+			composition_type = "onslaught_blightreaper_temple_easy"
 		},
 		{
 			"delay",
@@ -799,9 +704,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -809,7 +714,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_button1_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_button2 = {
 		{
 			"set_master_event_running",
@@ -850,14 +755,14 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
 			"delay",
-			duration = 20
+			duration = 10
 		},
 		{
 			"event_horde",
@@ -868,47 +773,28 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "temple_event_button4",
-			composition_type = "onslaught_storm_vermin_white_medium"
+			composition_type = "onslaught_blightreaper_temple_easy"
 		},
 		{
 			"event_horde",
-			spawner_id = "temple_event_button4",
-			composition_type = "onslaught_storm_vermin_white_medium"
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_special_skaven"
 		},
 		{
 			"event_horde",
-			spawner_id = "temple_event_button4",
-			composition_type = "onslaught_storm_vermin_white_medium"
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_special_skaven"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_window1",
-			breed_name = "storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_front4",
-			breed_name = "storm_vermin",
-			optional_data = {
-				spawned_func = slaanesh_buff_spawn_function
-			}
+			"event_horde",
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_special_skaven"
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_storm_vermin") < 8 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -916,7 +802,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_button2_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_button3 = {
 		{
 			"set_master_event_running",
@@ -949,41 +835,13 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_window1",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_front4",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"delay",
-			duration = 20
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 30,
+			duration = 40,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1002,40 +860,20 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_window1",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_front4",
-			breed_name = "skaven_plague_monk",
-			optional_data = {
-				spawned_func = nurgle_buff_spawn_function
-			}
+			"event_horde",
+			spawner_id = "temple_event_button3",
+			composition_type = "onslaught_blightreaper_temple_easy"
 		},
 		{
 			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "temple_event_button3",
-			composition_type = "onslaught_plague_monks_medium"
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_specials_heavy_denial"
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_storm_vermin_commander") < 10 and count_event_breed("skaven_slave") < 35 and count_event_breed("skaven_storm_vermin_with_shield") < 8 and count_event_breed("skaven_plague_monk") < 10 and count_event_breed("chaos_marauder") < 26 and count_event_breed("chaos_marauder_with_shield") < 20 and count_event_breed("chaos_raider") < 10 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 4
+				return count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("skaven_plague_monk") < 4 and count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1043,7 +881,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_button3_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_button4 = {
 		{
 			"set_master_event_running",
@@ -1074,38 +912,10 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_window2",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_front2",
-			breed_name = "khorne_buff_spawn_function",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"delay",
-			duration = 20
-		},
-		{
 			"continue_when",
-			duration = 30,
+			duration = 40,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 3
 			end
 		},
 		{
@@ -1115,38 +925,32 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_blightreaper_temple_hard"
 		},
 		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "temple_event_button5",
+			composition_type = "onslaught_blightreaper_temple_hard"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "temple_event_button2",
+			composition_type = "onslaught_custom_special_denial"
+		},
+		{
 			"delay",
-			duration = 5
-		},
-				{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_window2",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "chaos_warrior",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_front2",
-			breed_name = "khorne_buff_spawn_function",
-			optional_data = {
-				spawned_func = khorne_buff_spawn_function
-			}
-		},
+			duration = 10
+		},		
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1154,7 +958,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_button4_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_button5 = {
 		{
 			"set_master_event_running",
@@ -1169,26 +973,20 @@ local mod = get_mod("Dense Onslaught")
 			stinger_name = "enemy_horde_chaos_stinger"
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "temple_rawspawner01",
-			breed_name = "chaos_spawn",
-			optional_data = {
-				max_health_modifier = 0.75,
-				enhancements = enhancement_5
-			}
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "temple_event_button5",
+			composition_type = "onslaught_custom_boss_spawn"
 		},
 		{
 			"delay",
 			duration = 5
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_button_hidden",
-			breed_name = "chaos_spawn",
-			optional_data = {
-				max_health_modifier = 0.75,
-				enhancements = enhancement_6
-			}
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "temple_event_button5",
+			composition_type = "onslaught_custom_boss_spawn"
 		},
 		{
 			"delay",
@@ -1218,9 +1016,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2 and count_event_breed("chaos_spawn") < 1
 			end
 		},
 		{
@@ -1228,7 +1026,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "dlc_bogenhafen_city_temple_button5_done"
 		}
 	}
-
+	
 	TerrorEventBlueprints.dlc_bogenhafen_city.dlc_bogenhafen_city_temple_escape = {
 		{
 			"set_master_event_running",
@@ -1256,13 +1054,13 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 20
+			duration = 10
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1283,9 +1081,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1306,9 +1104,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1329,9 +1127,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -1352,9 +1150,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"continue_when",
-			duration = 60,
+			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 24 and count_event_breed("chaos_marauder_with_shield") < 15 and count_event_breed("chaos_raider") < 8 and count_event_breed("chaos_berzerker") < 8 and count_event_breed("chaos_warrior") < 6
+				return count_event_breed("chaos_marauder") < 12 and count_event_breed("chaos_marauder_with_shield") < 7 and count_event_breed("chaos_raider") < 4 and count_event_breed("chaos_berzerker") < 4 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{

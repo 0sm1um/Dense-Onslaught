@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Horn of Magnus
+	
 	HordeCompositions.onslaught_gutter_assistants = {
 		{
 			name = "monk",
@@ -15,7 +16,7 @@ local mod = get_mod("Dense Onslaught")
 			weight = 5,
 			breeds = {
 				"skaven_storm_vermin_with_shield",
-				1
+				1				
 			}
 		},
 		{
@@ -35,7 +36,7 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
+	
 	TerrorEventBlueprints.magnus.magnus_gutter_runner_treasure = {
 		{
 			"spawn_special",
@@ -62,7 +63,7 @@ local mod = get_mod("Dense Onslaught")
 			flow_event_name = "gutter_runner_treasure_restart"
 		}
 	}
-
+	
 	TerrorEventBlueprints.magnus.magnus_door_a = {
 		{
 			"enable_bots_in_carry_event"
@@ -73,12 +74,12 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"event_horde",
 			spawner_id = "magnus_door_event_a",
-			composition_type = "event_large"
+			composition_type = "event_medium"
 		},
 		{
 			"play_stinger",
@@ -112,12 +113,9 @@ local mod = get_mod("Dense Onslaught")
 			duration = 12
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_magnus_boss_middle",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				enhancements = shield_shatter
-			}
+			"event_horde",
+			spawner_id = "magnus_door_event_specials",
+			composition_type = "onslaught_custom_boss_ogre"
 		},
 		{
 			"delay",
@@ -129,6 +127,35 @@ local mod = get_mod("Dense Onslaught")
 			condition = function (t)
 				return count_breed("skaven_rat_ogre") < 1
 			end
+		},
+		{
+			"delay",
+			duration = 5
+		},
+		{
+			"spawn_special",
+			spawner_id = "magnus_door_event_specials",
+			breed_name = "skaven_poison_wind_globadier"
+		},
+		{
+			"spawn_special",
+			spawner_id = "magnus_door_event_specials",
+			breed_name = {
+				"skaven_pack_master",
+				"skaven_gutter_runner"
+			}
+		},
+		{
+			"spawn_special",
+			spawner_id = "magnus_door_event_specials",
+			breed_name = {
+				"skaven_ratling_gunner",
+				"skaven_warpfire_thrower"
+			}
+		},
+		{
+			"delay",
+			duration = 2
 		},
 		{
 			"event_horde",
@@ -148,7 +175,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 12,
 			condition = function (t)
-				return (count_breed("chaos_marauder") + count_breed("chaos_marauder_with_shield")) < 12 and count_breed("chaos_fanatic") < 16 and count_breed("chaos_raider") < 6 and count_breed("chaos_berzerker") < 6
+				return (count_breed("chaos_marauder") + count_breed("chaos_marauder_with_shield")) < 8 and count_breed("chaos_fanatic") < 13 and count_breed("chaos_raider") < 4 and count_breed("chaos_berzerker") < 4
 			end
 		},
 		{
@@ -170,7 +197,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "magnus_door_event_c",
-			composition_type = "event_extra_spice_large"
+			composition_type = "event_extra_spice_small"
 		},
 		{
 			"event_horde",
@@ -658,7 +685,7 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-
+	
 	TerrorEventBlueprints.magnus.magnus_door_b = {
 		{
 			"enable_bots_in_carry_event"
@@ -669,7 +696,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"event_horde",
@@ -703,12 +730,9 @@ local mod = get_mod("Dense Onslaught")
 			duration = 10
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_magnus_boss_middle",
-			breed_name = "chaos_troll",
-			optional_data = {
-				enhancements = relentless
-			}
+			"event_horde",
+			spawner_id = "magnus_door_event_specials",
+			composition_type = "onslaught_custom_boss_troll"
 		},
 		{
 			"delay",
@@ -786,6 +810,16 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		},
 		{
+			"spawn_special",
+			spawner_id = "magnus_door_event_specials",
+			breed_name = "chaos_vortex_sorcerer"
+		},
+		{
+			"spawn_special",
+			spawner_id = "magnus_door_event_specials",
+			breed_name = "chaos_vortex_sorcerer"
+		},
+		{
 			"continue_when",
 			duration = 12,
 			condition = function (t)
@@ -806,7 +840,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "magnus_door_event_c",
-			composition_type = "event_large"
+			composition_type = "event_medium"
 		},
 		{
 			"delay",
@@ -829,6 +863,16 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = 5
+		},
+		{
+			"spawn_special",
+			"skaven_warpfire_thrower",
+			breed_name = "skaven_ratling_gunner",
+			spawner_id = "magnus_door_event_specials",
+			amount = {
+				1,
+				2
+			}
 		},
 		{
 			"delay",
@@ -929,6 +973,20 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = 5
+		},
+		{
+			"spawn_special",
+			breed_name = "skaven_poison_wind_globadier",
+			spawner_id = "magnus_door_event_specials",
+			amount = {
+				1,
+				2
+			}
+		},
+		{
+			"spawn_special",
+			breed_name = "chaos_corruptor_sorcerer",
+			spawner_id = "magnus_door_event_specials",
 		},
 		{
 			"delay",
@@ -1231,7 +1289,7 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-
+	
 	TerrorEventBlueprints.magnus.magnus_end_event = {
 		{
 			"control_pacing",
@@ -1239,7 +1297,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"set_master_event_running",
@@ -1287,18 +1345,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
@@ -1333,7 +1379,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "magnus_tower_horn",
-			composition_type = "event_medium"
+			composition_type = "event_small"
 		},
 		{
 			"event_horde",
@@ -1351,13 +1397,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"event_horde",
@@ -1414,12 +1454,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
 			"delay",
 			duration = 1
 		},
@@ -1428,12 +1462,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 1,
 			spawner_id = "magnus_tower_chaos",
 			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_chaos",
-			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"event_horde",
@@ -1457,6 +1485,16 @@ local mod = get_mod("Dense Onslaught")
 			duration = 4
 		},
 		{
+			"spawn_special",
+			amount = 4,
+			breed_name = "skaven_poison_wind_globadier"
+		},
+		{
+			"spawn_special",
+			amount = 2,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
 			"play_stinger",
 			stinger_name = "enemy_horde_stinger"
 		},
@@ -1474,13 +1512,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "magnus_tower_horn",
-			composition_type = "event_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 4,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "event_stormvermin_shielders"
+			composition_type = "event_small"
 		},
 		{
 			"event_horde",
@@ -1491,12 +1523,6 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = 5
-		},
-		{
-			"event_horde",
-			limit_spawners = 1,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"event_horde",
@@ -1552,18 +1578,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
 			"delay",
 			duration = 10
 		},
@@ -1575,18 +1589,18 @@ local mod = get_mod("Dense Onslaught")
 			end
 		},
 		{
+			"spawn_special",
+			amount = 2,
+			breed_name = "chaos_corruptor_sorcerer"
+		},
+		{
+			"spawn_special",
+			amount = 3,
+			breed_name = "chaos_vortex_sorcerer"
+		},
+		{
 			"delay",
 			duration = 3
-		},
-		{
-			"event_horde",
-			spawner_id = "magnus_tower_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			spawner_id = "magnus_tower_chaos",
-			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
 			"event_horde",
@@ -1630,6 +1644,15 @@ local mod = get_mod("Dense Onslaught")
 			end
 		},
 		{
+			"spawn_special",
+			breed_name = "skaven_poison_wind_globadier"
+		},
+		{
+			"spawn_special",
+			amount = 2,
+			breed_name = "skaven_warpfire_thrower"
+		},
+		{
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "magnus_tower_horn",
@@ -1656,28 +1679,8 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_plague_monks_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
 			"delay",
 			duration = 10
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_magnus_boss_end",
-			breed_name = "skaven_rat_ogre",
-			optional_data = {
-				enhancements = relentless
-			}
 		},
 		{
 			"continue_when",
@@ -1685,6 +1688,16 @@ local mod = get_mod("Dense Onslaught")
 			condition = function (t)
 				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield")) < 18 and count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_plague_monk") < 5
 			end
+		},
+		{
+			"spawn_special",
+			amount = 2,
+			breed_name = "skaven_warpfire_thrower"
+		},
+		{
+			"spawn_special",
+			amount = 2,
+			breed_name = "skaven_ratling_gunner"
 		},
 		{
 			"delay",
@@ -1706,18 +1719,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 4,
 			spawner_id = "magnus_tower_horn",
 			composition_type = "onslaught_storm_vermin_small"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "magnus_tower_horn",
-			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"delay",

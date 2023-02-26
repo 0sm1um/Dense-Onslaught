@@ -94,6 +94,8 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Events/engines_of_war")
 	-- Dark Omens
 	mod:dofile("scripts/mods/Dense Onslaught/Events/dark_omens")
+	-- Old Haunts
+	mod:dofile("scripts/mods/Dense Onslaught/Events/old_haunts")
 	-- Blood in the Darkness
 	mod:dofile("scripts/mods/Dense Onslaught/Events/blood_in_the_darkness")
 	-- Enchanter's lair
