@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-	-- Generic event spawnsets
+	-- Event Horde Composition
 	HordeCompositions.event_smaller = {
 		{
 			name = "plain",

@@ -35,9 +35,15 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/ambient")
 	-- Pacing Timers
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pacing")
-	-- Generic Horde Composition
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/horde_composition")
-	-- Special Settings
+	-- Ambient Horde Composition
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/roaming_horde_composition")
+	-- Skaven Horde Composition
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/skaven_horde_composition")
+	-- Chaos Horde Composition
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/chaos_horde_composition")
+	-- Beastmen Horde Composition
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/beastmen_composition")
+	-- Special Spawn Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/specials")
 	-- Monster Trigger Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/monsters")
@@ -48,8 +54,8 @@ mutator.start = function()
 	---------------------Events---------------------
 	------------------------------------------------
 	
-	-- Generic Event Spawnsets
-	mod:dofile("scripts/mods/Dense Onslaught/Events/generic_spawnsets")
+	-- Generic Event Horde Composition
+	mod:dofile("scripts/mods/Dense Onslaught/Events/event_horde_composition")
 	-- Righteous Stand
 	mod:dofile("scripts/mods/Dense Onslaught/Events/righteous_stand")
 	-- Convocation of Decay
