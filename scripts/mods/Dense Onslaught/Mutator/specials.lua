@@ -1,20 +1,30 @@
 local mod = get_mod("Dense Onslaught")
 
 -- Special Settings
-SpecialsSettings.default.max_specials = 8
-	SpecialsSettings.default_light.max_specials = 8
-	SpecialsSettings.skaven.max_specials = 8
-	SpecialsSettings.skaven_light.max_specials = 8
-	SpecialsSettings.chaos.max_specials = 8
-	SpecialsSettings.chaos_light.max_specials = 8
-	SpecialsSettings.beastmen.max_specials = 8
-	SpecialsSettings.skaven_beastmen.max_specials = 8
-	SpecialsSettings.chaos_beastmen.max_specials = 8
+
+	--[[
+	My rationale for these settings are as follows:
+	I want increased special pressure compared to Ons+.
+	I am increasing the max special slots, and decreasing spawn timers.
+	However settings identical to Dutch may be too challenging. So I've reduced
+	slots by 1, and added more increased spawn timers.
+	--]]
+
+
+SpecialsSettings.default.max_specials = 7					     -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.default_light.max_specials = 7              -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.skaven.max_specials = 7                     -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.skaven_light.max_specials = 7               -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.chaos.max_specials = 7                      -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.chaos_light.max_specials = 7                -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.beastmen.max_specials = 7                   -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.skaven_beastmen.max_specials = 7            -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.chaos_beastmen.max_specials = 7             -- 2 More than Ons+, 1 Less than Dutch
 	PacingSettings.default.delay_specials_threat_value = nil
 	PacingSettings.chaos.delay_specials_threat_value = nil
 	PacingSettings.beastmen.delay_specials_threat_value = nil
 	SpecialsSettings.default.methods.specials_by_slots = {
-		max_of_same = 4,
+		max_of_same = 4,                                         -- Same as Dutch
 		coordinated_attack_cooldown_multiplier = 0.5,
 		chance_of_coordinated_attack = 0.5,
 		select_next_breed = "get_random_breed",
@@ -23,8 +33,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.default_light.methods.specials_by_slots = {
@@ -37,8 +47,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.skaven.methods.specials_by_slots = {
@@ -51,8 +61,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.skaven_light.methods.specials_by_slots = {
@@ -65,8 +75,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.chaos.methods.specials_by_slots = {
@@ -79,8 +89,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.chaos_light.methods.specials_by_slots = {
@@ -93,8 +103,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.beastmen.methods.specials_by_slots = {
@@ -107,8 +117,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.skaven_beastmen.methods.specials_by_slots = {
@@ -121,8 +131,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.chaos_beastmen.methods.specials_by_slots = {
@@ -135,8 +145,8 @@ SpecialsSettings.default.max_specials = 8
 			20
 		},
 		spawn_cooldown = {
-			25,
-			50
+			32,													 -- Median of Ons+ and Dutch (Rounded Down)
+			60													 -- Median of Ons+ and Dutch
 		}
 	}
 	SpecialsSettings.beastmen.breeds = {
