@@ -1,36 +1,22 @@
 local mod = get_mod("Dense Onslaught")
 
-local mutator = mod:persistent_table("DenseOnslaught")
+mutator = mod:persistent_table("DenseOnslaught")
+
+	------------------------------------------------
+	--------------Hooks and Functions---------------
+	------------------------------------------------
 
 mod:dofile("scripts/mods/Dense Onslaught/base/base")
 
 mutator.start = function()
 
 	-- Save existing horde tables
-	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)
-	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
-	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
-	mutator.OriginalBreedPacks = table.clone(BreedPacks)
-	mutator.OriginalPackSpawningSettings = table.clone(PackSpawningSettings)
-	mutator.OriginalRecycleSettings  = table.clone(RecycleSettings)
-	mutator.OriginalPacingSettingsDefault = table.clone(PacingSettings.default)
-	mutator.OriginalPacingSettingsChaos = table.clone(PacingSettings.chaos)
-	mutator.OriginalPacingSettingsBeastmen = table.clone(PacingSettings.beastmen)
-	mutator.OriginalSpecialsSettings = table.clone(SpecialsSettings)
-	mutator.OriginalBossSettings = table.clone(BossSettings)
-	mutator.OriginalBreedActions = table.clone(BreedActions)
-	mutator.OriginalThreatValue = {}
-	for name, breed in pairs(Breeds) do
-		if breed.threat_value then
-			mutator.OriginalThreatValue[name] = breed.threat_value
-		end
-	end
-	mutator.OriginalBeastmenBannerBuff = BuffTemplates.healing_standard.buffs
-	
+	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
+
 	------------------------------------------------
 	---------------------Pacing---------------------
 	------------------------------------------------
-	
+
 	-- Ambient horde composition and spawn frequencies
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/ambient")
 	-- Pacing Timers
@@ -120,41 +106,6 @@ end
 
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
-
--- Call when game state changes (e.g. StateLoading -> StateIngame)
-mod.on_game_state_changed = function(status, state)
-	if not Managers.player.is_server and mutator.active and Managers.state.game_mode ~= nil then
-		mutator.stop()
-		mod:echo("The Dense Onslaught mutator was disabled because you are no longer the server.")
-	end
-	return
-end
-
-mutator.toggle = function()
-	if Managers.state.game_mode == nil or (Managers.state.game_mode._game_mode_key ~= "inn" and Managers.player.is_server) then
-		mod:echo("You must be in the keep to do that!")
-		return
-	end
-	if Managers.matchmaking:_matchmaking_status() ~= "idle" then
-		mod:echo("You must cancel matchmaking before toggling this.")
-		return
-	end
-	if not mutator.active then
-		if not Managers.player.is_server then
-			mod:echo("You must be the host to activate this.")
-			return
-		end
-		mutator.start()
-		mod:network_send("rpc_enable_white_sv", "all", true)
-
-		mod:chat_broadcast("Dense Onslaught ENABLED.")
-	else
-		mutator.stop()
-		mod:network_send("rpc_disable_white_sv", "all", true)
-
-		mod:chat_broadcast("Dense Onslaught DISABLED.")
-	end
-end
 
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)

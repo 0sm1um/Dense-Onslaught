@@ -11,7 +11,7 @@ local mod = get_mod("Dense Onslaught")
 	--]]
 
 
-SpecialsSettings.default.max_specials = 7					     -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
 	SpecialsSettings.default_light.max_specials = 7              -- 2 More than Ons+, 1 Less than Dutch
 	SpecialsSettings.skaven.max_specials = 7                     -- 2 More than Ons+, 1 Less than Dutch
 	SpecialsSettings.skaven_light.max_specials = 7               -- 2 More than Ons+, 1 Less than Dutch
