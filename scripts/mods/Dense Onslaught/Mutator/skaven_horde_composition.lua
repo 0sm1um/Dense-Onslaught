@@ -21,6 +21,33 @@ local mod = get_mod("Dense Onslaught")
 	local shield_elite_entities = {"skaven_storm_vermin_with_shield"}
 	local berzerker_entities = {"skaven_plague_monk"}
 	local super_armor_entities = {"skaven_storm_vermin"}
+	
+	local scaling_data = {
+    {
+        scale_factor = trash_scale,
+        breeds = trash_entities,
+    },
+    {
+        scale_factor = shield_trash_scale,
+        breeds = shield_trash_entities,
+    },
+    {
+        scale_factor = elite_scale,
+        breeds = elite_entities,
+    },
+    {
+        scale_factor = shield_elite_scale,
+        breeds = shield_elite_entities,
+    },
+    {
+        scale_factor = berzerker_scale,
+        breeds = berzerker_entities,
+    },
+    {
+        scale_factor = super_armor_scale,
+        breeds = super_armor_entities,
+    },
+}
 
 	HordeCompositionsPacing.small = {
 		{
@@ -657,15 +684,4 @@ local mod = get_mod("Dense Onslaught")
 	}
 
 scale_horde_composition(faction,	-- Skaven don't have a faction name, so we scale their hordes first and use "huge" to have it scale all hordes.
-						trash_scale,
-						trash_entities,
-						shield_trash_scale,
-						shield_trash_entities, 								 
-						elite_scale,
-						elite_entities,
-						shield_elite_scale,
-						shield_elite_entities, 
-						berzerker_scale,
-						berzerker_entities,
-						super_armor_scale, 
-						super_armor_entities)
+						scaling_data)

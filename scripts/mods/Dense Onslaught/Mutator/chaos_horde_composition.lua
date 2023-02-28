@@ -15,6 +15,33 @@ local mod = get_mod("Dense Onslaught")
 	local shield_elite_entities = {}
 	local berzerker_entities = {"chaos_berzerker"}
 	local super_armor_entities = {"chaos_warrior"}
+	
+	local scaling_data = {
+    {
+        scale_factor = trash_scale,
+        breeds = trash_entities,
+    },
+    {
+        scale_factor = shield_trash_scale,
+        breeds = shield_trash_entities,
+    },
+    {
+        scale_factor = elite_scale,
+        breeds = elite_entities,
+    },
+    {
+        scale_factor = shield_elite_scale,
+        breeds = shield_elite_entities,
+    },
+    {
+        scale_factor = berzerker_scale,
+        breeds = berzerker_entities,
+    },
+    {
+        scale_factor = super_armor_scale,
+        breeds = super_armor_entities,
+    },
+}
 
 	HordeCompositionsPacing.chaos_medium = {	-- Never spawned in this mod.
 		{
@@ -749,16 +776,4 @@ local mod = get_mod("Dense Onslaught")
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
 	
-scale_horde_composition(faction,
-						trash_scale,
-						trash_entities,
-						shield_trash_scale,
-						shield_trash_entities, 								 
-						elite_scale,
-						elite_entities,
-						shield_elite_scale,
-						shield_elite_entities, 
-						berzerker_scale,
-						berzerker_entities,
-						super_armor_scale, 
-						super_armor_entities)
+scale_horde_composition(faction, scaling_data)
