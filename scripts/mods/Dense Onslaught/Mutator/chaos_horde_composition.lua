@@ -1,6 +1,22 @@
 local mod = get_mod("Dense Onslaught")
+	
+	local faction = "chaos"
+	
+	local trash_scale = 0.75
+	local shield_trash_scale = 0.75
+	local elite_scale = 1
+	local shield_elite_scale = 1
+	local berzerker_scale = 1
+	local super_armor_scale = 1
 
-	HordeCompositionsPacing.chaos_medium = {
+	local trash_entities = {"chaos_fanatic","chaos_marauder"}
+	local shield_trash_entities = {"chaos_marauder_with_shield"}
+	local elite_entities = {"chaos_raider"}
+	local shield_elite_entities = {}
+	local berzerker_entities = {"chaos_berzerker"}
+	local super_armor_entities = {"chaos_warrior"}
+
+	HordeCompositionsPacing.chaos_medium = {	-- Never spawned in this mod.
 		{
 			name = "plain",
 			weight = 7,
@@ -67,7 +83,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
-	HordeCompositionsPacing.chaos_large = {
+	HordeCompositionsPacing.chaos_large = {	-- Never spawned in this mod.
 		{
 			name = "plain",
 			weight = 7,
@@ -155,12 +171,12 @@ local mod = get_mod("Dense Onslaught")
 				{
 					1,
 					2
-				},
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
-	HordeCompositionsPacing.chaos_huge = {
+	HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 		{
 			name = "plain",
 			weight = 7,
@@ -181,7 +197,10 @@ local mod = get_mod("Dense Onslaught")
 					7
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -230,7 +249,10 @@ local mod = get_mod("Dense Onslaught")
 					4
 				},
 				"chaos_warrior",
-				1,
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -253,7 +275,10 @@ local mod = get_mod("Dense Onslaught")
 					4
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -284,7 +309,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					8,
 					10
-				},
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -315,7 +340,10 @@ local mod = get_mod("Dense Onslaught")
 					4
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -395,7 +423,10 @@ local mod = get_mod("Dense Onslaught")
 					7
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -426,7 +457,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					6,
 					7
-				},
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -455,7 +486,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					3,
 					4
-				},
+				}
 			}
 		},
 		{
@@ -478,7 +509,10 @@ local mod = get_mod("Dense Onslaught")
 					8
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -509,7 +543,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					4,
 					6
-				},
+				}
 			}
 		},
 		{
@@ -537,7 +571,10 @@ local mod = get_mod("Dense Onslaught")
 					3
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -565,7 +602,10 @@ local mod = get_mod("Dense Onslaught")
 					6
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -612,7 +652,10 @@ local mod = get_mod("Dense Onslaught")
 					6
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -640,7 +683,10 @@ local mod = get_mod("Dense Onslaught")
 					7
 				},
 				"chaos_warrior",
-				1
+				{
+						1,
+						1,
+				}
 			}
 		},
 		{
@@ -694,8 +740,25 @@ local mod = get_mod("Dense Onslaught")
 					4
 				},
 				"chaos_warrior",
-				1
+				{
+					1,
+					1,
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
+	
+scale_horde_composition(faction,
+						trash_scale,
+						trash_entities,
+						shield_trash_scale,
+						shield_trash_entities, 								 
+						elite_scale,
+						elite_entities,
+						shield_elite_scale,
+						shield_elite_entities, 
+						berzerker_scale,
+						berzerker_entities,
+						super_armor_scale, 
+						super_armor_entities)

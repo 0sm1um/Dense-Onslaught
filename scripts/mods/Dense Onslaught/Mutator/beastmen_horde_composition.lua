@@ -1,5 +1,21 @@
 local mod = get_mod("Dense Onslaught")
 
+	local faction = "beastmen"
+
+	local trash_scale = 0.75
+	local shield_trash_scale = 0.75
+	local elite_scale = 1            -- This term is meant to convey it counts for Stormvermin and Mauler type enemies.
+	local shield_elite_scale = 1
+	local berzerker_scale = 1
+	local super_armor_scale = 1
+
+	local trash_entities = {"beastmen_ungor","beastmen_gor"}
+	local shield_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}
+	local elite_entities = {"beastmen_bestigor","chaos_raider","skaven_storm_vermin_commander"}
+	local shield_elite_entities = {"skaven_storm_vermin_with_shield"}
+	local berzerker_entities = {"chaos_berzerker"}
+	local super_armor_entities = {"chaos_warrior"}
+
 	HordeCompositionsPacing.beastmen_medium = {
 		{
 			name = "plain",
@@ -175,7 +191,10 @@ local mod = get_mod("Dense Onslaught")
 					5
 				},
 				"chaos_warrior",
-				1
+				{
+					1,
+					1
+				}
 			}
 		},
 		{
@@ -206,7 +225,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					1,
 					2
-				},
+				}
 			}
 		},
 		{
@@ -237,7 +256,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					1,
 					2
-				},
+				}
 			}
 		},
 		{
@@ -268,7 +287,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					1,
 					2
-				},
+				}
 
 			}
 
@@ -304,7 +323,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					3,
 					4
-				},
+				}
 			}
 		},
 		{
@@ -330,7 +349,7 @@ local mod = get_mod("Dense Onslaught")
 				{
 					3,
 					4
-				},
+				}
 			}
 		},
 		{
@@ -377,8 +396,22 @@ local mod = get_mod("Dense Onslaught")
 				{
 					3,
 					4
-				},
-			},
+				}
+			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.beastmen
 	}
+
+scale_horde_composition(faction,
+						trash_scale,
+						trash_entities,
+						shield_trash_scale,
+						shield_trash_entities, 								 
+						elite_scale,
+						elite_entities,
+						shield_elite_scale,
+						shield_elite_entities, 
+						berzerker_scale,
+						berzerker_entities,
+						super_armor_scale, 
+						super_armor_entities)

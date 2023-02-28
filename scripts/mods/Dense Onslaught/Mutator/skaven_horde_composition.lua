@@ -1,5 +1,27 @@
 local mod = get_mod("Dense Onslaught")
 
+	--[[
+	Note that Skaven aren't refrenced in the horde compositions by name. Therefore, for faction we put "huge" and this script
+	changes ALL horde compositions. Don't worry though, because this one is run first, therefore the chaos and beastmen
+	compositions get overwritten later.
+	--]]
+
+	local faction = "huge"
+
+	local trash_scale = 0.75
+	local shield_trash_scale = 0.75
+	local elite_scale = 1
+	local shield_elite_scale = 1
+	local berzerker_scale = 1
+	local super_armor_scale = 1
+
+	local trash_entities = {"skaven_slave","skaven_clan_rat"}
+	local shield_trash_entities = {"skaven_clan_rat_with_shield"}
+	local elite_entities = {"skaven_storm_vermin_commander"}
+	local shield_elite_entities = {"skaven_storm_vermin_with_shield"}
+	local berzerker_entities = {"skaven_plague_monk"}
+	local super_armor_entities = {"skaven_storm_vermin"}
+
 	HordeCompositionsPacing.small = {
 		{
 			name = "plain",
@@ -633,3 +655,17 @@ local mod = get_mod("Dense Onslaught")
 		},
 		sound_settings = HordeCompositionsSoundSettings.skaven
 	}
+
+scale_horde_composition(faction,	-- Skaven don't have a faction name, so we scale their hordes first and use "huge" to have it scale all hordes.
+						trash_scale,
+						trash_entities,
+						shield_trash_scale,
+						shield_trash_entities, 								 
+						elite_scale,
+						elite_entities,
+						shield_elite_scale,
+						shield_elite_entities, 
+						berzerker_scale,
+						berzerker_entities,
+						super_armor_scale, 
+						super_armor_entities)

@@ -8,6 +8,8 @@ mutator = mod:persistent_table("DenseOnslaught")
 
 mod:dofile("scripts/mods/Dense Onslaught/base/base")
 
+mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
+
 mutator.start = function()
 
 	-- Save existing horde tables
