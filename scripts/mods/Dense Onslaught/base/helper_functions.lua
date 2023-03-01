@@ -19,7 +19,7 @@ function scale_horde_composition(faction,scaling_data)
 									if type(enemy_count) == "number" then
 										for _, scaling_data in pairs(scaling_data) do 
 											for _, enemy_name in pairs(scaling_data.breeds) do 
-												if name_of_enemy == enemy_name then -- If enemy is trash
+												if name_of_enemy == enemy_name then -- If enemy name matches scaling factor name. Apply scaling.
 													breed_data[i] = math.floor(enemy_count * scaling_data.scale_factor)
 												end
 											end
