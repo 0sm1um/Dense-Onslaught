@@ -6,7 +6,6 @@ local mod = get_mod("Dense Onslaught")
 	--]]
 
 function scale_horde_composition(faction,scaling_data)
-
 	for horde_name, horde_comp_data in pairs(HordeCompositionsPacing) do
 		local isfaction = false
 		if string.find(tostring(horde_name), faction) then
@@ -33,5 +32,118 @@ function scale_horde_composition(faction,scaling_data)
 				end
 			end
 		end
+	end
+end
+
+	--[[
+	These functions came from Core and pertain to adding buffs to bosses/entities.
+	--]]
+	
+function count_event_breed(breed_name)
+	return Managers.state.conflict:count_units_by_breed_during_event(breed_name)
+end
+
+function count_breed(breed_name)
+	return Managers.state.conflict:count_units_by_breed(breed_name)
+end
+
+
+boss_pre_spawn_func = nil
+custom_grudge_boss = nil
+boss_pre_spawn_func = TerrorEventUtils.add_enhancements_for_difficulty
+custom_grudge_boss = TerrorEventUtils.generate_enhanced_breed_from_list
+
+enhancement_list = {
+	["regenerating"] = true,
+	["unstaggerable"] = true
+}
+enhancement_1 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+
+enhancement_list = {
+	["unstaggerable"] = true
+}
+relentless = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+
+enhancement_list = {
+	["intangible"] = true
+}
+enhancement_3 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+
+enhancement_list = {
+	["ranged_immune"] = true
+}
+enhancement_4 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+enhancement_list = {
+	["commander"] = true
+}
+enhancement_5 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+
+enhancement_list = {
+	["regenerating"] = true
+}
+enhancement_6 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+enhancement_list = {
+	["intangible"] = true,
+	["unstaggerable"] = true,
+	["crushing"] = true
+}
+enhancement_7 = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+enhancement_list = {
+	["crushing"] = true
+}
+shield_shatter = TerrorEventUtils.generate_enhanced_breed_from_list(enhancement_list)
+
+function khorne_buff_spawn_function(unit, breed, optional_data)
+	if enemy_buffs_present then
+		local buff_system = Managers.state.entity:system("buff_system")
+		mod:echo("buffed")
+
+		buff_system:add_buff(unit, "ai_health_buff_dutch", unit)
+		buff_system:add_buff(unit, "khorne_buff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "khorne_champion_decal", unit)
+		buff_system:add_buff(unit, "khorne_buff_dutch_fx", unit)
+		buff_system:add_buff(unit, "khorne_prop_dutch", unit)
+		buff_system:add_buff(unit, "khorne_ranged_debuff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "khorne_melee_debuff_dutch_aoe", unit)
+	end
+end
+
+function tzeentch_buff_spawn_function(unit, breed, optional_data)
+	if enemy_buffs_present then
+		local buff_system = Managers.state.entity:system("buff_system")
+		mod:echo("buffed")
+
+		buff_system:add_buff(unit, "ai_health_buff_dutch", unit)
+		buff_system:add_buff(unit, "tzeentch_debuff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "tzeentch_buff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "tzeentch_champion_decal", unit)
+		buff_system:add_buff(unit, "tzeentch_buff_dutch_fx", unit)
+	end
+end
+
+function slaanesh_buff_spawn_function(unit, breed, optional_data)
+	if enemy_buffs_present then
+		local buff_system = Managers.state.entity:system("buff_system")
+		mod:echo("buffed")
+
+		buff_system:add_buff(unit, "ai_health_buff_dutch", unit)
+		buff_system:add_buff(unit, "slaanesh_stagger_buff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "slaanesh_health_debuff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "belakor_buff_dutch_fx", unit)
+		buff_system:add_buff(unit, "belakor_champion_decal", unit)
+	end
+end
+
+function nurgle_buff_spawn_function(unit, breed, optional_data)
+	if enemy_buffs_present then
+		local buff_system = Managers.state.entity:system("buff_system")
+		mod:echo("buffed")
+
+		buff_system:add_buff(unit, "nurgle_debuff_dutch_aoe_movement", unit)
+		buff_system:add_buff(unit, "nurgle_debuff_dutch_aoe_attack_speed", unit)
+		buff_system:add_buff(unit, "nurgle_buff_dutch_aoe", unit)
+		buff_system:add_buff(unit, "nurgle_debuff_dutch_fx", unit)
+		buff_system:add_buff(unit, "ai_health_buff_dutch", unit)
+		buff_system:add_buff(unit, "gs_nurgle_decal", unit)
 	end
 end
