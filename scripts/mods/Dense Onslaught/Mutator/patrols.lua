@@ -24,6 +24,7 @@ local mod = get_mod("Dense Onslaught")
 				"storm_vermin_two_column",
 				"chaos_warrior_default"
 			}
+		}
 	}
 
 	GenericTerrorEvents.boss_event_skaven_beastmen_spline_patrol = {
@@ -37,7 +38,6 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
 	GenericTerrorEvents.boss_event_chaos_beastmen_spline_patrol = {
 		{
 			"spawn_patrol",
@@ -49,7 +49,6 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-
 	GenericTerrorEvents.boss_event_spline_patrol = {
 		{
 			"spawn_patrol",
@@ -83,10 +82,8 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-		-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.chaos_warrior_default = {
 		settings = PatrolFormationSettings.default_marauder_settings,
-
 		normal = {
 			{
 				"chaos_marauder_with_shield",
@@ -268,7 +265,10 @@ local mod = get_mod("Dense Onslaught")
 	-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.storm_vermin_two_column = {
 		settings = {
-			extra_breed_name = "skaven_storm_vermin_with_shield",
+			extra_breed_name = {
+								"skaven_storm_vermin_with_shield",
+								"skaven_plague_monk"
+								},
 			use_controlled_advance = true,
 			sounds = {
 				PLAYER_SPOTTED = "storm_vermin_patrol_player_spotted",
@@ -439,16 +439,23 @@ local mod = get_mod("Dense Onslaught")
 			{
 				"skaven_storm_vermin",
 				"skaven_storm_vermin"
-			}
+			},
 			{
 				"skaven_storm_vermin_with_shield",
 				"skaven_storm_vermin_with_shield"
-			},
+			}
 		}
 	}
 	-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.beastmen_standard = {
 		settings = {
+			extra_breed_name = {
+								"skaven_storm_vermin_with_shield",
+								"skaven_storm_vermin",
+								"skaven_plague_monk",
+								"chaos_warrior",
+								"chaos_raider"
+								},
 			sounds = {
 				PLAYER_SPOTTED = "beastmen_patrol_player_spotted",
 				FORMING = "beastmen_patrol_forming",
