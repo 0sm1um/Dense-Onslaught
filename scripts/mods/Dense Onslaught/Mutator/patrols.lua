@@ -454,8 +454,10 @@ local mod = get_mod("Dense Onslaught")
 								"skaven_storm_vermin",
 								"skaven_plague_monk",
 								"chaos_warrior",
-								"chaos_raider"
+								"chaos_raider",
+								"chaos_berzerker"
 								},
+			use_controlled_advance = true,
 			sounds = {
 				PLAYER_SPOTTED = "beastmen_patrol_player_spotted",
 				FORMING = "beastmen_patrol_forming",
@@ -465,19 +467,8 @@ local mod = get_mod("Dense Onslaught")
 				CHARGE = "beastmen_patrol_charge",
 				VOICE = "beastmen_patrol_voice"
 			},
-			offsets = {
-				ANCHOR_OFFSET = {
-					x = 1.4,
-					y = 0.6
-				}
-			},
-			speeds = {
-				FAST_WALK_SPEED = 2.6,
-				MEDIUM_WALK_SPEED = 2.35,
-				WALK_SPEED = 2.12,
-				SPLINE_SPEED = 2.22,
-				SLOW_SPLINE_SPEED = 0.1
-			},
+			offsets = PatrolFormationSettings.default_settings.offsets,
+			speeds = PatrolFormationSettings.default_settings.speeds
 		},
 		normal = {
 			{
