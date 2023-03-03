@@ -1,13 +1,29 @@
 local mod = get_mod("Dense Onslaught")
 
+	--[[
+	There are two prevailing design principles for the patrols in this mod:
+	Patrols should be approximatly equal in difficulty.
+	Patrols should not be so long that they become totally unavoidable on large numbers of maps.
+	
+	With this in mind, I've tried to ensure that each patrol has similar amounts of super armor,
+	berzerkers, and elites.
+	
+	I consider Dutch white SV patrols to be the most balanced, so using that as a baseline I tried
+	to design Chaos Patrols and Beastmen patrols of equivilant difficulty.
+	
+	As a result, Chaos Patrols have been "nerfed". Since Beastmen are rather bland to fight,
+	Beastmen patrols have included both Skaven and Chaos units to bolster their numbers.
+	--]]
+
 	GenericTerrorEvents.boss_event_beastmen_spline_patrol = {
 		{
 			"spawn_patrol",
 			patrol_template = "spline_patrol",
 			formations = {
-				"beastmen_standard"
+				"beastmen_standard",
+				"storm_vermin_two_column",
+				"chaos_warrior_default"
 			}
-		}
 	}
 
 	GenericTerrorEvents.boss_event_skaven_beastmen_spline_patrol = {
@@ -16,8 +32,8 @@ local mod = get_mod("Dense Onslaught")
 			patrol_template = "spline_patrol",
 			formations = {
 				"beastmen_standard",
-				"storm_vermin_shields_infront",
-				"storm_vermin_shields_infront"
+				"storm_vermin_two_column",
+				"chaos_warrior_default"
 			}
 		}
 	}
@@ -27,7 +43,9 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_patrol",
 			patrol_template = "spline_patrol",
 			formations = {
-				"beastmen_standard"
+				"beastmen_standard",
+				"storm_vermin_two_column",
+				"chaos_warrior_default"
 			}
 		}
 	}
@@ -37,8 +55,8 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_patrol",
 			patrol_template = "spline_patrol",
 			formations = {
+				"beastmen_standard",
 				"storm_vermin_two_column",
-				"storm_vermin_shields_infront",
 				"chaos_warrior_default"
 			}
 		}
@@ -48,8 +66,9 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_patrol",
 			patrol_template = "spline_patrol",
 			formations = {
-				"storm_vermin_shields_infront",
-				"storm_vermin_two_column"
+				"beastmen_standard",
+				"storm_vermin_two_column",
+				"chaos_warrior_default"
 			}
 		}
 	}
@@ -58,12 +77,13 @@ local mod = get_mod("Dense Onslaught")
 			"spawn_patrol",
 			patrol_template = "spline_patrol",
 			formations = {
+				"beastmen_standard",
+				"storm_vermin_two_column",
 				"chaos_warrior_default"
 			}
 		}
 	}
-
-
+		-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.chaos_warrior_default = {
 		settings = PatrolFormationSettings.default_marauder_settings,
 
@@ -189,31 +209,9 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_marauder_with_shield"
 			}
 		},
+		-- Patrol Composation Changed From Dutch
 		cataclysm = {
 			{
-				"chaos_raider"
-			},
-			{
-				"chaos_warrior",
-				"chaos_warrior"
-			},
-			{
-				"chaos_berzerker",
-				"chaos_berzerker"
-			},
-			{
-				"chaos_warrior",
-				"chaos_warrior"
-			},
-			{
-				"chaos_berzerker",
-				"chaos_berzerker"
-			},
-			{
-				"chaos_warrior",
-				"chaos_warrior"
-			},
-			{
 				"chaos_raider",
 				"chaos_raider"
 			},
@@ -222,8 +220,8 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_warrior"
 			},
 			{
-				"chaos_warrior",
-				"chaos_warrior"
+				"chaos_marauder_with_shield",
+				"chaos_marauder_with_shield"
 			},
 			{
 				"chaos_berzerker",
@@ -238,17 +236,36 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_warrior"
 			},
 			{
+				"chaos_marauder_with_shield",
+				"chaos_marauder_with_shield"
+			},
+			{
+				"chaos_berzerker",
+				"chaos_berzerker"
+			},
+			{
+				"chaos_raider",
+				"chaos_raider"
+			},
+			{
 				"chaos_berzerker",
 				"chaos_berzerker"
 			},
 			{
 				"chaos_warrior",
 				"chaos_warrior"
+			},
+			{
+				"chaos_marauder_with_shield",
+				"chaos_marauder_with_shield"
+			},
+			{
+				"chaos_raider",
+				"chaos_raider"
 			}
 		}
 	}
-
-
+	-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.storm_vermin_two_column = {
 		settings = {
 			extra_breed_name = "skaven_storm_vermin_with_shield",
@@ -373,12 +390,33 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			}
 		},
+		-- Patrol Composation Changed From Dutch
 		cataclysm = {
 			{
 				"skaven_storm_vermin_with_shield",
 				"skaven_storm_vermin_with_shield"
 			},
 			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			{
+				"skaven_plague_monk",
+				"skaven_plague_monk"
+			},
+			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			{
+				"skaven_plague_monk",
+				"skaven_plague_monk"
+			},
+			{
 				"skaven_storm_vermin_with_shield",
 				"skaven_storm_vermin_with_shield"
 			},
@@ -391,199 +429,24 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			},
 			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
 				"skaven_storm_vermin",
 				"skaven_storm_vermin"
 			},
 			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
+				"skaven_plague_monk",
+				"skaven_plague_monk"
 			},
 			{
 				"skaven_storm_vermin",
 				"skaven_storm_vermin"
 			}
+			{
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield"
+			},
 		}
 	}
-
-
-	PatrolFormationSettings.storm_vermin_shields_infront = {
-		settings = {
-			extra_breed_name = "skaven_storm_vermin_with_shield",
-			use_controlled_advance = true,
-			sounds = {
-				PLAYER_SPOTTED = "storm_vermin_patrol_player_spotted",
-				FORMING = "Play_stormvermin_patrol_forming",
-				FOLEY = "Play_stormvermin_patrol_foley",
-				FORMATED = "Play_stormvemin_patrol_formated",
-				FOLEY_EXTRA = "Play_stormvermin_patrol_shield_foley",
-				FORMATE = "storm_vermin_patrol_formate",
-				CHARGE = "storm_vermin_patrol_charge",
-				VOICE = "Play_stormvermin_patrol_voice"
-			},
-			offsets = PatrolFormationSettings.default_settings.offsets,
-			speeds = PatrolFormationSettings.default_settings.speeds
-		},
-		normal = {
-			{
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_clan_rat",
-				"skaven_clan_rat",
-				"skaven_clan_rat",
-				"skaven_clan_rat"
-			}
-		},
-		hard = {
-			{
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			}
-		},
-		harder = {
-			{
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				EMPTY,
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				EMPTY
-			}
-		},
-		hardest = {
-			{
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				EMPTY,
-				EMPTY,
-				"skaven_storm_vermin"
-			}
-		},
-		cataclysm = {
-			{
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				EMPTY,
-				EMPTY,
-				"skaven_storm_vermin_with_shield"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
-				EMPTY,
-				EMPTY,
-				"skaven_storm_vermin_with_shield"
-			}
-		}
-	}
-
-
+	-- Patrol Composation Changed From Dutch
 	PatrolFormationSettings.beastmen_standard = {
 		settings = {
 			sounds = {
@@ -728,9 +591,23 @@ local mod = get_mod("Dense Onslaught")
 				"beastmen_gor"
 			}
 		},
+		-- Patrol Composation Changed From Dutch
 		cataclysm = {
 			{
-				"beastmen_standard_bearer"
+				"beastmen_bestigor",
+				"beastmen_bestigor"
+			},
+			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			{
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield"
+			},
+			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
 			},
 			{
 				"beastmen_bestigor",
@@ -745,12 +622,16 @@ local mod = get_mod("Dense Onslaught")
 				"beastmen_bestigor"
 			},
 			{
-				"beastmen_bestigor",
-				"beastmen_bestigor"
+				"chaos_berzerker",
+				"chaos_berzerker"
 			},
 			{
-				"beastmen_bestigor",
-				"beastmen_bestigor"
+				"chaos_warrior",
+				"chaos_warrior"
+			},
+			{
+				"chaos_raider",
+				"chaos_raider"
 			},
 			{
 				"beastmen_bestigor",
@@ -759,18 +640,6 @@ local mod = get_mod("Dense Onslaught")
 			{
 				"beastmen_standard_bearer",
 				"beastmen_standard_bearer"
-			},
-			{
-				"beastmen_bestigor",
-				"beastmen_bestigor"
-			},
-			{
-				"beastmen_bestigor",
-				"beastmen_bestigor"
-			},
-			{
-				"beastmen_bestigor",
-				"beastmen_bestigor"
 			},
 			{
 				"beastmen_bestigor",
