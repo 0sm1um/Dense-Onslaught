@@ -61,3 +61,73 @@ local mod = get_mod("Dense Onslaught")
 			"event_boss",
 			"event_patrol"
 		}
+
+	BossSettings.default.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.default_light.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.skaven.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+
+	BossSettings.skaven_light.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.chaos.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.chaos_light.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.beastmen.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+
+	BossSettings.skaven_beastmen.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.chaos_beastmen.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
+	
+	BossSettings.beastmen_light.boss_events.event_lookup.event_boss = {
+		"boss_event_rat_ogre",
+		"boss_event_chaos_troll",
+		"boss_event_chaos_spawn",
+		"boss_event_minotaur"
+	}
