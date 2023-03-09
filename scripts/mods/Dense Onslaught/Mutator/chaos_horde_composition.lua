@@ -2,10 +2,10 @@ local mod = get_mod("Dense Onslaught")
 	
 	local faction = "chaos"
 	
-	local trash_scale = 0.8
-	local shield_trash_scale = 0.8
+	local trash_scale = 0.7
+	local shield_trash_scale = 1
 	local elite_scale = 0.9
-	local shield_elite_scale = 1
+	local shield_elite_scale = 0.95
 	local berzerker_scale = 0.9
 	local super_armor_scale = 1
 
@@ -267,13 +267,13 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_marauder_with_shield",
 				{
-					18,
-					20
+					8,
+					10
 				},
 				"chaos_raider",
 				{
-					3,
-					4
+					4,
+					6
 				},
 				"chaos_warrior",
 				{
@@ -776,4 +776,4 @@ local mod = get_mod("Dense Onslaught")
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
 	
-scale_horde_composition(faction, scaling_data)
+scale_horde_composition(HordeCompositionsPacing, faction, scaling_data)

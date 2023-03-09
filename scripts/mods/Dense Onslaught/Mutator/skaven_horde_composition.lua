@@ -8,8 +8,8 @@ local mod = get_mod("Dense Onslaught")
 
 	local faction = "huge"
 
-	local trash_scale = 0.8
-	local shield_trash_scale = 0.8
+	local trash_scale = 0.7
+	local shield_trash_scale = 0.9
 	local elite_scale = 0.9
 	local shield_elite_scale = 1
 	local berzerker_scale = 0.9
@@ -267,18 +267,18 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					18,
-					20
+					9,
+					10
 				},
 				"skaven_storm_vermin_commander",
 				{
-					3,
+					2,
 					4
 				},
-				"skaven_plague_monk",
+				"skaven_storm_vermin_with_shield",
 				{
-					3,
-					4
+					2,
+					2
 				}
 			}
 		},
@@ -330,7 +330,7 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin_with_shield",
 				{
 					2,
-					3
+					4
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -451,8 +451,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					18,
-					20
+					9,
+					10
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -683,5 +683,4 @@ local mod = get_mod("Dense Onslaught")
 		sound_settings = HordeCompositionsSoundSettings.skaven
 	}
 
-scale_horde_composition(faction,	-- Skaven don't have a faction name, so we scale their hordes first and use "huge" to have it scale all hordes.
-						scaling_data)
+scale_horde_composition(HordeCompositionsPacing, faction, scaling_data) -- Skaven don't have a faction name, so we pass in "huge" and update the subsequent factions after.

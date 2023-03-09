@@ -429,4 +429,4 @@ local mod = get_mod("Dense Onslaught")
 		sound_settings = HordeCompositionsSoundSettings.beastmen
 	}
 
-scale_horde_composition(faction, scaling_data)
+scale_horde_composition(HordeCompositionsPacing, faction, scaling_data)

@@ -5,8 +5,8 @@ local mod = get_mod("Dense Onslaught")
 		Requires locally defined variables to function.
 	--]]
 
-function scale_horde_composition(faction,scaling_data)
-	for horde_name, horde_comp_data in pairs(HordeCompositionsPacing) do
+function scale_horde_composition(HordeCompositions,faction,scaling_data)
+	for horde_name, horde_comp_data in pairs(HordeCompositions) do
 		local isfaction = false
 		if string.find(tostring(horde_name), faction) then
 			for sub_var_name, horde_subvariant in pairs(horde_comp_data) do

@@ -121,23 +121,23 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					15,
-					17
+					5,
+					10
 				},
 				"skaven_clan_rat",
 				{
-					10,
-					14
+					15,
+					20
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					12,
-					17
+					10,
+					15
 				},
 				"skaven_plague_monk",
 				{
-					2,
-					3
+					6,
+					8
 				},
 				"skaven_storm_vermin_with_shield",
 				2,
@@ -149,18 +149,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_clan_rat",
 				{
-					14,
-					16
+					10,
+					12
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					17,
+					15,
 					20
 				},
 				"skaven_plague_monk",
 				{
-					5,
-					6
+					9,
+					10
 				},
 				"skaven_storm_vermin_with_shield",
 				2,
@@ -180,8 +180,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat",
 				{
-					2,
-					3
+					5,
+					6
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -201,15 +201,15 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat",
 				{
-					2,
-					3
+					4,
+					5
 				},
 				"skaven_clan_rat_with_shield",
 				{
 					4,
 					5
 				},
-				"skaven_storm_vermin_commander",
+				"skaven_storm_vermin",
 				1
 			}
 		}
@@ -221,13 +221,13 @@ local mod = get_mod("Dense Onslaught")
 			weight = 6,
 			breeds = {
 				"skaven_storm_vermin",
-				8,
+				10,
 				"skaven_plague_monk",
-				4,
+				6,
 				"skaven_clan_rat",
 				{
-					6,
-					8
+					8,
+					12
 				}
 			}
 		}
@@ -270,12 +270,18 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			},
 			survival_hardest = {
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
 				"skaven_storm_vermin",
-				"skaven_storm_vermin"
+				"skaven_storm_vermin",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
 			}
 	}
 	--See hooks for Skarrik behaviour changes

@@ -1,4 +1,99 @@
 local mod = get_mod("Dense Onslaught")
+	
+	faction = "huge"
+	
+	local skaven_trash_scale = 1
+	local skaven_shield_trash_scale = 1
+	local skaven_elite_scale = 1
+	local skaven_shield_elite_scale = 1
+	local skaven_berzerker_scale = 1
+	local skaven_super_armor_scale = 1
+	
+	local chaos_trash_scale = 1
+	local chaos_shield_trash_scale = 1
+	local chaos_elite_scale = 1
+	local chaos_shield_elite_scale = 1
+	local chaos_berzerker_scale = 1
+	local chaos_super_armor_scale = 1
+	
+	local beastmen_trash_scale = 1
+	local beastmen_elite_scale = 1
+
+	local skaven_trash_entities = {"skaven_slave","skaven_clan_rat"}
+	local skaven_shield_trash_entities = {"skaven_clan_rat_with_shield"}
+	local skaven_elite_entities = {"skaven_storm_vermin_commander"}
+	local skaven_shield_elite_entities = {"skaven_storm_vermin_with_shield"}
+	local skaven_berzerker_entities = {"skaven_plague_monk"}
+	local skaven_super_armor_entities = {"skaven_storm_vermin"}
+
+	local chaos_trash_entities = {"chaos_fanatic","chaos_marauder"}
+	local chaos_shield_trash_entities = {"chaos_marauder_with_shield"}
+	local chaos_elite_entities = {"chaos_raider"}
+	local chaos_shield_elite_entities = {}
+	local chaos_berzerker_entities = {"chaos_berzerker"}
+	local chaos_super_armor_entities = {"chaos_warrior"}
+
+	local beastmen_trash_entities = {"beastmen_ungor","beastmen_gor"}
+	local beastmen_elite_entities = {"beastmen_bestigor"}
+	
+	local skaven_scaling_data = {
+    {
+        scale_factor = skaven_trash_scale,
+        breeds = skaven_trash_entities,
+    },
+    {
+        scale_factor = skaven_shield_trash_scale,
+        breeds = skaven_shield_trash_entities,
+    },
+    {
+        scale_factor = skaven_elite_scale,
+        breeds = skaven_elite_entities,
+    },
+    {
+        scale_factor = skaven_shield_elite_scale,
+        breeds = skaven_shield_elite_entities,
+    },
+    {
+        scale_factor = skaven_berzerker_scale,
+        breeds = skaven_berzerker_entities,
+    },
+    {
+        scale_factor = skaven_super_armor_scale,
+        breeds = skaven_super_armor_entities,
+    },
+	{
+        scale_factor = chaos_trash_scale,
+        breeds = chaos_trash_entities,
+    },
+    {
+        scale_factor = chaos_shield_trash_scale,
+        breeds = chaos_shield_trash_entities,
+    },
+    {
+        scale_factor = chaos_elite_scale,
+        breeds = chaos_elite_entities,
+    },
+    {
+        scale_factor = chaos_shield_elite_scale,
+        breeds = chaos_shield_elite_entities,
+    },
+    {
+        scale_factor = chaos_berzerker_scale,
+        breeds = chaos_berzerker_entities,
+    },
+    {
+        scale_factor = chaos_super_armor_scale,
+        breeds = chaos_super_armor_entities,
+    },
+	{
+        scale_factor = beastmen_trash_scale,
+        breeds = beastmen_trash_entities,
+    },
+	{
+        scale_factor = beastmen_trash_scale,
+        breeds = beastmen_trash_entities,
+    }
+}
 
 	-- Event Horde Composition
 	HordeCompositions.event_smaller = {
@@ -1411,3 +1506,5 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
+
+scale_horde_composition(HordeCompositions,faction,scaling_data)
