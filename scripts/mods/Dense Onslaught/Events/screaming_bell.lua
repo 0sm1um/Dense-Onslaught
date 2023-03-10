@@ -15,8 +15,28 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
+	
+	HordeCompositions.event_bell_warriors = {
+		{
+			name = "plain",
+			weight = 7,
+			breeds = {
+				"chaos_warrior",
+				{
+					8,
+					8
+				},
+				"skaven_storm_vermin",
+				{
+					4,
+					4
+				}
+				
+			}
+		}	
+	}
 
-	TerrorEventBlueprints.bell.canyon_bell_event = {
+TerrorEventBlueprints.bell.canyon_bell_event = {
 		{
 			"set_master_event_running",
 			name = "canyon_bell_event"
@@ -44,7 +64,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "canyon_bell_event",
-			composition_type = "event_extra_spice_small"
+			composition_type = "event_extra_spice_large"
 		},
 		{
 			"delay",
@@ -64,13 +84,18 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_bell_monks"
 		},
 		{
+			"event_horde",
+			spawner_id = "canyon_bell_event",
+			composition_type = "event_bell_monks"
+		},
+		{
 			"delay",
 			duration = 5
 		},
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_clan_rat_with_shield") < 8 and count_event_breed("skaven_storm_vermin_commander") < 3 and count_event_breed("skaven_plague_monk") < 4
+				return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
 			end
 		},
 		{
@@ -100,7 +125,12 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_second_ogre",
-			breed_name = "skaven_rat_ogre"
+			breed_name = "chaos_troll"
+		},
+		{
+			"event_horde",
+			spawner_id = "canyon_bell_event",
+			composition_type = "event_bell_warriors"
 		}
 	}
 
@@ -115,6 +145,12 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "canyon_escape_event",
+			composition_type = "onslaught_custom_specials_heavy_disabler"
+		},		
+		{
+			"event_horde",
 			spawner_id = "canyon_escape_event",
 			composition_type = "event_large"
 		},
@@ -124,11 +160,11 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = true
+			enable = false
 		},
 		{
 			"control_pacing",
-			enable = false
+			enable = true
 		},
 		{
 			"continue_when",

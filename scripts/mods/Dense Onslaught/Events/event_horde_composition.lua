@@ -225,8 +225,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat",
 				{
-					28,
-					31
+					20,
+					25
 				}
 			}
 		},
@@ -248,7 +248,17 @@ local mod = get_mod("Dense Onslaught")
 				{
 					5,
 					6
-				}
+				},
+				"skaven_clan_rat_with_shield",
+				{
+					5,
+					6
+				},
+				"skaven_storm_vermin_commander",
+				{
+					2,
+					4
+				},
 			}
 		},
 		{
@@ -274,6 +284,11 @@ local mod = get_mod("Dense Onslaught")
 				{
 					2,
 					3
+				},
+				"skaven_storm_vermin",
+				{
+					2,
+					2
 				}
 			}
 		}
@@ -989,7 +1004,10 @@ local mod = get_mod("Dense Onslaught")
 			weight = 10,
 			breeds = {
 				"skaven_storm_vermin",
-				3,
+				{
+					2,
+					3
+				}
 			}
 		}
 	}
