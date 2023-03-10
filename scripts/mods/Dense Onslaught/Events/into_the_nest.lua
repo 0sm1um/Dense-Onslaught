@@ -1,6 +1,76 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Into the Nest
+	BreedActions.skaven_storm_vermin_warlord.spawn_allies.spawn_list = {
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_pack_master",
+				"skaven_ratling_gunner"
+			}
+	
+	BreedActions.skaven_storm_vermin_warlord.spawn_allies.difficulty_spawn_list = {
+			easy = {
+				"skaven_storm_vermin"
+			},
+			normal = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			hard = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			survival_hard = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			harder = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			survival_harder = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			hardest = {
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			survival_hardest = {
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_pack_master",
+				"skaven_ratling_gunner"
+			}
+	}
 	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_pacing_off = {
 		{
@@ -131,8 +201,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					10,
-					15
+					8,
+					10
 				},
 				"skaven_plague_monk",
 				{
@@ -154,8 +224,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					15,
-					20
+					10,
+					12
 				},
 				"skaven_plague_monk",
 				{
@@ -163,7 +233,10 @@ local mod = get_mod("Dense Onslaught")
 					10
 				},
 				"skaven_storm_vermin_with_shield",
-				2,
+				{
+					2,
+					2
+				}
 			}
 		}
 	}
@@ -181,12 +254,12 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_clan_rat",
 				{
 					5,
-					6
+					7
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					4,
-					5
+					2,
+					3
 				}
 			}
 		},
@@ -201,16 +274,19 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat",
 				{
-					4,
-					5
+					5,
+					7
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					4,
-					5
+					2,
+					3
 				},
 				"skaven_storm_vermin",
+				{
+				1,
 				1
+				}
 			}
 		}
 	}
@@ -232,57 +308,6 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-	
-	BreedActions.skaven_storm_vermin_warlord.spawn_allies.difficulty_spawn_list = {
-			easy = {
-				"skaven_storm_vermin"
-			},
-			normal = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			hard = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_hard = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			harder = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_harder = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			hardest = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_hardest = {
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-			}
-	}
+
 	--See hooks for Skarrik behaviour changes
 	BreedActions.skaven_storm_vermin_warlord.spawn_sequence.considerations.time_since_last.max_value = 800
