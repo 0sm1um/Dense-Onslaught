@@ -423,13 +423,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_marauder",
 				{
-					14,
-					16
+					15,
+					20
 				},
 				"chaos_fanatic",
 				{
-					20,
-					25
+					15,
+					20
 				}
 			}
 		},
@@ -444,19 +444,19 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_marauder",
 				{
-					4,
-					5
+					5,
+					10
 				},
 				"chaos_fanatic",
 				{
-					20,
-					25
+					15,
+					20
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 5,
+			weight = 7,
 			breeds = {
 				"chaos_marauder",
 				{
@@ -470,8 +470,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_raider",
 				{
-					2,
-					2
+					3,
+					3
 				}
 			}
 		},
@@ -481,8 +481,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_marauder",
 				{
-					5,
-					6
+					10,
+					15
 				},
 				"chaos_fanatic",
 				{
@@ -491,8 +491,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_berzerker",
 				{
-					1,
-					2
+					4,
+					4
 				}
 			}
 		}
@@ -758,8 +758,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_marauder_with_shield",
 				{
-					3,
-					4
+					5,
+					6
 				}
 			}
 		}
@@ -772,8 +772,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_berzerker",
 				{
-					2,
-					3
+					3,
+					4
 				}
 			}
 		}
@@ -786,8 +786,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_berzerker",
 				{
-					3,
-					4
+					5,
+					6
 				}
 			}
 		}
@@ -1057,8 +1057,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_raider",
 				{
-					5,
-					6
+					6,
+					8
 				}
 			}
 		}
