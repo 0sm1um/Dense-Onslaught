@@ -18,31 +18,6 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 	
-	HordeCompositions.chaos_elites = {
-		{
-			name = "zerker",
-			weight = 1,
-			breeds = {
-				"chaos_berzerker",
-				{
-					3,
-					4
-				}
-			}
-		},
-		{
-			name = "mauler",
-			weight = 1,
-			breeds = {
-				"chaos_raider",
-				{
-					3,
-					4
-				}
-			}
-		}
-	}
-	
 	HordeCompositions.slum_specials = {
 		{
 			name = "leech",
@@ -142,6 +117,16 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_left_01",
 			composition_type = "chaos_elites"
+		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_front_left_01",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_front_right_01",
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"event_horde",
@@ -275,6 +260,11 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_roof_01",
 			composition_type = "event_large"
+		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_roof_01",
+			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"event_horde",
@@ -473,7 +463,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 6
 		},
 		{
 			"continue_when",
@@ -484,7 +474,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
+			duration = 4
 		},
 		{
 			"flow_event",

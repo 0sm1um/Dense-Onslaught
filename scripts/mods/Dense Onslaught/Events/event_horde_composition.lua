@@ -724,6 +724,30 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	HordeCompositions.chaos_elites = {
+		{
+			name = "zerker",
+			weight = 1,
+			breeds = {
+				"chaos_berzerker",
+				{
+					3,
+					4
+				}
+			}
+		},
+		{
+			name = "mauler",
+			weight = 1,
+			breeds = {
+				"chaos_raider",
+				{
+					3,
+					4
+				}
+			}
+		}
+	}
 	---------------------
 	--Unscaled Onslaught variants of generic compositions
 
