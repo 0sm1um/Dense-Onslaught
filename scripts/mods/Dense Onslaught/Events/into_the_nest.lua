@@ -18,60 +18,6 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_ratling_gunner"
 			}
 	
-	BreedActions.skaven_storm_vermin_warlord.spawn_allies.difficulty_spawn_list = {
-			easy = {
-				"skaven_storm_vermin"
-			},
-			normal = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			hard = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_hard = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			harder = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_harder = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			hardest = {
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			survival_hardest = {
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_storm_vermin",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-				"skaven_plague_monk",
-				"skaven_pack_master",
-				"skaven_ratling_gunner"
-			}
-	}
-	
 	TerrorEventBlueprints.skaven_stronghold.stronghold_pacing_off = {
 		{
 			"text",

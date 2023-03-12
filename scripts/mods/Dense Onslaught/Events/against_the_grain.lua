@@ -41,7 +41,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_rat_ogre",
 				"skaven_stormfiend",
 				"chaos_troll",
-				"chaos_spawn"
+				"chaos_spawn",
+				"beastmen_minotaur"
 			}		
 		},
 		{
@@ -51,7 +52,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1 and count_event_breed("beastmen_minotaur") < 1
 			end
 		},
 		{
@@ -68,7 +69,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "farmlands_rat_ogre",
-			breed_name = "skaven_stormfiend"
+			breed_name = "skaven_rat_ogre"
 		},
 		{
 			"delay",
@@ -99,7 +100,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_rat_ogre",
 				"skaven_stormfiend",
 				"chaos_troll",
-				"chaos_spawn"
+				"chaos_spawn",
+				"beastmen_minotaur"
 			}		
 		},
 		{
@@ -109,7 +111,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1 and count_event_breed("beastmen_minotaur") < 1
 			end
 		},
 		{
@@ -157,7 +159,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_rat_ogre",
 				"skaven_stormfiend",
 				"chaos_troll",
-				"chaos_spawn"
+				"chaos_spawn",
+				"beastmen_minotaur"
 			}		
 		},
 		{
@@ -167,7 +170,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1 and count_event_breed("beastmen_minotaur") < 1
 			end
 		},
 		{
@@ -214,6 +217,7 @@ local mod = get_mod("Dense Onslaught")
 			breed_name = {
 				"skaven_rat_ogre",
 				"skaven_stormfiend",
+				"beastmen_minotaur",
 				"chaos_troll",
 				"chaos_spawn"
 			}		
@@ -225,7 +229,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1
+				return count_event_breed("skaven_rat_ogre") < 1 and count_event_breed("skaven_stormfiend") < 1 and count_event_breed("chaos_troll") < 1 and count_event_breed("chaos_spawn") < 1 and count_event_breed("beastmen_minotaur") < 1
 			end
 		},
 		{
@@ -251,12 +255,12 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "wall_guard_02",
-			breed_name = "skaven_storm_vermin_commander"
+			breed_name = "skaven_storm_vermin"
 		},
 		{
 			"spawn_at_raw",
 			spawner_id = "wall_guard_03",
-			breed_name = "skaven_storm_vermin_commander"
+			breed_name = "skaven_storm_vermin"
 		},
 		{
 			"spawn_at_raw",
@@ -302,11 +306,21 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "square_front",
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "square_front",
 			composition_type = "skaven_shields"
 		},
 		{
 			"delay",
 			duration = 5
+		},
+		{
+			"spawn_at_raw",
+			spawner_id = "hay_barn_bridge_invis",
+			breed_name = "skaven_stormfiend"
 		},
 		{
 			"event_horde",
@@ -324,8 +338,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
+			"event_horde",
+			spawner_id = "hay_barn_bridge_invis",
+			composition_type = "event_maulers_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"event_horde",
@@ -338,8 +357,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "skaven_shields"
 		},
 		{
+			"event_horde",
+			spawner_id = "square_center",
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -359,8 +383,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_maulers_medium"
 		},
 		{
+			"event_horde",
+			spawner_id = "hay_barn_bridge_invis",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -378,6 +407,11 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "hay_barn_back",
 			composition_type = "skaven_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "square_front",
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"delay",
@@ -460,7 +494,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = false
+			enable = true
 		},
 		{
 			"disable_kick"
@@ -474,9 +508,19 @@ local mod = get_mod("Dense Onslaught")
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
+			"event_horde",
+			spawner_id = "hay_barn_guards",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
 			"spawn_at_raw",
 			spawner_id = "hay_barn_guards",
 			breed_name = "chaos_raider"
+		},
+		{
+			"event_horde",
+			spawner_id = "hay_barn_guards",
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"spawn_at_raw",
@@ -496,11 +540,16 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "hay_barn_cellar_invis",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "hay_barn_cellar_invis",
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"event_horde",
@@ -513,8 +562,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_warriors"
 		},
 		{
+			"event_horde",
+			spawner_id = "hay_barn_front_invis",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"event_horde",
@@ -527,7 +581,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"spawn_special",
-			amount = 1,
+			amount = 2,
 			breed_name = "skaven_poison_wind_globadier"
 		},
 		{
@@ -554,6 +608,11 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 2,
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
@@ -563,7 +622,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -585,6 +644,16 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 2,
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
 			composition_type = "event_stormvermin_shielders"
 		},
 		{
@@ -594,7 +663,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -616,6 +685,16 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 2,
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
@@ -625,7 +704,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -652,11 +731,21 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 2,
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
 			composition_type = "event_stormvermin_shielders"
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -699,6 +788,21 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "square_center",
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "square_center",
+			composition_type = "onslaught_storm_vermin_white_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "square_center",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"event_horde",
+			spawner_id = "square_center",
 			composition_type = "skaven_shields"
 		},
 		{
@@ -721,8 +825,18 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
+			"event_horde",
+			spawner_id = "sawmill_yard_invis",
+			composition_type = "event_maulers_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
+		},
+		{
+			"event_horde",
+			spawner_id = "sawmill_yard",
+			composition_type = "event_small"
 		},
 		{
 			"event_horde",
@@ -737,16 +851,16 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "sawmill_yard",
-			composition_type = "skaven_shields"
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"event_horde",
 			spawner_id = "sawmill_yard",
-			composition_type = "onslaught_storm_vermin_medium"
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -771,8 +885,13 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
+			"event_horde",
+			spawner_id = "sawmill_yard_invis",
+			composition_type = "event_maulers_medium"
+		},
+		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -800,6 +919,11 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "sawmill_creek",
 			composition_type = "event_stormvermin_shielders"
+		},
+		{
+			"event_horde",
+			spawner_id = "sawmill_creek",
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"delay",
@@ -853,7 +977,17 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "sawmill_interior",
+			composition_type = "event_stormvermin_shielders"
+		},
+		{
+			"event_horde",
+			spawner_id = "sawmill_interior",
 			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "sawmill_interior",
+			composition_type = "onslaught_event_military_courtyard_plague_monks"
 		},
 		{
 			"event_horde",
@@ -917,6 +1051,11 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "sawmill_interior_invis",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"event_horde",
+			spawner_id = "sawmill_interior_invis",
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
@@ -926,7 +1065,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -941,7 +1080,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -962,7 +1101,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			limit_spawners = 2,
-			composition_type = "skaven_shields"
+			composition_type = "event_small"
 		},
 		{
 			"event_horde",
@@ -990,7 +1129,28 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 8
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
+			end
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			composition_type = "event_small"
+		},
+		{
+			"delay",
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -1011,28 +1171,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_slave") < 20
-			end
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "event_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			composition_type = "skaven_shields"
-		},
-		{
-			"delay",
-			duration = 10
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -1061,9 +1200,14 @@ local mod = get_mod("Dense Onslaught")
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
+			"spawn_at_raw",
+			spawner_id = "sawmill_yard",
+			breed_name = "beastmen_minotaur"
+		},
+		{
 			"event_horde",
 			spawner_id = "sawmill_yard",
-			composition_type = "event_large"
+			composition_type = "event_medium"
 		},
 		{
 			"event_horde",
@@ -1074,11 +1218,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "sawmill_yard",
 			composition_type = "skaven_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "sawmill_yard",
-			composition_type = "onslaught_event_military_courtyard_plague_monks"
 		},
 		{
 			"delay",
