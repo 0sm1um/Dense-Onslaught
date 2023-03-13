@@ -1,8 +1,8 @@
 local mod = get_mod("Dense Onslaught")
 
-	--Garden of Morr
+--Garden of Morr
 	
-	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
+TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		{
 			"disable_kick"
 		},
@@ -38,12 +38,24 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium",
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium",
+		},
+		{
 			"delay",
 			duration = 5
 		},
 		{
 			"event_horde",
-			composition_type = "event_extra_spice_medium"
+			composition_type = "event_extra_spice_medium",
 		},
 		{
 			"delay",
@@ -56,26 +68,50 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small"
+			composition_type = "onslaught_storm_vermin_shields_small",
 		},
 		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small"
+			composition_type = "onslaught_storm_vermin_shields_small",
 		},
 		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small"
+			composition_type = "onslaught_storm_vermin_shields_small",
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_shields_small",
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_shields_small",
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium",
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium",
 		},
 		{
 			"delay",
 			duration = 5
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_b = {
 		{
 			"disable_kick"
@@ -93,15 +129,20 @@ local mod = get_mod("Dense Onslaught")
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
-			"delay",
-			duration = {
-				3,
-				5
-			}
+			"event_horde",
+			composition_type = "event_extra_spice_medium"
 		},
 		{
 			"event_horde",
-			composition_type = "event_extra_spice_medium"
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
 			"delay",
@@ -147,7 +188,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_2_a = {
 		{
 			"disable_kick"
@@ -159,6 +200,18 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"play_stinger",
@@ -210,6 +263,18 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
 			"delay",
 			duration = 5
 		},
@@ -223,7 +288,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_2_b = {
 		{
 			"disable_kick"
@@ -235,6 +300,18 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"play_stinger",
@@ -287,6 +364,18 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_plague_monks_medium"
 		},
 		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
 			"delay",
 			duration = 5
 		},
@@ -300,7 +389,7 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_3_a = {
 		{
 			"disable_kick"
@@ -312,6 +401,18 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_large"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"play_stinger",
@@ -343,6 +444,14 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
+			"event_horde",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
 			"delay",
 			duration = 5
 		},
@@ -367,7 +476,7 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_3_b = {
 		{
 			"disable_kick"
@@ -430,11 +539,21 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_shields_small"
 		},
 		{
+			"event_horde",
+			composition_type = "event_extra_spice_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 1,
+			spawner_id = "cemetery_brew_event_specials",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
 			"delay",
 			duration = 5
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_4_a = {
 		{
 			"disable_kick"
@@ -448,7 +567,7 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_4_b = {
 		{
 			"disable_kick"
@@ -462,7 +581,7 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_extra_spice_medium"
 		}
 	}
-	
+
 	TerrorEventBlueprints.cemetery.cemetery_plague_brew_exit_event = {
 		{
 			"play_stinger",
@@ -495,7 +614,41 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 2
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
 			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "event_maulers_medium"
 		},
 		{
 			"delay",
