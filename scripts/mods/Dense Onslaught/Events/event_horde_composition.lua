@@ -1466,10 +1466,57 @@ local mod = get_mod("Dense Onslaught")
 			}
 		},
 		{
+			name = "minotaur",
+			weight = 5,
+			breeds = {
+				"beastmen_minotaur",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
 			name = "troll",
 			weight = 5,
 			breeds = {
 				"chaos_troll",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
+	HordeCompositions.onslaught_custom_boss_random_no_fiend_no_troll = {
+		{
+			name = "ogre",
+			weight = 5,
+			breeds = {
+				"skaven_rat_ogre",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "spawn",
+			weight = 5,
+			breeds = {
+				"chaos_spawn",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "minotaur",
+			weight = 5,
+			breeds = {
+				"beastmen_minotaur",
 				{
 					1,
 					1

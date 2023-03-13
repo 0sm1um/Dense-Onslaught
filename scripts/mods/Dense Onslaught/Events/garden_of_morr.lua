@@ -190,7 +190,8 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
 			composition_type = "onslaught_plague_monks_medium"
-		},{
+		},
+		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
@@ -640,7 +641,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		{
 			"event_horde",
 			composition_type = "onslaught_storm_vermin_white_medium"
-		}
+		},
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
