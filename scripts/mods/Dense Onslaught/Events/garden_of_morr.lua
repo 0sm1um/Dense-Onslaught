@@ -26,6 +26,11 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			}
 		},
 		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
@@ -129,6 +134,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
 		},
@@ -223,6 +236,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 				3,
 				5
 			}
+		},
+		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
 		},
 		{
 			"spawn_special",
@@ -325,6 +346,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			}
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
 		},
@@ -419,6 +448,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			stinger_name = "enemy_horde_stinger"
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"delay",
 			duration = {
 				3,
@@ -501,6 +538,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			}
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"spawn_special",
 			breed_name = "skaven_ratling_gunner",
 			amount = 3
@@ -530,7 +575,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			"event_horde",
 			limit_spawners = 1,
 			spawner_id = "cemetery_brew_event_specials",
-			composition_type = "onslaught_storm_vermin_shields_small"
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"event_horde",
@@ -563,6 +608,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			max_active_enemies = 100
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
 		}
@@ -577,6 +630,18 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			max_active_enemies = 100
 		},
 		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
+		},
+		{
+			"event_horde",
+			composition_type = "onslaught_storm_vermin_white_medium"
+		}
+		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
 		}
@@ -586,6 +651,14 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		{
 			"play_stinger",
 			stinger_name = "enemy_horde_chaos_stinger"
+		},
+		{
+			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
+			spawner_id = "onslaught_cemetery_entrance",
+			breed_name = "skaven_stormfiend"
 		},
 		{
 			"event_horde",
