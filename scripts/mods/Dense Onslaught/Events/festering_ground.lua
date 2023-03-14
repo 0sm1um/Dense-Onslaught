@@ -14,12 +14,46 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "nurgle_end_event",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
+			composition_type = "event_large"
+		},		
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
 			composition_type = "event_large"
 		},
 		{
 			"event_horde",
 			spawner_id = "nurgle_end_event",
 			composition_type = "skaven_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
+			composition_type = "onslaught_storm_vermin_medium"
+		},
+		{
+			"event_horde",
+			spawner_id = "nurgle_end_event",
+			composition_type = "onslaught_plague_monks_medium"
+		},
+		{
+			"delay",
+			duration = 10
 		},
 		{
 			"delay",
@@ -29,12 +63,22 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield") < 15) and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_storm_vermin_with_shield") < 4
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield") < 12) and count_event_breed("skaven_slave") < 6 and count_event_breed("skaven_storm_vermin_commander") < 6 and count_event_breed("skaven_storm_vermin_with_shield") < 6  and count_event_breed("skaven_storm_vermin") < 6
 			end
 		},
 		{
 			"delay",
 			duration = 6
+		},
+		{
+			"play_stinger",
+			stinger_name = "enemy_horde_chaos_stinger"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "courtyard_hidden",
+			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"event_horde",
@@ -55,18 +99,10 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_maulers_medium"
 		},
 		{
-			"delay",
-			duration = 10
-		},
-		{
-			"play_stinger",
-			stinger_name = "enemy_horde_chaos_stinger"
-		},
-		{
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 10) and count_event_breed("chaos_raider") < 5
+				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 10) and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_warrior") < 2
 			end
 		},
 		{
@@ -76,7 +112,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "nurgle_end_event",
-			composition_type = "event_medium"
+			composition_type = "event_large"
 		},
 		{
 			"delay",
@@ -112,6 +148,12 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 4,
 			spawner_id = "nurgle_end_event_chaos",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 4,
+			spawner_id = "nurgle_end_event_chaos",
 			composition_type = "onslaught_chaos_berzerkers_medium"
 		},
 		{
@@ -134,7 +176,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield") < 15) and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("chaos_berzerker") < 5
+				return (count_event_breed("skaven_clan_rat") + count_event_breed("skaven_clan_rat_with_shield") < 15) and count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_storm_vermin_commander") < 5 and count_event_breed("skaven_storm_vermin_with_shield") < 4 and count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 5
 			end
 		},
 		{
@@ -193,6 +235,12 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "event_large_chaos"
 		},
 		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "nurgle_end_event_chaos",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
 			"delay",
 			duration = 10
 		},
@@ -200,7 +248,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 10) and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_berzerker") < 5
+				return (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield") < 10) and count_event_breed("chaos_raider") < 5 and count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_warrior") < 3
 			end
 		},
 		{
@@ -223,7 +271,7 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "end_event_monk",
-			composition_type = "onslaught_plague_monks_medium"
+			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"play_stinger",
@@ -287,11 +335,11 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 4
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 7,
 			condition = function (t)
 				return count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_ratling_gunner") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_pack_master") + count_event_breed("skaven_gutter_runner") + count_event_breed("chaos_corruptor_sorcerer") < 3
 			end
@@ -394,11 +442,11 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 4
 		},
 		{
 			"continue_when",
-			duration = 40,
+			duration = 7,
 			condition = function (t)
 				return count_event_breed("skaven_poison_wind_globadier") + count_event_breed("skaven_ratling_gunner") + count_event_breed("skaven_warpfire_thrower") + count_event_breed("skaven_pack_master") + count_event_breed("skaven_gutter_runner") + count_event_breed("chaos_corruptor_sorcerer") < 3
 			end
@@ -428,8 +476,9 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
+			limit_spawners = 2,
 			spawner_id = "nurgle_end_event02",
-			composition_type = "event_large"
+			composition_type = "event_extra_spice_medium"
 		},
 		{
 			"event_horde",
@@ -444,7 +493,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5
+				return count_event_breed("skaven_slave") < 20 and count_event_breed("skaven_clan_rat") < 15 and count_event_breed("skaven_clan_rat_with_shield") < 12 and count_event_breed("skaven_storm_vermin_commander") < 8
 			end
 		},
 		{
@@ -484,7 +533,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5
+				return count_event_breed("skaven_slave") < 30 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 10
 			end
 		},
 		{
@@ -510,7 +559,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5
+				return count_event_breed("skaven_slave") < 30 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 10
 			end
 		},
 		{
@@ -535,7 +584,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 12 and count_event_breed("skaven_clan_rat_with_shield") < 10 and count_event_breed("skaven_storm_vermin_commander") < 5
+				return count_event_breed("skaven_slave") < 30 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 10
 			end
 		},
 		{
