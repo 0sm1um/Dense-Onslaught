@@ -198,6 +198,8 @@ local mod = get_mod("Dense Onslaught")
 	BreedActions.skaven_grey_seer.ground_combat.teleport_spell_cooldown = mutator.OriginalBreedActions.skaven_grey_seer.ground_combat.teleport_spell_cooldown
 	HordeCompositions.skittergate_grey_seer_trickle = mutator.OriginalHordeCompositions.skittergate_grey_seer_trickle
 	HordeCompositions.skittergate_boss_event_defensive = mutator.OriginalHordeCompositions.skittergate_boss_event_defensive
+
+	-- Revert Breed Settings to Default Values
 	Breeds.skaven_storm_vermin.primary_armor_category = nil
 	Breeds.skaven_storm_vermin.max_health = BreedTweaks.max_health.stormvermin
 	Breeds.skaven_storm_vermin.hit_mass_counts = BreedTweaks.hit_mass_counts.stormvermin
@@ -207,8 +209,7 @@ local mod = get_mod("Dense Onslaught")
 	UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.max = 30
 	UnitVariationSettings.skaven_storm_vermin.material_variations.skin_tint.min = 0
 	UnitVariationSettings.skaven_storm_vermin.material_variations.skin_tint.max = 5
-
-	-- Revert Breed Settings to Default Values
+	
 	Breeds.skaven_plague_monk.breed_data = {
 	detection_radius = 24,
 	walk_speed = 3.25,

@@ -10,13 +10,13 @@ mod:dofile("scripts/mods/Dense Onslaught/base/base")
 
 mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 
-mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
-
 mutator.start = function()
 
 	-- Save existing horde tables
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
-
+	-- Load Custom Breed Data
+	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
+	
 	------------------------------------------------
 	---------------------Pacing---------------------
 	------------------------------------------------
