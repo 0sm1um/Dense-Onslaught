@@ -4,9 +4,9 @@ local mod = get_mod("Dense Onslaught")
 	
 	local trash_scale = 0.7
 	local shield_trash_scale = 1
-	local elite_scale = 0.9
+	local elite_scale = 0.75
 	local shield_elite_scale = 0.95
-	local berzerker_scale = 0.9
+	local berzerker_scale = 0.75
 	local super_armor_scale = 1
 
 	local trash_entities = {"chaos_fanatic","chaos_marauder"}

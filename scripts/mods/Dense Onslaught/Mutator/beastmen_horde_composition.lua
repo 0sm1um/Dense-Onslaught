@@ -4,9 +4,9 @@ local mod = get_mod("Dense Onslaught")
 
 	local trash_scale = 0.8
 	local shield_trash_scale = 0.8
-	local elite_scale = 0.9            -- This term is meant to convey it counts for Stormvermin and Mauler type enemies.
+	local elite_scale = 0.75            -- This term is meant to convey it counts for Stormvermin and Mauler type enemies.
 	local shield_elite_scale = 1
-	local berzerker_scale = 0.9
+	local berzerker_scale = 0.75
 	local super_armor_scale = 1
 
 	local trash_entities = {"beastmen_ungor","beastmen_gor"}

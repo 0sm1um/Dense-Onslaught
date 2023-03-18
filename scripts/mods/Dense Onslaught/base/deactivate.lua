@@ -163,6 +163,11 @@ local mod = get_mod("Dense Onslaught")
 	BossSettings.skaven_beastmen.boss_events.events = mutator.OriginalBossSettings.skaven_beastmen.boss_events.events
 	BossSettings.chaos_beastmen.boss_events.events = mutator.OriginalBossSettings.chaos_beastmen.boss_events.events
 	BossSettings.beastmen_light.boss_events.events = mutator.OriginalBossSettings.beastmen_light.boss_events.events
+	
+	-- Patrol Templates
+	GenericTerrorEvents = mutator.OriginalGenericTerrorEvents
+	
+	-- Original Event Horde Compositions
 
 	HordeCompositions.event_smaller = mutator.OriginalHordeCompositions.event_smaller
 	HordeCompositions.event_small = mutator.OriginalHordeCompositions.event_small

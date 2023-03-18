@@ -2,6 +2,7 @@ local mod = get_mod("Dense Onslaught")
 
 	-- Save existing horde tables
 	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)
+	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)
 	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
 	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
 	mutator.OriginalBreedPacks = table.clone(BreedPacks)

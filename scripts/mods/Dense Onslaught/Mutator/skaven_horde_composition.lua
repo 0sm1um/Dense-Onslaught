@@ -9,10 +9,10 @@ local mod = get_mod("Dense Onslaught")
 	local faction = "huge"
 
 	local trash_scale = 0.7
-	local shield_trash_scale = 0.9
-	local elite_scale = 0.9
+	local shield_trash_scale = 1
+	local elite_scale = 0.75
 	local shield_elite_scale = 1
-	local berzerker_scale = 0.9
+	local berzerker_scale = 0.75
 	local super_armor_scale = 1
 
 	local trash_entities = {"skaven_slave","skaven_clan_rat"}
