@@ -8,7 +8,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"plague_monks",
-			15,
+			12,
 			0.08
 		},
 		{
@@ -30,7 +30,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"plague_monks",
-			15,
+			12,
 			0.15
 		},
 		{
@@ -52,7 +52,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"plague_monks",
-			15,
+			12,
 			0.25
 		}
 	}
@@ -64,7 +64,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"plague_monks",
-			15,
+			12,
 			0.08
 		}
 	}
@@ -144,7 +144,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"plague_monks",
-			13,
+			12,
 			0.15
 		},
 		{
