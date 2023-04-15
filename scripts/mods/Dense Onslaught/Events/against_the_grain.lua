@@ -74,7 +74,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("skaven_stormfiend") == 1
+				return count_event_breed("skaven_rat_ogre") == 1
 			end
 		},
 		{
@@ -149,7 +149,6 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_farmlands_extra_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"skaven_stormfiend",
 				"chaos_spawn",
 				"beastmen_minotaur"
 			}		
