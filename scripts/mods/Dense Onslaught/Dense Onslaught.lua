@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-mutator = mod:persistent_table("DenseOnslaught")
+local mutator = mod:persistent_table("DenseOnslaught")
 
 	------------------------------------------------
 	--------------Hooks and Functions---------------

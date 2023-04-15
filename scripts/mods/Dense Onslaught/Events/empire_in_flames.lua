@@ -37,7 +37,7 @@ local mod = get_mod("Dense Onslaught")
 			breed_name = "chaos_warrior"
 		}
 	}
-	
+
 	TerrorEventBlueprints.ussingen.ussingen_payload_event_01 = {
 		{
 			"control_pacing",
@@ -81,8 +81,14 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "ussingen_payload_start",
-			composition_type = "event_maulers_medium"
+			composition_type = "onslaught_chaos_warriors"
 		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_start",
+			composition_type = "onslaught_chaos_warriors_small"
+		},	
 		{
 			"delay",
 			duration = 5
@@ -101,7 +107,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 10
 		},
 		{
 			"continue_when",
@@ -167,7 +173,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 6
+			duration = 8
 		},
 		{
 			"continue_when",
@@ -178,7 +184,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 4
+			duration = 5
 		},
 		{
 			"event_horde",
@@ -190,8 +196,14 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			limit_spawners = 2,
 			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
+			composition_type = "event_maulers_medium"
 		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},	
 		{
 			"delay",
 			duration = 10
@@ -215,133 +227,6 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
 			duration = 6
 		},
 		{
@@ -362,515 +247,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_berzerkers_medium"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"delay",
-			duration = 8
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"spawn_special",
-			amount = 1,
-			breed_name = "skaven_ratling_gunner"
-		},
-		{
-			"continue_when",
-			duration = 80,
-			condition = function (t)
-				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
-			end
-		},
-		{
-			"delay",
-			duration = 5
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_medium_chaos"
-		},
-		{
-			"event_horde",
-			limit_spawners = 2,
-			spawner_id = "ussingen_payload_square",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "ussingen_payload_square",
-			composition_type = "event_maulers_medium"
-		},
-		{
-			"delay",
-			duration = 8
+			duration = 10
 		},
 		{
 			"spawn_special",
@@ -956,7 +333,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 10
 		},
 		{
 			"spawn_special",
@@ -997,7 +374,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 10
 		},
 		{
 			"spawn_special",
@@ -1046,7 +423,642 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 8
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_warriors"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_maulers_medium"
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"spawn_special",
+			amount = 1,
+			breed_name = "skaven_ratling_gunner"
+		},
+		{
+			"continue_when",
+			duration = 80,
+			condition = function (t)
+				return count_event_breed("chaos_berzerker") < 5 and count_event_breed("chaos_raider") < 4 and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 11 and count_event_breed("chaos_fanatic") < 16 and count_event_breed("chaos_warrior") < 4
+			end
+		},
+		{
+			"delay",
+			duration = 6
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "event_medium_chaos"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_shields"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"event_horde",
+			limit_spawners = 2,
+			spawner_id = "ussingen_payload_square",
+			composition_type = "onslaught_chaos_berzerkers_medium"
+		},
+		{
+			"delay",
+			duration = 10
 		},
 		{
 			"spawn_special",

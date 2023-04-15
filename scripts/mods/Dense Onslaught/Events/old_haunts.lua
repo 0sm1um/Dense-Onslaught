@@ -141,7 +141,7 @@ local mod = get_mod("Dense Onslaught")
 			"continue_when",
 			duration = 80,
 			condition = function (t)
-				return count_event_breed("chaos_marauder") < 6 and count_event_breed("chaos_fanatic") < 6 and count_event_breed("chaos_raider") < 4
+				return count_event_breed("chaos_marauder") < 3 and count_event_breed("chaos_fanatic") < 3 and count_event_breed("chaos_raider") < 2
 			end
 		},
 		{
@@ -161,20 +161,6 @@ local mod = get_mod("Dense Onslaught")
 			duration = 18
 		},
 		{
-			"spawn_at_raw",
-			spawner_id = "portals_temple_yard_exit",
-			breed_name = {
-				"chaos_spawn",
-				"skaven_rat_ogre",
-				"beastmen_minotaur",
-				"chaos_troll"
-				}
-		},
-		{
-			"delay",
-			duration = 10
-		},	
-		{
 			"control_pacing",
 			enable = true
 		},
@@ -183,14 +169,8 @@ local mod = get_mod("Dense Onslaught")
 			enable = true
 		}
 	}
-
 	
 	TerrorEventBlueprints.dlc_portals.dlc_portals_end_event_guards = {
-		{
-			"event_horde",
-			spawner_id = "portals_end_event_guards",
-			composition_type = "chaos_warriors"
-		},
 		{
 			"event_horde",
 			spawner_id = "portals_end_event_guards",
@@ -230,7 +210,7 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "portals_end_event_skaven",
-			composition_type = "onslaught_storm_vermin_white_medium"
+			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
 			"delay",
@@ -338,11 +318,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_chaos_warriors"
 		},
 		{
-			"event_horde",
-			spawner_id = "portals_end_event",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
-		{
 			"delay",
 			duration = 7
 		},
@@ -396,7 +371,7 @@ local mod = get_mod("Dense Onslaught")
 			breed_name = {
 				"skaven_warpfire_thrower",
 				"skaven_ratling_gunner"
-			}
+			},
 		},
 		{
 			"spawn_special",
@@ -404,7 +379,7 @@ local mod = get_mod("Dense Onslaught")
 			amount = 1,
 			breed_name = {
 				"skaven_gutter_runner"
-			}
+			},
 		},
 		{
 			"delay",
@@ -484,11 +459,6 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "portals_end_event",
 			composition_type = "plague_monks_small",
-		},
-		{
-			"event_horde",
-			spawner_id = "portals_end_event",
-			composition_type = "onslaught_storm_vermin_white_medium"
 		},
 		{
 			"delay",
@@ -740,8 +710,8 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "dlc_portals_end_escape_yard",
-			composition_type = "onslaught_custom_boss_random_no_fiend_no_troll"
+			spawner_id = "portals_end_escape_yard",
+			composition_type = "onslaught_custom_boss_spawn"
 		},
 		{
 			"event_horde",

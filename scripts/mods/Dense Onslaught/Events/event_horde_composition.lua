@@ -1007,6 +1007,181 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	HordeCompositions.onslaught_event_skaven_elite_adds_small = {
+		{
+			name = "vermin",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "verminmix",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					1,
+					2
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"skaven_plague_monk",
+				{
+					2,
+					3
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				}
+			}
+		}
+	}
+
+	HordeCompositions.onslaught_event_skaven_elite_adds = {
+		{
+			name = "vermin",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					4,
+					5
+				}
+			}
+		},
+		{
+			name = "verminmix",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					2,
+					3
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"skaven_plague_monk",
+				{
+					3,
+					4
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "mixed",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin_commander",
+				{
+					2,
+					3
+				},
+				"skaven_plague_monk",
+				{
+					2,
+					2
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				}
+			}
+		}	
+	}
+
+	HordeCompositions.beastmen_mix = {
+		{
+			name = "plain",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					4,
+					5
+				},
+				"beastmen_ungor",
+				{
+					10,
+					12
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				},
+				"beastmen_standard_bearer",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
+	HordeCompositions.beastmen_elite = {
+		{
+			name = "plain",
+			weight = 10,
+			breeds = {
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				}
+			}
+		}
+	}
+
+	HordeCompositions.beastmen_trash = {
+		{
+			name= "plain",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					3,
+					4
+				},
+				"beastmen_ungor",
+				{
+					4,
+					5
+				}
+			}
+		}
+	}
+
 	---------------------
 	--Custom specials & bosses
 

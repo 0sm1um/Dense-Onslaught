@@ -368,8 +368,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -446,8 +446,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -532,8 +532,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -584,7 +584,7 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_raider",
 				{
-					3,
+					3,`
 					4
 				},
 				"chaos_berzerker",
@@ -594,8 +594,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -675,8 +675,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -706,8 +706,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-					1,
-					1
+						1,
+						1,
 				}
 			}
 		},
@@ -769,7 +769,7 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_warrior",
 				{
 					1,
-					1
+					1,
 				}
 			}
 		},

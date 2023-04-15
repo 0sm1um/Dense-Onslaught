@@ -18,6 +18,31 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 	
+	HordeCompositions.chaos_elites = {
+		{
+			name = "zerker",
+			weight = 1,
+			breeds = {
+				"chaos_berzerker",
+				{
+					3,
+					4
+				}
+			}
+		},
+		{
+			name = "mauler",
+			weight = 1,
+			breeds = {
+				"chaos_raider",
+				{
+					3,
+					4
+				}
+			}
+		}
+	}
+	
 	HordeCompositions.slum_specials = {
 		{
 			name = "leech",
@@ -46,6 +71,49 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
+	
+	HordeCompositions.slum_escape_chaos = {
+		{
+			name = "escape",
+			weight = 2,
+			breeds = {
+				"chaos_marauder_with_shield",
+				5,
+				"chaos_raider",
+				2,
+				"chaos_berzerker",
+				4,
+				"chaos_warrior",
+				2
+			}
+		}
+	}
+
+	HordeCompositions.slum_escape_skaven = {
+		{
+			name = "cutoff",
+			weight = 2,
+			breeds = {
+				"skaven_storm_vermin",
+				4,
+				"skaven_storm_vermin_with_shield",
+				4,
+				"skaven_clan_rat_with_shield",
+				8
+			}
+		}
+	}
+
+	HordeCompositions.slum_warrior = {
+		{
+			name = "warrior",
+			weight = 2,
+			breeds = {
+				"chaos_warrior",
+				1
+			}
+		}
+	}	
 	
 	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_event_start = {
 		{
@@ -121,13 +189,8 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_left_01",
-			composition_type = "onslaught_chaos_warriors"
-		},
-		{
-			"event_horde",
-			spawner_id = "bogenhafen_slum_event_front_right_01",
-			composition_type = "onslaught_storm_vermin_white_medium"
-		},
+			composition_type = "slum_warrior"
+		},	
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_front_mid_01",
@@ -143,6 +206,11 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "bogenhafen_slum_event_front_right_01",
 			composition_type = "chaos_elites"
 		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_front_right_01",
+			composition_type = "slum_warrior"
+		},	
 		{
 			"delay",
 			duration = 41
@@ -264,8 +332,13 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_roof_01",
-			composition_type = "onslaught_chaos_warriors"
+			composition_type = "slum_warrior"
 		},
+		{
+			"event_horde",
+			spawner_id = "bogenhafen_slum_event_roof_01",
+			composition_type = "slum_warrior"
+		},	
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_event_roof_01",
@@ -311,7 +384,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"set_freeze_condition",
-			max_active_enemies = 100
+			max_active_enemies = 130
 		},
 		{
 			"control_specials",
@@ -367,18 +440,18 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "onslaught_slum_gauntlet_behind",
-			composition_type = "onslaught_chaos_warriors"
+			spawner_id = "onslaught_slum_gauntlet_cutoff_3",
+			composition_type = "slum_escape_chaos"
 		},
+		{
+			"event_horde",
+			spawner_id = "onslaught_slum_gauntlet_cutoff_4",
+			composition_type = "slum_escape_skaven"
+		},	
 		{
 			"event_horde",
 			spawner_id = "onslaught_slum_gauntlet_behind",
 			composition_type = "onslaught_chaos_berzerkers_small"
-		},
-		{
-			"event_horde",
-			spawner_id = "onslaught_slum_gauntlet_behind",
-			composition_type = "event_small_chaos"
 		},
 		{
 			"delay",
@@ -398,7 +471,17 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"set_freeze_condition",
-			max_active_enemies = 100
+			max_active_enemies = 130
+		},
+		{
+			"event_horde",
+			spawner_id = "onslaught_slum_gauntlet_cutoff_4",
+			composition_type = "slum_escape_chaos"
+		},	
+		{
+			"event_horde",
+			spawner_id = "onslaught_slum_gauntlet_cutoff_3",
+			composition_type = "slum_escape_chaos"
 		},
 		{
 			"event_horde",
@@ -413,17 +496,23 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_gauntlet_wall_01",
-			composition_type = "onslaught_chaos_shields"
-		},
-		{
-			"event_horde",
-			spawner_id = "bogenhafen_slum_gauntlet_wall_01",
 			composition_type = "event_small_chaos"
 		},
 		{
 			"event_horde",
 			spawner_id = "bogenhafen_slum_gauntlet_wall",
 			composition_type = "onslaught_chaos_warriors"
+		}	
+	}
+	
+	TerrorEventBlueprints.dlc_bogenhafen_slum.dlc_bogenhafen_slum_gauntlet_wall_smash = {
+		{
+			"set_master_event_running",
+			name = "dlc_bogenhafen_slum_gauntlet_master"
+		},
+		{
+			"set_freeze_condition",
+			max_active_enemies = 130
 		}
 	}
 	
@@ -433,8 +522,13 @@ local mod = get_mod("Dense Onslaught")
 			name = "dlc_bogenhafen_slum_gauntlet_master"
 		},
 		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_slum_portal_boss",
+			breed_name = "chaos_troll"
+		},	
+		{
 			"set_freeze_condition",
-			max_active_enemies = 100
+			max_active_enemies = 130
 		},
 		{
 			"event_horde",
@@ -443,7 +537,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
-			spawner_id = "dlc_bogenhafen_slum_gauntlet_part_02",
+			spawner_id = "onslaught_slum_gauntlet_cutoff_3",
 			composition_type = "event_extra_spice_large"
 		},
 		{
@@ -457,13 +551,28 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_storm_vermin_medium"
 		},
 		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_slum_escape_crate_big",
+			breed_name = "chaos_warrior"
+		},
+		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_slum_escape_crate_small",
+			breed_name = "chaos_warrior"
+		},
+		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_slum_escape_wall",
+			breed_name = "chaos_warrior"
+		},	
+		{
 			"spawn_special",
 			spawner_id = "dlc_bogenhafen_slum_gauntlet_part_02",
 			breed_name = "skaven_ratling_gunner"
 		},
 		{
 			"delay",
-			duration = 6
+			duration = 10
 		},
 		{
 			"continue_when",
@@ -474,7 +583,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 4
+			duration = 5
 		},
 		{
 			"flow_event",

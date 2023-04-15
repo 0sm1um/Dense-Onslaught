@@ -169,25 +169,35 @@ local mod = get_mod("Dense Onslaught")
 	HordeCompositions.sorcerer_boss_event_defensive = {
 		{
 			name = "wave_a",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					24,
-					30
+					15,
+					20
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
-					4
+					9,
+					12
 				},
+				"chaos_raider",
+				{
+					2,
+					2
+				},
+				"chaos_berzerker",
+				{
+					4,
+					5
+				},	
 				"chaos_plague_sorcerer",
 				2
 			}
 		},
 		{
 			name = "wave_b",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
@@ -204,13 +214,18 @@ local mod = get_mod("Dense Onslaught")
 					2,
 					3
 				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				},	
 				"chaos_plague_sorcerer",
 				2
 			}
 		},
 		{
 			name = "wave_c",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_marauder",
 				{
@@ -228,7 +243,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "wave_d",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
@@ -246,7 +261,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "wave_e",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_marauder",
 				{
@@ -262,6 +277,29 @@ local mod = get_mod("Dense Onslaught")
 				2
 			}
 		},
+		{
+			name = "wave_f",
+			weight = 4,
+			breeds = {
+				"beastmen_gor",
+				{
+					6,
+					8
+				},
+				"beastmen_ungor",
+				{
+					8,
+					10
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				},
+				"beastmen_standard_bearer",
+				2
+			}
+		},			
 		start_time = 0
 	}
 

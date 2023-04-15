@@ -27,6 +27,9 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		},
 		{
 			"spawn_at_raw",
+			condition = function (t)
+				return count_event_breed("skaven_stormfiend") < 1
+			end,
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},

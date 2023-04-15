@@ -5,7 +5,7 @@ local mod = get_mod("Dense Onslaught")
 	--White/Super Armored Stormvermin
 	Breeds.skaven_storm_vermin.bloodlust_health = BreedTweaks.bloodlust_health.beastmen_elite
 	Breeds.skaven_storm_vermin.primary_armor_category = 6
-	Breeds.skaven_storm_vermin.size_variation_range = { 1.23, 1.25 }
+	Breeds.skaven_storm_vermin.size_variation_range = { 1.26, 1.28 }
 	Breeds.skaven_storm_vermin.max_health = BreedTweaks.max_health.bestigor
 	Breeds.skaven_storm_vermin.hit_mass_counts = BreedTweaks.hit_mass_counts.bestigor
 	UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.min = 31

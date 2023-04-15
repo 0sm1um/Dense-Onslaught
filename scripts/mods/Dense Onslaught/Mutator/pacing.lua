@@ -9,7 +9,7 @@ local mod = get_mod("Dense Onslaught")
 	--]]
 	
 	RecycleSettings.max_grunts = 175                                      -- More than Ons+, Less than Dutch
-	RecycleSettings.push_horde_if_num_alive_grunts_above = 225            -- More than Ons+, Less than Dutch
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
 	
 	PacingSettings.default.peak_fade_threshold = 110                      -- Shared between all versions of Onslaught
 	PacingSettings.default.peak_intensity_threshold = 120				  -- Shared between all versions of Onslaught
