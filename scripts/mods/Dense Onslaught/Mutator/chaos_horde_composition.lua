@@ -4,7 +4,7 @@ local mod = get_mod("Dense Onslaught")
 	
 	local trash_scale = 1
 	local shield_trash_scale = 1
-	local elite_scale = 0.75
+	local elite_scale = 1
 	local shield_elite_scale = 1
 	local berzerker_scale = 1
 	local super_armor_scale = 1
@@ -513,7 +513,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "zerker",
-			weight = 5,
+			weight = 2,
 			breeds = {
 				"chaos_fanatic",
 				{
@@ -539,7 +539,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "shielders",
-			weight = 2,
+			weight = 4,
 			breeds = {
 				"chaos_fanatic",
 				{

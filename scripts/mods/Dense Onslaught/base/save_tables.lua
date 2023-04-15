@@ -1,4 +1,5 @@
 local mod = get_mod("Dense Onslaught")
+local mutator = mod:persistent_table("DenseOnslaught")
 
 	-- Save existing horde tables
 	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)

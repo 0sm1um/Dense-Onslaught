@@ -1007,51 +1007,6 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
-	HordeCompositions.onslaught_event_skaven_elite_adds_small = {
-		{
-			name = "vermin",
-			weight = 5,
-			breeds = {
-				"skaven_storm_vermin",
-				{
-					2,
-					3
-				}
-			}
-		},
-		{
-			name = "verminmix",
-			weight = 5,
-			breeds = {
-				"skaven_storm_vermin",
-				{
-					1,
-					2
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					1,
-					2
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"skaven_plague_monk",
-				{
-					2,
-					3
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					1,
-					2
-				}
-			}
-		}
-	}
 
 	HordeCompositions.onslaught_event_skaven_elite_adds = {
 		{
@@ -1118,6 +1073,248 @@ local mod = get_mod("Dense Onslaught")
 				}
 			}
 		}	
+	}	
+	
+	HordeCompositions.onslaught_event_skaven_elite_adds_small = {
+		{
+			name = "vermin",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "verminmix",
+			weight = 5,
+			breeds = {
+				"skaven_storm_vermin",
+				{
+					1,
+					2
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"skaven_plague_monk",
+				{
+					2,
+					3
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				}
+			}
+		}
+	}
+	
+	HordeCompositions.onslaught_event_chaos_elite_adds = {
+		{
+			name = "mauler",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					4,
+					5
+				}
+			}
+		},
+		{
+			name = "warrior",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_warrior",
+				{
+					1,
+					2
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					3,
+					4
+				}
+			}
+		}
+	}
+	
+	HordeCompositions.onslaught_event_chaos_elite_adds_small = {
+		{
+			name = "mauler",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_fanatic",
+				{
+					2,
+					3
+				}	
+			}
+		},
+		{
+			name = "warrior",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					1,
+					2
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				},
+				"chaos_fanatic",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"chaos_raider",
+				{
+					1,
+					2
+				},
+				"chaos_berzerker",
+				{
+					3,
+					4
+				},
+				"chaos_fanatic",
+				{
+					2,
+					3
+				}
+			}
+		}
+	}
+
+	HordeCompositions.onslaught_event_chaos_adds_small = {
+		{
+			name = "plain",
+			weight = 5,
+			breeds = {
+				"chaos_warrior",
+				1,
+				"chaos_marauder",
+				{
+					5,
+					7
+				},
+				"chaos_berzerker",
+				{
+					2,
+					3
+				},
+				"chaos_fanatic",
+				{
+					5,
+					8
+				}
+			}
+		}
+	}	
+	
+	HordeCompositions.onslaught_chaos_shield_adds = {
+		{
+			name = "marauder",
+			weight = 5,
+			breeds = {
+				"chaos_marauder",
+				{
+					4,
+					5
+				},
+				"chaos_marauder_with_shield",
+				{
+					8,
+					10
+				}
+			}
+		},
+		{
+			name = "fanatic",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					7,
+					9
+				},
+				"chaos_marauder_with_shield",
+				{
+					8,
+					10
+				}
+			}
+		}
+	}	
+
+	HordeCompositions.onslaught_chaos_warriors_small = {
+		{
+			name = "plain",
+			weight = 7,
+			breeds = {
+				"chaos_warrior",
+				{
+					2,
+					2
+				}
+			}
+		}
+	}
+	
+	HordeCompositions.onslaught_chaos_warriors = {
+		{
+			name = "plain",
+			weight = 7,
+			breeds = {
+				"chaos_warrior",
+				{
+					2,
+					3
+				}
+			}
+		}
 	}
 
 	HordeCompositions.beastmen_mix = {
