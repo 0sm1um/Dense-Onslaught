@@ -299,7 +299,7 @@ local mod = get_mod("Dense Onslaught")
 				"beastmen_standard_bearer",
 				2
 			}
-		},			
+		},
 		start_time = 0
 	}
 

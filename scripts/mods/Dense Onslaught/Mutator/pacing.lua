@@ -8,7 +8,7 @@ local mod = get_mod("Dense Onslaught")
 	I just want to increase the time players have to clear the wave.
 	--]]
 	
-	RecycleSettings.max_grunts = 175                                      -- More than Ons+, Less than Dutch
+	RecycleSettings.max_grunts = 165                                      -- Same as Dutch
 	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
 	
 	PacingSettings.default.peak_fade_threshold = 110                      -- Shared between all versions of Onslaught
@@ -19,6 +19,7 @@ local mod = get_mod("Dense Onslaught")
 	PacingSettings.default.multiple_horde_frequency = { 6, 9 }            -- Shared between all versions of Onslaught
 	PacingSettings.default.max_delay_until_next_horde = { 60, 72 }        -- Shared between all versions of Onslaught
 	PacingSettings.default.horde_startup_time = { 10, 20 }                -- Shared between all versions of Onslaught
+	PacingSettings.default.multiple_hordes = 3							  -- Introduced in Dense
 
 	PacingSettings.default.mini_patrol.only_spawn_above_intensity = 0
 	PacingSettings.default.mini_patrol.only_spawn_below_intensity = 900  -- Same as Dutch
