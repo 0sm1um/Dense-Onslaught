@@ -1,24 +1,20 @@
 local mod = get_mod("Dense Onslaught")
-local mutator = mod:persistent_table("DenseOnslaught")
 
 	-- Save existing horde tables
-	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)
-	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)
-	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
-	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
-	mutator.OriginalBreedPacks = table.clone(BreedPacks)
-	mutator.OriginalPackSpawningSettings = table.clone(PackSpawningSettings)
-	mutator.OriginalRecycleSettings  = table.clone(RecycleSettings)
-	mutator.OriginalPacingSettingsDefault = table.clone(PacingSettings.default)
-	mutator.OriginalPacingSettingsChaos = table.clone(PacingSettings.chaos)
-	mutator.OriginalPacingSettingsBeastmen = table.clone(PacingSettings.beastmen)
-	mutator.OriginalSpecialsSettings = table.clone(SpecialsSettings)
-	mutator.OriginalBossSettings = table.clone(BossSettings)
-	mutator.OriginalBreedActions = table.clone(BreedActions)
-	mutator.OriginalThreatValue = {}
-	for name, breed in pairs(Breeds) do
-		if breed.threat_value then
-			mutator.OriginalThreatValue[name] = breed.threat_value
-		end
-	end
-	mutator.OriginalBeastmenBannerBuff = BuffTemplates.healing_standard.buffs
+	mod.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints,true)
+	mod.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents,true)
+	mod.OriginalHordeCompositions = table.clone(HordeCompositions,true)
+	mod.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing,true)
+	mod.OriginalBreedPacks = table.clone(BreedPacks,true)
+	mod.OriginalPackSpawningSettings = table.clone(PackSpawningSettings,true)
+	mod.OriginalRecycleSettings  = table.clone(RecycleSettings,true)
+	mod.OriginalPacingSettings = table.clone(PacingSettings,true)
+	mod.OriginalSpecialsSettings = table.clone(SpecialsSettings,true)
+	mod.OriginalBossSettings = table.clone(BossSettings,true)
+	mod.OriginalBreedActions = table.clone(BreedActions,true)
+	mod.OriginalBuffTemplates = table.clone(BuffTemplates,true)
+	mod.OriginalBreedBehaviors = table.clone(BreedBehaviors,true)
+	mod.OriginalBreedActions = table.clone(BreedActions,true)
+	mod.OriginalBreeds = table.clone(Breeds,true)
+	mod.OriginalUnitVariationSettings = table.clone(UnitVariationSettings,true)
+	mod:echo(mod.OriginalSpecialsSettings)
