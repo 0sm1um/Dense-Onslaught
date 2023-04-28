@@ -99,10 +99,8 @@ mutator.start = function()
 end
 
 mutator.stop = function()
-
 	-- Execute code to reset all values modified by this mod back to default:
 	mod:dofile("scripts/mods/Dense Onslaught/base/deactivate")
-
 	create_weights()
 	mod:disable_all_hooks()
 	mutator.active = false

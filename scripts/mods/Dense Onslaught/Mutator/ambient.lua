@@ -10,16 +10,21 @@ local mod = get_mod("Dense Onslaught")
 	their hold spot in time.
 	--]]
 	
-	PackSpawningSettings.default.area_density_coefficient = 0.13
-	PackSpawningSettings.default_light.area_density_coefficient = 0.13
-	PackSpawningSettings.skaven.area_density_coefficient = 0.13
-	PackSpawningSettings.skaven_light.area_density_coefficient = 0.13
-	PackSpawningSettings.chaos.area_density_coefficient = 0.13
-	PackSpawningSettings.chaos_light.area_density_coefficient = 0.13
-	PackSpawningSettings.beastmen.area_density_coefficient = 0.13
-	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.13
-	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.13
-	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.13
+	PackSpawningSettings.default.area_density_coefficient = 0.25
+	PackSpawningSettings.default_light.area_density_coefficient = 0.25
+	PackSpawningSettings.skaven.area_density_coefficient = 0.25
+	PackSpawningSettings.skaven_light.area_density_coefficient = 0.25
+	PackSpawningSettings.chaos.area_density_coefficient = 0.25
+	PackSpawningSettings.chaos_light.area_density_coefficient = 0.25
+	PackSpawningSettings.beastmen.area_density_coefficient = 0.25
+	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.25
+	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.25
+	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.25
+
+	PackSpawningSettings.default_light.roaming_set = PackSpawningSettings.default.roaming_set
+	PackSpawningSettings.skaven_light.roaming_set = PackSpawningSettings.skaven.roaming_set
+	PackSpawningSettings.chaos_light.roaming_set = PackSpawningSettings.chaos.roaming_set
+	PackSpawningSettings.beastmen_light.roaming_set = PackSpawningSettings.beastmen.roaming_set
 
 	PackSpawningSettings.default.difficulty_overrides = nil
 	PackSpawningSettings.skaven.difficulty_overrides = nil

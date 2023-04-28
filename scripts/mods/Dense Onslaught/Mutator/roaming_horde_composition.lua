@@ -1,25 +1,26 @@
 local mod = get_mod("Dense Onslaught")
 
+--[[
 	PackSpawningSettings.default.roaming_set.breed_packs_override = {
 		{
 			"shield_rats",
 			8,
-			0.08
+			0.09
 		},
 		{
 			"plague_monks",
 			12,
-			0.08
+			0.15
 		},
 		{
 			"marauders",
 			8,
-			0.08
+			0.09
 		},
 		{
 			"marauders_elites",
 			10,
-			0.20
+			0.15
 		}
 	}
 	PackSpawningSettings.default_light.roaming_set.breed_packs_override = {
@@ -47,13 +48,13 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.skaven.roaming_set.breed_packs_override = {
 		{
 			"shield_rats",
-			4,
-			0.20
+			8,
+			0.18
 		},
 		{
 			"plague_monks",
 			12,
-			0.25
+			0.15
 		}
 	}
 	PackSpawningSettings.skaven_light.roaming_set.breed_packs_override = {
@@ -180,3 +181,4 @@ local mod = get_mod("Dense Onslaught")
 			0.2
 		}
 	}
+--]]
