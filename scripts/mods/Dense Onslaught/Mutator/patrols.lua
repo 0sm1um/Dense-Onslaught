@@ -405,8 +405,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_plague_monk"
 			},
 			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield"
 			},
 			{
 				"skaven_storm_vermin",
@@ -425,8 +425,8 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			},
 			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin_with_shield"
 			},
 			{
 				"skaven_storm_vermin",

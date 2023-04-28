@@ -10,16 +10,16 @@ local mod = get_mod("Dense Onslaught")
 	their hold spot in time.
 	--]]
 	
-	PackSpawningSettings.default.area_density_coefficient = 0.13           -- More than Ons+, Less than Dutch
-	PackSpawningSettings.default_light.area_density_coefficient = 0.13     -- More than Ons+, Less than Dutch
-	PackSpawningSettings.skaven.area_density_coefficient = 0.14	           -- More than Ons+, Less than Dutch
-	PackSpawningSettings.skaven_light.area_density_coefficient = 0.14      -- More than Ons+, Less than Dutch
-	PackSpawningSettings.chaos.area_density_coefficient = 0.13			   -- More than Ons+, Less than Dutch
-	PackSpawningSettings.chaos_light.area_density_coefficient = 0.13	   -- More than Ons+, Less than Dutch
-	PackSpawningSettings.beastmen.area_density_coefficient = 0.13          -- More than Ons+, Less than Dutch
-	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.13    -- More than Ons+, Less than Dutch
-	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.14   -- More than Ons+, Less than Dutch
-	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.13    -- More than Ons+, Less than Dutch
+	PackSpawningSettings.default.area_density_coefficient = 0.13
+	PackSpawningSettings.default_light.area_density_coefficient = 0.13
+	PackSpawningSettings.skaven.area_density_coefficient = 0.13
+	PackSpawningSettings.skaven_light.area_density_coefficient = 0.13
+	PackSpawningSettings.chaos.area_density_coefficient = 0.13
+	PackSpawningSettings.chaos_light.area_density_coefficient = 0.13
+	PackSpawningSettings.beastmen.area_density_coefficient = 0.13
+	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.13
+	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.13
+	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.13
 
 	PackSpawningSettings.default.difficulty_overrides = nil
 	PackSpawningSettings.skaven.difficulty_overrides = nil
