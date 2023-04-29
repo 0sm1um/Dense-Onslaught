@@ -5,9 +5,6 @@ local mod = get_mod("Dense Onslaught")
 	--[[
 	My rationale for these settings are as follows:
 	I want increased ambients compared to base onslaught to slow down progression through map.
-	However, I want more skaven ambients due to their lower HP.
-	Increasing max_grunts means players can be caught out of position more if they can't get to
-	their hold spot in time.
 	--]]
 	
 	PackSpawningSettings.default.area_density_coefficient = 0.25
