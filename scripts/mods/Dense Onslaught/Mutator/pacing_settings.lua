@@ -8,15 +8,6 @@ local mod = get_mod("Dense Onslaught")
 	I just want to increase the time players have to clear the wave.
 	--]]
 	
-	--[[
-	The Recycler seems to be a module which prevents spawning in the event of super high quantity of enemies. It seems
-	to be a failsafe system of sorts. I am removing the limit for max_grunts to prevent it from stopping ambient spawning
-	during hordes/waves.
-	--]]
-	
-	RecycleSettings.max_grunts = 999                                      -- Specific to Dense, removes upper cap to ambient spawning.
-	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
-	
 	PacingSettings.default.peak_fade_threshold = 110                      -- Shared between all versions of Onslaught
 	PacingSettings.default.peak_intensity_threshold = 120				  -- Shared between all versions of Onslaught
 	PacingSettings.default.sustain_peak_duration = { 5, 10 }			  -- Shared between all versions of Onslaught

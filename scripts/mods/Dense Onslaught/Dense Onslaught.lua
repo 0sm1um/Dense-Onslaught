@@ -10,23 +10,32 @@ mod:dofile("scripts/mods/Dense Onslaught/base/base")
 
 mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 
+-- Hooks related to turning the mod on and off.
+mod:dofile("scripts/mods/Dense Onslaught/base/control")
+
+-- Activation and deactivation command:
+mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
+	if not mutator.active then
+		mod:disable_all_hooks()
+	end
+
 mutator.start = function()
 
 	-- Save existing horde tables
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
-	
+
 	------------------------------------------------
 	---------------------Pacing---------------------
 	------------------------------------------------
 
-	-- Ambient horde composition and spawn frequencies
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/ambient")
+	-- Ambient Spawning Settings
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack_settings")
+	-- Ambient Spawning Settings
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pack_spawning_settings")
 	-- Pacing Timers
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pacing")
-	-- Ambient Horde Composition
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/roaming_horde_composition")
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pacing_settings")
 	-- Skaven Horde Composition
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/skaven_horde_composition")
 	-- Chaos Horde Composition
@@ -105,12 +114,3 @@ mutator.stop = function()
 	mod:disable_all_hooks()
 	mutator.active = false
 end
-
--- Hooks related to turning the mod on and off.
-mod:dofile("scripts/mods/Dense Onslaught/base/control")
-
--- Activation and deactivation command:
-mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
-	if not mutator.active then
-		mod:disable_all_hooks()
-	end
