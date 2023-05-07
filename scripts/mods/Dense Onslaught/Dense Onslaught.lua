@@ -13,6 +13,12 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
+--initalizes new directors and sets levels to use them
+mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
+for level_key,data in pairs(LevelSettings) do
+    mod:set(data.level_name, "dense_default")
+end
+
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
 	if not mutator.active then
