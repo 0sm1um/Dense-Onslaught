@@ -1,5 +1,5 @@
 local mod = get_mod("Dense Onslaught")
-
+--[[
 	local low_trash_scale = 0
 	local low_elite_scale = 0
 	local low_berzerker_scale = 1
@@ -54,24 +54,21 @@ local mod = get_mod("Dense Onslaught")
 }
 
 function scale_clamp_values(BreedPacks,scaling_data, hi_or_low)
-	for pack_name, breed_pack_data in pairs(BreedPacks) do 											-- breedpacks.default 
+	for pack_name, breed_pack_data in pairs(BreedPacks) do 												-- breedpacks.default 
 		if not string.find(tostring(pack_name), "code_test") then
 			for pack_attribute_name, pack_attribute_item in pairs(breed_pack_data) do					-- breedpacks.default.zone_checks
 				if string.find(tostring(pack_attribute_name), "zone_checks") then
 					for hi_low_name, hi_low_contents in pairs(pack_attribute_item) do
 						if string.find(tostring(hi_low_name), hi_or_low) then
-							for difficulty_name, clamp_contents  in pairs(hi_low_contents) do  			--breedpacks.default.zone_checks.clamp_breeds_low
+							for difficulty_name, clamp_contents  in pairs(hi_low_contents) do
 								for clamp_breed_table, clamp_breed_info in pairs(clamp_contents) do
 									for _, scaling_data in pairs(scaling_data) do 							
 										for _, enemy_name in pairs(scaling_data.breeds) do 
-											if clamp_breed_info[2] == enemy_name then -- If enemy name matches scaling factor name. Apply scaling.
-											mod:echo("Name Matched")
+											if clamp_breed_info[2] == enemy_name then 					-- If enemy name matches scaling factor name. Apply scaling.
 												if type(clamp_breed_info[1]) == "number" then
 													clamp_breed_info[1] = math.floor(clamp_breed_info[1] * scaling_data.scale_factor)
-													mod:echo("Number Changed")
 												else
 													clamp_breed_info[1] = math.floor(clamp_breed_info[1][1] * scaling_data.scale_factor)
-													mod:echo("Table Changed")
 												end
 											end
 										end
@@ -89,3 +86,4 @@ end
 scale_clamp_values(BreedPacks,hi_scaling_data, "hi")
 mod:echo("ASUHHHHH")
 scale_clamp_values(BreedPacks,low_scaling_data, "low")
+--]]
