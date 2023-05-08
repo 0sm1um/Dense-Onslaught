@@ -38,6 +38,10 @@ mutator.start = function()
 
 	-- Ambient Spawning Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack_settings")
+	-- Reworked BreedPacks
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack")
+
+
 	-- Ambient Spawning Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pack_spawning_settings")
 	-- Pacing Timers
@@ -107,6 +111,12 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Events/enchanters_lair")
 	-- Trail of Treachery
 	mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
+
+	------------------------------------------------
+	-----------------Apply Settings-----------------
+	------------------------------------------------
+
+	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
 
 	create_weights()
 	mod:enable_all_hooks()

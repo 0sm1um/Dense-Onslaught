@@ -2761,3 +2761,5 @@ dense_chaos = dense_standard = {
 	}
 }
 
+-- TODO
+dense_beastmen = {}

@@ -35,6 +35,211 @@ function scale_horde_composition(HordeCompositions,faction,scaling_data)
 	end
 end
 
+function scale_clamp_values(BreedPacks,scaling_data, hi_or_low)
+	for pack_name, breed_pack_data in pairs(BreedPacks) do
+		if not string.find(tostring(pack_name), "code_test") then
+			for pack_attribute_name, pack_attribute_item in pairs(breed_pack_data) do
+				if string.find(tostring(pack_attribute_name), "zone_checks") then
+					for hi_low_name, hi_low_contents in pairs(pack_attribute_item) do
+						if string.find(tostring(hi_low_name), hi_or_low) then
+							for difficulty_name, clamp_contents  in pairs(hi_low_contents) do
+								for clamp_breed_table, clamp_breed_info in pairs(clamp_contents) do
+									for _, scaling_data in pairs(scaling_data) do
+										for _, enemy_name in pairs(scaling_data.breeds) do
+											if clamp_breed_info[2] == enemy_name then
+												if type(clamp_breed_info[1]) == "number" then
+													clamp_breed_info[1] = math.floor(clamp_breed_info[1] * scaling_data.scale_factor)
+												else
+													clamp_breed_info[1] = math.floor(clamp_breed_info[1][1] * scaling_data.scale_factor)
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+-- Functions for applying BreedPacks
+
+mod.get_with_override = function(settings, key, difficulty, fallback_difficulty)
+	local overrides = settings.difficulty_overrides
+	local override_settings = overrides and (overrides[difficulty] or overrides[fallback_difficulty])
+
+	return override_settings and override_settings[key] or settings[key]
+end
+
+mod.add_breeds_from_breed_packs = function(breed_packs, difficulty, output)
+	local zone_checks = breed_packs.zone_checks
+	local REPLACEMENT_BREED_INDEX = 3
+	local clamp_breeds_low = zone_checks.clamp_breeds_low[difficulty]
+
+	if clamp_breeds_low then
+		for i = 1, #clamp_breeds_low do
+			local clamp_breeds = clamp_breeds_low[i]
+			local replacement_breed_name = clamp_breeds[REPLACEMENT_BREED_INDEX].name
+			output[replacement_breed_name] = true
+		end
+	end
+
+	local clamp_breeds_hi = zone_checks.clamp_breeds_hi[difficulty]
+
+	if clamp_breeds_hi then
+		for i = 1, #clamp_breeds_hi do
+			local clamp_breeds = clamp_breeds_hi[i]
+			local replacement_breed_name = clamp_breeds[REPLACEMENT_BREED_INDEX].name
+			output[replacement_breed_name] = true
+		end
+	end
+
+	for i = 1, #breed_packs do
+		local pack = breed_packs[i]
+		local breed_members = pack.members
+
+		for j = 1, #breed_members do
+			local breed = breed_members[j]
+			local breed_name = breed.name
+			output[breed_name] = true
+		end
+	end
+end
+
+mod.add_breeds_from_special_settings = function(special_settings, difficulty, fallback_difficulty, output)
+	local breeds = get_with_override(special_settings, "breeds", difficulty, fallback_difficulty)
+
+	for i = 1, #breeds do
+		local breed_name = breeds[i]
+		output[breed_name] = true
+	end
+
+	local rush_intervention = get_with_override(special_settings, "rush_intervention", difficulty, fallback_difficulty)
+	local rush_intervention_breeds = rush_intervention.breeds
+
+	for i = 1, #rush_intervention_breeds do
+		local breed_name = rush_intervention_breeds[i]
+		output[breed_name] = true
+	end
+
+	local speed_running_intervention = get_with_override(special_settings, "speed_running_intervention", difficulty, fallback_difficulty) or SpecialsSettings.default.speed_running_intervention
+	local speed_running_intervention_breeds = speed_running_intervention.breeds
+
+	for i = 1, #speed_running_intervention_breeds do
+		local breed_name = speed_running_intervention_breeds[i]
+		output[breed_name] = true
+	end
+
+	local speed_running_intervention_vector_horde_breeds = speed_running_intervention.vector_horde_breeds
+
+	for i = 1, #speed_running_intervention_vector_horde_breeds do
+		local breed_name = speed_running_intervention_vector_horde_breeds[i]
+		output[breed_name] = true
+	end
+end
+
+mod.add_breeds_from_pack_spawning_settings = function(pack_spawning_settings, difficulty, fallback_difficulty, output)
+	local roaming_set = mod.get_with_override(pack_spawning_settings, "roaming_set", difficulty, fallback_difficulty)
+	local breed_packs_name = roaming_set.breed_packs
+	-- local breed_packs = BreedPacks[breed_packs_name]
+
+	mod.add_breeds_from_breed_packs(BreedPacks[breed_packs_name], difficulty, output)
+
+	local PACK_OVERRIDE_BREED_INDEX = 1
+	local breed_packs_override = roaming_set.breed_packs_override
+
+	for i = 1, #breed_packs_override do
+		local pack_override_data = breed_packs_override[i]
+		local pack_override_name = pack_override_data[PACK_OVERRIDE_BREED_INDEX]
+		local pack_override = BreedPacks[pack_override_name]
+
+		mod.add_breeds_from_breed_packs(pack_override, difficulty, output)
+	end
+end
+
+mod.add_breeds_from_special_settings = function(special_settings, difficulty, fallback_difficulty, output)
+	local breeds = mod.get_with_override(special_settings, "breeds", difficulty, fallback_difficulty)
+
+	for i = 1, #breeds do
+		local breed_name = breeds[i]
+		output[breed_name] = true
+	end
+
+	local rush_intervention = mod.get_with_override(special_settings, "rush_intervention", difficulty, fallback_difficulty)
+	local rush_intervention_breeds = rush_intervention.breeds
+
+	for i = 1, #rush_intervention_breeds do
+		local breed_name = rush_intervention_breeds[i]
+		output[breed_name] = true
+	end
+
+	local speed_running_intervention = mod.get_with_override(special_settings, "speed_running_intervention", difficulty, fallback_difficulty) or SpecialsSettings.default.speed_running_intervention
+	local speed_running_intervention_breeds = speed_running_intervention.breeds
+
+	for i = 1, #speed_running_intervention_breeds do
+		local breed_name = speed_running_intervention_breeds[i]
+		output[breed_name] = true
+	end
+
+	local speed_running_intervention_vector_horde_breeds = speed_running_intervention.vector_horde_breeds
+
+	for i = 1, #speed_running_intervention_vector_horde_breeds do
+		local breed_name = speed_running_intervention_vector_horde_breeds[i]
+		output[breed_name] = true
+	end
+end
+
+mod.add_breeds_from_boss_settings = function(boss_settings, difficulty, fallback_difficulty, output)
+	local difficulty_rank = DifficultySettings[difficulty].rank
+
+	for key, _ in pairs(boss_settings) do
+		local settings = mod.get_with_override(boss_settings, key, difficulty, fallback_difficulty)
+
+		if type(settings) == "table" then
+			local event_lookup = settings.event_lookup
+
+			for _, lookup in pairs(event_lookup) do
+				for i = 1, #lookup do
+					local event_name = lookup[i]
+					local terror_event_lookup = GenericTerrorEvents
+					local event = terror_event_lookup[event_name]
+
+					ConflictUtils.add_breeds_from_event(event_name, event, difficulty, difficulty_rank, output, terror_event_lookup)
+				end
+			end
+		end
+	end
+end
+
+mod.add_breeds_from_horde_settings = function(horde_settings, difficulty, fallback_difficulty, output)
+	return
+end
+
+mod.ConflictUtils_find_conflict_director_breeds = function (conflict_director, difficulty, output)
+	local fallback_difficulty = DifficultySettings[difficulty].fallback_difficulty
+
+	if not conflict_director.boss.disabled then
+		mod.add_breeds_from_boss_settings(conflict_director.boss, difficulty, fallback_difficulty, output)
+	end
+
+	if not conflict_director.specials.disabled then
+		mod.add_breeds_from_special_settings(conflict_director.specials, difficulty, fallback_difficulty, output)
+	end
+
+	if not conflict_director.pack_spawning.disabled then
+		mod.add_breeds_from_pack_spawning_settings(conflict_director.pack_spawning, difficulty, fallback_difficulty, output)
+	end
+
+	if not conflict_director.horde.disabled then
+		mod.add_breeds_from_horde_settings(conflict_director.horde, difficulty, fallback_difficulty, output)
+	end
+
+	return output
+end
+
 	--[[
 	These functions came from Core and pertain to adding buffs to bosses/entities.
 	--]]

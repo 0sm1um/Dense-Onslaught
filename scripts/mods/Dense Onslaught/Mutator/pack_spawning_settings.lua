@@ -24,7 +24,7 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.2
 	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.2
 	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.2
-	--]]
+--]]
 	
 --	PackSpawningSettings.default.difficulty_overrides = nil
 --	PackSpawningSettings.skaven.difficulty_overrides = nil
@@ -35,26 +35,6 @@ local mod = get_mod("Dense Onslaught")
 --	PackSpawningSettings.chaos_beastmen.difficulty_overrides = nil
 
 --mod:dofile("scripts/managers/conflict_director/conflict_settings")
-
-local difficulties = Difficulties
-local start_time = os.clock()
-local ConflictUtils_find_conflict_director_breeds = ConflictUtils.find_conflict_director_breeds
-
-for conflict_director_name, data in pairs(ConflictDirectors) do
-    data.name = conflict_director_name
-    data.contained_breeds = {}
-
-    for i = 1, #difficulties do
-        local difficulty = difficulties[i]
-        local difficulty_breeds = {}
-
-        ConflictUtils_find_conflict_director_breeds(data, difficulty, difficulty_breeds)
-
-        data.contained_breeds[difficulty] = difficulty_breeds
-    end
-end
-
-print("[ConflictSettings] Contained breeds generated in:", os.clock() - start_time)
 
 	PackSpawningSettings.default.roaming_set = {
 		breed_packs = "standard",
@@ -208,8 +188,24 @@ print("[ConflictSettings] Contained breeds generated in:", os.clock() - start_ti
 	}
 
 
-	PackSpawningSettings.default_light.roaming_set = PackSpawningSettings.default.roaming_set
-	PackSpawningSettings.skaven_light.roaming_set = PackSpawningSettings.skaven.roaming_set
-	PackSpawningSettings.chaos_light.roaming_set = PackSpawningSettings.chaos.roaming_set
-	PackSpawningSettings.beastmen_light.roaming_set = PackSpawningSettings.beastmen.roaming_set
+	PackSpawningSettings.default_light = PackSpawningSettings.default
+	PackSpawningSettings.skaven_light = PackSpawningSettings.skaven
+	PackSpawningSettings.chaos_light = PackSpawningSettings.chaos
+	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
+	
+	local difficulties = Difficulties
+	local start_time = os.clock()
+	for conflict_director_name, data in pairs(ConflictDirectors) do
+		data.name = conflict_director_name
+		data.contained_breeds = {}
+	
+		for i = 1, #difficulties do
+			local difficulty = difficulties[i]
+			local difficulty_breeds = {}
+	
+			mod.ConflictUtils_find_conflict_director_breeds(data, difficulty, difficulty_breeds)
+	
+			data.contained_breeds[difficulty] = difficulty_breeds
+		end
+	end
 	
