@@ -34,7 +34,7 @@ local mod = get_mod("Dense Onslaught")
 		breeds = super_armor_entities,
 	},
 	}
-
+--[[
 mod.calculate_BreedPack_weights = function calculate_weights(breed_pack, scaling_data)
 	-- figure out how many breed classes
 	local num_classes = #scaling_data
@@ -63,3 +63,4 @@ mod.calculate_BreedPack_weights = function calculate_weights(breed_pack, scaling
 			-- insert all u_i into "A" matrix as a column
 			-- take PsuedoInverse(moore penrose inverse) of A, yielding A^{-1}
 			-- weights x_i equal w*pinv(A)
+			--]]
