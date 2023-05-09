@@ -12,8 +12,8 @@ DirectorUtils = {}
 ConflictDirectors = ConflictDirectors or {}
 
 DirectorUtils.add_to_settings = function (name, settings_table, settings_to_add_to)
-    settings_to_add_to[name] = settings_table
-    return settings_table
+    settings_table[name] = settings_to_add_to
+    return settings_to_add_to
 end
 
 DirectorUtils.add_new_ConflictDirector = function (name)
