@@ -130,3 +130,64 @@ mutator.stop = function()
 	mod:disable_all_hooks()
 	mutator.active = false
 end
+
+mod:hook(Pacing, "disable", function (func, self)
+	self._threat_population = 1
+	self._specials_population = 1
+	self._horde_population = 0
+	self.pacing_state = "pacing_frozen"
+end)
+
+mod:hook(TerrorEventMixer.init_functions, "control_specials", function (func, event, element, t)
+	local conflict_director = Managers.state.conflict
+	local specials_pacing = conflict_director.specials_pacing
+	local not_already_enabled = specials_pacing:is_disabled()
+
+	if specials_pacing then
+		specials_pacing:enable(element.enable)
+
+		if element.enable and not_already_enabled then
+			local delay = math.random(5, 12)
+			local per_unit_delay = math.random(8, 16)
+			local t = Managers.time:time("game")
+
+			specials_pacing:delay_spawning(t, delay, per_unit_delay, true)
+		end
+	end
+end)
+
+mod:hook(ConflictDirector, "calculate_threat_value", function (func, self)
+	local aggroed_units = {}
+	local ai_system = Managers.state.entity:system('ai_system')
+	local broadphase = ai_system.broadphase
+
+	for i, player in pairs(Managers.player:human_and_bot_players()) do
+		local ai_units = {}
+		if player.player_unit then
+			local num_ai_units = Broadphase.query(broadphase, Unit.local_position(player.player_unit, 0), 50, ai_units)
+			if num_ai_units > 0 then
+				for i = 1, num_ai_units do
+					local ai_unit = ai_units[i]
+					if ScriptUnit.has_extension(ai_unit, 'health_system') and ScriptUnit.extension(ai_unit, 'health_system'):is_alive() and BLACKBOARDS[ai_unit].target_unit then
+						aggroed_units[ai_unit] = ai_unit
+					end
+				end
+			end
+		end
+	end
+
+	local threat_value = 0
+	local count = 0
+
+	for _, unit in pairs(aggroed_units) do
+		local breed = Unit.get_data(unit, "breed")
+		threat_value = threat_value + (override_threat_value or breed.threat_value or 0)
+		count = count + 1
+	end
+
+	self.delay_horde = self.delay_horde_threat_value < threat_value
+	self.delay_mini_patrol = self.delay_mini_patrol_threat_value < threat_value
+	self.delay_specials = self.delay_specials_threat_value < threat_value
+	self.threat_value = threat_value
+	self.num_aggroed = count
+end)

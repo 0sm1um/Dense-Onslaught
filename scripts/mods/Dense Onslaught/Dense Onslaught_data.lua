@@ -13,6 +13,14 @@ menu.options.widgets = {
         type = "checkbox",
 		default_value = true,
 		sub_widgets   = {}
+	},
+	{
+        setting_id = "zone_density",
+        type = "numeric",
+		default_value   = 0,
+		range           = {0, 100},
+		-- unit_text       = "unit_text_localization_id", -- optional
+		decimals_number = 0.5 
 	}
 }
 
