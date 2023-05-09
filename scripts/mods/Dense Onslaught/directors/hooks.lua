@@ -22,3 +22,13 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     end
     return result 
 end)
+
+mod:hook(SpawnZoneBaker, "populate_spawns_by_rats", function (func, self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
+
+    for k,v in pairs(zone_list) do
+        zone_list[k].density = mod:get("zone_density")
+    end
+    local result = func(self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
+
+    return result
+end)
