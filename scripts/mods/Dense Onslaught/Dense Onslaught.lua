@@ -13,6 +13,9 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
+
+mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
+
 --initalizes new directors and sets levels to use them
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 for level_key,data in pairs(LevelSettings) do
