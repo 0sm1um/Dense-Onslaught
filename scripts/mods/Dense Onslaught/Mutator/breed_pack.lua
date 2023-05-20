@@ -1,9 +1,9 @@
 local mod = get_mod("Dense Onslaught")
 
-local trash_weight = 1
-local shielded_trash_weight = 1
-local elite_weight = 1
-local shielded_elite_weight = 1
+local trash_weight = 0
+local shielded_trash_weight = 0
+local elite_weight = 0
+local shielded_elite_weight = 0
 local berzerker_weight = 1
 local super_armor_weight = 1
 
@@ -33,184 +33,184 @@ local scaling_data = {
 
 -- 2, 3 and 4 are actually designed, 
 -- 6 and 8 are just doubled 3 and 4
---[[
+
 dense_standard = {
 		-- Size 1 Enemy Packs
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder_with_shield
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin
 			}
 		},
 		-- Size 2 Enemy Packs
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat_with_shield
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat_with_shield
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder_with_shield,
 				Breeds.chaos_marauder
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_clan_rat
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_plague_monk
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_with_shield,
 				Breeds.skaven_storm_vermin_with_shield
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_berzerker
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_marauder
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_marauder_with_shield
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_raider
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_clan_rat_with_shield
@@ -218,7 +218,7 @@ dense_standard = {
 		},
 		-- 3 Enemy Packs
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat,
@@ -226,7 +226,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat,
@@ -234,7 +234,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -242,7 +242,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder_with_shield,
@@ -250,7 +250,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -258,7 +258,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_storm_vermin_commander,
@@ -266,7 +266,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -274,7 +274,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_with_shield,
 				Breeds.skaven_storm_vermin_with_shield,
@@ -282,7 +282,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_with_shield,
 				Breeds.skaven_storm_vermin_with_shield,
@@ -290,7 +290,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -298,7 +298,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -306,7 +306,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_marauder_with_shield,
@@ -314,7 +314,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -322,7 +322,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_marauder_with_shield,
@@ -330,7 +330,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_marauder,
@@ -338,7 +338,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_raider,
@@ -346,7 +346,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -354,7 +354,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -362,7 +362,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -370,7 +370,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat,
@@ -378,7 +378,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat,
@@ -386,7 +386,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder,
@@ -394,7 +394,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_berzerker,
@@ -402,7 +402,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -410,7 +410,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -419,7 +419,7 @@ dense_standard = {
 		},
 		-- 4 Enemy Packs
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat,
@@ -428,7 +428,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat_with_shield,
@@ -437,7 +437,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat_with_shield,
@@ -446,7 +446,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat,
@@ -455,7 +455,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -464,7 +464,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder_with_shield,
@@ -473,7 +473,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -482,7 +482,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -491,7 +491,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -500,7 +500,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -509,7 +509,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_plague_monk,
@@ -518,7 +518,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_plague_monk,
@@ -527,7 +527,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin,
@@ -536,7 +536,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -545,7 +545,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -554,7 +554,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -563,7 +563,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -572,7 +572,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -581,7 +581,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -590,7 +590,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -599,7 +599,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -608,7 +608,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -617,7 +617,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -626,7 +626,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -635,7 +635,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -644,7 +644,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat_with_shield,
@@ -653,7 +653,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -662,7 +662,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder,
@@ -671,7 +671,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder_with_shield,
@@ -680,7 +680,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -689,7 +689,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -699,7 +699,7 @@ dense_standard = {
 		},
 		-- 6 Enemy Packs
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat,
@@ -710,7 +710,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat,
@@ -721,7 +721,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -732,7 +732,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder_with_shield,
@@ -743,7 +743,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -754,7 +754,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_storm_vermin_commander,
@@ -765,7 +765,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -776,7 +776,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_with_shield,
 				Breeds.skaven_storm_vermin_with_shield,
@@ -787,7 +787,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_with_shield,
 				Breeds.skaven_storm_vermin_with_shield,
@@ -798,7 +798,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -809,7 +809,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -820,7 +820,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_marauder_with_shield,
@@ -831,7 +831,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -842,7 +842,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_marauder_with_shield,
@@ -853,7 +853,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_marauder,
@@ -864,7 +864,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_raider,
@@ -875,7 +875,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -886,7 +886,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -897,7 +897,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -908,7 +908,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat,
@@ -919,7 +919,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat,
@@ -930,7 +930,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder,
@@ -941,7 +941,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_berzerker,
@@ -952,7 +952,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -963,7 +963,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -975,7 +975,7 @@ dense_standard = {
 		},
 		-- 8 Enemy Breed Packs (double 4 enemy packs)
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat,
 				Breeds.skaven_clan_rat,
@@ -988,7 +988,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat_with_shield,
@@ -1001,7 +1001,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat_with_shield,
@@ -1014,7 +1014,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_clan_rat_with_shield,
 				Breeds.skaven_clan_rat,
@@ -1027,7 +1027,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -1040,7 +1040,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder_with_shield,
@@ -1053,7 +1053,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -1066,7 +1066,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_marauder,
 				Breeds.chaos_marauder,
@@ -1079,7 +1079,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -1092,7 +1092,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin_commander,
@@ -1105,7 +1105,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_plague_monk,
@@ -1118,7 +1118,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_plague_monk,
@@ -1131,7 +1131,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin_commander,
 				Breeds.skaven_storm_vermin,
@@ -1144,7 +1144,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -1157,7 +1157,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -1170,7 +1170,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -1183,7 +1183,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -1196,7 +1196,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_raider,
 				Breeds.chaos_raider,
@@ -1209,7 +1209,7 @@ dense_standard = {
 			}
 		},
         {
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -1222,7 +1222,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -1235,7 +1235,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -1248,7 +1248,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_berzerker,
 				Breeds.chaos_berzerker,
@@ -1261,7 +1261,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -1274,7 +1274,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -1287,7 +1287,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -1300,7 +1300,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_clan_rat_with_shield,
@@ -1313,7 +1313,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_plague_monk,
 				Breeds.skaven_plague_monk,
@@ -1326,7 +1326,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder,
@@ -1339,7 +1339,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.chaos_warrior,
 				Breeds.chaos_marauder_with_shield,
@@ -1352,7 +1352,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -1365,7 +1365,7 @@ dense_standard = {
 			}
 		},
 		{
-			spawn_weight = nil,
+			spawn_weight = 0,
 			members = {
 				Breeds.skaven_storm_vermin,
 				Breeds.skaven_storm_vermin,
@@ -1381,94 +1381,94 @@ dense_standard = {
 dense_skaven = {
 	-- Size 1 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin
 		}
 	},
 	-- Size 2 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_plague_monk
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.skaven_storm_vermin_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_clan_rat_with_shield
@@ -1476,7 +1476,7 @@ dense_skaven = {
 	},
 	-- 3 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat,
@@ -1484,7 +1484,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -1492,7 +1492,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1500,7 +1500,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_storm_vermin_commander,
@@ -1508,7 +1508,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1516,7 +1516,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.skaven_storm_vermin_with_shield,
@@ -1524,7 +1524,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.skaven_storm_vermin_with_shield,
@@ -1532,7 +1532,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1540,7 +1540,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1548,7 +1548,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat,
@@ -1556,7 +1556,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat,
@@ -1564,7 +1564,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1572,7 +1572,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1581,7 +1581,7 @@ dense_skaven = {
 	},
 	-- 4 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat,
@@ -1590,7 +1590,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
@@ -1599,7 +1599,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
@@ -1608,7 +1608,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -1617,7 +1617,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1626,7 +1626,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1635,7 +1635,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_plague_monk,
@@ -1644,7 +1644,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_plague_monk,
@@ -1653,7 +1653,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin,
@@ -1662,7 +1662,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1671,7 +1671,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1680,7 +1680,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1689,7 +1689,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat_with_shield,
@@ -1698,7 +1698,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1707,7 +1707,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1716,7 +1716,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1726,7 +1726,7 @@ dense_skaven = {
 	},
 	-- 6 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat,
@@ -1737,7 +1737,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -1748,7 +1748,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1759,7 +1759,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_storm_vermin_commander,
@@ -1770,7 +1770,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1781,7 +1781,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.skaven_storm_vermin_with_shield,
@@ -1792,7 +1792,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.skaven_storm_vermin_with_shield,
@@ -1803,7 +1803,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1814,7 +1814,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -1825,7 +1825,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat,
@@ -1836,7 +1836,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat,
@@ -1847,7 +1847,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1858,7 +1858,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -1870,7 +1870,7 @@ dense_skaven = {
 	},
 	-- 8 Enemy Breed Packs (double 4 enemy packs)
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat,
 			Breeds.skaven_clan_rat,
@@ -1883,7 +1883,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
@@ -1896,7 +1896,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
@@ -1909,7 +1909,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -1922,7 +1922,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1935,7 +1935,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
@@ -1948,7 +1948,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_plague_monk,
@@ -1961,7 +1961,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_plague_monk,
@@ -1974,7 +1974,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin,
@@ -1987,7 +1987,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -2000,7 +2000,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -2013,7 +2013,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -2026,7 +2026,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_clan_rat_with_shield,
@@ -2039,7 +2039,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk,
 			Breeds.skaven_plague_monk,
@@ -2052,7 +2052,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -2065,7 +2065,7 @@ dense_skaven = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
@@ -2078,120 +2078,120 @@ dense_skaven = {
 		}
 	}
 }
-dense_chaos = dense_standard = {
+dense_chaos = {
 	-- Size 1 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_clan_rat
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin_commander
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_plague_monk
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.skaven_storm_vermin
 		}
 	},
 	-- Size 2 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder_with_shield,
 			Breeds.chaos_marauder
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_berzerker
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_marauder
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_raider
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder
@@ -2199,7 +2199,7 @@ dense_chaos = dense_standard = {
 	},
 	-- 3 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2207,7 +2207,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder_with_shield,
@@ -2215,7 +2215,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2223,7 +2223,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2231,7 +2231,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_marauder_with_shield,
@@ -2239,7 +2239,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2247,7 +2247,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder_with_shield,
@@ -2255,7 +2255,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder,
@@ -2263,7 +2263,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_raider,
@@ -2271,7 +2271,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2279,7 +2279,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
@@ -2287,7 +2287,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_berzerker,
@@ -2296,7 +2296,7 @@ dense_chaos = dense_standard = {
 	},
 	-- 4 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2305,7 +2305,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder_with_shield,
@@ -2314,7 +2314,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2323,7 +2323,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2332,7 +2332,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2341,7 +2341,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2350,7 +2350,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2359,7 +2359,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2368,7 +2368,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2377,7 +2377,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2386,7 +2386,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2395,7 +2395,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2404,7 +2404,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2413,7 +2413,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
@@ -2422,7 +2422,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder_with_shield,
@@ -2432,7 +2432,7 @@ dense_chaos = dense_standard = {
 	},
 	-- 6 Enemy Packs
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2443,7 +2443,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder_with_shield,
@@ -2454,7 +2454,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2465,7 +2465,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2476,7 +2476,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_marauder_with_shield,
@@ -2487,7 +2487,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2498,7 +2498,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder_with_shield,
@@ -2509,7 +2509,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder,
@@ -2520,7 +2520,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_raider,
@@ -2531,7 +2531,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2542,7 +2542,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
@@ -2553,7 +2553,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_berzerker,
@@ -2565,7 +2565,7 @@ dense_chaos = dense_standard = {
 	},
 	-- 8 Enemy Breed Packs (double 4 enemy packs)
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2578,7 +2578,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder_with_shield,
@@ -2591,7 +2591,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2604,7 +2604,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
@@ -2617,7 +2617,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2630,7 +2630,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2643,7 +2643,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2656,7 +2656,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2669,7 +2669,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_raider,
 			Breeds.chaos_raider,
@@ -2682,7 +2682,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2695,7 +2695,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2708,7 +2708,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2721,7 +2721,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
@@ -2734,7 +2734,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
@@ -2747,7 +2747,7 @@ dense_chaos = dense_standard = {
 		}
 	},
 	{
-		spawn_weight = nil,
+		spawn_weight = 0,
 		members = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder_with_shield,
@@ -2763,4 +2763,7 @@ dense_chaos = dense_standard = {
 
 -- TODO
 dense_beastmen = {}
---]]
+
+dense_standard = mod.calculate_breed_pack_weights(scaling_data, dense_standard)
+dense_chaos = mod.calculate_breed_pack_weights(scaling_data, dense_chaos)
+dense_skaven = mod.calculate_breed_pack_weights(scaling_data, dense_skaven)

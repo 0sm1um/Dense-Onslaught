@@ -4,10 +4,10 @@ local mod = get_mod("Dense Onslaught")
 		Functions in this file are solely dedicated to manipulating and doing operations on the "BreedPacks" table.
 	--]]
 
-	local trash_weight = 1
-	local shielded_trash_weight = 1
-	local elite_weight = 1
-	local shielded_elite_weight = 1
+	local trash_weight = 0
+	local shielded_trash_weight = 0
+	local elite_weight = 0
+	local shielded_elite_weight = 0
 	local berzerker_weight = 1
 	local super_armor_weight = 1
 	
@@ -34,33 +34,21 @@ local mod = get_mod("Dense Onslaught")
 		breeds = super_armor_entities,
 	},
 	}
---[[
-mod.calculate_BreedPack_weights = function calculate_weights(breed_pack, scaling_data)
-	-- figure out how many breed classes
-	local num_classes = #scaling_data
-	-- calculate normalized target weights
-	local weights = {}
-	local total_weights = 0
-	for data in pairs(scaling_data)
-		weights.insert(data[1])
-		total_weights = total_weights + data[1]
+
+mod.calculate_breed_pack_weights = function(scaling_data, breed_packs)
+	local weighted_packs = {}
+	for pack in pairs(breed_packs) do -- Select a Pack
+		for breed_name, breed_table in pairs(pack.members) do -- Iterate through Pack Members
+			for scale_data in pairs(scaling_data) do -- Iterate through classes of enemies.
+				for scale_breed_name in pairs(scale_data.breeds) do  -- On a selected class, check each breed
+					if string.find(tostring(breed_name), scale_breed_name) then -- If the breed is in the breed class:
+						pack.spawn_weight = pack.spawn_weight + scale_data.scale_factor
+					end
+				end
+			end
+		end
+		weighted_packs.insert(pack)
 	end
-	for w in pairs(weights)
-		w = w/total_weights
-	end
-	-- Iterate through pack sizes
-		-- On a given pack size, count total number of packs (number of constraint equations, rows of "A")
-			--  Iterate through an individual pack
-				-- count number of trash
-				-- count number of shielded trash
-				-- count number of elites
-				-- count number of shielded elites
-				-- count number of super armor
-				-- count number of shielded super armor
-				-- Construct q_i vector from counted numbers
-			-- Iterate through q_i
-				-- insert hadamard product of of q_i and r^-1 into normalized "u" vector
-			-- insert all u_i into "A" matrix as a column
-			-- take PsuedoInverse(moore penrose inverse) of A, yielding A^{-1}
-			-- weights x_i equal w*pinv(A)
-			--]]
+	return weighted_packs
+end
+

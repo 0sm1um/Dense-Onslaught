@@ -12,12 +12,13 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
-
+--[[
 --initalizes new directors and sets levels to use them
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 for level_key,data in pairs(LevelSettings) do
     mod:set(data.level_name, "dense_default")
 end
+--]]
 
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
@@ -31,13 +32,14 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
+	-- Reworked BreedPacks
+	mod:dofile("scripts/mods/Dense Onslaught/base/breed_pack_helper_functions")
+
 
 	------------------------------------------------
 	---------------------Pacing---------------------
 	------------------------------------------------
 
-	-- Ambient Spawning Settings
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack_settings")
 	-- Reworked BreedPacks
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack")
 
@@ -116,7 +118,7 @@ mutator.start = function()
 	-----------------Apply Settings-----------------
 	------------------------------------------------
 
-	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
+--	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
 
 	create_weights()
 	mod:enable_all_hooks()

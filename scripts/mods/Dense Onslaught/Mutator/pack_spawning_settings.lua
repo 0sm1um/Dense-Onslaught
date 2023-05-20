@@ -37,10 +37,10 @@ local mod = get_mod("Dense Onslaught")
 --mod:dofile("scripts/managers/conflict_director/conflict_settings")
 
 	PackSpawningSettings.default.roaming_set = {
-		breed_packs = "standard",
+		breed_packs = "dense_standard",
 		breed_packs_peeks_overide_chance = {
-			1,
-			1
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -113,7 +113,7 @@ local mod = get_mod("Dense Onslaught")
 	}
 	
 	PackSpawningSettings.skaven.roaming_set = {
-		breed_packs = "skaven",
+		breed_packs = "dense_skaven",
 		breed_packs_peeks_overide_chance = {
 			1,
 			1
@@ -138,7 +138,7 @@ local mod = get_mod("Dense Onslaught")
 	}
 
 	PackSpawningSettings.chaos.roaming_set = {
-		breed_packs = "marauders",
+		breed_packs = "dense_chaos",
 		breed_packs_peeks_overide_chance = {
 			1,
 			1
@@ -192,7 +192,9 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.skaven_light = PackSpawningSettings.skaven
 	PackSpawningSettings.chaos_light = PackSpawningSettings.chaos
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
-	
+	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
+	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
+	--[[
 	local difficulties = Difficulties
 	local start_time = os.clock()
 	for conflict_director_name, data in pairs(ConflictDirectors) do
@@ -208,4 +210,4 @@ local mod = get_mod("Dense Onslaught")
 			data.contained_breeds[difficulty] = difficulty_breeds
 		end
 	end
-	
+	--]]
