@@ -26,8 +26,8 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.skaven_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
 	PackSpawningSettings.chaos_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
 
-RecycleSettings.max_grunts = 200                                      -- Specific to Dense, raises upper cap to ambient spawning.
-RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
+	RecycleSettings.max_grunts = 200                                      -- Specific to Dense, raises upper cap to ambient spawning.
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
 
 	PackSpawningSettings.default.roaming_set = {
 		breed_packs = "dense_standard",
