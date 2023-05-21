@@ -1,4 +1,5 @@
 local mod = get_mod("Dense Onslaught")
+local mutator = mod:persistent_table("Dense Onslaught")
 
 	TerrorEventBlueprints = mutator.OriginalTerrorEventBlueprints
 	RecycleSettings.push_horde_if_num_alive_grunts_above = mutator.OriginalRecycleSettings.push_horde_if_num_alive_grunts_above

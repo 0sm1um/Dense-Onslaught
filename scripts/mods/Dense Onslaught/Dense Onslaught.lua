@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-local mutator = mod:persistent_table("DenseOnslaught")
+local mutator = mod:persistent_table("Dense Onslaught")
 
 	------------------------------------------------
 	--------------Hooks and Functions---------------
@@ -42,8 +42,6 @@ mutator.start = function()
 
 	-- Reworked BreedPacks
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack")
-
-
 	-- Ambient Spawning Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pack_spawning_settings")
 	-- Pacing Timers
