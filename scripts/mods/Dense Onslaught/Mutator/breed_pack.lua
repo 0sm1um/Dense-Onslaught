@@ -1,11 +1,11 @@
 local mod = get_mod("Dense Onslaught")
 
-local trash_weight = 0
-local shielded_trash_weight = 0
-local elite_weight = 0
-local shielded_elite_weight = 0
+local trash_weight = 0.75
+local shielded_trash_weight = 0.5
+local elite_weight = 1
+local shielded_elite_weight = 1
 local berzerker_weight = 1
-local super_armor_weight = 1
+local super_armor_weight = 0.25
 
 local trash_entities = {"beastmen_ungor","beastmen_gor","skaven_slave","skaven_clan_rat","chaos_fanatic","chaos_marauder"}
 local shielded_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}
@@ -100,20 +100,6 @@ dense_standard = {
 		members_n = 1,
 		members = {
 			Breeds.skaven_plague_monk
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 1,
-		members = {
-			Breeds.chaos_warrior
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 1,
-		members = {
-			Breeds.skaven_storm_vermin
 		}
 	},
 	-- Size 2 Enemy Packs
@@ -1557,13 +1543,6 @@ dense_skaven = {
 			Breeds.skaven_plague_monk
 		}
 	},
-	{
-		spawn_weight = 0,
-		members_n = 1,
-		members = {
-			Breeds.skaven_storm_vermin
-		}
-	},
 	-- Size 2 Enemy Packs
 	{
 		spawn_weight = 0,
@@ -2327,13 +2306,6 @@ dense_chaos = {
 		members_n = 1,
 		members = {
 			Breeds.chaos_berzerker
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 1,
-		members = {
-			Breeds.chaos_warrior
 		}
 	},
 	-- Size 2 Enemy Packs

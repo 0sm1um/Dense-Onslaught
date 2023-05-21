@@ -12,35 +12,28 @@ local mod = get_mod("Dense Onslaught")
 	
 
 	-- These parameters seem to correlated with increasing or decreasing ambient spawns.
-	
-	--[[
-	PackSpawningSettings.default.area_density_coefficient = 0.2
-	PackSpawningSettings.default_light.area_density_coefficient = 0.2
-	PackSpawningSettings.skaven.area_density_coefficient = 0.2
-	PackSpawningSettings.skaven_light.area_density_coefficient = 0.2
-	PackSpawningSettings.chaos.area_density_coefficient = 0.2
-	PackSpawningSettings.chaos_light.area_density_coefficient = 0.2
-	PackSpawningSettings.beastmen.area_density_coefficient = 0.2
-	PackSpawningSettings.beastmen_light.area_density_coefficient = 0.2
-	PackSpawningSettings.skaven_beastmen.area_density_coefficient = 0.2
-	PackSpawningSettings.chaos_beastmen.area_density_coefficient = 0.2
---]]
-	
---	PackSpawningSettings.default.difficulty_overrides = nil
---	PackSpawningSettings.skaven.difficulty_overrides = nil
---	PackSpawningSettings.skaven_light.difficulty_overrides = nil
---	PackSpawningSettings.chaos.difficulty_overrides = nil
---	PackSpawningSettings.beastmen.difficulty_overrides = nil
---	PackSpawningSettings.skaven_beastmen.difficulty_overrides = nil
---	PackSpawningSettings.chaos_beastmen.difficulty_overrides = nil
+	-- Note they are VERY sensitive
 
---mod:dofile("scripts/managers/conflict_director/conflict_settings")
+	PackSpawningSettings.default.area_density_coefficient = 0.045
+	PackSpawningSettings.skaven.area_density_coefficient = 0.045
+	PackSpawningSettings.chaos.area_density_coefficient = 0.045
+	PackSpawningSettings.beastmen.area_density_coefficient = 0.045
+
+	PackSpawningSettings.default_light.area_density_coefficient = PackSpawningSettings.default.area_density_coefficient
+	PackSpawningSettings.skaven_light.area_density_coefficient = PackSpawningSettings.skaven.area_density_coefficient
+	PackSpawningSettings.chaos_light.area_density_coefficient = PackSpawningSettings.chaos.area_density_coefficient
+	PackSpawningSettings.beastmen_light.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
+	PackSpawningSettings.skaven_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
+	PackSpawningSettings.chaos_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
+
+RecycleSettings.max_grunts = 200                                      -- Specific to Dense, raises upper cap to ambient spawning.
+RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
 
 	PackSpawningSettings.default.roaming_set = {
 		breed_packs = "dense_standard",
 		breed_packs_peeks_overide_chance = {
-			0.5,
-			0.5
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -69,8 +62,8 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.skaven.roaming_set = {
 		breed_packs = "dense_skaven",
 		breed_packs_peeks_overide_chance = {
-			0.5,
-			0.5
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -94,8 +87,8 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.chaos.roaming_set = {
 		breed_packs = "dense_chaos",
 		breed_packs_peeks_overide_chance = {
-			0.5,
-			0.5
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -124,8 +117,8 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.beastmen.roaming_set = {
 		breed_packs = "beastmen",
 		breed_packs_peeks_overide_chance = {
-			0.5,
-			0.5
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -145,10 +138,10 @@ local mod = get_mod("Dense Onslaught")
 
 --[[
 	PackSpawningSettings.skaven_beastmen.roaming_set = {
-		breed_packs = "skaven_beastmen",
+		breed_packs = "dense_skaven_beastmen",
 		breed_packs_peeks_overide_chance = {
-			1,
-			1
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -171,10 +164,10 @@ local mod = get_mod("Dense Onslaught")
 		
 		
 	PackSpawningSettings.chaos_beastmen.roaming_set = {
-		breed_packs = "chaos_beastmen",
+		breed_packs = "dense_chaos_beastmen",
 		breed_packs_peeks_overide_chance = {
-			1,
-			1
+			0,
+			0
 		},
 		breed_packs_override = {
 			{
@@ -198,20 +191,3 @@ local mod = get_mod("Dense Onslaught")
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
-	--[[
-	local difficulties = Difficulties
-	local start_time = os.clock()
-	for conflict_director_name, data in pairs(ConflictDirectors) do
-		data.name = conflict_director_name
-		data.contained_breeds = {}
-	
-		for i = 1, #difficulties do
-			local difficulty = difficulties[i]
-			local difficulty_breeds = {}
-	
-			mod.ConflictUtils_find_conflict_director_breeds(data, difficulty, difficulty_breeds)
-	
-			data.contained_breeds[difficulty] = difficulty_breeds
-		end
-	end
-	--]]
