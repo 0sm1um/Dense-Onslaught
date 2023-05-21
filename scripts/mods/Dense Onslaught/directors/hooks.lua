@@ -16,6 +16,8 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
             self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
         end
 
+        -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
+
         --populate all zones with override director
         -- self.spawn_zone_data.zones[k].roaming_set = directors[math.random(1, #directors)]
 

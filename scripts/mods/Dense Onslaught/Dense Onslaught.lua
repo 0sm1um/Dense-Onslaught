@@ -22,6 +22,53 @@ for level_key,data in pairs(LevelSettings) do
     mod:set(data.level_name, "dense_default")
 end
 
+mod.on_disabled = function()
+    RecycleSettings = {
+		destroy_stuck_distance_squared = 625,
+		destroy_los_distance_squared = 8100,
+		push_horde_in_time = true,
+		destroy_no_path_only_behind = true,
+		ai_stuck_check_start_time = 10,
+		push_horde_if_num_alive_grunts_above = 60,
+		destroy_no_path_found_time = 10,
+		max_grunts = 90
+	}
+end
+
+mod.on_enabled = function()
+    RecycleSettings = {
+		destroy_stuck_distance_squared = 625,
+		destroy_los_distance_squared = 8100,
+		push_horde_in_time = true,
+		destroy_no_path_only_behind = true,
+		ai_stuck_check_start_time = 10,
+		push_horde_if_num_alive_grunts_above = 10,
+		destroy_no_path_found_time = 10,
+		max_grunts = 500
+	}
+end
+
+if mod:is_enabled() then
+	RecycleSettings = {
+		destroy_stuck_distance_squared = 625,
+		destroy_los_distance_squared = 8100,
+		push_horde_in_time = true,
+		destroy_no_path_only_behind = true,
+		ai_stuck_check_start_time = 10,
+		push_horde_if_num_alive_grunts_above = 10,
+		destroy_no_path_found_time = 10,
+		max_grunts = 500
+	}
+end
+
+mod:echo(RecycleSettings.max_grunts)
+
+
+-- Breeds.skaven_rat_ogre.perception_continuous = nil
+-- Breeds.skaven_rat_ogre.distance_sq_can_detect_target = 1
+-- Breeds.skaven_rat_ogre.detection_radius = 10
+-- Breeds.skaven_rat_ogreperception = "perception_regular"
+
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
 	if not mutator.active then
@@ -134,63 +181,63 @@ mutator.stop = function()
 	mutator.active = false
 end
 
-mod:hook(Pacing, "disable", function (func, self)
-	self._threat_population = 1
-	self._specials_population = 1
-	self._horde_population = 0
-	self.pacing_state = "pacing_frozen"
-end)
+-- mod:hook(Pacing, "disable", function (func, self)
+-- 	self._threat_population = 1
+-- 	self._specials_population = 1
+-- 	self._horde_population = 0
+-- 	self.pacing_state = "pacing_frozen"
+-- end)
 
-mod:hook(TerrorEventMixer.init_functions, "control_specials", function (func, event, element, t)
-	local conflict_director = Managers.state.conflict
-	local specials_pacing = conflict_director.specials_pacing
-	local not_already_enabled = specials_pacing:is_disabled()
+-- mod:hook(TerrorEventMixer.init_functions, "control_specials", function (func, event, element, t)
+-- 	local conflict_director = Managers.state.conflict
+-- 	local specials_pacing = conflict_director.specials_pacing
+-- 	local not_already_enabled = specials_pacing:is_disabled()
 
-	if specials_pacing then
-		specials_pacing:enable(element.enable)
+-- 	if specials_pacing then
+-- 		specials_pacing:enable(element.enable)
 
-		if element.enable and not_already_enabled then
-			local delay = math.random(5, 12)
-			local per_unit_delay = math.random(8, 16)
-			local t = Managers.time:time("game")
+-- 		if element.enable and not_already_enabled then
+-- 			local delay = math.random(5, 12)
+-- 			local per_unit_delay = math.random(8, 16)
+-- 			local t = Managers.time:time("game")
 
-			specials_pacing:delay_spawning(t, delay, per_unit_delay, true)
-		end
-	end
-end)
+-- 			specials_pacing:delay_spawning(t, delay, per_unit_delay, true)
+-- 		end
+-- 	end
+-- end)
 
-mod:hook(ConflictDirector, "calculate_threat_value", function (func, self)
-	local aggroed_units = {}
-	local ai_system = Managers.state.entity:system('ai_system')
-	local broadphase = ai_system.broadphase
+-- mod:hook(ConflictDirector, "calculate_threat_value", function (func, self)
+-- 	local aggroed_units = {}
+-- 	local ai_system = Managers.state.entity:system('ai_system')
+-- 	local broadphase = ai_system.broadphase
 
-	for i, player in pairs(Managers.player:human_and_bot_players()) do
-		local ai_units = {}
-		if player.player_unit then
-			local num_ai_units = Broadphase.query(broadphase, Unit.local_position(player.player_unit, 0), 50, ai_units)
-			if num_ai_units > 0 then
-				for i = 1, num_ai_units do
-					local ai_unit = ai_units[i]
-					if ScriptUnit.has_extension(ai_unit, 'health_system') and ScriptUnit.extension(ai_unit, 'health_system'):is_alive() and BLACKBOARDS[ai_unit].target_unit then
-						aggroed_units[ai_unit] = ai_unit
-					end
-				end
-			end
-		end
-	end
+-- 	for i, player in pairs(Managers.player:human_and_bot_players()) do
+-- 		local ai_units = {}
+-- 		if player.player_unit then
+-- 			local num_ai_units = Broadphase.query(broadphase, Unit.local_position(player.player_unit, 0), 50, ai_units)
+-- 			if num_ai_units > 0 then
+-- 				for i = 1, num_ai_units do
+-- 					local ai_unit = ai_units[i]
+-- 					if ScriptUnit.has_extension(ai_unit, 'health_system') and ScriptUnit.extension(ai_unit, 'health_system'):is_alive() and BLACKBOARDS[ai_unit].target_unit then
+-- 						aggroed_units[ai_unit] = ai_unit
+-- 					end
+-- 				end
+-- 			end
+-- 		end
+-- 	end
 
-	local threat_value = 0
-	local count = 0
+-- 	local threat_value = 0
+-- 	local count = 0
 
-	for _, unit in pairs(aggroed_units) do
-		local breed = Unit.get_data(unit, "breed")
-		threat_value = threat_value + (override_threat_value or breed.threat_value or 0)
-		count = count + 1
-	end
+-- 	for _, unit in pairs(aggroed_units) do
+-- 		local breed = Unit.get_data(unit, "breed")
+-- 		threat_value = threat_value + (override_threat_value or breed.threat_value or 0)
+-- 		count = count + 1
+-- 	end
 
-	self.delay_horde = self.delay_horde_threat_value < threat_value
-	self.delay_mini_patrol = self.delay_mini_patrol_threat_value < threat_value
-	self.delay_specials = self.delay_specials_threat_value < threat_value
-	self.threat_value = threat_value
-	self.num_aggroed = count
-end)
+-- 	self.delay_horde = self.delay_horde_threat_value < threat_value
+-- 	self.delay_mini_patrol = self.delay_mini_patrol_threat_value < threat_value
+-- 	self.delay_specials = self.delay_specials_threat_value < threat_value
+-- 	self.threat_value = threat_value
+-- 	self.num_aggroed = count
+-- end)

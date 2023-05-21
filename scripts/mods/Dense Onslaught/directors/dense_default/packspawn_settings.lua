@@ -31,7 +31,9 @@ director_packspawn.roaming_set = {
         }
     }
 }
-director_packspawn.basics.goal_density = 20 
-director_packspawn.basics.spawn_cycle_length = 50
+director_packspawn.basics.goal_density = 50
+director_packspawn.basics.spawn_cycle_length = 100
+
+director_packspawn.basics.distribution_method = "random"
 
 return director_packspawn
