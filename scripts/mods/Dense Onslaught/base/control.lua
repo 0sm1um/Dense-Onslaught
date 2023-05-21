@@ -1,5 +1,5 @@
 local mod = get_mod("Dense Onslaught")
-local mutator = mod:persistent_table("DenseOnslaught")
+local mutator = mod:persistent_table("Dense Onslaught")
 
 	JOIN_MESSAGE = "Dense Onslaught Active"
 

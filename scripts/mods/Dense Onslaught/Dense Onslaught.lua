@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-local mutator = mod:persistent_table("DenseOnslaught")
+local mutator = mod:persistent_table("Dense Onslaught")
 
 	------------------------------------------------
 	--------------Hooks and Functions---------------
@@ -16,11 +16,13 @@ mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
 mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
 
+--[[
 --initalizes new directors and sets levels to use them
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 for level_key,data in pairs(LevelSettings) do
     mod:set(data.level_name, "dense_default")
 end
+--]]
 
 mod.on_disabled = function()
     RecycleSettings = {
@@ -81,17 +83,16 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
+	-- Reworked BreedPacks
+	mod:dofile("scripts/mods/Dense Onslaught/base/breed_pack_helper_functions")
+
 
 	------------------------------------------------
 	---------------------Pacing---------------------
 	------------------------------------------------
 
-	-- Ambient Spawning Settings
-	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack_settings")
 	-- Reworked BreedPacks
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/breed_pack")
-
-
 	-- Ambient Spawning Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pack_spawning_settings")
 	-- Pacing Timers
@@ -166,7 +167,7 @@ mutator.start = function()
 	-----------------Apply Settings-----------------
 	------------------------------------------------
 
-	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
+--	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
 
 	create_weights()
 	mod:enable_all_hooks()

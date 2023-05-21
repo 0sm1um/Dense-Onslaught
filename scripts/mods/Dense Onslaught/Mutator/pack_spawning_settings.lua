@@ -37,10 +37,10 @@ local mod = get_mod("Dense Onslaught")
 --mod:dofile("scripts/managers/conflict_director/conflict_settings")
 
 	PackSpawningSettings.default.roaming_set = {
-		breed_packs = "standard",
+		breed_packs = "dense_standard",
 		breed_packs_peeks_overide_chance = {
-			1,
-			1
+			0.5,
+			0.5
 		},
 		breed_packs_override = {
 			{
@@ -66,6 +66,84 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	PackSpawningSettings.skaven.roaming_set = {
+		breed_packs = "dense_skaven",
+		breed_packs_peeks_overide_chance = {
+			0.5,
+			0.5
+		},
+		breed_packs_override = {
+			{
+				"skaven",
+				2,
+				0.035
+			},
+			{
+				"shield_rats",
+				2,
+				0.035
+			},
+			{
+				"plague_monks",
+				2,
+				0.035
+			}
+		}
+	}
+
+	PackSpawningSettings.chaos.roaming_set = {
+		breed_packs = "dense_chaos",
+		breed_packs_peeks_overide_chance = {
+			0.5,
+			0.5
+		},
+		breed_packs_override = {
+			{
+				"marauders_and_warriors",
+				2,
+				0.03
+			},
+			{
+				"marauders_shields",
+				2,
+				0.03
+			},
+			{
+				"marauders_elites",
+				2,
+				0.03
+			},
+			{
+				"marauders_berzerkers",
+				2,
+				0.03
+			}
+		}
+	}
+	
+	PackSpawningSettings.beastmen.roaming_set = {
+		breed_packs = "beastmen",
+		breed_packs_peeks_overide_chance = {
+			0.5,
+			0.5
+		},
+		breed_packs_override = {
+			{
+				"beastmen_elites",
+				2,
+				0.035
+			},
+			{
+				"beastmen",
+				2,
+				0.035
+			}
+		}
+	}
+
+
+
+--[[
 	PackSpawningSettings.skaven_beastmen.roaming_set = {
 		breed_packs = "skaven_beastmen",
 		breed_packs_peeks_overide_chance = {
@@ -111,88 +189,16 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-	
-	PackSpawningSettings.skaven.roaming_set = {
-		breed_packs = "skaven",
-		breed_packs_peeks_overide_chance = {
-			1,
-			1
-		},
-		breed_packs_override = {
-			{
-				"skaven",
-				2,
-				0.035
-			},
-			{
-				"shield_rats",
-				2,
-				0.035
-			},
-			{
-				"plague_monks",
-				2,
-				0.035
-			}
-		}
-	}
-
-	PackSpawningSettings.chaos.roaming_set = {
-		breed_packs = "marauders",
-		breed_packs_peeks_overide_chance = {
-			1,
-			1
-		},
-		breed_packs_override = {
-			{
-				"marauders_and_warriors",
-				2,
-				0.03
-			},
-			{
-				"marauders_shields",
-				2,
-				0.03
-			},
-			{
-				"marauders_elites",
-				2,
-				0.03
-			},
-			{
-				"marauders_berzerkers",
-				2,
-				0.03
-			}
-		}
-	}
-	
-	PackSpawningSettings.beastmen.roaming_set = {
-		breed_packs = "beastmen",
-		breed_packs_peeks_overide_chance = {
-			1,
-			1
-		},
-		breed_packs_override = {
-			{
-				"beastmen_elites",
-				2,
-				0.035
-			},
-			{
-				"beastmen",
-				2,
-				0.035
-			}
-		}
-	}
+--]]	
 
 
 	PackSpawningSettings.default_light = PackSpawningSettings.default
 	PackSpawningSettings.skaven_light = PackSpawningSettings.skaven
 	PackSpawningSettings.chaos_light = PackSpawningSettings.chaos
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
-	
+	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
+	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
+	--[[
 	local difficulties = Difficulties
 	local start_time = os.clock()
 	for conflict_director_name, data in pairs(ConflictDirectors) do
@@ -208,4 +214,4 @@ local mod = get_mod("Dense Onslaught")
 			data.contained_breeds[difficulty] = difficulty_breeds
 		end
 	end
-	
+	--]]

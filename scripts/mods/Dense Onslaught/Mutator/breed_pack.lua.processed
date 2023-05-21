@@ -3040,15 +3040,16 @@ table.insert(dense_chaos,BreedPacks.marauders_elites.patrol_overrides)
 --]]
 
 
-dense_standard.roof_spawning_allowed = BreedPacks.standard.roof_spawning_allowed
+dense_standard.roof_spawning_allowed = BreedPacks.standard.roof_spawning_allowed)
 --table.insert(dense_standard,BreedPacks.standard.zone_checks)
-dense_standard.patrol_overrides = BreedPacks.standard.patrol_overrides
-dense_skaven.roof_spawning_allowed = BreedPacks.skaven.roof_spawning_allowed
+dense_standard.patrol_overrides = BreedPacks.standard.patrol_overrides)
+dense_skaven.roof_spawning_allowed = BreedPacks.skaven.roof_spawning_allowed)
 --table.insert(dense_skaven,BreedPacks.skaven.zone_checks)
-dense_skaven.patrol_overrides = BreedPacks.skaven.patrol_overrides
-dense_chaos.roof_spawning_allowed = BreedPacks.marauders_elites.roof_spawning_allowed
+dense_skaven.patrol_overrides = BreedPacks.skaven.patrol_overrides)
+dense_chaos.roof_spawning_allowed = BreedPacks.marauders_elites.roof_spawning_allowed)
 --table.insert(dense_chaos,BreedPacks.marauders_elites.zone_checks)
-dense_chaos.patrol_overrides = BreedPacks.marauders_elites.patrol_overrides
+dense_chaos.patrol_overrides = BreedPacks.marauders_elites.patrol_overrides)
+
 
 --table.insert(BreedPacks, dense_standard)
 --table.insert(BreedPacks, dense_chaos)
