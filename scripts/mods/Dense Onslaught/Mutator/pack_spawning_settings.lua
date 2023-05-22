@@ -14,17 +14,42 @@ local mod = get_mod("Dense Onslaught")
 	-- These parameters seem to correlated with increasing or decreasing ambient spawns.
 	-- Note they are VERY sensitive
 
-	PackSpawningSettings.default.area_density_coefficient = 0.045
-	PackSpawningSettings.skaven.area_density_coefficient = 0.045
-	PackSpawningSettings.chaos.area_density_coefficient = 0.045
-	PackSpawningSettings.beastmen.area_density_coefficient = 0.045
+local mean = 0.5
+local range = 0.1
 
-	PackSpawningSettings.default_light.area_density_coefficient = PackSpawningSettings.default.area_density_coefficient
-	PackSpawningSettings.skaven_light.area_density_coefficient = PackSpawningSettings.skaven.area_density_coefficient
-	PackSpawningSettings.chaos_light.area_density_coefficient = PackSpawningSettings.chaos.area_density_coefficient
-	PackSpawningSettings.beastmen_light.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
-	PackSpawningSettings.skaven_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
-	PackSpawningSettings.chaos_beastmen.area_density_coefficient = PackSpawningSettings.beastmen.area_density_coefficient
+	PackDistributions = {
+		periodical = {
+			max_low_density = mean,
+			min_low_density = mean - range,
+			min_hi_density = mean,
+			max_hi_density = mean + range,
+			random_distribution = false,
+			zero_density_below = 0,
+			max_hi_dist = 3,
+			min_hi_dist = 2,
+			max_low_dist = 10,
+			min_low_dist = 7,
+			zero_clamp_max_dist = 5
+		},
+		random = {}
+	}
+
+	PackSpawningDistribution = {
+		standard = {
+			goal_density = mean,
+			clamp_main_path_zone_area = 100,
+			length_density_coefficient = 0,
+			spawn_cycle_length = 350,
+			clamp_outer_zones_used = 1,
+			distribution_method = "periodical",
+			calculate_nearby_islands = false
+		}
+	}
+	
+	PackSpawningSettings.default.area_density_coefficient = 0.0725
+	PackSpawningSettings.skaven.area_density_coefficient = 0.0725
+	PackSpawningSettings.chaos.area_density_coefficient = 0.0725
+	PackSpawningSettings.beastmen.area_density_coefficient = 0.0725
 
 	RecycleSettings.max_grunts = 200                                      -- Specific to Dense, raises upper cap to ambient spawning.
 	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+

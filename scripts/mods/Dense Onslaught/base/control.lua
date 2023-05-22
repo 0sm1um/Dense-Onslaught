@@ -73,5 +73,3 @@ mutator.toggle = function()
 		mod:chat_broadcast("Dense Onslaught DISABLED.")
 	end
 end
-
-

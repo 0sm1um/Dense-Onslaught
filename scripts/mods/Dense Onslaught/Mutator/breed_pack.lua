@@ -227,14 +227,6 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 2,
-		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -433,24 +425,6 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_storm_vermin,
 			Breeds.skaven_clan_rat_with_shield
@@ -514,16 +488,6 @@ dense_standard = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
@@ -662,28 +626,8 @@ dense_standard = {
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
@@ -743,16 +687,6 @@ dense_standard = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
 			Breeds.chaos_marauder
 		}
 	},
@@ -1153,20 +1087,6 @@ dense_standard = {
 		members_n = 8,
 		members = {
 			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 8,
-		members = {
-			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder_with_shield,
 			Breeds.chaos_marauder_with_shield,
@@ -1513,6 +1433,7 @@ dense_standard = {
 		}
 	}
 }
+
 dense_skaven = {
 	-- Size 1 Enemy Packs
 	{
@@ -2365,14 +2286,6 @@ dense_chaos = {
 			Breeds.chaos_raider
 		}
 	},
-	{
-		spawn_weight = 0,
-		members_n = 2,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder
-		}
-	},
 	-- 3 Enemy Packs
 	{
 		spawn_weight = 0,
@@ -2469,15 +2382,6 @@ dense_chaos = {
 		members_n = 3,
 		members = {
 			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_warrior,
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder
 		}
@@ -2491,16 +2395,6 @@ dense_chaos = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
@@ -2589,16 +2483,6 @@ dense_chaos = {
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
 			Breeds.chaos_marauder
 		}
@@ -2620,16 +2504,6 @@ dense_chaos = {
 			Breeds.chaos_warrior,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
 			Breeds.chaos_marauder
 		}
 	},
@@ -2791,20 +2665,6 @@ dense_chaos = {
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder,
 			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 8,
-		members = {
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
 		}
 	},
 	{
@@ -2989,101 +2849,31 @@ dense_chaos = {
 			Breeds.chaos_marauder
 		}
 	}
+	--]]
 }
+
+
 
 -- TODO
 dense_beastmen = {}
-
 
 dense_standard = mod.calculate_breed_pack_weights(scaling_data, dense_standard)
 dense_chaos = mod.calculate_breed_pack_weights(scaling_data, dense_chaos)
 dense_skaven = mod.calculate_breed_pack_weights(scaling_data, dense_skaven)
 
---[[
-table.insert(dense_standard.BreedPacks.standard.roof_spawning_allowed)
---table.insert(dense_standard,BreedPacks.standard.zone_checks)
-table.insert(dense_standard,BreedPacks.standard.patrol_overrides)
-table.insert(dense_skaven,BreedPacks.skaven.roof_spawning_allowed)
---table.insert(dense_skaven,BreedPacks.skaven.zone_checks)
-table.insert(dense_skaven,BreedPacks.skaven.patrol_overrides)
-table.insert(dense_chaos,BreedPacks.marauders_elites.roof_spawning_allowed)
---table.insert(dense_chaos,BreedPacks.marauders_elites.zone_checks)
-table.insert(dense_chaos,BreedPacks.marauders_elites.patrol_overrides)
---]]
-
-
 dense_standard.roof_spawning_allowed = BreedPacks.standard.roof_spawning_allowed
---table.insert(dense_standard,BreedPacks.standard.zone_checks)
 dense_standard.patrol_overrides = BreedPacks.standard.patrol_overrides
 dense_skaven.roof_spawning_allowed = BreedPacks.skaven.roof_spawning_allowed
---table.insert(dense_skaven,BreedPacks.skaven.zone_checks)
 dense_skaven.patrol_overrides = BreedPacks.skaven.patrol_overrides
 dense_chaos.roof_spawning_allowed = BreedPacks.marauders_elites.roof_spawning_allowed
---table.insert(dense_chaos,BreedPacks.marauders_elites.zone_checks)
 dense_chaos.patrol_overrides = BreedPacks.marauders_elites.patrol_overrides
-
---table.insert(BreedPacks, dense_standard)
---table.insert(BreedPacks, dense_chaos)
---table.insert(BreedPacks, dense_skaven)
 
 BreedPacks.dense_standard = dense_standard
 BreedPacks.dense_skaven = dense_skaven
 BreedPacks.dense_chaos = dense_chaos
 
-local function calc_num_in_packs(breed_packs, roaming_set_name)
-	local num_breed_packs = #breed_packs
-
-	for i = 1, num_breed_packs do
-		local pack = breed_packs[i]
-		local size = #pack.members
-
-		fassert(InterestPointUnits[size], "The %d pack in BreedPacks[%s] is of size %d. There are no InterestPointUnits matching this size.", i, roaming_set_name, size)
-
-		pack.members_n = size
-	end
-
-	return num_breed_packs
-end
-
-local function generate_breed_pack_by_size(breed_packs, roaming_set_name)
-	local num_breed_packs = calc_num_in_packs(breed_packs, roaming_set_name)
-
-	assert("BreedPack of size have no matching interestpoint of that size.")
-
-	local breed_pack_by_size = {}
-	local by_size = {}
-
-	for i = 1, num_breed_packs do
-		local pack = breed_packs[i]
-		local size = pack.members_n
-
-		if not by_size[size] then
-			by_size[size] = {
-				packs = {},
-				weights = {}
-			}
-		end
-
-		local slot = by_size[size]
-		local packs = slot.packs
-		packs[#packs + 1] = pack
-		slot.weights[#slot.weights + 1] = pack.spawn_weight
-	end
-
-	for size, slot in pairs(by_size) do
-		local prob, alias = LoadedDice.create(slot.weights, false)
-		breed_pack_by_size[size] = {
-			packs = slot.packs,
-			prob = prob,
-			alias = alias
-		}
-	end
-
-	return breed_pack_by_size
-end
-
 BreedPacksBySize = {}
 
 for roaming_set_name, breed_packs in pairs(BreedPacks) do
-	BreedPacksBySize[roaming_set_name] = generate_breed_pack_by_size(breed_packs, roaming_set_name)
+	BreedPacksBySize[roaming_set_name] = mod.generate_breed_pack_by_size(breed_packs, roaming_set_name)
 end
