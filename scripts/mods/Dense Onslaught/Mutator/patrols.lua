@@ -206,7 +206,7 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_marauder_with_shield"
 			}
 		},
-		-- Patrol Composation Changed From Dutch
+		-- Patrol Composition Changed From Dutch
 		cataclysm = {
 			{
 				"chaos_raider",
@@ -262,7 +262,7 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-	-- Patrol Composation Changed From Dutch
+	-- Patrol Composition Changed From Dutch
 	PatrolFormationSettings.storm_vermin_two_column = {
 		settings = {
 			extra_breed_name = {
@@ -390,7 +390,7 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			}
 		},
-		-- Patrol Composation Changed From Dutch
+		-- Patrol Composition Changed From Dutch
 		cataclysm = {
 			{
 				"skaven_storm_vermin_with_shield",
@@ -446,7 +446,7 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
-	-- Patrol Composation Changed From Dutch
+	-- Patrol Composition Changed From Dutch
 	PatrolFormationSettings.beastmen_standard = {
 		settings = {
 			extra_breed_name = {

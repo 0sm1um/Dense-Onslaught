@@ -7,7 +7,6 @@ local mod = get_mod("Dense Onslaught")
 	Most of these functions were written by Grim.
 --]]
 
-
 function create_weights()
 	local crash = nil
 

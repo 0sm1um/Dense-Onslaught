@@ -1,24 +1,24 @@
 local mod = get_mod("Dense Onslaught")
-local mutator = mod:persistent_table("DenseOnslaught")
+local mutator = mod:persistent_table("Dense Onslaught")
 
-	-- Save existing horde tables
-	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)
-	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)
-	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
-	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
+	-- Pacing
+	--mutator.OriginalManagers = table.clone(Managers)
+	mutator.OriginalConflictDirector = ConflictDirector
+	mutator.OriginalBreeds = table.clone(Breeds)
 	mutator.OriginalBreedPacks = table.clone(BreedPacks)
 	mutator.OriginalPackSpawningSettings = table.clone(PackSpawningSettings)
+	mutator.OriginalPacingSettings = table.clone(PacingSettings)
 	mutator.OriginalRecycleSettings  = table.clone(RecycleSettings)
-	mutator.OriginalPacingSettingsDefault = table.clone(PacingSettings.default)
-	mutator.OriginalPacingSettingsChaos = table.clone(PacingSettings.chaos)
-	mutator.OriginalPacingSettingsBeastmen = table.clone(PacingSettings.beastmen)
+	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
+	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
 	mutator.OriginalSpecialsSettings = table.clone(SpecialsSettings)
+
+	-- Events and Triggers
+	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)
+	mutator.OriginalTerrorEventBlueprints = table.clone(TerrorEventBlueprints)
 	mutator.OriginalBossSettings = table.clone(BossSettings)
+	mutator.OriginalPatrolFormationSettings = table.clone(PatrolFormationSettings)
+
+	-- Dutch Remnants
 	mutator.OriginalBreedActions = table.clone(BreedActions)
-	mutator.OriginalThreatValue = {}
-	for name, breed in pairs(Breeds) do
-		if breed.threat_value then
-			mutator.OriginalThreatValue[name] = breed.threat_value
-		end
-	end
-	mutator.OriginalBeastmenBannerBuff = BuffTemplates.healing_standard.buffs
+	mutator.OriginalBuffTemplates = table.clone(BuffTemplates)

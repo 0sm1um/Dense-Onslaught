@@ -21,7 +21,7 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the 
 
 mutator.start = function()
 
-	-- Save existing horde tables
+	-- Save existing tables
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
