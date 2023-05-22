@@ -49,6 +49,7 @@ mod.on_game_state_changed = function(status, state)
 end
 
 mutator.toggle = function()
+	mod.difficulty_level = mod:get("difficulty_level")
 	if Managers.state.game_mode == nil or (Managers.state.game_mode._game_mode_key ~= "inn" and Managers.player.is_server) then
 		mod:echo("You must be in the keep to do that!")
 		return
@@ -64,8 +65,13 @@ mutator.toggle = function()
 		end
 		mutator.start()
 		mod:network_send("rpc_enable_white_sv", "all", true)
-
-		mod:chat_broadcast("Dense Onslaught ENABLED.")
+		if mod.difficulty_level == 1 then
+			mod:chat_broadcast("Level 1 Dense Onslaught ENABLED.")
+		elseif mod.difficulty_level == 2 then
+			mod:chat_broadcast("Level 2 Dense Onslaught ENABLED.")
+		else
+			mod:chat_broadcast("Level 3 Dense Onslaught ENABLED.")
+		end
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)
