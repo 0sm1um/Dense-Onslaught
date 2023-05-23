@@ -18,27 +18,27 @@ local mod = get_mod("Dense Onslaught")
 	
 	local scaling_data = {
     {
-        scale_factor = trash_scale,
+        scale_factor = trash_scale * mod.gain,
         breeds = trash_entities,
     },
     {
-        scale_factor = shield_trash_scale,
+        scale_factor = shield_trash_scale * mod.gain,
         breeds = shield_trash_entities,
     },
     {
-        scale_factor = elite_scale,
+        scale_factor = elite_scale * mod.gain,
         breeds = elite_entities,
     },
     {
-        scale_factor = shield_elite_scale,
+        scale_factor = shield_elite_scale * mod.gain,
         breeds = shield_elite_entities,
     },
     {
-        scale_factor = berzerker_scale,
+        scale_factor = berzerker_scale * mod.gain,
         breeds = berzerker_entities,
     },
     {
-        scale_factor = super_armor_scale,
+        scale_factor = super_armor_scale * mod.gain,
         breeds = super_armor_entities,
     },
 }

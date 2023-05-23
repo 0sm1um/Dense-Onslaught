@@ -49,7 +49,6 @@ mod.on_game_state_changed = function(status, state)
 end
 
 mutator.toggle = function()
-	mod.difficulty_level = mod:get("difficulty_level")
 	mod.auto_enable_deathwish = mod:get("auto_enable_deathwish")
 	local deathwish_mod_name = "catas"
 	mod.is_mod_mutator_enabled(deathwish_mod_name, deathwish_mod_name)
@@ -85,7 +84,8 @@ mutator.toggle = function()
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)
-
 		mod:chat_broadcast("Dense Onslaught DISABLED.")
 	end
 end
+
+mod:command("dn", " ... ", function() mod:chat_broadcast("HA! GOTEEM!!!") end)
