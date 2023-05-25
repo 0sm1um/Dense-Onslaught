@@ -28,7 +28,7 @@ local mod = get_mod("Dense Onslaught")
         breeds = trash_entities,
     },
     {
-        scale_factor = shield_trash_scale * mod.gain,
+        scale_factor = shield_trash_scale,
         breeds = shield_trash_entities,
     },
     {
@@ -44,7 +44,7 @@ local mod = get_mod("Dense Onslaught")
         breeds = berzerker_entities,
     },
     {
-        scale_factor = super_armor_scale * mod.gain,
+        scale_factor = super_armor_scale * mod.gain^2,
         breeds = super_armor_entities,
     },
 }
@@ -118,13 +118,13 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_storm_vermin_commander",
 				{
-					5,
-					6
+					3,
+					5
 				},
 				"skaven_storm_vermin",
 				{
-					1,
-					2
+					2,
+					4
 				}
 			}
 		},
