@@ -1,9 +1,27 @@
 local mod = get_mod("Dense Onslaught")
 
 	--[[
-		This function us used to dozens of lines of code without manually tweaking every single horde composition.
+		This function is used to dozens of lines of code without manually tweaking every single horde composition.
 		Requires locally defined variables to function.
 	--]]
+
+mod.calculate_breed_pack_weights = function(scaling_data, breed_packs)
+	local weighted_packs = {}
+	for _, pack in pairs(breed_packs) do -- Select a Pack
+		for breed_name, breed_table in pairs(pack.members) do -- Iterate through Pack Members
+			for _, scale_data in pairs(scaling_data) do -- Iterate through classes of enemies.
+				for _, scale_breed_name in pairs(scale_data.breeds) do  -- On a selected class, check each breed
+					if string.find(tostring(breed_name), scale_breed_name) then -- If the breed is in the breed class:
+						pack.spawn_weight = pack.spawn_weight + scale_data.scale_factor
+					end
+				end
+			end
+		end
+		table.insert(weighted_packs,pack)
+	end
+	return weighted_packs
+end
+
 
 function scale_horde_composition(HordeCompositions,faction,scaling_data)
 	for horde_name, horde_comp_data in pairs(HordeCompositions) do
@@ -35,37 +53,60 @@ function scale_horde_composition(HordeCompositions,faction,scaling_data)
 	end
 end
 
-function scale_clamp_values(BreedPacks,scaling_data, hi_or_low)
-	for pack_name, breed_pack_data in pairs(BreedPacks) do
-		if not string.find(tostring(pack_name), "code_test") then
-			for pack_attribute_name, pack_attribute_item in pairs(breed_pack_data) do
-				if string.find(tostring(pack_attribute_name), "zone_checks") then
-					for hi_low_name, hi_low_contents in pairs(pack_attribute_item) do
-						if string.find(tostring(hi_low_name), hi_or_low) then
-							for difficulty_name, clamp_contents  in pairs(hi_low_contents) do
-								for clamp_breed_table, clamp_breed_info in pairs(clamp_contents) do
-									for _, scaling_data in pairs(scaling_data) do
-										for _, enemy_name in pairs(scaling_data.breeds) do
-											if clamp_breed_info[2] == enemy_name then
-												if type(clamp_breed_info[1]) == "number" then
-													clamp_breed_info[1] = math.floor(clamp_breed_info[1] * scaling_data.scale_factor)
-												else
-													clamp_breed_info[1] = math.floor(clamp_breed_info[1][1] * scaling_data.scale_factor)
-												end
-											end
-										end
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
+-- Functions for applying BreedPacks
+
+mod.calc_num_in_packs = function(breed_packs, roaming_set_name)
+	local num_breed_packs = #breed_packs
+
+	for i = 1, num_breed_packs do
+		local pack = breed_packs[i]
+		local size = #pack.members
+
+		fassert(InterestPointUnits[size], "The %d pack in BreedPacks[%s] is of size %d. There are no InterestPointUnits matching this size.", i, roaming_set_name, size)
+
+		pack.members_n = size
 	end
+
+	return num_breed_packs
 end
 
--- Functions for applying BreedPacks
+mod.generate_breed_pack_by_size = function(breed_packs, roaming_set_name)
+	local num_breed_packs = mod.calc_num_in_packs(breed_packs, roaming_set_name)
+
+	assert("BreedPack of size have no matching interestpoint of that size.")
+
+	local breed_pack_by_size = {}
+	local by_size = {}
+
+	for i = 1, num_breed_packs do
+		local pack = breed_packs[i]
+		local size = pack.members_n
+
+		if not by_size[size] then
+			by_size[size] = {
+				packs = {},
+				weights = {}
+			}
+		end
+
+		local slot = by_size[size]
+		local packs = slot.packs
+		packs[#packs + 1] = pack
+		slot.weights[#slot.weights + 1] = pack.spawn_weight
+	end
+
+	for size, slot in pairs(by_size) do
+		local prob, alias = LoadedDice.create(slot.weights, false)
+		breed_pack_by_size[size] = {
+			packs = slot.packs,
+			prob = prob,
+			alias = alias
+		}
+	end
+
+	return breed_pack_by_size
+end
+
 
 mod.get_with_override = function(settings, key, difficulty, fallback_difficulty)
 	local overrides = settings.difficulty_overrides

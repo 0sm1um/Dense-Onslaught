@@ -1,12 +1,11 @@
--- local mod = get_mod("Dense Onslaught")
+-- -- local mod = get_mod("Dense Onslaught")
 
--- --[[
--- 	This file contains functions and hooks required for the rest of the mod to function.
--- 	I do not reccomend messing with this unless you know what you are doing.
+-- -- --[[
+-- -- 	This file contains functions and hooks required for the rest of the mod to function.
+-- -- 	I do not reccomend messing with this unless you know what you are doing.
 	
 -- 	Most of these functions were written by Grim.
 -- --]]
-
 
 -- function create_weights()
 -- 	local crash = nil

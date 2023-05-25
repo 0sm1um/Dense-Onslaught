@@ -16,6 +16,11 @@ mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
 mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
 
+
+mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
+for level_key,data in pairs(LevelSettings) do
+    mod:set(data.level_name, "dense_default")
+end
 --[[
 --initalizes new directors and sets levels to use them
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
@@ -79,13 +84,10 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the 
 
 mutator.start = function()
 
-	-- Save existing horde tables
+	-- Save existing tables
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
-	-- Reworked BreedPacks
-	mod:dofile("scripts/mods/Dense Onslaught/base/breed_pack_helper_functions")
-
 
 	------------------------------------------------
 	---------------------Pacing---------------------
@@ -162,12 +164,6 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Events/enchanters_lair")
 	-- Trail of Treachery
 	mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
-
-	------------------------------------------------
-	-----------------Apply Settings-----------------
-	------------------------------------------------
-
---	mod:dofile("scripts/mods/Dense Onslaught/base/apply_breed_packs")
 
 	create_weights()
 	mod:enable_all_hooks()
