@@ -4,6 +4,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	-- Pacing
 	Breeds = mutator.OriginalBreeds
 	BreedPacks = mutator.OriginalBreedPacks
+	BreedPacksBySize = mutator.OriginalBreedPacksBySize
 	PackSpawningSettings = mutator.OriginalPackSpawningSettings
 	PacingSettings = mutator.OriginalPacingSettings
 	RecycleSettings  = mutator.OriginalRecycleSettings
