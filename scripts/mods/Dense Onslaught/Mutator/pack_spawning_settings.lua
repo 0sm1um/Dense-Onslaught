@@ -49,11 +49,11 @@ local range = 0.1
 	local gain = 0
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
-		gain = -0.02
+		gain = -0.01
 	elseif mod.difficulty_level == 2 then
 		gain = 0
 	else
-		gain = 0.02
+		gain = 0.03
 	end
 
 	PackSpawningSettings.default.area_density_coefficient = 0.07 + gain

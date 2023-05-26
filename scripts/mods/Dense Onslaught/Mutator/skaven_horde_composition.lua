@@ -65,13 +65,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_plague_monk",
 				{
@@ -117,13 +117,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -177,13 +177,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -229,13 +229,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -289,13 +289,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
@@ -346,13 +346,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin_with_shield",
 				{
@@ -401,13 +401,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					24
+					16,
+					22
 				},
 				"skaven_storm_vermin",
 				{

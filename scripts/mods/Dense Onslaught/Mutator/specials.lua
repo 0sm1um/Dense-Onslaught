@@ -37,7 +37,7 @@ local mod = get_mod("Dense Onslaught")
 	SpecialsSettings.chaos = SpecialsSettings.default
 	SpecialsSettings.chaos_light = SpecialsSettings.default
 	SpecialsSettings.beastmen = SpecialsSettings.default
-	
+--[[
 	SpecialsSettings.beastmen.breeds = {
 		"beastmen_standard_bearer",
 		"chaos_vortex_sorcerer",
@@ -51,6 +51,7 @@ local mod = get_mod("Dense Onslaught")
 		"skaven_ratling_gunner",
 		"skaven_ratling_gunner"
 	}
+--]]
 
 	if mod.gain == 1.25 then
 		SpecialsSettings.default.methods.specials_by_slots.max_of_same = 4
