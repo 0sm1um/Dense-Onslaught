@@ -2,8 +2,7 @@ local mod = get_mod("Dense Onslaught")
 local mutator = mod:persistent_table("Dense Onslaught")
 
 	-- Pacing
-	--mutator.OriginalManagers = table.clone(Managers)
-	mutator.OriginalConflictDirector = ConflictDirector
+	mutator.OriginalConflictDirectors = table.clone(ConflictDirectors)
 	mutator.OriginalBreeds = table.clone(Breeds)
 	mutator.OriginalBreedPacks = table.clone(BreedPacks)
 	mutator.OriginalPackSpawningSettings = table.clone(PackSpawningSettings)

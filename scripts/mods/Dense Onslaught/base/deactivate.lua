@@ -22,4 +22,4 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	BuffTemplates = mutator.OriginalBuffTemplates
 
 	--Managers = mutator.OriginalManagers
-	ConflictDirector = mutator.OriginalConflictDirector
+	ConflictDirectors = mutator.OriginalConflictDirectors
