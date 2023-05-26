@@ -10,12 +10,12 @@ local mod = get_mod("Dense Onslaught")
 	slots by 1, and added more increased spawn timers.
 	--]]
 
-
-	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
 	PacingSettings.default.delay_specials_threat_value = nil
 	PacingSettings.chaos = PacingSettings.default
+	PacingSettings.skaven = PacingSettings.skaven
 	PacingSettings.beastmen = PacingSettings.beastmen
 
+	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
 	SpecialsSettings.default.methods.specials_by_slots = {
 		max_of_same = 2,                                         -- Same as Dutch
 		coordinated_attack_cooldown_multiplier = 0.5,
@@ -37,47 +37,10 @@ local mod = get_mod("Dense Onslaught")
 	SpecialsSettings.chaos = SpecialsSettings.default
 	SpecialsSettings.chaos_light = SpecialsSettings.default
 	SpecialsSettings.beastmen = SpecialsSettings.default
---[[
-	SpecialsSettings.beastmen.breeds = {
-		"beastmen_standard_bearer",
-		"chaos_vortex_sorcerer",
-		"chaos_vortex_sorcerer",
-		"chaos_corruptor_sorcerer",
-		"chaos_corruptor_sorcerer",
-		"skaven_gutter_runner",
-		"skaven_gutter_runner",
-		"skaven_pack_master",
-		"skaven_pack_master",
-		"skaven_ratling_gunner",
-		"skaven_ratling_gunner"
-	}
---]]
 
 	if mod.gain == 1.25 then
 		SpecialsSettings.default.methods.specials_by_slots.max_of_same = 4
-		SpecialsSettings.default.breeds = {
-			"skaven_gutter_runner",
-			"skaven_gutter_runner",
-			"skaven_pack_master",
-			"skaven_pack_master",
-			"skaven_ratling_gunner",
-			"skaven_poison_wind_globadier",
-			"chaos_vortex_sorcerer",
-			"chaos_vortex_sorcerer",
-			"chaos_corruptor_sorcerer",
-			"skaven_warpfire_thrower"
-		}
-		SpecialsSettings.beastmen.breeds = {
-			"beastmen_standard_bearer",
-			"skaven_gutter_runner",
-			"skaven_gutter_runner",
-			"skaven_pack_master",
-			"skaven_ratling_gunner",
-			"skaven_poison_wind_globadier",
-			"chaos_vortex_sorcerer",
-			"chaos_corruptor_sorcerer",
-			"skaven_warpfire_thrower"
-		}
+		SpecialsSettings.beastmen.methods.specials_by_slots.max_of_same = 4
 	end
 
 	SpecialsSettings.beastmen_light = SpecialsSettings.beastmen

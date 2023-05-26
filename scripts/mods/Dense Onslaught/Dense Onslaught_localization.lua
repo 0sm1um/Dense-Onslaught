@@ -30,9 +30,9 @@ return {
 		en = "Enable this if you are running into memory related crashes."
 	},
 	giga_ambients = {
-		en = "69"
+		en = "Giga Ambients"
 	},
 	giga_ambients_tooltip = {
-		en = "Spawn Ambients in all Zones."
+		en = "Warning: Not for the faint of heart."
 	},
 }

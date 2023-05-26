@@ -85,6 +85,13 @@ mutator.toggle = function()
 			RecycleSettings.max_grunts = 150
 			mod:chat_broadcast("Low Performance Mode ENABLED")
 		end
+		if mod:get("giga_ambients") then
+			PackSpawningSettings.default.area_density_coefficient = 1
+			PackSpawningSettings.skaven.area_density_coefficient = 1
+			PackSpawningSettings.chaos.area_density_coefficient = 1
+			PackSpawningSettings.beastmen.area_density_coefficient = 1
+			mod:chat_broadcast("GIGA Ambients ENABLED")
+		end
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)
