@@ -21,7 +21,13 @@ return {
 		en = "Level 3"
 	},
 	difficulty_level_tooltip = {
-		en = "Choose from one of three difficulty levels."
+		en = "Choose from one of three difficulty levels. Level 1 is comparable to Base Onslaught, Level 2 comparable to Ons+, Level 3 comparable to Dutch Spice."
+	},
+	low_performance_mode = {
+		en = "Low Performance Mode"
+	},
+	low_performance_mode_tooltip = {
+		en = "Enable this if you are running into memory related crashes."
 	},
 	giga_ambients = {
 		en = "69"

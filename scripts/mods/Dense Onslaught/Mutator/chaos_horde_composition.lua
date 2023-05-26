@@ -43,6 +43,15 @@ local mod = get_mod("Dense Onslaught")
     },
 }
 
+--[[
+	Key to understanding:
+		Plain: Always Unshielded trash
+		Zerker: Always Shielded Trash
+		Shielders: Always Shielded Trash
+		Leader: Always unshielded trash and max of 2 CWs
+		Frenzy: Always mix of maulers and berzerkers
+]]
+
 HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 		{
 			name = "plain",
@@ -60,13 +69,13 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_raider",
 				{
-					3,
-					4
+					4,
+					5
 				},
 				"chaos_warrior",
 				{
 					1,
-					2,
+					1
 				}
 			}
 		},
@@ -92,7 +101,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_berzerker",
 				{
 					5,
-					6
+					7
 				}
 			}
 		},
@@ -115,10 +124,15 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 					4,
 					6
 				},
+				"chaos_berzerker",
+				{
+					3,
+					5
+				},
 				"chaos_raider",
 				{
-					4,
-					5
+					1,
+					2
 				}
 			}
 		},
@@ -139,12 +153,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					3,
-					4
+					5
 				},
 				"chaos_warrior",
 				{
 					1,
-					2,
+					2
 				}
 			}
 		},
@@ -169,9 +183,9 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_berzerker",
 				{
-					2,
-					3
-				},
+					4,
+					5
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -194,7 +208,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					3,
-					4
+					5
 				},
 				"chaos_warrior",
 				{
@@ -224,7 +238,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_berzerker",
 				{
-					4,
+					3,
 					5
 				}
 			}
@@ -251,7 +265,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					3,
-					4
+					5
 				}
 			}
 		},
@@ -271,8 +285,8 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_raider",
 				{
-					2,
-					3
+					4,
+					5
 				},
 				"chaos_warrior",
 				{
@@ -303,8 +317,8 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_berzerker",
 				{
 					2,
-					3
-				},
+					4
+				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -332,7 +346,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_warrior",
 				{
 					1,
-					2
+					1
 				}
 			}
 		},
@@ -358,7 +372,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_warrior",
 				{
 					1,
-					2
+					1
 				}
 			}
 		},
@@ -383,13 +397,13 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_raider",
 				{
-					2,
+					1,
 					3
 				},
 				"chaos_berzerker",
 				{
 					3,
-					5
+					6
 				}
 			}
 		},
@@ -435,13 +449,18 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_raider",
 				{
-					3,
+					2,
 					4
 				},
 				"chaos_berzerker",
 				{
-					3,
-					4
+					1,
+					3
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
 				}
 			}
 		},
@@ -455,22 +474,22 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
 					8,
-					12
-				},
-				"chaos_marauder_with_shield",
-				{
-					4,
-					6
+					14
 				},
 				"chaos_berzerker",
 				{
-					5,
-					6
+					3,
+					5
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
 				}
 			}
 		},
@@ -495,8 +514,8 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_berzerker",
 				{
-					5,
-					6
+					4,
+					7
 				}
 			}
 		},
@@ -519,9 +538,14 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 					4,
 					6
 				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
 				"chaos_berzerker",
 				{
-					5,
+					3,
 					6
 				}
 			}

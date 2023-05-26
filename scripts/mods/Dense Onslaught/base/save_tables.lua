@@ -12,6 +12,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
 	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
 	mutator.OriginalSpecialsSettings = table.clone(SpecialsSettings)
+	mutator.OriginalCurrentSpecialsSettings = table.clone(CurrentSpecialsSettings)
 
 	-- Events and Triggers
 	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)

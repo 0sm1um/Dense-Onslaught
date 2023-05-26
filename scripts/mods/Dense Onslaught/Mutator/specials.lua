@@ -12,19 +12,12 @@ local mod = get_mod("Dense Onslaught")
 
 
 	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.default_light.max_specials = 7              -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.skaven.max_specials = 7                     -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.skaven_light.max_specials = 7               -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.chaos.max_specials = 7                      -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.chaos_light.max_specials = 7                -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.beastmen.max_specials = 7                   -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.skaven_beastmen.max_specials = 7            -- 2 More than Ons+, 1 Less than Dutch
-	SpecialsSettings.chaos_beastmen.max_specials = 7             -- 2 More than Ons+, 1 Less than Dutch
 	PacingSettings.default.delay_specials_threat_value = nil
-	PacingSettings.chaos.delay_specials_threat_value = nil
-	PacingSettings.beastmen.delay_specials_threat_value = nil
+	PacingSettings.chaos = PacingSettings.default
+	PacingSettings.beastmen = PacingSettings.beastmen
+
 	SpecialsSettings.default.methods.specials_by_slots = {
-		max_of_same = 4,                                         -- Same as Dutch
+		max_of_same = 2,                                         -- Same as Dutch
 		coordinated_attack_cooldown_multiplier = 0.5,
 		chance_of_coordinated_attack = 0.5,
 		select_next_breed = "get_random_breed",
@@ -37,118 +30,14 @@ local mod = get_mod("Dense Onslaught")
 			60													 -- Median of Ons+ and Dutch
 		}
 	}
-	SpecialsSettings.default_light.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.skaven.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.skaven_light.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.chaos.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.chaos_light.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.beastmen.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.skaven_beastmen.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
-	SpecialsSettings.chaos_beastmen.methods.specials_by_slots = {
-		max_of_same = 2,
-		coordinated_attack_cooldown_multiplier = 0.5,
-		chance_of_coordinated_attack = 0.5,
-		select_next_breed = "get_random_breed",
-		after_safe_zone_delay = {
-			5,
-			20
-		},
-		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
-		}
-	}
+
+	SpecialsSettings.default_light = SpecialsSettings.default
+	SpecialsSettings.skaven = SpecialsSettings.default
+	SpecialsSettings.skaven_light = SpecialsSettings.default
+	SpecialsSettings.chaos = SpecialsSettings.default
+	SpecialsSettings.chaos_light = SpecialsSettings.default
+	SpecialsSettings.beastmen = SpecialsSettings.default
+	
 	SpecialsSettings.beastmen.breeds = {
 		"beastmen_standard_bearer",
 		"chaos_vortex_sorcerer",
@@ -162,34 +51,37 @@ local mod = get_mod("Dense Onslaught")
 		"skaven_ratling_gunner",
 		"skaven_ratling_gunner"
 	}
-	SpecialsSettings.skaven_beastmen.breeds = {
-		"skaven_gutter_runner",
-		"skaven_gutter_runner",
-		"skaven_pack_master",
-		"skaven_pack_master",
-		"skaven_ratling_gunner",
-		"skaven_ratling_gunner",
-		"skaven_poison_wind_globadier",
-		"skaven_poison_wind_globadier",
-		"skaven_warpfire_thrower",
-		"skaven_warpfire_thrower",
-		"beastmen_standard_bearer"
-	}
-	SpecialsSettings.chaos_beastmen.breeds = {
-		"skaven_gutter_runner",
-		"skaven_gutter_runner",
-		"skaven_pack_master",
-		"skaven_pack_master",
-		"skaven_poison_wind_globadier",
-		"skaven_poison_wind_globadier",
-		"chaos_vortex_sorcerer",
-		"chaos_vortex_sorcerer",
-		"chaos_corruptor_sorcerer",
-		"chaos_corruptor_sorcerer",
-		"skaven_warpfire_thrower",
-		"skaven_warpfire_thrower",
-		"beastmen_standard_bearer"
-	}
+
+	if mod.gain == 1.25 then
+		SpecialsSettings.default.methods.specials_by_slots.max_of_same = 4
+		SpecialsSettings.default.breeds = {
+			"skaven_gutter_runner",
+			"skaven_gutter_runner",
+			"skaven_pack_master",
+			"skaven_pack_master",
+			"skaven_ratling_gunner",
+			"skaven_poison_wind_globadier",
+			"chaos_vortex_sorcerer",
+			"chaos_vortex_sorcerer",
+			"chaos_corruptor_sorcerer",
+			"skaven_warpfire_thrower"
+		}
+		SpecialsSettings.beastmen.breeds = {
+			"beastmen_standard_bearer",
+			"skaven_gutter_runner",
+			"skaven_gutter_runner",
+			"skaven_pack_master",
+			"skaven_ratling_gunner",
+			"skaven_poison_wind_globadier",
+			"chaos_vortex_sorcerer",
+			"chaos_corruptor_sorcerer",
+			"skaven_warpfire_thrower"
+		}
+	end
+
+	SpecialsSettings.beastmen_light = SpecialsSettings.beastmen
+	SpecialsSettings.skaven_beastmen = SpecialsSettings.beastmen
+	SpecialsSettings.chaos_beastmen = SpecialsSettings.beastmen
 
 	SpecialsSettings.default.difficulty_overrides.hard = nil
 	SpecialsSettings.default.difficulty_overrides.harder = nil

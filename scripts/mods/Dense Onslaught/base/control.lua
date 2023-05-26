@@ -81,6 +81,10 @@ mutator.toggle = function()
 		else
 			mod:chat_broadcast("Dense Onslaught Level 3 ENABLED.")
 		end
+		if mod:get("low_performance_mode") then
+			RecycleSettings.max_grunts = 150
+			mod:chat_broadcast("Low Performance Mode ENABLED")
+		end
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)

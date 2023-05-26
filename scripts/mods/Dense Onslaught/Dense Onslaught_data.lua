@@ -28,6 +28,13 @@ menu.options.widgets = {
 				},
 				sub_widgets = {},
 			},
+			{
+				setting_id    = "low_performance_mode",
+				type          = "checkbox",
+				title		  = "low_performance_mode",
+				tooltip       = "low_performance_mode_tooltip",
+				default_value = false
+			},
 			--[[
 			{
 				setting_id    = "giga_ambients",
