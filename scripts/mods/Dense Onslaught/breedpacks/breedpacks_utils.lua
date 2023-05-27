@@ -29,10 +29,6 @@ BreedpackUtils.calculate_breed_pack_weights = function(scaling_data, breed_packs
 		table.insert(weighted_packs,pack)
 	end
 
-    breed_packs["roof_spawning_allowed"] = true
-    breed_packs["zone_checks"] = table.clone(BreedPacks.standard.zone_checks)
-    breed_packs["patrol_overrides"] = table.clone(BreedPacks.standard.patrol_overrides)
-
 	return weighted_packs
 end
 
@@ -78,9 +74,12 @@ BreedpackUtils.add_new_pack = function(name, BreedPacks_table)
         }
     }
 
-    local new_pack = mod:dofile("scripts/mods/Dense Onslaught/breedpacks/"..name)
+    local new_pack = mod:dofile("scripts/mods/Dense Onslaught/breedpacks/packs/"..name)
     -- BreedPacks_table[name] = BreedpackUtils.add_generate_missing_pack_wieghts(new_pack)
     BreedpackUtils.calculate_breed_pack_weights(scaling_data ,new_pack)
+    new_pack["roof_spawning_allowed"] = true
+    new_pack["zone_checks"] = table.clone(BreedPacks[string.gsub(name,"dense_", "")].zone_checks)
+    new_pack["patrol_overrides"] = table.clone(BreedPacks[string.gsub(name,"dense_", "")].patrol_overrides)
     BreedPacks_table[name] = new_pack
 end
 
