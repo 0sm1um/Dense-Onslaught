@@ -53,6 +53,18 @@ function scale_horde_composition(HordeCompositions,faction,scaling_data)
 	end
 end
 
+mod.is_mod_mutator_enabled = function(mod_name, mutator_name)
+	local other_mod = get_mod(mod_name)
+	local mod_is_enabled = false
+	local mutator_is_enabled = false
+	if other_mod then
+	  local omutator = other_mod:persistent_table(mutator_name)
+	  mod_is_enabled = other_mod:is_enabled()
+	  mutator_is_enabled = omutator.active
+	end
+	return mod_is_enabled and mutator_is_enabled
+end
+
 -- Functions for applying BreedPacks
 
 mod.calc_num_in_packs = function(breed_packs, roaming_set_name)

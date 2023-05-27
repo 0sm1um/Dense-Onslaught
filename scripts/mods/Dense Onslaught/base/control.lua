@@ -49,6 +49,10 @@ mod.on_game_state_changed = function(status, state)
 end
 
 mutator.toggle = function()
+	mod.auto_enable_deathwish = mod:get("auto_enable_deathwish")
+	local deathwish_mod_name = "catas"
+	mod.is_mod_mutator_enabled(deathwish_mod_name, deathwish_mod_name)
+
 	if Managers.state.game_mode == nil or (Managers.state.game_mode._game_mode_key ~= "inn" and Managers.player.is_server) then
 		mod:echo("You must be in the keep to do that!")
 		return
@@ -63,13 +67,36 @@ mutator.toggle = function()
 			return
 		end
 		mutator.start()
+		if mod.auto_enable_deathwish and not mod.is_mod_mutator_enabled(deathwish_mod_name, deathwish_mod_name) then
+			local dw = get_mod("catas")
+			local deathwish = dw:persistent_table("catas")
+			deathwish.start()
+			mod:chat_broadcast("Deathwish ENABLED.")
+		end
 		mod:network_send("rpc_enable_white_sv", "all", true)
-
-		mod:chat_broadcast("Dense Onslaught ENABLED.")
+		if mod.difficulty_level == 1 then
+			mod:chat_broadcast("Dense Onslaught Level 1 ENABLED.")
+		elseif mod.difficulty_level == 2 then
+			mod:chat_broadcast("Dense Onslaught Level 2 ENABLED.")
+		else
+			mod:chat_broadcast("Dense Onslaught Level 3 ENABLED.")
+		end
+		if mod:get("low_performance_mode") then
+			RecycleSettings.max_grunts = 150
+			mod:chat_broadcast("Low Performance Mode ENABLED")
+		end
+		if mod:get("giga_ambients") then
+			PackSpawningSettings.default.area_density_coefficient = 1
+			PackSpawningSettings.skaven.area_density_coefficient = 1
+			PackSpawningSettings.chaos.area_density_coefficient = 1
+			PackSpawningSettings.beastmen.area_density_coefficient = 1
+			mod:chat_broadcast("GIGA Ambients ENABLED")
+		end
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)
-
 		mod:chat_broadcast("Dense Onslaught DISABLED.")
 	end
 end
+
+mod:command("dn", " ... ", function() mod:chat_broadcast("HA! GOTEEM!!!") end)

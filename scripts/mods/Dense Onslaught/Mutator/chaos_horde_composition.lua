@@ -26,197 +26,46 @@ local mod = get_mod("Dense Onslaught")
         breeds = shield_trash_entities,
     },
     {
-        scale_factor = elite_scale,
+        scale_factor = elite_scale * mod.gain,
         breeds = elite_entities,
     },
     {
-        scale_factor = shield_elite_scale,
+        scale_factor = shield_elite_scale * mod.gain,
         breeds = shield_elite_entities,
     },
     {
-        scale_factor = berzerker_scale,
+        scale_factor = berzerker_scale * mod.gain,
         breeds = berzerker_entities,
     },
     {
-        scale_factor = super_armor_scale,
+        scale_factor = super_armor_scale * mod.gain^2,
         breeds = super_armor_entities,
     },
 }
 
-	HordeCompositionsPacing.chaos_medium = {	-- Never spawned in this mod.
+--[[
+	Key to understanding:
+		Plain: Always Unshielded trash
+		Zerker: Always Shielded Trash
+		Shielders: Always Shielded Trash
+		Leader: Always unshielded trash and max of 2 CWs
+		Frenzy: Always mix of maulers and berzerkers
+]]
+
+HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 		{
 			name = "plain",
-			weight = 7,
-			breeds = {
-				"chaos_marauder",
-				{
-					3,
-					4
-				},
-				"chaos_fanatic",
-				{
-					15,
-					20
-				}
-			}
-		},
-		{
-			name = "zerkers",
 			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					15,
-					20
-				},
-				"chaos_berzerker",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					15,
-					20
-				},
-				"chaos_marauder_with_shield",
-				{
-					1,
-					3
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					15,
-					20
-				},
-				"chaos_raider",
-				{
-					1,
-					1
-				}
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.chaos
-	}
-	HordeCompositionsPacing.chaos_large = {	-- Never spawned in this mod.
-		{
-			name = "plain",
-			weight = 7,
-			breeds = {
-				"chaos_marauder",
-				{
-					5,
-					6
-				},
-				"chaos_fanatic",
-				{
-					20,
-					25
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					20,
-					25
-				},
-				"chaos_berzerker",
-				{
-					2,
-					3
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					20,
-					25
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					4
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					20,
-					25
-				},
-				"chaos_raider",
-				{
-					2,
-					2
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					20,
-					22
-				},
-				"chaos_raider",
-				{
-					1,
-					1
-				},
-				"chaos_berzerker",
-				{
-					1,
-					2
-				},
-				"chaos_marauder_with_shield",
-				{
-					1,
-					2
-				}
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.chaos
-	}
-	HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
-		{
-			name = "plain",
-			weight = 7,
-			breeds = {
-				"chaos_fanatic",
-				{
-					12,
+					10,
 					14
 				},
 				"chaos_marauder",
 				{
-					16,
-					18
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -225,8 +74,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_warrior",
 				{
-						1,
-						1,
+					1,
+					1
 				}
 			}
 		},
@@ -236,91 +85,96 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_fanatic",
 				{
-					12,
-					14
+					8,
+					12
+				},
+				"chaos_marauder",
+				{
+					8,
+					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					2,
-					3
-				},
-				"chaos_marauder",
-				{
-					9,
-					11
+					4,
+					6
 				},
 				"chaos_berzerker",
-				{
-					4,
-					5
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 3,
-			breeds = {
-				"chaos_fanatic",
-				{
-					7,
-					8
-				},
-				"chaos_marauder",
 				{
 					5,
 					7
+				}
+			}
+		},
+		{
+			name = "shielders",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					12
+				},
+				"chaos_marauder",
+				{
+					8,
+					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					8,
-					10
+					4,
+					6
 				},
-				"chaos_raider",
+				"chaos_berzerker",
 				{
 					3,
 					5
+				},
+				"chaos_raider",
+				{
+					1,
+					2
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					8,
-					9
+					10,
+					14
 				},
 				"chaos_marauder",
 				{
-					12,
+					10,
 					14
 				},
 				"chaos_raider",
 				{
-					2,
-					3
+					3,
+					5
 				},
 				"chaos_warrior",
 				{
-						1,
-						1,
+					1,
+					2
 				}
 			}
 		},
 		{
 			name = "frenzy",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					7,
-					8
+					10,
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					9
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -329,13 +183,8 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"chaos_berzerker",
 				{
-					2,
-					3
-				},
-				"chaos_marauder_with_shield",
-				{
-					8,
-					10
+					4,
+					5
 				}
 			}
 		},
@@ -344,32 +193,27 @@ local mod = get_mod("Dense Onslaught")
 	HordeCompositionsPacing.chaos_huge_shields = {
 		{
 			name = "plain",
-			weight = 7,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					14,
-					15
+					10,
+					14
 				},
 				"chaos_marauder",
 				{
 					10,
-					11
+					14
 				},
-				"chaos_marauder_with_shield",
+				"chaos_raider",
 				{
-					10,
-					12
-				},
-				"chaos_berzerker",
-				{
-					2,
-					3
+					3,
+					5
 				},
 				"chaos_warrior",
 				{
 					1,
-					1
+					2
 				}
 			}
 		},
@@ -379,106 +223,101 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_fanatic",
 				{
-					14,
-					15
+					8,
+					12
+				},
+				"chaos_marauder",
+				{
+					8,
+					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					8,
-					10
+					4,
+					6
 				},
 				"chaos_berzerker",
 				{
-					2,
-					3
-				},
-				"chaos_raider",
-				{
 					3,
-					4
+					5
 				}
 			}
 		},
 		{
 			name = "shielders",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					14,
-					15
+					10,
+					14
+				},
+				"chaos_marauder",
+				{
+					10,
+					14
 				},
 				"chaos_marauder_with_shield",
 				{
-					14,
-					15
+					4,
+					6
 				},
 				"chaos_raider",
 				{
-					6,
-					7
+					3,
+					5
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					8,
-					9
+					10,
+					14
 				},
 				"chaos_marauder",
 				{
 					10,
-					11
+					14
 				},
 				"chaos_raider",
 				{
-					5,
-					6
-				},
-				"chaos_marauder_with_shield",
-				{
-					6,
-					7
+					4,
+					5
 				},
 				"chaos_warrior",
 				{
 					1,
-					1
+					2
 				}
 			}
 		},
 		{
 			name = "frenzy",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					12,
+					8,
 					14
 				},
 				"chaos_marauder",
 				{
-					11,
-					12
+					8,
+					14
 				},
 				"chaos_raider",
 				{
-					2,
-					3
+					3,
+					4
 				},
 				"chaos_berzerker",
 				{
 					2,
-					3
-				},
-				"chaos_marauder_with_shield",
-				{
-					6,
-					7
+					4
 				}
 			}
 		},
@@ -487,130 +326,16 @@ local mod = get_mod("Dense Onslaught")
 	HordeCompositionsPacing.chaos_huge_armor = {
 		{
 			name = "plain",
-			weight = 7,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					14,
-					15
+					10,
+					14
 				},
 				"chaos_marauder",
 				{
-					14,
-					15
-				},
-				"chaos_raider",
-				{
-					2,
-					3
-				},
-				"chaos_berzerker",
-				{
-					2,
-					3
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					14,
-					15
-				},
-				"chaos_marauder",
-				{
-					8,
-					9
-				},
-				"chaos_berzerker",
-				{
-					4,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					14,
-					15
-				},
-				"chaos_marauder",
-				{
-					7,
-					8
-				},
-				"chaos_marauder_with_shield",
-				{
-					9,
-					10
-				},
-				"chaos_raider",
-				{
-					4,
-					5
-				},
-				"chaos_berzerker",
-				{
-					3,
-					4
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 4,
-			breeds = {
-				"chaos_fanatic",
-				{
-					14,
-					15
-				},
-				"chaos_marauder",
-				{
-					9,
-					11
-				},
-				"chaos_raider",
-				{
-					3,
-					4
-				},
-				"chaos_berzerker",
-				{
-					1,
-					2
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					7,
-					9
-				},
-				"chaos_marauder",
-				{
-					12,
+					10,
 					14
 				},
 				"chaos_raider",
@@ -618,39 +343,10 @@ local mod = get_mod("Dense Onslaught")
 					4,
 					5
 				},
-				"chaos_berzerker",
+				"chaos_warrior",
 				{
-					4,
-					5
-				}
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.chaos
-	}
-	HordeCompositionsPacing.chaos_huge_berzerker = {
-		{
-			name = "plain",
-			weight = 7,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					11
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					4
-				},
-				"chaos_marauder",
-				{
-					12,
-					15
-				},
-				"chaos_berzerker",
-				{
-					7,
-					8
+					1,
+					1
 				}
 			}
 		},
@@ -660,18 +356,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"chaos_fanatic",
 				{
-					7,
-					8
+					8,
+					14
 				},
 				"chaos_marauder",
 				{
-					12,
+					8,
 					14
 				},
 				"chaos_berzerker",
 				{
-					5,
-					6
+					4,
+					5
 				},
 				"chaos_warrior",
 				{
@@ -682,86 +378,50 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "shielders",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					11,
+					8,
 					12
 				},
 				"chaos_marauder",
 				{
-					11,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					8,
-					10
+					4,
+					6
+				},
+				"chaos_raider",
+				{
+					1,
+					3
 				},
 				"chaos_berzerker",
 				{
-					5,
+					3,
 					6
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 4,
+			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					9,
-					11
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					4
+					8,
+					14
 				},
 				"chaos_marauder",
 				{
-					9,
-					11
-				},
-				"chaos_berzerker",
-				{
-					7,
-					8
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 2,
-			breeds = {
-				"chaos_fanatic",
-				{
-					9,
-					11
-				},
-				"chaos_marauder",
-				{
-					9,
-					11
+					8,
+					14
 				},
 				"chaos_raider",
-				{
-					4,
-					5
-				},
-				"chaos_berzerker",
-				{
-					3,
-					4
-				},
-				"chaos_marauder_with_shield",
 				{
 					3,
 					4
@@ -769,7 +429,181 @@ local mod = get_mod("Dense Onslaught")
 				"chaos_warrior",
 				{
 					1,
+					2
+				}
+			}
+		},
+		{
+			name = "frenzy",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					14
+				},
+				"chaos_marauder",
+				{
+					8,
+					14
+				},
+				"chaos_raider",
+				{
+					2,
+					4
+				},
+				"chaos_berzerker",
+				{
+					1,
+					3
+				},
+				"chaos_warrior",
+				{
+					1,
 					1
+				}
+			}
+		},
+		sound_settings = HordeCompositionsSoundSettings.chaos
+	}
+	HordeCompositionsPacing.chaos_huge_berzerker = {
+		{
+			name = "plain",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					14
+				},
+				"chaos_marauder",
+				{
+					8,
+					14
+				},
+				"chaos_berzerker",
+				{
+					3,
+					5
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					12
+				},
+				"chaos_marauder",
+				{
+					8,
+					12
+				},
+				"chaos_marauder_with_shield",
+				{
+					4,
+					6
+				},
+				"chaos_berzerker",
+				{
+					4,
+					7
+				}
+			}
+		},
+		{
+			name = "shielders",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					12
+				},
+				"chaos_marauder",
+				{
+					8,
+					12
+				},
+				"chaos_marauder_with_shield",
+				{
+					4,
+					6
+				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					3,
+					6
+				}
+			}
+		},
+		{
+			name = "leader",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					14
+				},
+				"chaos_marauder",
+				{
+					8,
+					14
+				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					3,
+					5
+				},
+				"chaos_warrior",
+				{
+					1,
+					2
+				}
+			}
+		},
+		{
+			name = "frenzy",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					10,
+					14
+				},
+				"chaos_marauder",
+				{
+					10,
+					14
+				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					3,
+					5
 				}
 			}
 		},

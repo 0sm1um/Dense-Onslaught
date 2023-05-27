@@ -84,6 +84,15 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the 
 
 mutator.start = function()
 
+	mod.difficulty_level = mod:get("difficulty_level")
+	if mod.difficulty_level == 1 then
+		mod.gain = 0.85
+	elseif mod.difficulty_level == 2 then
+		mod.gain = 1
+	else
+		mod.gain = 1.25
+	end
+
 	-- Save existing tables
 	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 	-- Load Custom Breed Data

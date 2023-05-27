@@ -8,11 +8,11 @@ local mod = get_mod("Dense Onslaught")
 
 	local faction = "huge"
 
-	local trash_scale = 0.7
+	local trash_scale = 1
 	local shield_trash_scale = 1
-	local elite_scale = 0.75
+	local elite_scale = 1
 	local shield_elite_scale = 1
-	local berzerker_scale = 0.75
+	local berzerker_scale = 1
 	local super_armor_scale = 1
 
 	local trash_entities = {"skaven_slave","skaven_clan_rat"}
@@ -32,203 +32,32 @@ local mod = get_mod("Dense Onslaught")
         breeds = shield_trash_entities,
     },
     {
-        scale_factor = elite_scale,
+        scale_factor = elite_scale * mod.gain,
         breeds = elite_entities,
     },
     {
-        scale_factor = shield_elite_scale,
+        scale_factor = shield_elite_scale * mod.gain,
         breeds = shield_elite_entities,
     },
     {
-        scale_factor = berzerker_scale,
+        scale_factor = berzerker_scale * mod.gain,
         breeds = berzerker_entities,
     },
     {
-        scale_factor = super_armor_scale,
+        scale_factor = super_armor_scale * mod.gain,
         breeds = super_armor_entities,
     },
 }
 
-	HordeCompositionsPacing.small = {
-		{
-			name = "plain",
-			weight = 7,
-			breeds = {
-				"skaven_slave",
-				{
-					8,
-					10
-				},
-				"skaven_clan_rat",
-				{
-					12,
-					14
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 7,
-			breeds = {
-				"skaven_slave",
-				{
-					10,
-					12
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					7,
-					8
-				}
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.skaven
-	}
-	HordeCompositionsPacing.medium = {
-		{
-			name = "plain",
-			weight = 5,
-			breeds = {
-				"skaven_slave",
-				{
-					15,
-					20
-				},
-				"skaven_clan_rat",
-				{
-					26,
-					30
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 7,
-			breeds = {
-				"skaven_slave",
-				{
-					16,
-					20
-				},
-				"skaven_clan_rat",
-				{
-					10,
-					12
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"skaven_slave",
-				{
-					15,
-					20
-				},
-				"skaven_clan_rat",
-				{
-					18,
-					20
-				}
+--[[
+	Key to understanding:
+		Plain: Always Unshielded trash
+		Zerker: Always Shielded Trash
+		Shielders: Always Shielded Trash
+		Leader: Always unshielded trash and white SV
+		Frenzy: Always mix of SV and berzerkers
+]]
 
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.skaven
-	}
-	HordeCompositionsPacing.large = {
-		{
-			name = "plain",
-			weight = 2,
-			breeds = {
-				"skaven_slave",
-				{
-					15,
-					20
-				},
-				"skaven_clan_rat",
-				{
-					35,
-					42
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 7,
-			breeds = {
-				"skaven_clan_rat",
-				{
-					40,
-					42
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					10,
-					12
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 6,
-			breeds = {
-				"skaven_slave",
-				{
-					15,
-					20
-				},
-				"skaven_clan_rat",
-				{
-					20,
-					22
-				},
-				"skaven_storm_vermin_commander",
-				{
-					5,
-					6
-				},
-				"skaven_plague_monk",
-				{
-					2,
-					3
-				}
-
-			}
-		},
-		{
-			name = "shielders_heavy",
-			weight = 2,
-			breeds = {
-				"skaven_slave",
-				{
-					20,
-					30
-				},
-				"skaven_clan_rat",
-				{
-					10,
-					12
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					10,
-					15
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					3,
-					4
-				},
-				"skaven_plague_monk",
-				{
-					3,
-					4
-				}
-			}
-		},
-		sound_settings = HordeCompositionsSoundSettings.skaven
-	}
 	HordeCompositionsPacing.huge = {
 		{
 			name = "plain",
@@ -236,106 +65,106 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					22,
-					28
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					30
+					16,
+					22
 				},
 				"skaven_plague_monk",
 				{
-					7,
-					8
+					3,
+					4
+				},
+				"skaven_storm_vermin",
+				{
+					2,
+					4
 				}
 			}
 		},
 		{
 			name = "shielders",
-			weight = 7,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					12,
+					10,
 					16
 				},
 				"skaven_clan_rat",
 				{
-					20,
-					25
+					14,
+					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					9,
-					10
+					5,
+					7
 				},
-				"skaven_storm_vermin_commander",
+				"skaven_plague_monk",
 				{
-					2,
-					4
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					2,
-					2
+					3,
+					7
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 6,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					20,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					30,
-					35
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
-					5,
+					3,
 					6
 				},
 				"skaven_storm_vermin",
 				{
-					1,
-					2
+					2,
+					3
 				}
 			}
 		},
 		{
 			name = "shielders_heavy",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					22,
-					28
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					20,
+					14,
 					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					8,
-					10
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					2,
-					4
+					5,
+					7
 				},
 				"skaven_storm_vermin_commander",
 				{
-					4,
+					2,
 					5
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
 				}
 			}
 		},
@@ -348,85 +177,70 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
-					22
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					30,
-					34
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					7,
-					9
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
 					3,
-					4
+					5
 				},
-				"skaven_plague_monk",
+				"skaven_storm_vermin_with_shield",
 				{
-					2,
-					3
+					1,
+					2
 				}
 			}
 		},
 		{
 			name = "shielders",
-			weight = 7,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					20,
-					22
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					26,
-					28
+					14,
+					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					12,
-					14
+					5,
+					7
 				},
 				"skaven_plague_monk",
 				{
-					3,
-					4
-				},
-				"skaven_storm_vermin_commander",
-				{
-					3,
-					4
+					4,
+					8
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 6,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					20,
-					24
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					24,
-					28
+					16,
+					22
 				},
 				"skaven_storm_vermin_commander",
 				{
-					3,
-					4
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					6,
-					8
+					4,
+					6
 				},
 				"skaven_plague_monk",
 				{
@@ -437,32 +251,32 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			name = "shielders_heavy",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					22,
-					24
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					24,
-					28
+					14,
+					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					9,
-					10
+					5,
+					7
 				},
-				"skaven_storm_vermin_commander",
+				"skaven_plague_monk",
 				{
 					3,
-					4
+					6
 				},
 				"skaven_storm_vermin_with_shield",
 				{
-					3,
-					4
+					2,
+					3
 				}
 			}
 		},
@@ -475,101 +289,106 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
-					24
-				},
-				"skaven_clan_rat",
-				{
 					12,
-					30
-				},
-				"skaven_storm_vermin_commander",
-				{
-					7,
-					8
-				},
-			}
-		},
-		{
-			name = "shielders",
-			weight = 7,
-			breeds = {
-				"skaven_slave",
-				{
-					18,
-					22
+					18
 				},
 				"skaven_clan_rat",
 				{
-					24,
-					26
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					7,
-					9
-				},
-				"skaven_storm_vermin_commander",
-				{
-					3,
-					4
-				},
-				"skaven_storm_vermin",
-				{
-					2,
-					3
-				},
-			}
-		},
-		{
-			name = "leader",
-			weight = 6,
-			breeds = {
-				"skaven_slave",
-				{
-					22,
-					24
-				},
-				"skaven_clan_rat",
-				{
-					20,
+					16,
 					22
 				},
 				"skaven_storm_vermin_commander",
 				{
-					7,
+					5,
 					8
 				}
 			}
 		},
 		{
-			name = "shielders_heavy",
-			weight = 2,
+			name = "shielders",
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					20
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					20,
+					14,
 					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					3,
-					5
+					5,
+					7
 				},
 				"skaven_storm_vermin_commander",
 				{
-					4,
-					5
+					2,
+					4
 				},
 				"skaven_storm_vermin_with_shield",
 				{
-					3,
+					1,
+					2
+				},
+				"skaven_storm_vermin",
+				{
+					1,
+					2
+				}
+			}
+		},
+		{
+			name = "leader",
+			weight = 5,
+			breeds = {
+				"skaven_slave",
+				{
+					12,
+					18
+				},
+				"skaven_clan_rat",
+				{
+					16,
+					22
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
+				},
+				"skaven_storm_vermin",
+				{
+					2,
 					4
+				}
+			}
+		},
+		{
+			name = "shielders_heavy",
+			weight = 5,
+			breeds = {
+				"skaven_slave",
+				{
+					10,
+					16
+				},
+				"skaven_clan_rat",
+				{
+					14,
+					22
+				},
+				"skaven_clan_rat_with_shield",
+				{
+					5,
+					7
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					3
 				}
 			}
 		},
@@ -582,34 +401,39 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					18,
-					20
+					12,
+					18
 				},
 				"skaven_clan_rat",
 				{
-					28,
-					30
+					16,
+					22
+				},
+				"skaven_storm_vermin",
+				{
+					2,
+					4
 				},
 				"skaven_plague_monk",
 				{
-					7,
-					8
+					2,
+					5
 				}
 			}
 		},
 		{
 			name = "shielders",
-			weight = 7,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					15,
-					18
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					15,
-					18
+					14,
+					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -618,65 +442,65 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_plague_monk",
 				{
-					7,
+					5,
 					8
 				}
 			}
 		},
 		{
 			name = "leader",
-			weight = 6,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					15,
-					18
+					18,
+					22
 				},
 				"skaven_clan_rat",
 				{
 					20,
-					22
+					24
 				},
-				"skaven_storm_vermin_commander",
+				"skaven_storm_vermin",
 				{
-					3,
-					4
+					1,
+					3
 				},
 				"skaven_plague_monk",
 				{
-					4,
+					2,
 					5
 				}
 			}
 		},
 		{
 			name = "shielders_heavy",
-			weight = 2,
+			weight = 5,
 			breeds = {
 				"skaven_slave",
 				{
-					15,
-					18
+					10,
+					16
 				},
 				"skaven_clan_rat",
 				{
-					20,
+					14,
 					22
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					3,
-					5
-				},
-				"skaven_storm_vermin_with_shield",
-				{
-					3,
-					4
+					5,
+					7
 				},
 				"skaven_plague_monk",
 				{
-					4,
-					5
+					3,
+					6
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					2,
+					3
 				}
 			}
 		},
