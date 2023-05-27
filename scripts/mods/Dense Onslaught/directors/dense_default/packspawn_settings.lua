@@ -2,38 +2,36 @@ PackSpawningSettings = PackSpawningSettings or {}
 
 local director_packspawn = table.clone(PackSpawningSettings.default)
 
+director_packspawn.area_density_coefficient = 0.07
+
 director_packspawn.roaming_set = {
     breed_packs = "dense_standard",
     breed_packs_peeks_overide_chance = {
-        0.01,
-        0.75
+        0,
+        0
     },
     breed_packs_override = {
         {
-            "dense_standard",
+            "skaven",
             2,
             0.035
         },
         {
-            "dense_standard",
+            "plague_monks",
             2,
             0.035
         },
         {
-            "dense_standard",
+            "marauders",
             2,
             0.03
         },
         {
-            "dense_standard",
+            "marauders_elites",
             2,
             0.03
         }
     }
 }
-director_packspawn.basics.goal_density = 50
-director_packspawn.basics.spawn_cycle_length = 100
-
-director_packspawn.basics.distribution_method = "random"
 
 return director_packspawn

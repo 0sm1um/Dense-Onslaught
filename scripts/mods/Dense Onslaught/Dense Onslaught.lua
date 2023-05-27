@@ -6,7 +6,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	--------------Hooks and Functions---------------
 	------------------------------------------------
 
-mod:dofile("scripts/mods/Dense Onslaught/base/base")
+-- mod:dofile("scripts/mods/Dense Onslaught/base/base")
 
 mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 
@@ -21,55 +21,57 @@ mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 for level_key,data in pairs(LevelSettings) do
     mod:set(data.level_name, "dense_default")
 end
---[[
---initalizes new directors and sets levels to use them
-mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
-for level_key,data in pairs(LevelSettings) do
-    mod:set(data.level_name, "dense_default")
-end
---]]
 
 mod.on_disabled = function()
-    RecycleSettings = {
-		destroy_stuck_distance_squared = 625,
-		destroy_los_distance_squared = 8100,
-		push_horde_in_time = true,
-		destroy_no_path_only_behind = true,
-		ai_stuck_check_start_time = 10,
-		push_horde_if_num_alive_grunts_above = 60,
-		destroy_no_path_found_time = 10,
-		max_grunts = 90
+    RecycleSettings.max_grunts = 90
+	RecycleSettings.push_horde_if_num_alive_grunts_above =  60 
+end
+
+--need a stand down tables funciton too
+local stand_up_tables = function()
+	local mean = 0.4
+	local range = 0.1
+
+	RecycleSettings.max_grunts = 250                                      -- Specific to Dense, raises upper cap to ambient spawning.
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 200 
+	
+	PackDistributions = {
+		periodical = {
+			max_low_density = mean,
+			min_low_density = mean - range,
+			min_hi_density = mean,
+			max_hi_density = mean + range,
+			random_distribution = false,
+			zero_density_below = 0,
+			max_hi_dist = 3,
+			min_hi_dist = 2,
+			max_low_dist = 10,
+			min_low_dist = 7,
+			zero_clamp_max_dist = 5
+		},
+		random = {}
+	}
+
+	PackSpawningDistribution = {
+		standard = {
+			goal_density = mean,
+			clamp_main_path_zone_area = 100,
+			length_density_coefficient = 0,
+			spawn_cycle_length = 350,
+			clamp_outer_zones_used = 1,
+			distribution_method = "periodical",
+			calculate_nearby_islands = false
+		}
 	}
 end
 
 mod.on_enabled = function()
-    RecycleSettings = {
-		destroy_stuck_distance_squared = 625,
-		destroy_los_distance_squared = 8100,
-		push_horde_in_time = true,
-		destroy_no_path_only_behind = true,
-		ai_stuck_check_start_time = 10,
-		push_horde_if_num_alive_grunts_above = 10,
-		destroy_no_path_found_time = 10,
-		max_grunts = 500
-	}
+    stand_up_tables()
 end
 
 if mod:is_enabled() then
-	RecycleSettings = {
-		destroy_stuck_distance_squared = 625,
-		destroy_los_distance_squared = 8100,
-		push_horde_in_time = true,
-		destroy_no_path_only_behind = true,
-		ai_stuck_check_start_time = 10,
-		push_horde_if_num_alive_grunts_above = 10,
-		destroy_no_path_found_time = 10,
-		max_grunts = 500
-	}
+	stand_up_tables()
 end
-
-mod:echo(RecycleSettings.max_grunts)
-
 
 -- Breeds.skaven_rat_ogre.perception_continuous = nil
 -- Breeds.skaven_rat_ogre.distance_sq_can_detect_target = 1

@@ -14,9 +14,74 @@ BreedpackUtils.add_generate_missing_pack_wieghts = function(pack_table)
     return pack_table
 end
 
+BreedpackUtils.calculate_breed_pack_weights = function(scaling_data, breed_packs)
+	local weighted_packs = {}
+	for _, pack in pairs(breed_packs) do -- Select a Pack
+        for breed_name, breed_table in pairs(pack.members) do -- Iterate through Pack Members
+			for _, scale_data in pairs(scaling_data) do -- Iterate through classes of enemies.
+				for _, scale_breed_name in pairs(scale_data.breeds) do  -- On a selected class, check each breed
+					if string.find(tostring(breed_name), scale_breed_name) then -- If the breed is in the breed class:
+						pack.spawn_weight = pack.spawn_weight + scale_data.scale_factor
+					end
+				end
+			end
+		end
+		table.insert(weighted_packs,pack)
+	end
+
+    breed_packs["roof_spawning_allowed"] = true
+    breed_packs["zone_checks"] = table.clone(BreedPacks.standard.zone_checks)
+    breed_packs["patrol_overrides"] = table.clone(BreedPacks.standard.patrol_overrides)
+
+	return weighted_packs
+end
+
 BreedpackUtils.add_new_pack = function(name, BreedPacks_table)
+    local trash_weight = 1
+    local shielded_trash_weight = 1
+    local elite_weight = 1
+    local shielded_elite_weight = 1
+    local berzerker_weight = 1
+    local super_armor_weight = 0.33
+
+    local trash_entities = {"beastmen_ungor","beastmen_gor","skaven_slave","skaven_clan_rat","chaos_fanatic","chaos_marauder"}
+    local shielded_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}
+    local elite_entities = {"beastmen_bestigor","chaos_raider","skaven_storm_vermin_commander","skaven_storm_vermin_with_shield"}
+    local shielded_elite_entities = {"skaven_storm_vermin_with_shield"}
+    local berzerker_entities = {"chaos_berzerker","skaven_plague_monk"}
+    local super_armor_entities = {"chaos_warrior","skaven_storm_vermin"}
+
+    local scaling_data = {
+        {
+            scale_factor = trash_weight,
+            breeds = trash_entities,
+        },
+        {
+            scale_factor = shielded_trash_weight,
+            breeds = shielded_trash_entities,
+        },
+        {
+            scale_factor = elite_weight,
+            breeds = elite_entities,
+        },
+        {
+            scale_factor = shielded_elite_weight,
+            breeds = shielded_elite_entities,
+        },
+        {
+            scale_factor = berzerker_weight,
+            breeds = berzerker_entities,
+        },
+        {
+            scale_factor = super_armor_weight,
+            breeds = super_armor_entities,
+        }
+    }
+
     local new_pack = mod:dofile("scripts/mods/Dense Onslaught/breedpacks/"..name)
-    BreedPacks_table[name] = BreedpackUtils.add_generate_missing_pack_wieghts(new_pack)
+    -- BreedPacks_table[name] = BreedpackUtils.add_generate_missing_pack_wieghts(new_pack)
+    BreedpackUtils.calculate_breed_pack_weights(scaling_data ,new_pack)
+    BreedPacks_table[name] = new_pack
 end
 
 return BreedpackUtils

@@ -32,4 +32,9 @@ DirectorUtils.add_new_ConflictDirector = function (name)
     }
 end
 
+DirectorUtils.scale_horde_composition = function (HordeCompositions,faction,scaling_data)
+    
+    return HordeCompositions
+end
+
 return DirectorUtils

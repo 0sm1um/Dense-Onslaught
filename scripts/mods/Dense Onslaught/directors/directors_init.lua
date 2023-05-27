@@ -38,6 +38,44 @@ for conflict_director_name, data in pairs(ConflictDirectors) do
 	end
 end
 
+local weights = {}
+local crash = nil
+
+for key, setting in pairs(HordeSettings) do
+	setting.name = key
+
+	if setting.compositions_pacing then
+		for name, composition in pairs(setting.compositions_pacing) do
+			table.clear_array(weights, #weights)
+
+			for i, variant in ipairs(composition) do
+				weights[i] = variant.weight
+				local breeds = variant.breeds
+
+				for j = 1, #breeds, 2 do
+					local breed_name = breeds[j]
+					local breed = Breeds[breed_name]
+
+					if not breed then
+						print(string.format("Bad or non-existing breed in HordeCompositionsPacing table %s : '%s' defined in HordeCompositionsPacing.", name, tostring(breed_name)))
+
+						crash = true
+					elseif not breed.can_use_horde_spawners then
+						variant.must_use_hidden_spawners = true
+					end
+				end
+			end
+
+			composition.loaded_probs = {
+				LoadedDice.create(weights)
+			}
+
+			fassert(not crash, "Found errors in HordeCompositionsPacing table %s - see above. ", name)
+			fassert(composition.loaded_probs, "Could not create horde composition probablitity table, make sure the table '%s' in HordeCompositionsPacing is correctly structured.", name)
+		end
+	end
+end
+
 
 for name, horde_setting in pairs(HordeSettings) do
 	local compositions = horde_setting.compositions
