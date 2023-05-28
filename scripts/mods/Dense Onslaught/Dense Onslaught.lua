@@ -13,7 +13,7 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
-
+mod:dofile("scripts/mods/Dense Onslaught/horde_comps/horde_comp_init")
 mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
 mod:dofile("scripts/mods/Dense Onslaught/event/event_init")
 mod:dofile("scripts/mods/Dense Onslaught/patrols/patrols_init")
@@ -38,6 +38,23 @@ Breeds.skaven_plague_monk.passive_in_patrol_start_anim = "move_fwd"
 
 BeastmenStandardTemplates.healing_standard.radius = 10
 UtilityConsiderations.beastmen_place_standard.distance_to_target.max_value = 15
+
+
+-- for k,v in pairs(TerrorEventBlueprints.farmlands) do
+-- 	mod:echo(k.."	"..tostring(v))
+-- end
+
+-- for level_key, terror_events in pairs(TerrorEventBlueprints) do
+-- 	for _, blueprint in pairs(terror_events) do
+-- 		for _, event in ipairs(blueprint) do
+-- 			local name = event.flow_event_name
+
+-- 			if name and not event.disable_network_send then
+-- 				mod:echo(level_key.."	"..tostring(name))
+-- 			end
+-- 		end
+-- 	end
+-- end
 
 mod.on_disabled = function()
     RecycleSettings.max_grunts = 90
@@ -78,11 +95,13 @@ mod.on_disabled = function()
 	Breeds.chaos_troll.threat_value = 32
 	Breeds.beastmen_minotaur.threat_value = 32
 
-	Managers.state.conflict:set_threat_value("skaven_rat_ogre", 32)
-	Managers.state.conflict:set_threat_value("skaven_stormfiend", 32)
-	Managers.state.conflict:set_threat_value("chaos_spawn", 32)
-	Managers.state.conflict:set_threat_value("chaos_troll", 32)
-	Managers.state.conflict:set_threat_value("beastmen_minotaur", 32)
+	if Managers.state.conflict then
+		Managers.state.conflict:set_threat_value("skaven_rat_ogre", 32)
+		Managers.state.conflict:set_threat_value("skaven_stormfiend", 32)
+		Managers.state.conflict:set_threat_value("chaos_spawn", 32)
+		Managers.state.conflict:set_threat_value("chaos_troll", 32)
+		Managers.state.conflict:set_threat_value("beastmen_minotaur", 32)
+	end
 end
 
 --need a stand down tables funciton too
