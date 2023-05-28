@@ -78,8 +78,9 @@ BreedpackUtils.add_new_pack = function(name, BreedPacks_table)
     -- BreedPacks_table[name] = BreedpackUtils.add_generate_missing_pack_wieghts(new_pack)
     BreedpackUtils.calculate_breed_pack_weights(scaling_data ,new_pack)
     new_pack["roof_spawning_allowed"] = true
-    new_pack["zone_checks"] = table.clone(BreedPacks[string.gsub(name,"dense_", "")].zone_checks)
-    new_pack["patrol_overrides"] = table.clone(BreedPacks[string.gsub(name,"dense_", "")].patrol_overrides)
+    local table_to_clone = BreedPacks[string.gsub(name,"dense_", "")] or BreedPacks["standard"]
+    new_pack["zone_checks"] = table_to_clone.zone_checks
+    new_pack["patrol_overrides"] = table_to_clone.patrol_overrides
     BreedPacks_table[name] = new_pack
 end
 

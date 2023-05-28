@@ -4,6 +4,8 @@ local BreedPacks = BreedPacks or {}
 
 
 BreedpackUtils.add_new_pack("dense_standard", BreedPacks)
+BreedpackUtils.add_new_pack("dense_skaven", BreedPacks)
+BreedpackUtils.add_new_pack("dense_chaos", BreedPacks)
 
 --Taken from the base game to initialize new Breedpacks
 --Vermintide-2-Source-Code\scripts\managers\conflict_director\breed_packs.lua

@@ -3,7 +3,16 @@ mod:dofile("scripts/mods/Dense Onslaught/directors/hooks")
 local DirectorUtils = local_require("scripts/mods/Dense Onslaught/directors/director_utils")
 
 
+-- DirectorUtils.add_new_ConflictDirector("dense_default")
 DirectorUtils.add_new_ConflictDirector("dense_default")
+DirectorUtils.add_new_ConflictDirector("dense_skaven")
+DirectorUtils.add_new_ConflictDirector("dense_chaos")
+
+--workaround for now, to save time from copy pasting
+ConflictDirectors["dense_default_light"] = table.clone(ConflictDirectors["dense_default"])
+ConflictDirectors["dense_skaven_light"] = table.clone(ConflictDirectors["dense_skaven"])
+ConflictDirectors["dense_chaos_light"] = table.clone(ConflictDirectors["dense_chaos"])
+
 
 ConflictDirectors = ConflictDirectors or {}
 

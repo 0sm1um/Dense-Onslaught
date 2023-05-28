@@ -18,13 +18,54 @@ mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
 
 
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
-for level_key,data in pairs(LevelSettings) do
-    mod:set(data.level_name, "dense_default")
-end
+-- for level_key,data in pairs(LevelSettings) do
+--     mod:set(data.level_name, "dense_default")
+-- end
 
 mod.on_disabled = function()
     RecycleSettings.max_grunts = 90
 	RecycleSettings.push_horde_if_num_alive_grunts_above =  60 
+
+	PackDistributions = {
+		periodical = {
+			min_hi_dist = 2,
+			min_low_dist = 7,
+			max_low_density = 0.4,
+			min_hi_density = 0.65,
+			random_distribution = false,
+			zero_density_below = 0.1,
+			max_hi_dist = 3,
+			min_low_density = 0,
+			zero_clamp_max_dist = 5,
+			max_low_dist = 10,
+			max_hi_density = 1
+		},
+		random = {}
+	}
+
+	PackSpawningDistribution = {
+		standard = {
+			goal_density = 0.45,
+			clamp_main_path_zone_area = 100,
+			length_density_coefficient = 0,
+			spawn_cycle_length = 350,
+			clamp_outer_zones_used = 1,
+			distribution_method = "periodical",
+			calculate_nearby_islands = false
+		}
+	}
+
+	Breeds.skaven_rat_ogre.threat_value = 32
+	Breeds.skaven_stormfiend.threat_value = 32
+	Breeds.chaos_spawn.threat_value = 32
+	Breeds.chaos_troll.threat_value = 32
+	Breeds.beastmen_minotaur.threat_value = 32
+
+	Managers.state.conflict:set_threat_value("skaven_rat_ogre", 32)
+	Managers.state.conflict:set_threat_value("skaven_stormfiend", 32)
+	Managers.state.conflict:set_threat_value("chaos_spawn", 32)
+	Managers.state.conflict:set_threat_value("chaos_troll", 32)
+	Managers.state.conflict:set_threat_value("beastmen_minotaur", 32)
 end
 
 --need a stand down tables funciton too
@@ -67,10 +108,34 @@ end
 
 mod.on_enabled = function()
     stand_up_tables()
+	Breeds.skaven_rat_ogre.threat_value = 25
+	Breeds.skaven_stormfiend.threat_value = 25
+	Breeds.chaos_spawn.threat_value = 25
+	Breeds.chaos_troll.threat_value = 25
+	Breeds.beastmen_minotaur.threat_value = 25
+
+	Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
+	Managers.state.conflict:set_threat_value("skaven_stormfiend", 25)
+	Managers.state.conflict:set_threat_value("chaos_spawn", 25)
+	Managers.state.conflict:set_threat_value("chaos_troll", 25)
+	Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
 end
 
 if mod:is_enabled() then
 	stand_up_tables()
+	Breeds.skaven_rat_ogre.threat_value = 25
+	Breeds.skaven_stormfiend.threat_value = 25
+	Breeds.chaos_spawn.threat_value = 25
+	Breeds.chaos_troll.threat_value = 25
+	Breeds.beastmen_minotaur.threat_value = 25
+
+	if Managers.state.conflict then
+		Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
+		Managers.state.conflict:set_threat_value("skaven_stormfiend", 25)
+		Managers.state.conflict:set_threat_value("chaos_spawn", 25)
+		Managers.state.conflict:set_threat_value("chaos_troll", 25)
+		Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
+	end
 end
 
 -- Breeds.skaven_rat_ogre.perception_continuous = nil
