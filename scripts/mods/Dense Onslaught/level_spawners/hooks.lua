@@ -15,7 +15,7 @@ mod:hook(StateIngame, "on_enter", function (func, self)
                 local spawner_func = LevelSpawnerUtils.spawn_funcs[spawning_data.spawn_func]
                 local unit_name = spawning_data.unit_name or "units/hub_elements/empty"
                 local pos = spawning_data.position
-                local rot = spawning_data.rotation or Quaternion.identity()
+                local rot = spawning_data.rotation or QuaternionBox(Quaternion.identity())
                 local terror_event_id = spawning_data.terror_event_id
                 local hidden = spawning_data.hidden
                 local unit = spawner_func(self.world, unit_name, terror_event_id, pos, rot, custom_spawners, hidden)
