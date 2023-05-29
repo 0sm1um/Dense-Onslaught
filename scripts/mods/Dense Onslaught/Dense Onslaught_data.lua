@@ -23,25 +23,38 @@ menu.options.widgets = {
 		decimals_number = 0.5 
 	},
 	{
+		setting_id = "dense_level",
+		type = "dropdown",
+		default_value = "medium",
+		title = "difficulty_level",
+		tooltip = "difficulty_level_tooltip",
+		options = {
+			{text = "level_one", value = "low"},
+			{text = "level_two", value = "medium"},
+			{text = "level_three", value = "high"},
+		},
+		sub_widgets = {},
+	},
+	{
 		setting_id    = "auto_enable_deathwish",
 		type          = "checkbox",
 		title		  = "auto_enable_deathwish",
 		tooltip       = "auto_enable_deathwish_tooltip",
 		default_value = false
 	},
-	{
-		setting_id = "difficulty_level",
-		type = "dropdown",
-		default_value = 2,
-		title = "difficulty_level",
-		tooltip = "difficulty_level_tooltip",
-		options = {
-			{text = "level_one", value = 1},
-			{text = "level_two", value = 2},
-			{text = "level_three", value = 3},
-		},
-		sub_widgets = {},
-	},
+	-- {
+	-- 	setting_id = "difficulty_level",
+	-- 	type = "dropdown",
+	-- 	default_value = 2,
+	-- 	title = "difficulty_level",
+	-- 	tooltip = "difficulty_level_tooltip",
+	-- 	options = {
+	-- 		{text = "level_one", value = 1},
+	-- 		{text = "level_two", value = 2},
+	-- 		{text = "level_three", value = 3},
+	-- 	},
+	-- 	sub_widgets = {},
+	-- },
 	{
 		setting_id    = "low_performance_mode",
 		type          = "checkbox",

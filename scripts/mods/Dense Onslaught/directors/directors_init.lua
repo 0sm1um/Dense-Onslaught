@@ -8,10 +8,26 @@ DirectorUtils.add_new_ConflictDirector("dense_default")
 DirectorUtils.add_new_ConflictDirector("dense_skaven")
 DirectorUtils.add_new_ConflictDirector("dense_chaos")
 
+DirectorUtils.add_new_ConflictDirector("dense_low_default")
+DirectorUtils.add_new_ConflictDirector("dense_low_skaven")
+DirectorUtils.add_new_ConflictDirector("dense_low_chaos")
+
+DirectorUtils.add_new_ConflictDirector("dense_high_default")
+DirectorUtils.add_new_ConflictDirector("dense_high_skaven")
+DirectorUtils.add_new_ConflictDirector("dense_high_chaos")
+
 --workaround for now, to save time from copy pasting
 ConflictDirectors["dense_default_light"] = table.clone(ConflictDirectors["dense_default"])
 ConflictDirectors["dense_skaven_light"] = table.clone(ConflictDirectors["dense_skaven"])
 ConflictDirectors["dense_chaos_light"] = table.clone(ConflictDirectors["dense_chaos"])
+
+ConflictDirectors["dense_low_default_light"] = table.clone(ConflictDirectors["dense_low_default"])
+ConflictDirectors["dense_low_skaven_light"] = table.clone(ConflictDirectors["dense_low_skaven"])
+ConflictDirectors["dense_low_chaos_light"] = table.clone(ConflictDirectors["dense_low_chaos"])
+
+ConflictDirectors["dense_high_default_light"] = table.clone(ConflictDirectors["dense_high_default"])
+ConflictDirectors["dense_high_skaven_light"] = table.clone(ConflictDirectors["dense_high_skaven"])
+ConflictDirectors["dense_high_chaos_light"] = table.clone(ConflictDirectors["dense_high_chaos"])
 
 
 ConflictDirectors = ConflictDirectors or {}

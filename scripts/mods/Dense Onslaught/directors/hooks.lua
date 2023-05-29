@@ -2,12 +2,12 @@ local mod = get_mod("Dense Onslaught")
 
 --this table is used for a temporary fixe to avoid tons of copy pasting
 local replacement_directors = {
-    default = "dense_default",
-    default_light = "dense_default",
-    skaven = "dense_skaven",
-    skaven_light = "dense_skaven",
-    chaos = "dense_chaos",
-    chaos_light = "dense_chaos",
+    default = "default",
+    default_light = "default_light",
+    skaven = "skaven",
+    skaven_light = "skaven_light",
+    chaos = "chaos",
+    chaos_light = "chaos_light",
 }
 
 mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, level_seed)
@@ -15,27 +15,31 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     
     local result = func(self, level_name, level_seed)
     -- mod:echo(self.spawn_zone_data.roaming_set)
-    for k,v in pairs(self.spawn_zone_data.zones) do
+    if mod:is_enabled() then
+        local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level"), "medium", "").."_"
+        for k,v in pairs(self.spawn_zone_data.zones) do
 
-        if v.roaming_set and mod:is_enabled() then
+            --probably need to revist this for performance reasons as this will do quite a lot of string operations
+            if v.roaming_set then
+                -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
+                -- mod:echo(self.spawn_zone_data.zones[k].roaming_set.."       dense_"..self.spawn_zone_data.zones[k].roaming_set)
+                -- self.spawn_zone_data.zones[k].roaming_set = "dense_"..tostring(self.spawn_zone_data.zones[k].roaming_set)
+                local og_driector = self.spawn_zone_data.zones[k].roaming_set
+                local new_director = replacement_directors[og_driector] or "default"
+                self.spawn_zone_data.zones[k].roaming_set = dense_difficulty..new_director
+            end
+
+            -- --populate unpopulated ambient zones
+            -- if not v.roaming_set and mod:get("populate_all_zones") then
+            --     self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
+            -- end
+
             -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
-            -- mod:echo(self.spawn_zone_data.zones[k].roaming_set.."       dense_"..self.spawn_zone_data.zones[k].roaming_set)
-            -- self.spawn_zone_data.zones[k].roaming_set = "dense_"..tostring(self.spawn_zone_data.zones[k].roaming_set)
-            local og_driector = self.spawn_zone_data.zones[k].roaming_set
-            
-            self.spawn_zone_data.zones[k].roaming_set = replacement_directors[og_driector] or "dense_default"
+
+            --populate all zones with override director
+            -- self.spawn_zone_data.zones[k].roaming_set = directors[math.random(1, #directors)]
+
         end
-
-        -- --populate unpopulated ambient zones
-        -- if not v.roaming_set and mod:get("populate_all_zones") then
-        --     self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
-        -- end
-
-        -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
-
-        --populate all zones with override director
-        -- self.spawn_zone_data.zones[k].roaming_set = directors[math.random(1, #directors)]
-
     end
     return result 
 end)
