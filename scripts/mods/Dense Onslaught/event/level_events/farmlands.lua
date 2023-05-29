@@ -285,7 +285,7 @@ farmlands.dense_farmlands_prisoner_event_01 = {
     {
         "event_horde",
         spawner_id = "square_front",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -299,7 +299,7 @@ farmlands.dense_farmlands_prisoner_event_01 = {
     {
         "event_horde",
         spawner_id = "hay_barn_bridge_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -318,7 +318,7 @@ farmlands.dense_farmlands_prisoner_event_01 = {
     {
         "event_horde",
         spawner_id = "square_center",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -339,7 +339,7 @@ farmlands.dense_farmlands_prisoner_event_01 = {
     {
         "event_horde",
         spawner_id = "sawmill_yard_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -360,7 +360,7 @@ farmlands.dense_farmlands_prisoner_event_01 = {
     {
         "event_horde",
         spawner_id = "hay_barn_back",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -474,7 +474,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         spawner_id = "hay_barn_cellar_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -493,7 +493,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         spawner_id = "hay_barn_front_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -507,7 +507,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         spawner_id = "hay_barn_interior",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "delay",
@@ -532,7 +532,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -563,7 +563,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -594,7 +594,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -625,7 +625,7 @@ farmlands.dense_farmlands_prisoner_event_hay_barn = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -682,7 +682,7 @@ farmlands.dense_farmlands_prisoner_event_upper_square = {
     {
         "event_horde",
         spawner_id = "square_center",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -696,12 +696,12 @@ farmlands.dense_farmlands_prisoner_event_upper_square = {
     {
         "event_horde",
         spawner_id = "sawmill_yard_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
         spawner_id = "sawmill_yard_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -715,7 +715,7 @@ farmlands.dense_farmlands_prisoner_event_upper_square = {
     {
         "event_horde",
         spawner_id = "sawmill_yard",
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -746,12 +746,12 @@ farmlands.dense_farmlands_prisoner_event_upper_square = {
     {
         "event_horde",
         spawner_id = "sawmill_yard_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
         spawner_id = "sawmill_yard_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -772,7 +772,7 @@ farmlands.dense_farmlands_prisoner_event_upper_square = {
     {
         "event_horde",
         spawner_id = "sawmill_creek",
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -826,7 +826,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill_door = {
     {
         "event_horde",
         spawner_id = "sawmill_interior",
-        composition_type = "event_large"
+        composition_type = "dense_event_large"
     },
     {
         "event_horde",
@@ -881,7 +881,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         spawner_id = "sawmill_interior",
-        composition_type = "event_large"
+        composition_type = "dense_event_large"
     },
     {
         "delay",
@@ -890,12 +890,12 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         spawner_id = "sawmill_interior_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
         spawner_id = "sawmill_interior_invis",
-        composition_type = "event_small_chaos"
+        composition_type = "dense_event_small_chaos"
     },
     {
         "event_horde",
@@ -925,7 +925,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     },
     {
         "event_horde",
-        composition_type = "event_large"
+        composition_type = "dense_event_large"
     },
     {
         "delay",
@@ -945,7 +945,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
@@ -969,7 +969,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         spawner_id = "sawmill_yard",
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -990,7 +990,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -1011,7 +1011,7 @@ farmlands.dense_farmlands_prisoner_event_sawmill = {
     {
         "event_horde",
         limit_spawners = 2,
-        composition_type = "event_medium"
+        composition_type = "dense_event_medium"
     },
     {
         "event_horde",
@@ -1051,12 +1051,12 @@ farmlands.dense_farmlands_gate_open_event = {
     {
         "event_horde",
         spawner_id = "sawmill_yard",
-        composition_type = "event_large"
+        composition_type = "dense_event_large"
     },
     {
         "event_horde",
         spawner_id = "sawmill_yard",
-        composition_type = "event_small"
+        composition_type = "dense_event_small"
     },
     {
         "event_horde",
