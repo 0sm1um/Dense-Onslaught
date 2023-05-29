@@ -28,9 +28,6 @@ mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 --     mod:set(data.level_name, "dense_default")
 -- end
 
--- if mod:get("dense_active") == nil then
--- 	mod:set("dense_active", false)
--- end
 
 local stand_up_tables = function()
 	local mean = 0.4
@@ -207,12 +204,7 @@ mod.on_setting_changed = function()
 			Managers.state.conflict:set_threat_value("chaos_troll", 25)
 			Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
 		end
-	
-		-- if Managers.player then
-		-- 	if Managers.player.is_server then
-		-- 		mod:network_send("rpc_enable_dense_breed_changes", "all")
-		-- 	end
-		-- end
+
 		if Managers.player.is_server then
 			mod:network_send("rpc_dense_activate", "all")
 		end
@@ -228,9 +220,6 @@ mod.on_disabled = function()
     stand_down_tables()
 end
 
---need a stand down tables funciton too
-
-
 mod.on_enabled = function()
     stand_up_tables()
 
@@ -241,12 +230,6 @@ mod.on_enabled = function()
 		Managers.state.conflict:set_threat_value("chaos_troll", 25)
 		Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
 	end
-
-	-- if Managers.player then
-	-- 	if Managers.player.is_server then
-	-- 		mod:network_send("rpc_enable_dense_breed_changes", "all")
-	-- 	end
-	-- end
 end
 
 if mod:is_enabled() then
@@ -265,11 +248,6 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host", function(
 	local toggled = mod:get("dense_active")
 	mod:set("dense_active", not toggled)
 end)
-
--- Breeds.skaven_rat_ogre.perception_continuous = nil
--- Breeds.skaven_rat_ogre.distance_sq_can_detect_target = 1
--- Breeds.skaven_rat_ogre.detection_radius = 10
--- Breeds.skaven_rat_ogreperception = "perception_regular"
 
 -- Activation and deactivation command:
 -- mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
