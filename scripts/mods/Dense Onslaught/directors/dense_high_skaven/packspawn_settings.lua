@@ -2,7 +2,7 @@ PackSpawningSettings = PackSpawningSettings or {}
 
 local director_packspawn = table.clone(PackSpawningSettings.skaven)
 
-director_packspawn.area_density_coefficient = 1
+director_packspawn.area_density_coefficient = 0.1
 
 director_packspawn.roaming_set = {
     breed_packs = "dense_skaven",
