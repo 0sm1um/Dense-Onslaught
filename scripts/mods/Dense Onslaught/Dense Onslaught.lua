@@ -143,6 +143,11 @@ local stand_up_tables = function()
 	RecycleSettings.max_grunts = 250                                      -- Specific to Dense, raises upper cap to ambient spawning.
 	RecycleSettings.push_horde_if_num_alive_grunts_above = 200 
 	
+	if mod:get("low_performance_mode") then
+		RecycleSettings.max_grunts = 150
+		mod:chat_broadcast("Low Performance Mode ENABLED")
+	end
+
 	PackDistributions = {
 		periodical = {
 			max_low_density = mean,
