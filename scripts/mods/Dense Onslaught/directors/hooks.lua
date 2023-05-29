@@ -17,6 +17,7 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     -- mod:echo(self.spawn_zone_data.roaming_set)
     if mod:is_enabled() then
         local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level"), "medium", "").."_"
+        local giga = mod:get("giga_ambients")
         for k,v in pairs(self.spawn_zone_data.zones) do
 
             --probably need to revist this for performance reasons as this will do quite a lot of string operations
@@ -30,9 +31,13 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
             end
 
             -- --populate unpopulated ambient zones
-            -- if not v.roaming_set and mod:get("populate_all_zones") then
-            --     self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
-            -- end
+            -- if (not v.roaming_set) and mod:get("populate_all_zones") then
+            if (not v.roaming_set) and giga then
+                -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
+                local og_driector = self.spawn_zone_data.zones[k].roaming_set
+                local new_director = replacement_directors[og_driector] or "default"
+                self.spawn_zone_data.zones[k].roaming_set = dense_difficulty..new_director
+            end
 
             -- self.spawn_zone_data.zones[k].roaming_set = mod:get(level_name) or "default"
 
@@ -44,12 +49,18 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     return result 
 end)
 
--- mod:hook(SpawnZoneBaker, "populate_spawns_by_rats", function (func, self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
+mod:hook(SpawnZoneBaker, "populate_spawns_by_rats", function (func, self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
 
---     for k,v in pairs(zone_list) do
---         zone_list[k].density = mod:get("zone_density")
---     end
---     local result = func(self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
+    if mod:get("giga_ambients") then
+        for k,v in pairs(zone_list) do
+            zone_list[k].density = 5
+        end
+    end
 
---     return result
--- end)
+    -- for k,v in pairs(zone_list) do
+    --     zone_list[k].density = mod:get("zone_density")
+    -- end
+    local result = func(self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
+
+    return result
+end)
