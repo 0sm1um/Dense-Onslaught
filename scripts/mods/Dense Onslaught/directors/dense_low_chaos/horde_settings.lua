@@ -3,7 +3,7 @@ HordeSettings = HordeSettings or {}
 
 local director_horde = table.clone(HordeSettings.chaos)
 
-local name = "dense_chaos"
+local name = "dense_low_chaos"
 director_horde.compositions_pacing = mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/horde_compositions_pacing")
 -- director_horde.compositions = mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/horde_compositions_pacing")
 

@@ -1,6 +1,6 @@
 BossSettings = BossSettings or {}
 
-local director_boss = table.clone(BossSettings.default)
+local director_boss = table.clone(BossSettings.skaven)
 
 director_boss.boss_events.events = {
     "event_boss",

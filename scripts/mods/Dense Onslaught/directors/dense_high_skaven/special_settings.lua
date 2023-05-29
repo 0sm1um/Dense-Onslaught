@@ -1,6 +1,6 @@
 SpecialsSettings = SpecialsSettings or {}
 
-local director_specials = table.clone(SpecialsSettings.default)
+local director_specials = table.clone(SpecialsSettings.skaven)
 
 director_specials.max_specials = 7	
 director_specials.delay_specials_threat_value = nil
