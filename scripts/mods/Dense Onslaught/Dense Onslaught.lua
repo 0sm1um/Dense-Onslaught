@@ -261,6 +261,11 @@ if mod:is_enabled() then
 	end
 end
 
+mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host", function() 
+	local toggled = mod:get("dense_active")
+	mod:set("dense_active", not toggled)
+end)
+
 -- Breeds.skaven_rat_ogre.perception_continuous = nil
 -- Breeds.skaven_rat_ogre.distance_sq_can_detect_target = 1
 -- Breeds.skaven_rat_ogre.detection_radius = 10
