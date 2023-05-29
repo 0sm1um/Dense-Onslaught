@@ -13,10 +13,13 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
+mod:dofile("scripts/mods/Dense Onslaught/level_spawners/level_spawners_utils")
+mod:dofile("scripts/mods/Dense Onslaught/event/event_init")
 mod:dofile("scripts/mods/Dense Onslaught/horde_comps/horde_comp_init")
 mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
-mod:dofile("scripts/mods/Dense Onslaught/event/event_init")
 mod:dofile("scripts/mods/Dense Onslaught/patrols/patrols_init")
+
+
 
 
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
@@ -39,22 +42,50 @@ Breeds.skaven_plague_monk.passive_in_patrol_start_anim = "move_fwd"
 BeastmenStandardTemplates.healing_standard.radius = 10
 UtilityConsiderations.beastmen_place_standard.distance_to_target.max_value = 15
 
+BreedActions.skaven_storm_vermin_warlord.spawn_allies.spawn_list = {
+	"skaven_storm_vermin_with_shield",
+	"skaven_storm_vermin_with_shield",
+	"skaven_storm_vermin",
+	"skaven_storm_vermin",
+	"skaven_storm_vermin",
+	"skaven_storm_vermin",
+	"skaven_storm_vermin",
+	"skaven_storm_vermin",
+	"skaven_plague_monk",
+	"skaven_plague_monk",
+	"skaven_plague_monk",
+	"skaven_plague_monk",
+	"skaven_pack_master",
+	"skaven_ratling_gunner"
+}
 
--- for k,v in pairs(TerrorEventBlueprints.farmlands) do
--- 	mod:echo(k.."	"..tostring(v))
--- end
+--See hooks for Skarrik behaviour changes
+BreedActions.skaven_storm_vermin_warlord.spawn_sequence.considerations.time_since_last.max_value = 800
 
--- for level_key, terror_events in pairs(TerrorEventBlueprints) do
--- 	for _, blueprint in pairs(terror_events) do
--- 		for _, event in ipairs(blueprint) do
--- 			local name = event.flow_event_name
 
--- 			if name and not event.disable_network_send then
--- 				mod:echo(level_key.."	"..tostring(name))
--- 			end
--- 		end
--- 	end
--- end
+BreedActions.skaven_grey_seer.ground_combat.spawn_allies_cooldown = 18
+
+BreedActions.skaven_grey_seer.ground_combat.staggers_until_teleport = 1
+BreedActions.skaven_grey_seer.ground_combat.warp_lightning_spell_cooldown = {
+		2,
+		2,
+		2,
+		2
+}
+	
+BreedActions.skaven_grey_seer.ground_combat.vermintide_spell_cooldown = {
+		4,
+		4,
+		4,
+		4
+}
+	
+BreedActions.skaven_grey_seer.ground_combat.teleport_spell_cooldown = {
+		1.5,
+		1.5,
+		1.5,
+		1.5
+}
 
 mod.on_disabled = function()
     RecycleSettings.max_grunts = 90
