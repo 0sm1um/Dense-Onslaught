@@ -5,7 +5,7 @@ local LevelSpawnerUtils = mod:dofile("scripts/mods/Dense Onslaught/level_spawner
 mod:hook(StateIngame, "on_enter", function (func, self)
 	local result = func(self)
 	
-	if Managers.player.is_server then
+	if Managers.player.is_server and mod:get("dense_active") then
 		local custom_spawners = {}
 		local level_key = Managers.state.game_mode:level_key()
 

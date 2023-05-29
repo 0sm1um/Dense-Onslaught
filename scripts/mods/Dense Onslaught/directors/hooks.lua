@@ -15,7 +15,7 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     
     local result = func(self, level_name, level_seed)
     -- mod:echo(self.spawn_zone_data.roaming_set)
-    if mod:is_enabled() then
+    if mod:get("dense_active") then
         local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level"), "medium", "").."_"
         local giga = mod:get("giga_ambients")
         for k,v in pairs(self.spawn_zone_data.zones) do
@@ -51,12 +51,13 @@ end)
 
 mod:hook(SpawnZoneBaker, "populate_spawns_by_rats", function (func, self, global_pack_spawning_setting, spawns, pack_sizes, pack_rotations, pack_members, zone_data_list, zone_list, ...)
 
-    if mod:get("giga_ambients") then
-        for k,v in pairs(zone_list) do
-            zone_list[k].density = 5
+    if mod:get("dense_active") then
+        if mod:get("giga_ambients") then
+            for k,v in pairs(zone_list) do
+                zone_list[k].density = 5
+            end
         end
     end
-
     -- for k,v in pairs(zone_list) do
     --     zone_list[k].density = mod:get("zone_density")
     -- end
