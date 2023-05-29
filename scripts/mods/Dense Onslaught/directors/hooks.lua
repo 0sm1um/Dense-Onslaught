@@ -16,7 +16,7 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
     local result = func(self, level_name, level_seed)
     -- mod:echo(self.spawn_zone_data.roaming_set)
     if mod:get("dense_active") then
-        local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level"), "medium", "").."_"
+        local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level").."_", "medium_", "")
         local giga = mod:get("giga_ambients")
         for k,v in pairs(self.spawn_zone_data.zones) do
 
