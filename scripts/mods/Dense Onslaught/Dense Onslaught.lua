@@ -13,7 +13,7 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Hooks related to turning the mod on and off.
 mod:dofile("scripts/mods/Dense Onslaught/base/control")
 
-mod:dofile("scripts/mods/Dense Onslaught/level_spawners/level_spawners_utils")
+mod:dofile("scripts/mods/Dense Onslaught/level_spawners/level_spawners_init")
 mod:dofile("scripts/mods/Dense Onslaught/event/event_init")
 mod:dofile("scripts/mods/Dense Onslaught/horde_comps/horde_comp_init")
 mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")

@@ -1,4 +1,9 @@
 local mod = get_mod("Dense Onslaught")
+-- for k,v in pairs(mod.custom_spawners_by_level) do
+--     mod:echo(v)
+-- end
+
+
 local LevelSpawnerUtils = LevelSpawnerUtils or {}
 
 mod.custom_spawners_by_level = mod.custom_spawners_by_level or {}
@@ -11,14 +16,18 @@ LevelSpawnerUtils.initalize_custom_spawner = function(name)
 end
 
 LevelSpawnerUtils.spawn_funcs = {
-    setup_custom_raw_spawner = function (world, unit_name, terror_event_id, position, rotation, spawner_table, hidden)
-        local unit = World.spawn_unit(world, unit_name, location, rotation)
+    setup_custom_raw_spawner = function (world, unit_name, terror_event_id, position_box, rotation_box, spawner_table, hidden)
+        local position = position_box:unbox()
+        local rotation = rotation_box:unbox()
+        local unit = World.spawn_unit(world, unit_name, position, rotation)
         Unit.set_data(unit, "terror_event_id", terror_event_id)
         Unit.set_data(unit, "extensions", 0, "AISpawner")
         spawner_table[#spawner_table + 1] = unit
         return unit
     end,
-    setup_custom_horde_spawner = function (world, unit_name, terror_event_id, position, rotation, spawner_table, hidden)
+    setup_custom_horde_spawner = function (world, unit_name, terror_event_id, position_box, rotation_box, spawner_table, hidden)
+        local position = position_box:unbox()
+        local rotation = rotation_box:unbox()
         local unit = World.spawn_unit(world, unit_name, position, rotation)
         Unit.set_data(unit, "terror_event_id", terror_event_id)
         Unit.set_data(unit, "hidden", hidden)
@@ -32,4 +41,4 @@ LevelSpawnerUtils.spawn_funcs = {
     end,
 }
 
-return DirectorUtils
+return LevelSpawnerUtils
