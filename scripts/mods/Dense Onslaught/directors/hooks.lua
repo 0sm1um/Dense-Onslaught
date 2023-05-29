@@ -24,7 +24,6 @@ mod:hook(LevelAnalysis, "_setup_level_data", function(func, self, level_name, le
             local og_driector = self.spawn_zone_data.zones[k].roaming_set
             
             self.spawn_zone_data.zones[k].roaming_set = replacement_directors[og_driector] or "dense_default"
-            mod:echo(og_driector.."     "..self.spawn_zone_data.zones[k].roaming_set)
         end
 
         -- --populate unpopulated ambient zones
