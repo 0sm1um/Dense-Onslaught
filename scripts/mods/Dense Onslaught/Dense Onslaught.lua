@@ -420,3 +420,12 @@ end)
 -- 	self.threat_value = threat_value
 -- 	self.num_aggroed = count
 -- end)
+
+
+function count_event_breed(breed_name)
+	return Managers.state.conflict:count_units_by_breed_during_event(breed_name)
+end
+
+function count_breed(breed_name)
+	return Managers.state.conflict:count_units_by_breed(breed_name)
+end

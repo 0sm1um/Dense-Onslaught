@@ -58,4 +58,5 @@ for _, blueprint in pairs(GenericTerrorEvents) do
 	end
 end
 
-NetworkLookup.terror_flow_events = create_lookup({}, flow_events)
+local new_event_lookup_table = create_lookup({}, flow_events)
+table.merge(NetworkLookup.terror_flow_events, new_event_lookup_table)
