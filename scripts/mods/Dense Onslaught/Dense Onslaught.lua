@@ -194,7 +194,6 @@ local stand_down_tables = function()
 end
 
 mod.on_setting_changed = function()
-	mod:echo("setting changed")
 	if mod:get("dense_active") then
 		stand_up_tables()
 		if Managers.state.conflict then

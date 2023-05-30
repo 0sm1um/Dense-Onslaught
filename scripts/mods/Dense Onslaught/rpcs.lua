@@ -1,12 +1,10 @@
 local mod = get_mod("Dense Onslaught")
 
 mod:network_register("rpc_dense_activate", function (sender)
-    mod:echo("activated dense")
     mod:set("dense_active", true)
 end)
 
 mod:network_register("rpc_dense_deactivate", function (sender)
-    mod:echo("deactivated dense")
     mod:set("dense_active", false)
 end)
 
