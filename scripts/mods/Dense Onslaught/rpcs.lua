@@ -8,6 +8,14 @@ mod:network_register("rpc_dense_deactivate", function (sender)
     mod:set("dense_active", false)
 end)
 
+mod:network_register("rpc_dense_level_change", function (sender, level)
+    mod:set("dense_level", level)
+end)
+
+mod:network_register("rpc_dense_giga_toggle", function (sender, toggle)
+    mod:set("giga_ambients", toggle)
+end)
+
 mod:network_register("rpc_enable_dense_breed_changes", function (sender)
     UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.min = 31
 	UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.max = 31
