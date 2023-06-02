@@ -65,3 +65,13 @@ mod:hook(SpawnZoneBaker, "populate_spawns_by_rats", function (func, self, global
 
     return result
 end)
+
+mod:hook(ConflictDirector,"set_updated_settings", function (func, self, conflict_settings_name)
+   
+    if mod:get("dense_active") then
+        local dense_difficulty = "dense_"..string.gsub(mod:get("dense_level").."_", "medium_", "")
+        conflict_settings_name = dense_difficulty .. (replacement_directors[conflict_settings_name] or "default") 
+    end
+
+    return func(self, conflict_settings_name)
+end)
