@@ -60,12 +60,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -86,16 +86,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_berzerker",
@@ -112,16 +112,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_berzerker",
@@ -143,12 +143,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -169,12 +169,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -198,12 +198,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -224,16 +224,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_berzerker",
@@ -250,12 +250,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_marauder_with_shield",
 				{
@@ -276,12 +276,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -331,12 +331,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -383,16 +383,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_raider",
@@ -500,16 +500,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_berzerker",
@@ -526,16 +526,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					12
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
+					6,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					4,
+					3,
 					6
 				},
 				"chaos_raider",
@@ -588,12 +588,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					14
+					18
 				},
 				"chaos_marauder",
 				{
-					10,
-					14
+					8,
+					16
 				},
 				"chaos_raider",
 				{
@@ -609,5 +609,5 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
-	
+
 scale_horde_composition(HordeCompositionsPacing, faction, scaling_data)
