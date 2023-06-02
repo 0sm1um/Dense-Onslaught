@@ -2,10 +2,19 @@ local mod = get_mod("Dense Onslaught")
 
 mod:network_register("rpc_dense_activate", function (sender)
     mod:set("dense_active", true)
+    mod.stand_up_tables()
+	if Managers.state.conflict then
+		Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
+		Managers.state.conflict:set_threat_value("skaven_stormfiend", 25)
+		Managers.state.conflict:set_threat_value("chaos_spawn", 25)
+		Managers.state.conflict:set_threat_value("chaos_troll", 25)
+		Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
+	end
 end)
 
 mod:network_register("rpc_dense_deactivate", function (sender)
     mod:set("dense_active", false)
+    mod.stand_down_tables()
 end)
 
 mod:network_register("rpc_dense_level_change", function (sender, level)
@@ -14,6 +23,18 @@ end)
 
 mod:network_register("rpc_dense_giga_toggle", function (sender, toggle)
     mod:set("giga_ambients", toggle)
+end)
+
+mod:network_register("rpc_dense_sync", function (sender, toggle, level, giga_toggle)
+    if not Managers.player.is_server then
+        mod:set("dense_active", toggle)
+        mod:set("dense_level", level)
+        mod:set("giga_ambients", giga_toggle)
+    end
+end)
+
+mod:network_register("rpc_dense_sync_request", function (sender)
+    mod:network_send("rpc_dense_sync", "all", mod:get("dense_active"), mod:get("dense_level"), mod:get("giga_ambients"))
 end)
 
 mod:network_register("rpc_enable_dense_breed_changes", function (sender)

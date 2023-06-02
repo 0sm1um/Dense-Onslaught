@@ -30,7 +30,7 @@ mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
 -- end
 
 
-local stand_up_tables = function()
+mod.stand_up_tables = function()
 	local mean = 0.4
 	local range = 0.1
 
@@ -141,7 +141,7 @@ local stand_up_tables = function()
     }
 end
 
-local stand_down_tables = function()
+mod.stand_down_tables = function()
 	UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.min = 0
     UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.max = 30
     UnitVariationSettings.skaven_storm_vermin.material_variations.skin_tint.min = 0
@@ -195,45 +195,51 @@ local stand_down_tables = function()
 end
 
 mod.on_setting_changed = function()
-	if mod:get("dense_active") then
-		stand_up_tables()
-		if Managers.state.conflict then
-			Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
-			Managers.state.conflict:set_threat_value("skaven_stormfiend", 25)
-			Managers.state.conflict:set_threat_value("chaos_spawn", 25)
-			Managers.state.conflict:set_threat_value("chaos_troll", 25)
-			Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
-		end
+	
+	local is_server = Managers.player.is_server
 
-		if Managers.player.is_server then
-			mod:network_send("rpc_dense_activate", "all")
-		end
+	mod:echo(Managers.player.is_server)
+	
+	if mod:get("dense_active") and is_server then
+		mod:network_send("rpc_dense_activate", "all")		
+	elseif is_server then
+		mod:network_send("rpc_dense_deactivate", "all")
 	else
-		stand_down_tables()
-		if Managers.player.is_server then
-			mod:network_send("rpc_dense_deactivate", "all")
-		end
+		mod:network_send("rpc_dense_sync_request", "others")
 	end
 
-	if mod:get("dense_level") then
+	if mod:get("dense_level") ~= nil then
 		if Managers.player.is_server then
 			mod:network_send("rpc_dense_level_change", "all", mod:get("dense_level"))
+		else 
+			mod:network_send("rpc_dense_sync_request", "others")
 		end
 	end
 
-	if mod:get("giga_ambients") then
+	if mod:get("giga_ambients") ~= nil then
 		if Managers.player.is_server then
 			mod:network_send("rpc_dense_giga_toggle", "all", mod:get("giga_ambients"))
+		else 
+			mod:network_send("rpc_dense_sync_request", "others")
 		end
+	end
+end
+
+mod.on_user_joined = function(player)
+	if Managers.player.is_server then
+		mod:network_send("rpc_dense_sync", "all", mod:get("dense_active"), mod:get("dense_level"), mod:get("giga_ambients"))
+	else
+		mod:set("dense_active", false)
+		mod:network_send("rpc_dense_sync_request", "others")
 	end
 end
 
 mod.on_disabled = function()
-    stand_down_tables()
+    mod.stand_down_tables()
 end
 
 mod.on_enabled = function()
-    stand_up_tables()
+    mod.stand_up_tables()
 
 	if Managers.state.conflict then
 		Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
@@ -245,7 +251,7 @@ mod.on_enabled = function()
 end
 
 if mod:is_enabled() then
-	stand_up_tables()
+	mod.stand_up_tables()
 
 	if Managers.state.conflict then
 		Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
