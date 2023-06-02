@@ -6,6 +6,8 @@ local director_pacing = table.clone(PacingSettings.default)
 local name = "dense_default"
 director_pacing.horde = mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/horde_settings")
 
+director_pacing.delay_specials_threat_value = nil
+
 director_pacing.peak_fade_threshold = 110                      -- Shared between all versions of Onslaught
 director_pacing.peak_intensity_threshold = 120				  -- Shared between all versions of Onslaught
 director_pacing.sustain_peak_duration = { 5, 10 }			  -- Shared between all versions of Onslaught
