@@ -36,8 +36,6 @@ mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
         end
     end
     return func(self, name)
-<<<<<<< HEAD
-=======
 end)
 
 -- Nest boss logic
@@ -458,5 +456,4 @@ mod:hook(BTQuickTeleportAction, "enter", function (func, self, unit, blackboard,
 		conflict_director:spawn_one(Breeds["chaos_plague_sorcerer"], hidden_pos)
 		conflict_director:spawn_one(Breeds["chaos_plague_sorcerer"], hidden_pos)
 	end
->>>>>>> dc3ed465fb3ee3f8ba913cfbf42c4ac3d026bec0
 end)
