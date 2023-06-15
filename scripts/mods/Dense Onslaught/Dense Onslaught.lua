@@ -6,37 +6,24 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	--------------Hooks and Functions---------------
 	------------------------------------------------
 
--- mod:dofile("scripts/mods/Dense Onslaught/base/base")
+mod:dofile("scripts/mods/Dense Onslaught/base/hooks")
+mod:dofile("scripts/mods/Dense Onslaught/base/rpcs")
+mod:dofile("scripts/mods/Dense Onslaught/base/level_spawners/level_spawners_init")
 
--- mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
-
--- Hooks related to turning the mod on and off.
--- mod:dofile("scripts/mods/Dense Onslaught/base/control")
-
-mod:dofile("scripts/mods/Dense Onslaught/hooks")
-mod:dofile("scripts/mods/Dense Onslaught/rpcs")
-mod:dofile("scripts/mods/Dense Onslaught/level_spawners/level_spawners_init")
-mod:dofile("scripts/mods/Dense Onslaught/event/event_init")
-mod:dofile("scripts/mods/Dense Onslaught/horde_comps/horde_comp_init")
-mod:dofile("scripts/mods/Dense Onslaught/breedpacks/breedpacks_init")
-mod:dofile("scripts/mods/Dense Onslaught/patrols/patrols_init")
-
-
-
+mod:dofile("scripts/mods/Dense Onslaught/mutator/event/event_init")
+mod:dofile("scripts/mods/Dense Onslaught/mutator/horde_comps/horde_comp_init")
+mod:dofile("scripts/mods/Dense Onslaught/mutator/breedpacks/breedpacks_init")
+mod:dofile("scripts/mods/Dense Onslaught/mutator/patrols/patrols_init")
 
 mod:dofile("scripts/mods/Dense Onslaught/directors/directors_init")
--- for level_key,data in pairs(LevelSettings) do
---     mod:set(data.level_name, "dense_default")
--- end
-
 
 mod.stand_up_tables = function()
 	local mean = 0.4
 	local range = 0.1
 
 	RecycleSettings.max_grunts = 250                                      -- Specific to Dense, raises upper cap to ambient spawning.
-	RecycleSettings.push_horde_if_num_alive_grunts_above = 200 
-	
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 200
+
 	if mod:get("low_performance_mode") then
 		RecycleSettings.max_grunts = 150
 		mod:chat_broadcast("Low Performance Mode ENABLED")
@@ -114,7 +101,6 @@ mod.stand_up_tables = function()
 
     --See hooks for Skarrik behaviour changes
     BreedActions.skaven_storm_vermin_warlord.spawn_sequence.considerations.time_since_last.max_value = 800
-
 
     BreedActions.skaven_grey_seer.ground_combat.spawn_allies_cooldown = 18
 

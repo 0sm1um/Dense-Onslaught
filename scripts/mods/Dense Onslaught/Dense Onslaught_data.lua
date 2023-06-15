@@ -22,6 +22,13 @@ local enable_dense_options = {
 		sub_widgets = {},
 	},
 	{
+		setting_id    = "auto_enable_deathwish",
+		type          = "checkbox",
+		title		  = "auto_enable_deathwish",
+		tooltip       = "auto_enable_deathwish_tooltip",
+		default_value = false
+	},
+	{
 		setting_id    = "low_performance_mode",
 		type          = "checkbox",
 		title		  = "low_performance_mode",

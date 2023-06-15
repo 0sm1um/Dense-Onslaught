@@ -11,6 +11,9 @@ return {
 	difficulty_level = {
 		en = "Difficulty Level"
 	},
+	dense_active = {
+		en = "Dense Active"
+	},
 	level_one = {
 		en = "Level 1"
 	},

@@ -140,7 +140,7 @@ local patrol_formation = {
             "beastmen_gor"
         }
     },
-    -- Patrol Composation Changed From Dutch
+    -- Patrol Composition Changed From Dutch
     cataclysm = {
         {
             "beastmen_bestigor",

@@ -1,6 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
-local LevelSpawnerUtils = mod:dofile("scripts/mods/Dense Onslaught/level_spawners/level_spawners_utils")
+local LevelSpawnerUtils = mod:dofile("scripts/mods/Dense Onslaught/base/level_spawners/level_spawners_utils")
 
 mod:hook(StateIngame, "on_enter", function (func, self)
 	local result = func(self)

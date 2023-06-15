@@ -1,6 +1,8 @@
 local mod = get_mod("Dense Onslaught")
 	
 	local faction = "chaos"
+
+	local HordeCompositionsPacing = {}
 	
 	local trash_scale = 1
 	local shield_trash_scale = 1
@@ -60,12 +62,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -86,16 +88,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_berzerker",
@@ -112,16 +114,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_berzerker",
@@ -143,12 +145,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -169,12 +171,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -198,12 +200,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -224,16 +226,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_berzerker",
@@ -250,12 +252,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_marauder_with_shield",
 				{
@@ -276,12 +278,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -331,12 +333,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -383,16 +385,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_raider",
@@ -500,16 +502,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_berzerker",
@@ -526,16 +528,16 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					8,
-					14
+					12
 				},
 				"chaos_marauder",
 				{
-					6,
+					8,
 					12
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_raider",
@@ -588,12 +590,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					10,
-					18
+					14
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					10,
+					14
 				},
 				"chaos_raider",
 				{
@@ -610,4 +612,4 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 		sound_settings = HordeCompositionsSoundSettings.chaos
 	}
 
-scale_horde_composition(HordeCompositionsPacing, faction, scaling_data)
+return HordeCompositionsPacing

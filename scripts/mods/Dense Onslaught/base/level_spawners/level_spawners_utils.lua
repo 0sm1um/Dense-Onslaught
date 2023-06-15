@@ -10,7 +10,7 @@ mod.custom_spawners_by_level = mod.custom_spawners_by_level or {}
 
 LevelSpawnerUtils.initalize_custom_spawner = function(name)
 
-    local custom_spawn_data = mod:dofile("scripts/mods/Dense Onslaught/level_spawners/levels/"..name)
+    local custom_spawn_data = mod:dofile("scripts/mods/Dense Onslaught/base/level_spawners/levels/"..name)
     mod.custom_spawners_by_level[name] = custom_spawn_data
 
 end

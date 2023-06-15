@@ -28,7 +28,7 @@ DirectorUtils.add_new_ConflictDirector = function (name)
         pack_spawning = DirectorUtils.add_to_settings(name, PackSpawningSettings, mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/packspawn_settings")),
         horde = DirectorUtils.add_to_settings(name, HordeSettings, mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/horde_settings")),
         pacing = DirectorUtils.add_to_settings(name, PacingSettings, mod:dofile("scripts/mods/Dense Onslaught/directors/"..name.."/pacing_settings")),
-        factions = {}   
+        factions = {}
     }
 end
 

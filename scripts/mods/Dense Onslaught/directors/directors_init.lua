@@ -29,7 +29,6 @@ ConflictDirectors["dense_high_default_light"] = table.clone(ConflictDirectors["d
 ConflictDirectors["dense_high_skaven_light"] = table.clone(ConflictDirectors["dense_high_skaven"])
 ConflictDirectors["dense_high_chaos_light"] = table.clone(ConflictDirectors["dense_high_chaos"])
 
-
 ConflictDirectors = ConflictDirectors or {}
 
 local difficulties = Difficulties
@@ -160,6 +159,3 @@ end
 for name, pacing_setting in pairs(PacingSettings) do
 	pacing_setting.name = name
 end
-
-
-
