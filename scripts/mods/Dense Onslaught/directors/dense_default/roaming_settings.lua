@@ -1,5 +1,5 @@
 RoamingSettings = RoamingSettings or {}
 
-local director_roaming = mod:dofile("scripts/mods/Dense Onslaught/mutator/roaming_settings/roaming_settings_standard")
+local director_roaming = table.clone(RoamingSettings.default)
 
 return director_roaming

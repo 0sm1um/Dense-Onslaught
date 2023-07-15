@@ -1,5 +1,5 @@
 IntensitySettings = IntensitySettings or {}
 
-local director_intensity = mod:dofile("scripts/mods/Dense Onslaught/mutator/intensity_settings/intensity_settings_standard")
+local director_intensity = table.clone(IntensitySettings.default)
 
 return director_intensity

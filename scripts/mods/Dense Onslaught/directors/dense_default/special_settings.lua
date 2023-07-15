@@ -1,5 +1,5 @@
 SpecialsSettings = SpecialsSettings or {}
 
-local director_specials = mod:dofile("scripts/mods/Dense Onslaught/mutator/special_settings/special_settings_standard")
+local director_specials = table.clone(SpecialsSettings.beastmen)
 
 return director_specials
