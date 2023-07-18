@@ -59,132 +59,33 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					10,
+					24,
+					26
+				},
+				"chaos_marauder",
+				{
+					12,
 					18
 				},
-				"chaos_marauder",
-				{
-					8,
-					16
-				},
-				"chaos_raider",
-				{
-					4,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					6,
-					12
-				},
 				"chaos_marauder_with_shield",
-				{
-					3,
-					6
-				},
-				"chaos_berzerker",
-				{
-					5,
-					7
-				}
-			}
-		},
-		{
-			name = "shielders",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					6,
-					12
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					6
-				},
-				"chaos_berzerker",
-				{
-					3,
-					5
-				},
-				"chaos_raider",
 				{
 					1,
 					2
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					18
-				},
-				"chaos_marauder",
-				{
-					8,
-					16
 				},
 				"chaos_raider",
 				{
-					3,
-					5
+					1,
+					3
+				},
+				"chaos_berzerker",
+				{
+					1,
+					2
 				},
 				"chaos_warrior",
 				{
 					1,
 					2
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					18
-				},
-				"chaos_marauder",
-				{
-					8,
-					16
-				},
-				"chaos_raider",
-				{
-					3,
-					4
-				},
-				"chaos_berzerker",
-				{
-					4,
-					5
 				}
 			}
 		},
@@ -192,132 +93,38 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 	}
 	HordeCompositionsPacing.chaos_huge_shields = {
 		{
-			name = "plain",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					18
-				},
-				"chaos_marauder",
-				{
-					8,
-					16
-				},
-				"chaos_raider",
-				{
-					3,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					2
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					6,
-					12
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					6
-				},
-				"chaos_berzerker",
-				{
-					3,
-					5
-				}
-			}
-		},
-		{
 			name = "shielders",
 			weight = 5,
 			breeds = {
 				"chaos_fanatic",
 				{
-					10,
-					18
+					18,
+					22
 				},
 				"chaos_marauder",
 				{
-					8,
+					10,
 					16
 				},
 				"chaos_marauder_with_shield",
 				{
 					4,
-					6
+					5
 				},
 				"chaos_raider",
 				{
-					3,
-					5
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					18
+					1,
+					2
 				},
-				"chaos_marauder",
+				"chaos_berzerker",
 				{
-					8,
-					16
-				},
-				"chaos_raider",
-				{
-					4,
-					5
+					1,
+					3
 				},
 				"chaos_warrior",
 				{
 					1,
 					2
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					8,
-					14
-				},
-				"chaos_raider",
-				{
-					3,
-					4
-				},
-				"chaos_berzerker",
-				{
-					2,
-					4
 				}
 			}
 		},
@@ -330,49 +137,23 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					10,
-					18
+					24,
+					26
 				},
 				"chaos_marauder",
 				{
-					8,
-					16
+					12,
+					18
+				},
+				"chaos_marauder_with_shield",
+				{
+					1,
+					2
 				},
 				"chaos_raider",
 				{
-					4,
+					3,
 					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					8,
-					14
-				},
-				"chaos_berzerker",
-				{
-					4,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
 				}
 			}
 		},
@@ -382,85 +163,23 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					8,
-					14
+					18,
+					22
 				},
 				"chaos_marauder",
 				{
-					6,
-					12
+					10,
+					16
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
-					6
-				},
-				"chaos_raider",
-				{
-					1,
-					3
-				},
-				"chaos_berzerker",
-				{
-					3,
-					6
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					8,
-					14
-				},
-				"chaos_raider",
-				{
-					3,
-					4
-				},
-				"chaos_warrior",
-				{
-					1,
-					2
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					8,
-					14
+					4,
+					5
 				},
 				"chaos_raider",
 				{
 					2,
 					4
-				},
-				"chaos_berzerker",
-				{
-					1,
-					3
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
 				}
 			}
 		},
@@ -473,49 +192,23 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					8,
-					14
+					24,
+					26
 				},
 				"chaos_marauder",
 				{
-					8,
-					14
-				},
-				"chaos_berzerker",
-				{
-					3,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					1
-				}
-			}
-		},
-		{
-			name = "zerker",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					6,
-					12
+					12,
+					18
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
-					6
+					1,
+					2
 				},
 				"chaos_berzerker",
 				{
-					4,
-					7
+					5,
+					8
 				}
 			}
 		},
@@ -525,17 +218,17 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					8,
-					14
+					18,
+					22
 				},
 				"chaos_marauder",
 				{
-					6,
-					12
+					10,
+					16
 				},
 				"chaos_marauder_with_shield",
 				{
-					3,
+					4,
 					6
 				},
 				"chaos_raider",
@@ -547,63 +240,6 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				{
 					3,
 					6
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					8,
-					14
-				},
-				"chaos_marauder",
-				{
-					8,
-					14
-				},
-				"chaos_raider",
-				{
-					2,
-					3
-				},
-				"chaos_berzerker",
-				{
-					3,
-					5
-				},
-				"chaos_warrior",
-				{
-					1,
-					2
-				}
-			}
-		},
-		{
-			name = "frenzy",
-			weight = 5,
-			breeds = {
-				"chaos_fanatic",
-				{
-					10,
-					18
-				},
-				"chaos_marauder",
-				{
-					8,
-					16
-				},
-				"chaos_raider",
-				{
-					2,
-					3
-				},
-				"chaos_berzerker",
-				{
-					3,
-					5
 				}
 			}
 		},

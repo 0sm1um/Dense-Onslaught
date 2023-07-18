@@ -941,6 +941,20 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	HordeCompositions.event_plague_monks = {
+		{
+			name = "plain",
+			weight = 10,
+			breeds = {
+				"skaven_plague_monk",
+				{
+					3,
+					4
+				}
+			}
+		}
+	}
+
 	HordeCompositions.event_maulers_small = {
 		{
 			name = "plain",
@@ -1896,3 +1910,578 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
+
+-- Dense Skaven Compositions
+
+HordeCompositions.dn_skaven_slave_trash = {
+	{
+		name = "plain",
+		weight = 5,
+		breeds = {
+			"skaven_slave",
+			{
+				15,
+				20
+			},
+			"skaven_clan_rat",
+			{
+				20,
+				25
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_skaven_shielded_trash = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_clan_rat",
+			{
+				17,
+				19
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				20,
+				24
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_skaven_elites = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_storm_vermin_commander",
+			{
+				3,
+				4
+			}
+		}
+	},
+	{
+		name = "zerker",
+		weight = 10,
+		breeds = {
+			"skaven_plague_monk",
+			{
+				4,
+				5
+			}
+		}
+	},
+	{
+		name = "armored",
+		weight = 10,
+		breeds = {
+			"skaven_storm_vermin",
+			{
+				2,
+				3
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_white_stormvermin = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_storm_vermin",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_stormvermin = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_storm_vermin_commander",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_plague_monks = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_plague_monk",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_skaven_pursuit = {
+	{
+		name = "mixed",
+		weight = 5,
+		breeds = {
+			"skaven_slave",
+			{
+				14,
+				17
+			},
+			"skaven_clan_rat",
+			{
+				30,
+				35
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				8,
+				13
+			}
+		}
+	},
+	{
+		name = "leader",
+		weight = 5,
+		breeds = {
+			"skaven_slave",
+			{
+				12,
+				14
+			},
+			"skaven_clan_rat",
+			{
+				20,
+				22
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				7,
+				11
+			},
+			"skaven_storm_vermin_commander",
+			{
+				3,
+				4
+			}
+		}
+	},
+	{
+		name = "shielders",
+		weight = 5,
+		breeds = {
+			"skaven_slave",
+			{
+				14,
+				16
+			},
+			"skaven_clan_rat",
+			{
+				20,
+				21
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				10,
+				14
+			},
+			"skaven_storm_vermin",
+			{
+				1,
+				1
+			},
+			"skaven_storm_vermin_with_shield",
+			{
+				2,
+				2
+			}
+		}
+	}
+}
+
+
+
+-- Dense Chaos Horde Comps
+
+HordeCompositions.event_large_chaos = {
+	{
+		name = "plain",
+		weight = 7,
+		breeds = {
+			"chaos_marauder",
+			{
+				22,
+				26
+			},
+			"chaos_fanatic",
+			{
+				22,
+				26
+			}
+		}
+	},
+	{
+		name = "shielders",
+		weight = 3,
+		breeds = {
+			"chaos_marauder_with_shield",
+			{
+				9,
+				13
+			},
+			"chaos_marauder",
+			{
+				8,
+				11
+			},
+			"chaos_fanatic",
+			{
+				22,
+				26
+			}
+		}
+	},
+	{
+		name = "leader",
+		weight = 5,
+		breeds = {
+			"chaos_marauder",
+			{
+				8,
+				11
+			},
+			"chaos_fanatic",
+			{
+				22,
+				26
+			},
+			"chaos_raider",
+			{
+				3,
+				4
+			}
+		}
+	},
+	{
+		name = "zerker",
+		weight = 3,
+		breeds = {
+			"chaos_marauder",
+			{
+				8,
+				11
+			},
+			"chaos_fanatic",
+			{
+				22,
+				26
+			},
+			"chaos_berzerker",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_trash = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_fanatic",
+			{
+				22,
+				26
+			},
+			"chaos_marauder",
+			{
+				12,
+				16
+			},
+			"chaos_marauder_with_shield",
+			{
+				3,
+				9
+			},
+		}
+	},
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_fanatic",
+			{
+				18,
+				24
+			},
+			"chaos_marauder",
+			{
+				12,
+				16
+			},
+			"chaos_marauder_with_shield",
+			{
+				12,
+				16
+			},
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_shielded_trash = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_fanatic",
+			{
+				18,
+				24
+			},
+			"chaos_marauder",
+			{
+				12,
+				16
+			},
+			"chaos_marauder_with_shield",
+			{
+				12,
+				16
+			},
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_elites = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+		"chaos_raider",
+			{
+				3,
+				4
+			}
+		}
+	},
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+		"chaos_berzerker",
+			{
+				4,
+				5
+			}
+		}
+	},
+}
+
+HordeCompositions.dn_chaos_zerkers_light = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_berzerker",
+			{
+				3,
+				5
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_zerkers = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_berzerker",
+			{
+				5,
+				7
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_maulers = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_raider",
+			{
+				4,
+				7
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_zerkers_heavy = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_berzerker",
+			{
+				7,
+				10
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_warriors_light = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_warrior",
+			{
+				1,
+				2
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_warriors = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_warrior",
+			{
+				2,
+				3
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_chaos_warriors_heavy = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_warrior",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
+
+-- Dense Mixed Horde Comps
+
+HordeCompositions.dn_mixed_super_armor = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"chaos_warrior",
+			{
+				8,
+				8
+			},
+			"skaven_storm_vermin",
+			{
+				4,
+				4
+			}
+			
+		}
+	}	
+}
+
+-- Dense Beastmen
+
+-- Dense Specials
+
+HordeCompositions.dn_specials_heavy_disabler = {
+	{
+		name = "assassin",
+		weight = 10,
+		breeds = {
+			"skaven_gutter_runner",
+			{
+				2,
+				2
+			},
+			"skaven_pack_master",
+			{
+				1,
+				1
+			}
+		}
+	},
+	{
+		name = "packmaster",
+		weight = 10,
+		breeds = {
+			"skaven_pack_master",
+			{
+				2,
+				2
+			},
+			"chaos_corruptor_sorcerer",
+			{
+				1,
+				1
+			}
+		}
+	},
+	{
+		name = "leech",
+		weight = 10,
+		breeds = {
+			"chaos_corruptor_sorcerer",
+			{
+				2,
+				2
+			},
+			"skaven_gutter_runner",
+			{
+				1,
+				1
+			}
+		}
+	},
+	{
+		name = "mixed",
+		weight = 10,
+		breeds = {
+			"skaven_gutter_runner",
+			{
+				1,
+				1
+			},
+			"skaven_pack_master",
+			{
+				1,
+				1
+			},
+			"chaos_corruptor_sorcerer",
+			{
+				1,
+				1
+			}
+		}
+	}
+}
