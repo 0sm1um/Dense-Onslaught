@@ -17,8 +17,8 @@ require("scripts/mods/Dense Onslaught/Events/event_wave_composition")
 	},
 }
 
-	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_specials_and_pacing_disabled)
-	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_light_skaven_wave)
+	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_specials_enabled_and_pacing_disabled)
+	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_skaven_light)
 	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_high_threshold_continue_skaven)
 
 	TerrorEventBlueprints.bell.canyon_ogre_boss = {

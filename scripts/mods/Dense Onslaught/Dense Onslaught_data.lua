@@ -43,4 +43,5 @@ menu.options.widgets = {
 		default_value = false
 	},
 }
+
 return menu

@@ -49,17 +49,21 @@ local range = 0.1
 	local gain = 0
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
-		gain = -0.01
+		PackSpawningSettings.default.area_density_coefficient = 0.07
+		PackSpawningSettings.skaven.area_density_coefficient = 0.07
+		PackSpawningSettings.chaos.area_density_coefficient = 0.07
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.07
 	elseif mod.difficulty_level == 2 then
-		gain = 0
+		PackSpawningSettings.default.area_density_coefficient = 0.075
+		PackSpawningSettings.skaven.area_density_coefficient = 0.075
+		PackSpawningSettings.chaos.area_density_coefficient = 0.075
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.075
 	else
-		gain = 0.03
+		PackSpawningSettings.default.area_density_coefficient = 0.085
+		PackSpawningSettings.skaven.area_density_coefficient = 0.085
+		PackSpawningSettings.chaos.area_density_coefficient = 0.085
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.085
 	end
-
-	PackSpawningSettings.default.area_density_coefficient = 0.07 + gain
-	PackSpawningSettings.skaven.area_density_coefficient = 0.07 + gain
-	PackSpawningSettings.chaos.area_density_coefficient = 0.07 + gain
-	PackSpawningSettings.beastmen.area_density_coefficient = 0.07 + gain
 
 	RecycleSettings.max_grunts = 250                                      -- Specific to Dense, raises upper cap to ambient spawning.
 	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+

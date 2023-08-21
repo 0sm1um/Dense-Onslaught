@@ -1,11 +1,6 @@
 local mod = get_mod("Dense Onslaught")
 
--- Dense Skaven Waves
-
-dn_specials_and_pacing_disabled = {
-    {
-        "disable_kick"
-    },
+dn_specials_enabled_and_pacing_disabled = {
     {
         "control_specials",
         enable = true
@@ -16,7 +11,77 @@ dn_specials_and_pacing_disabled = {
     },
 }
 
-dn_light_skaven_wave = {
+dn_specials_and_pacing_disabled = {
+    {
+        "control_specials",
+        enable = true
+    },
+    {
+        "control_pacing",
+        enable = false
+    },
+}
+
+dn_specials_and_pacing_enabled = {
+    {
+        "control_specials",
+        enable = true
+    },
+    {
+        "control_pacing",
+        enable = true
+    },
+}
+
+-- Dense Skaven Waves
+
+dn_skaven_trash = {
+    {
+        "event_horde",
+        composition_type = "dn_skaven_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_skaven_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_skaven_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_skaven_elites"
+    },
+    {
+        "delay",
+        duration = 5
+    },
+}
+
+dn_skaven_berzerker = {
+    {
+        "event_horde",
+        limit_spawners = 2,
+        composition_type = "dn_skaven_shielded_trash"
+    },
+    {
+        "event_horde",
+        limit_spawners = 2,
+        composition_type = "dn_plague_monks"
+    },
+    {
+        "event_horde",
+        limit_spawners = 2,
+        composition_type = "dn_plague_monks"
+    },
+    {
+        "delay",
+        duration = 6
+    },
+
+}
+
+dn_skaven_light = {
     {
         "event_horde",
         composition_type = "dn_skaven_slave_trash"
@@ -26,20 +91,12 @@ dn_light_skaven_wave = {
         composition_type = "dn_stormvermin"
     },
     {
-        "delay",
-        duration = 5
-    },
-    {
         "event_horde",
         composition_type = "dn_skaven_shielded_trash"
     },
     {
         "event_horde",
         composition_type = "dn_white_stormvermin"
-    },
-    {
-        "delay",
-        duration = 5
     },
     {
         "event_horde",
@@ -72,6 +129,47 @@ dn_skaven_disabler_loop = {
 
 -- Dense Chaos Waves
 
+dn_chaos_stinger = {
+    {
+        "play_stinger",
+        stinger_name = "enemy_horde_chaos_stinger"
+    },
+}
+
+dn_chaos_trash = {
+    {
+        "event_horde",
+        composition_type = "dn_chaos_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_elites"
+    },
+    {
+        "delay",
+        duration = 6
+    },
+}
+
+dn_chaos_elites = {
+    {
+        "event_horde",
+        composition_type = "dn_chaos_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_elites"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_elites"
+    },
+    {
+        "delay",
+        duration = 6
+    },
+}
+
 dn_chaos_heavy_berzerker = {
     {
         "event_horde",
@@ -82,10 +180,6 @@ dn_chaos_heavy_berzerker = {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_zerkers_heavy"
-    },
-    {
-        "delay",
-        duration = 6
     },
     {
         "event_horde",
@@ -110,10 +204,6 @@ dn_chaos_heavy_maulers = {
         composition_type = "dn_chaos_maulers"
     },
     {
-        "delay",
-        duration = 6
-    },
-    {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_maulers"
@@ -126,10 +216,6 @@ dn_chaos_heavy_maulers = {
 
 dn_chaos_light_super_armor = {
     {
-        "delay",
-        duration = 6
-    },
-    {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_trash"
@@ -138,10 +224,6 @@ dn_chaos_light_super_armor = {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_maulers"
-    },
-    {
-        "delay",
-        duration = 6
     },
     {
         "event_horde",
@@ -161,10 +243,6 @@ dn_chaos_light_super_armor = {
 
 dn_chaos_heavy_super_armor = {
     {
-        "delay",
-        duration = 6
-    },
-    {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_trash"
@@ -180,10 +258,6 @@ dn_chaos_heavy_super_armor = {
         composition_type = "dn_chaos_warriors_light"
     },	
     {
-        "delay",
-        duration = 6
-    },
-    {
         "event_horde",
         limit_spawners = 2,
         composition_type = "dn_chaos_trash"
@@ -198,6 +272,55 @@ dn_chaos_heavy_super_armor = {
         duration = 6
     },
 }
+
+dn_chaos_crescendo = {
+    {
+        "event_horde",
+        composition_type = "dn_chaos_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_warriors"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_warriors"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_shielded_trash"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_zerkers"
+    },
+    {
+        "delay",
+        duration = 4
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_zerkers"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_elites"
+    },
+    {
+        "event_horde",
+        composition_type = "dn_chaos_elites"
+    },
+    {
+        "delay",
+        duration = 4
+    },
+    {
+        "spawn_special",
+        amount = 1,
+        breed_name = "chaos_vortex_sorcerer"
+    },
+}
+
 
 -- Dense Special Waves
 dn_ratling_guns = {
@@ -218,7 +341,7 @@ dn_ratling_guns = {
     },
     {
         "delay",
-        duration = 8
+        duration = 4
     },
 }
 

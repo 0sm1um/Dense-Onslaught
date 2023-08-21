@@ -92,6 +92,8 @@ mutator.toggle = function()
 			PackSpawningSettings.beastmen.area_density_coefficient = 1
 			mod:chat_broadcast("GIGA Ambients ENABLED")
 		end
+	local toggled = mod:get("dense_active")
+	mod:set("dense_active", not toggled)
 	else
 		mutator.stop()
 		mod:network_send("rpc_disable_white_sv", "all", true)

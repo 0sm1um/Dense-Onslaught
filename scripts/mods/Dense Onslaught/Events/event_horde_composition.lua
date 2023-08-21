@@ -1951,6 +1951,42 @@ HordeCompositions.dn_skaven_shielded_trash = {
 	}
 }
 
+HordeCompositions.dn_skaven_trash = {
+	{
+		name = "plain",
+		weight = 10,
+		breeds = {
+			"skaven_clan_rat",
+			{
+				17,
+				19
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				20,
+				24
+			}
+		}
+	},
+	{
+		name = "shielders",
+		weight = 10,
+		breeds = {
+			"skaven_clan_rat",
+			{
+				17,
+				19
+			},
+			"skaven_clan_rat_with_shield",
+			{
+				20,
+				24
+			}
+		}
+	}
+
+}
+
 HordeCompositions.dn_skaven_elites = {
 	{
 		name = "plain",
@@ -2215,11 +2251,11 @@ HordeCompositions.dn_chaos_trash = {
 			{
 				3,
 				9
-			},
+			}
 		}
 	},
 	{
-		name = "plain",
+		name = "shielders",
 		weight = 10,
 		breeds = {
 			"chaos_fanatic",
@@ -2236,7 +2272,7 @@ HordeCompositions.dn_chaos_trash = {
 			{
 				12,
 				16
-			},
+			}
 		}
 	}
 }
@@ -2278,7 +2314,7 @@ HordeCompositions.dn_chaos_elites = {
 		}
 	},
 	{
-		name = "plain",
+		name = "zerker",
 		weight = 10,
 		breeds = {
 		"chaos_berzerker",

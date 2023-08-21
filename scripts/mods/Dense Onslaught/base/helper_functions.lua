@@ -5,6 +5,26 @@ local mod = get_mod("Dense Onslaught")
 		Requires locally defined variables to function.
 	--]]
 
+mod.continue_when_condition_chaos = function(threshold, time)
+	return {
+		"continue_when",
+		duration = time,
+		condition = function (t)
+			return count_event_breed("chaos_berzerker") < threshold and count_event_breed("chaos_raider") < threshold and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 2*threshold and count_event_breed("chaos_fanatic") < 2*threshold and count_event_breed("chaos_warrior") < threshold
+		end
+	}
+end
+
+mod.continue_when_condition_skaven = function(threshold, time)
+	return {
+		"continue_when",
+		duration = time,
+		condition = function (t)
+			return count_event_breed("chaos_berzerker") < threshold and count_event_breed("chaos_raider") < threshold and (count_event_breed("chaos_marauder") + count_event_breed("chaos_marauder_with_shield")) < 2*threshold and count_event_breed("chaos_fanatic") < 2*threshold and count_event_breed("chaos_warrior") < threshold
+		end
+	}
+end
+
 mod.calculate_breed_pack_weights = function(scaling_data, breed_packs)
 	local weighted_packs = {}
 	for _, pack in pairs(breed_packs) do -- Select a Pack

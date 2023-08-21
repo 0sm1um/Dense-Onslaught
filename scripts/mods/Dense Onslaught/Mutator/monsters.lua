@@ -5,13 +5,13 @@ local mod = get_mod("Dense Onslaught")
 	Breeds.chaos_spawn.threat_value = 25
 	Breeds.chaos_troll.threat_value = 25
 	Breeds.beastmen_minotaur.threat_value = 25
-
+--[[
 	Managers.state.conflict:set_threat_value("skaven_rat_ogre", 25)
 	Managers.state.conflict:set_threat_value("skaven_stormfiend", 25)
 	Managers.state.conflict:set_threat_value("chaos_spawn", 25)
 	Managers.state.conflict:set_threat_value("chaos_troll", 25)
 	Managers.state.conflict:set_threat_value("beastmen_minotaur", 25)
-	
+--]]
 	BossSettings.default.boss_events.events = {
 			"event_boss",
 			"event_patrol"

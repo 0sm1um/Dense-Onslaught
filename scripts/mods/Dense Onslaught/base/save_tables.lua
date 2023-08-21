@@ -1,8 +1,11 @@
 local mod = get_mod("Dense Onslaught")
 local mutator = mod:persistent_table("Dense Onslaught")
 
+-- SOMETHING WRONG WITH BOSS SETTINGS
+
+
 	-- Pacing
-	mutator.OriginalConflictDirectors = table.clone(ConflictDirectors)
+	--mutator.OriginalConflictDirectors = table.clone(ConflictDirectors)
 	mutator.OriginalBreeds = table.clone(Breeds)
 	mutator.OriginalBreedPacks = table.clone(BreedPacks)
 	mutator.OriginalBreedPacksBySize = table.clone(BreedPacksBySize)
@@ -12,7 +15,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	mutator.OriginalHordeCompositions = table.clone(HordeCompositions)
 	mutator.OriginalHordeCompositionsPacing = table.clone(HordeCompositionsPacing)
 	mutator.OriginalSpecialsSettings = table.clone(SpecialsSettings)
-	mutator.OriginalCurrentSpecialsSettings = table.clone(CurrentSpecialsSettings)
+	--mutator.OriginalCurrentSpecialsSettings = table.clone(CurrentSpecialsSettings)
 
 	-- Events and Triggers
 	mutator.OriginalGenericTerrorEvents = table.clone(GenericTerrorEvents)
@@ -22,4 +25,3 @@ local mutator = mod:persistent_table("Dense Onslaught")
 
 	-- Dutch Remnants
 	mutator.OriginalBreedActions = table.clone(BreedActions)
-	mutator.OriginalBuffTemplates = table.clone(BuffTemplates)

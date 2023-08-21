@@ -6,12 +6,14 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	--------------Hooks and Functions---------------
 	------------------------------------------------
 
+-- Hooks related to turning the mod on and off.
+-- MISC Hooks and Helper Functions
 mod:dofile("scripts/mods/Dense Onslaught/base/base")
-
+mod:dofile("scripts/mods/Dense Onslaught/base/control")
 mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 
--- Hooks related to turning the mod on and off.
-mod:dofile("scripts/mods/Dense Onslaught/base/control")
+-- Save existing tables
+mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
@@ -20,7 +22,6 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the 
 	end
 
 mutator.start = function()
-
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
 		mod.gain = 0.75
@@ -29,9 +30,10 @@ mutator.start = function()
 	else
 		mod.gain = 1.25
 	end
-
-	-- Save existing tables
-	mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
+	-- Load Custom Spawners
+	mod:dofile("scripts/mods/Dense Onslaught/base/custom_spawners")
+	-- Load Boss AI
+	mod:dofile("scripts/mods/Dense Onslaught/base/lord_ai")
 	-- Load Custom Breed Data
 	mod:dofile("scripts/mods/Dense Onslaught/base/breed_data")
 
@@ -57,7 +59,7 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/monsters")
 	-- Patrol Trigger Settings
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/patrols")
-	
+
 	------------------------------------------------
 	---------------------Events---------------------
 	------------------------------------------------
@@ -111,7 +113,7 @@ mutator.start = function()
 	-- Trail of Treachery
 	mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
 
-	create_weights()
+	mod.create_weights()
 	mod:enable_all_hooks()
 	mutator.active = true
 end
@@ -119,7 +121,7 @@ end
 mutator.stop = function()
 	-- Execute code to reset all values modified by this mod back to default:
 	mod:dofile("scripts/mods/Dense Onslaught/base/deactivate")
-	create_weights()
+	mod.create_weights()
 	mod:disable_all_hooks()
 	mutator.active = false
 end

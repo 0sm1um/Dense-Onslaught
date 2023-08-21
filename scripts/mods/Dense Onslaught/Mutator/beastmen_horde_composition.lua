@@ -11,9 +11,9 @@ local mod = get_mod("Dense Onslaught")
 
 	local trash_entities = {"beastmen_ungor","beastmen_gor"}
 	local shield_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}
-	local elite_entities = {"beastmen_bestigor","chaos_raider","skaven_storm_vermin_commander"}
+	local elite_entities = {"beastmen_bestigor","chaos_raider","skaven_storm_vermin_commander","skaven_storm_vermin"}
 	local shield_elite_entities = {"skaven_storm_vermin_with_shield"}
-	local berzerker_entities = {"chaos_berzerker"}
+	local berzerker_entities = {"chaos_berzerker", "skaven_plague_monk"}
 	local super_armor_entities = {"chaos_warrior"}
 	
 	local scaling_data = {
@@ -48,36 +48,10 @@ local mod = get_mod("Dense Onslaught")
 			name = "plain",
 			weight = 5,
 			breeds = {
-				"beastmen_ungor",
+				"beastmen_gor",
 				{
-					10,
+					15,
 					16
-				},
-				"beastmen_gor",
-				{
-					10,
-					14
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				},
-				"chaos_warrior",
-				{
-					1,
-					2
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"beastmen_gor",
-				{
-					30,
-					32
 				},
 				"beastmen_ungor",
 				{
@@ -86,10 +60,180 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"beastmen_bestigor",
 				{
+					3,
+					4
+				}
+			}
+		},
+		{
+			name = "plain_chaos",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					5,
+					6
+				},
+				"chaos_marauder",
+				{
+					4,
+					6
+				},
+				"chaos_raider",
+				{
+					1,
+					2
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "chaos_shield",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					4,
+					6
+				},
+				"chaos_marauder_with_shield",
+				{
 					4,
 					5
 				},
-				"skaven_storm_vermin_with_shield",
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				},
+				"chaos_berzerker",
+				{
+					3,
+					6
+				}
+
+			}
+		},
+		{
+			name = "chaos_raiders",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					10,
+					12
+				},
+				"beastmen_bestigor",
+				{
+					1,
+					3
+				},
+				"chaos_raider",
+				{
+					2,
+					3
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				}
+			}
+		},
+		sound_settings = HordeCompositionsSoundSettings.beastmen
+	}
+	HordeCompositionsPacing.beastmen_huge_armor = {
+		{
+			name = "plain_skaven",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					5,
+					6
+				},
+				"skaven_clan_rat",
+				{
+					5,
+					9
+				},
+				"beastmen_bestigor",
+				{
+					3,
+					4
+				}
+			}
+		},
+		{
+			name = "skaven_shield",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					5,
+					6
+				},
+				"skaven_clan_rat_with_shield",
+				{
+					4,
+					9 
+				},
+				"beastmen_bestigor",
+				{
+					3,
+					4
+				},
+				"skaven_plague_monk",
+				{
+					3,
+					6
+				},
+			}
+		},
+		{
+			name = "skaven_armor",
+			weight = 5,
+			breeds = {
+				"beastmen_gor",
+				{
+					15,
+					16
+				},
+				"beastmen_ungor",
+				{
+					10,
+					12
+				},
+				"beastmen_bestigor",
 				{
 					1,
 					2
@@ -98,171 +242,16 @@ local mod = get_mod("Dense Onslaught")
 				{
 					1,
 					2
-				}
-			}
-		},
-		{
-			name = "leader_gor",
-			weight = 5,
-			breeds = {
-				"beastmen_gor",
-				{
-					38,
-					40
 				},
-				"beastmen_ungor",
-				{
-					10,
-					12
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				},
-				"chaos_berzerker",
+				"skaven_storm_vermin",
 				{
 					1,
 					2
 				},
-				"skaven_plague_monk",
+				"skaven_storm_vermin_with_shield",
 				{
 					1,
 					2
-				}
-			}
-		},
-		{
-			name = "leader_ungor",
-			weight = 5,
-			breeds = {
-				"beastmen_ungor",
-				{
-					14,
-					18
-				},
-				"chaos_marauder_with_shield",
-				{
-					4,
-					6
-				},
-				"skaven_plague_monk",
-				{
-					1,
-					2
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				}
-			}
-
-		},
-		sound_settings = HordeCompositionsSoundSettings.beastmen
-	}
-	HordeCompositionsPacing.beastmen_huge_armor = {
-		{
-			name = "plain",
-			weight = 5,
-			breeds = {
-				"beastmen_gor",
-				{
-					30,
-					32
-				},
-				"chaos_marauder_with_shield",
-				{
-					3,
-					4
-				},
-				"beastmen_ungor",
-				{
-					10,
-					12
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				},
-				"chaos_raider",
-				{
-					3,
-					4
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"beastmen_gor",
-				{
-					38,
-					40
-				},
-				"beastmen_ungor",
-				{
-					10,
-					12
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				},
-				"chaos_berzerker",
-				{
-					3,
-					4
-				}
-			}
-		},
-		{
-			name = "leader_gor",
-			weight = 5,
-			breeds = {
-				"beastmen_gor",
-				{
-					38,
-					40
-				},
-				"beastmen_ungor",
-				{
-					10,
-					12
-				},
-				"beastmen_bestigor",
-				{
-					7,
-					8
-				}
-			}
-		},
-		{
-			name = "leader",
-			weight = 5,
-			breeds = {
-				"beastmen_ungor",
-				{
-					35,
-					37
-				},
-				"beastmen_ungor",
-				{
-					10,
-					12
-				},
-				"beastmen_bestigor",
-				{
-					3,
-					4
-				},
-				"skaven_plague_monk",
-				{
-					3,
-					4
 				}
 			}
 		},

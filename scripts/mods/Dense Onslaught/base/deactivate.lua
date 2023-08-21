@@ -11,7 +11,6 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	HordeCompositions = mutator.OriginalHordeCompositions
 	HordeCompositionsPacing = mutator.OriginalHordeCompositionsPacing
 	SpecialsSettings = mutator.OriginalSpecialsSettings
-	CurrentSpecialsSettings = mutator.OriginalCurrentSpecialsSettings
 
 	-- Events and Triggers
 	GenericTerrorEvents = mutator.OriginalGenericTerrorEvents
@@ -21,7 +20,3 @@ local mutator = mod:persistent_table("Dense Onslaught")
 
 	-- Dutch Remnants
 	BreedActions = mutator.OriginalBreedActions
-	BuffTemplates = mutator.OriginalBuffTemplates
-
-	--Managers = mutator.OriginalManagers
-	ConflictDirectors = mutator.OriginalConflictDirectors
