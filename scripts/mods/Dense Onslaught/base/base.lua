@@ -19,7 +19,7 @@ mod:hook(Presence, "set_presence", function(func, key, value)
         local new_diff = value
         if mutator.active then 
             local difficulty_display_name = Managers.state.difficulty:get_difficulty_settings().display_name
-            new_diff = "Dense "..mod:get("difficulty_level")--.." "..Localize(difficulty_display_name)
+            new_diff = "Dense Onslaught"
             if mod:get("giga_ambients") then
                 new_diff = "Giga"..new_diff
             end
@@ -33,12 +33,19 @@ end)
 
 --In game difficulty display
 mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
-    if mutator.active then
+	if mutator.active then
         name = "Dense "..mod:get("difficulty_level")--.." "..name
         if mod:get("giga_ambients") then
             name = "Giga"..name
         end
     end
+	local dw = get_mod("catas")
+	if dw ~= nil then
+		local deathwish = dw:persistent_table("catas")
+		if deathwish.active == true then
+			name = "D"..mod:get("difficulty_level").." DWONS"
+		end
+	end
     return func(self, name)
 end)
 

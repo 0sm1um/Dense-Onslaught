@@ -22,13 +22,14 @@ mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the 
 	end
 
 mutator.start = function()
+	mod:network_send("rpc_enable_white_sv", "all", true)
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
 		mod.gain = 0.75
 	elseif mod.difficulty_level == 2 then
 		mod.gain = 1
 	else
-		mod.gain = 1.25
+		mod.gain = 1.5
 	end
 	-- Load Custom Spawners
 	mod:dofile("scripts/mods/Dense Onslaught/base/custom_spawners")
@@ -121,6 +122,7 @@ end
 mutator.stop = function()
 	-- Execute code to reset all values modified by this mod back to default:
 	mod:dofile("scripts/mods/Dense Onslaught/base/deactivate")
+	mod:network_send("rpc_disable_white_sv", "all", true)
 	mod.create_weights()
 	mod:disable_all_hooks()
 	mutator.active = false
