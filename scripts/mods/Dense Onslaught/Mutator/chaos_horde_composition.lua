@@ -59,7 +59,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					24,
+					20,
 					26
 				},
 				"chaos_marauder",
@@ -94,7 +94,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					20,
+					16,
 					22
 				},
 				"chaos_marauder",
@@ -128,7 +128,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					24,
+					20,
 					26
 				},
 				"chaos_marauder",
@@ -154,7 +154,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					20,
+					16,
 					22
 				},
 				"chaos_marauder",
@@ -188,7 +188,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					24,
+					20,
 					26
 				},
 				"chaos_marauder",
@@ -214,7 +214,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 			breeds = {
 				"chaos_fanatic",
 				{
-					20,
+					16,
 					22
 				},
 				"chaos_marauder",

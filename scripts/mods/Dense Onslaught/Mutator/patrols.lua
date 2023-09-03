@@ -393,31 +393,17 @@ local mod = get_mod("Dense Onslaught")
 		-- Patrol Composition Changed From Dutch
 		cataclysm = {
 			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
+				"skaven_storm_vermin_commander",
+				"skaven_storm_vermin_commander"
 			},
 			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
+				"skaven_plague_monk",
 				"skaven_plague_monk",
 				"skaven_plague_monk"
 			},
 			{
 				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
-			},
-			{
 				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
-			},
-			{
-				"skaven_storm_vermin_with_shield",
 				"skaven_storm_vermin_with_shield"
 			},
 			{
@@ -426,6 +412,7 @@ local mod = get_mod("Dense Onslaught")
 			},
 			{
 				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin",
 				"skaven_storm_vermin_with_shield"
 			},
 			{
@@ -433,16 +420,32 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin"
 			},
 			{
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin_with_shield"
+			},
+			{
+				"skaven_storm_vermin",
+				"skaven_storm_vermin"
+			},
+			{
+				"skaven_storm_vermin_with_shield",
+				"skaven_storm_vermin",
+				"skaven_storm_vermin_with_shield"
+			},
+			{
+				"skaven_plague_monk",
 				"skaven_plague_monk",
 				"skaven_plague_monk"
 			},
 			{
-				"skaven_storm_vermin",
-				"skaven_storm_vermin"
+				"skaven_plague_monk",
+				"skaven_plague_monk",
+				"skaven_plague_monk"
 			},
 			{
-				"skaven_storm_vermin_with_shield",
-				"skaven_storm_vermin_with_shield"
+				"skaven_storm_vermin_commander",
+				"skaven_storm_vermin_commander"
 			}
 		}
 	}

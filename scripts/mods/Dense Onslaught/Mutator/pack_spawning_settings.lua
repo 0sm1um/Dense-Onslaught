@@ -154,7 +154,7 @@ local range = 0.1
 	}
 	
 	PackSpawningSettings.beastmen.roaming_set = {
-		breed_packs = "beastmen",
+		breed_packs = "dense_beastmen",
 		breed_packs_peeks_overide_chance = {
 			0,
 			0
@@ -174,59 +174,7 @@ local range = 0.1
 	}
 
 
-
---[[
-	PackSpawningSettings.skaven_beastmen.roaming_set = {
-		breed_packs = "dense_skaven_beastmen",
-		breed_packs_peeks_overide_chance = {
-			0,
-			0
-		},
-		breed_packs_override = {
-			{
-				"shield_rats",
-				2,
-				0.035
-			},
-			{
-				"plague_monks",
-				2,
-				0.035
-			},
-			{
-				"beastmen_elites",
-				2,
-				0.035
-			}
-		}
-	}
-		
-		
-	PackSpawningSettings.chaos_beastmen.roaming_set = {
-		breed_packs = "dense_chaos_beastmen",
-		breed_packs_peeks_overide_chance = {
-			0,
-			0
-		},
-		breed_packs_override = {
-			{
-				"marauders_elites",
-				2,
-				0.03
-			},
-			{
-				"beastmen_elites",
-				2,
-				0.03
-			}
-		}
-	}
---]]	
-
-
 	PackSpawningSettings.default_light = PackSpawningSettings.default
 	PackSpawningSettings.skaven_light = PackSpawningSettings.skaven
 	PackSpawningSettings.chaos_light = PackSpawningSettings.chaos
-	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
-	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen
 	PackSpawningSettings.beastmen_light = PackSpawningSettings.beastmen

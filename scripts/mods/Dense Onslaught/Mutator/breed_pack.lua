@@ -2106,29 +2106,27 @@ dense_chaos = {
 	}
 }
 
--- TODO
---[[
 dense_beastmen = {
 	-- Size 1 Enemy Packs
 	{
 		spawn_weight = 0,
 		members_n = 1,
 		members = {
-			Breeds.chaos_marauder
+			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 1,
 		members = {
-			Breeds.chaos_marauder_with_shield
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 1,
 		members = {
-			Breeds.chaos_raider
+			Breeds.beastmen_bestigor
 		}
 	},
 	{
@@ -2143,40 +2141,24 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder
+			Breeds.skaven_storm_vermin,
+			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider
+			Breeds.beastmen_bestigor,
+			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_berzerker
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 2,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 2,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder_with_shield
+			Breeds.skaven_storm_vermin_with_shield,
+			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
@@ -2184,33 +2166,25 @@ dense_beastmen = {
 		members_n = 2,
 		members = {
 			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker
+			Breeds.skaven_clan_rat_with_shield
 		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 2,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_raider
-		}
-	},
+	},	
 	-- 3 Enemy Packs
 	{
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
-			Breeds.skaven_storm_vermin_commander,
-			Breeds.skaven_storm_vermin_commander,
-			Breeds.skaven_clan_rat
+			Breeds.beastmen_gor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
-			Breeds.skaven_storm_vermin_commander,
-			Breeds.skaven_clan_rat,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
@@ -2218,102 +2192,137 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
+			Breeds.beastmen_gor,
 			Breeds.skaven_storm_vermin_with_shield,
-			Breeds.skaven_storm_vermin_with_shield,
-			Breeds.skaven_clan_rat
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
-			Breeds.skaven_storm_vermin_with_shield,
-			Breeds.skaven_clan_rat,
-			Breeds.skaven_clan_rat
+			Breeds.chaos_raider,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 3,
 		members = {
-			Breeds.skaven_plague_monk,
-			Breeds.skaven_plague_monk,
+			Breeds.chaos_berzerker,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_gor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 3,
+		members = {
+			Breeds.chaos_berzerker,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor
+		}
+	},
+	-- 4 Enemy Packs
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_gor,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
 		spawn_weight = 0,
-		members_n = 3,
+		members_n = 4,
 		members = {
-			Breeds.skaven_plague_monk,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.skaven_storm_vermin,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin,
+			Breeds.beastmen_bestigor,
+			Breeds.skaven_clan_rat_with_shield
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.clan_rat
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.chaos_berzerker,
 			Breeds.skaven_clan_rat_with_shield,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 4,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.chaos_berzerker,
+			Breeds.chaos_marauder,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
 	{
 		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_berzerker
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 3,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},	-- 4 Enemy Packs
-	{
-		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
+			Breeds.beastmen_bestigor,
+			Breeds.skaven_storm_vermin,
 			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.beastmen_ungor
 		}
 	},
 	{
@@ -2321,9 +2330,9 @@ dense_beastmen = {
 		members_n = 4,
 		members = {
 			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_gor,
+			Breeds.skaven_skaven_clan_rat_with_shield
 		}
 	},
 	{
@@ -2331,9 +2340,9 @@ dense_beastmen = {
 		members_n = 4,
 		members = {
 			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
@@ -2341,72 +2350,81 @@ dense_beastmen = {
 		members_n = 4,
 		members = {
 			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
+			Breeds.skaven_plague_monk,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor
 		}
 	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 4,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},	-- 6 Enemy Packs
+	-- 6 Enemy Packs
 	{
 		spawn_weight = 0,
 		members_n = 6,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 6,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.skaven_clan_rat,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 6,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.chaos_warrior,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
 			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 6,
+		members = {
+			Breeds.skaven_storm_vermin_with_shield,
+			Breeds.chaos_warrior,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 6,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 6,
+		members = {
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.skaven_skaven_clan_rat_with_shield,
+			Breeds.beastmen_ungor_archer,
 			Breeds.chaos_marauder
 		}
 	},
@@ -2416,70 +2434,10 @@ dense_beastmen = {
 		members = {
 			Breeds.chaos_berzerker,
 			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 6,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 6,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 6,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_warrior,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 6,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 6,
-		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder
+			Breeds.skaven_skaven_clan_rat_with_shield,
+			Breeds.skaven_skaven_clan_rat_with_shield,
+			Breeds.beastmen_bestigor,
+			Breeds.skaven_skaven_clan_rat_with_shield
 		}
 	},
 	-- 8 Enemy Breed Packs (double 4 enemy packs)
@@ -2487,161 +2445,148 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.skaven_storm_vermin_with_shield,
+			Breeds.skaven_storm_vermin_with_shield,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_raider,
-			Breeds.chaos_raider,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 8,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 8,
-		members = {
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
-		}
-	},
-	{
-		spawn_weight = 0,
-		members_n = 8,
-		members = {
+			Breeds.skaven_storm_vermin_with_shield,
 			Breeds.chaos_warrior,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_warrior,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor_archer,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder
+			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	},
 	{
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.chaos_warrior,
-			Breeds.chaos_raider,
 			Breeds.chaos_berzerker,
-			Breeds.chaos_marauder,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield,
-			Breeds.chaos_marauder_with_shield
+			Breeds.chaos_berzerker,
+			Breeds.chaos_berzerker,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 8,
+		members = {
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor,
+			Breeds.beastmen_gor
+		}
+	},
+	{
+		spawn_weight = 0,
+		members_n = 8,
+		members = {
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.beastmen_bestigor,
+			Breeds.skaven_skaven_clan_rat_with_shield,
+			Breeds.skaven_skaven_clan_rat_with_shield,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor,
+			Breeds.beastmen_ungor
 		}
 	}
 }
---]]
+
 dense_standard = mod.calculate_breed_pack_weights(scaling_data, dense_standard)
 dense_chaos = mod.calculate_breed_pack_weights(scaling_data, dense_chaos)
 dense_skaven = mod.calculate_breed_pack_weights(scaling_data, dense_skaven)
+dense_beastmen = mod.calculate_breed_pack_weights(scaling_data, dense_beastmen)
 
 dense_standard.roof_spawning_allowed = BreedPacks.standard.roof_spawning_allowed
 dense_standard.patrol_overrides = BreedPacks.standard.patrol_overrides
@@ -2649,10 +2594,13 @@ dense_skaven.roof_spawning_allowed = BreedPacks.skaven.roof_spawning_allowed
 dense_skaven.patrol_overrides = BreedPacks.skaven.patrol_overrides
 dense_chaos.roof_spawning_allowed = BreedPacks.marauders_elites.roof_spawning_allowed
 dense_chaos.patrol_overrides = BreedPacks.marauders_elites.patrol_overrides
+dense_beastmen.roof_spawning_allowed = BreedPacks.chaos_beastmen.roof_spawning_allowed
+dense_beastmen.patrol_overrides = BreedPacks.chaos_beastmen.patrol_overrides
 
 BreedPacks.dense_standard = dense_standard
 BreedPacks.dense_skaven = dense_skaven
 BreedPacks.dense_chaos = dense_chaos
+BreedPacks.dense_beastmen = dense_beastmen
 
 BreedPacksBySize = {}
 

@@ -6,48 +6,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 	
 	Most of these functions were written by Grim.
 --]]
---Steam Presence Difficulty display
-local diff_tisch = {
-	high = 3,
-	medium = 2,
-	low = 1
-}
-mod:hook(Presence, "set_presence", function(func, key, value)
-	if value == "#presence_modded" then
-        func(key, "#presence_modded_difficulty")
-    elseif key == "difficulty" then
-        local new_diff = value
-        if mutator.active then 
-            local difficulty_display_name = Managers.state.difficulty:get_difficulty_settings().display_name
-            new_diff = "Dense Onslaught"
-            if mod:get("giga_ambients") then
-                new_diff = "Giga"..new_diff
-            end
-        end
-        func(key, new_diff)
-    else
-        func(key, value)
-    end
-	-- return func(key, value)
-end)
 
---In game difficulty display
-mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
-	if mutator.active then
-        name = "Dense "..mod:get("difficulty_level")--.." "..name
-        if mod:get("giga_ambients") then
-            name = "Giga"..name
-        end
-    end
-	local dw = get_mod("catas")
-	if dw ~= nil then
-		local deathwish = dw:persistent_table("catas")
-		if deathwish.active == true then
-			name = "D"..mod:get("difficulty_level").." DWONS"
-		end
-	end
-    return func(self, name)
-end)
 
 mod.create_weights = function()
 	local crash = nil

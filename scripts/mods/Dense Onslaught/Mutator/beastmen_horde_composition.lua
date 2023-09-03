@@ -50,7 +50,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -71,7 +71,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -102,7 +102,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -134,7 +134,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -168,7 +168,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -194,7 +194,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",
@@ -225,7 +225,7 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"beastmen_gor",
 				{
-					15,
+					12,
 					16
 				},
 				"beastmen_ungor",

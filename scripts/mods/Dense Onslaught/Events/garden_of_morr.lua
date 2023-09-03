@@ -136,6 +136,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			"play_stinger",
 			stinger_name = "enemy_horde_stinger"
 		},
+		--[[
 		{
 			"spawn_at_raw",
 			condition = function (t)
@@ -144,6 +145,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},
+		--]]
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
@@ -241,6 +243,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 				5
 			}
 		},
+		--[[
 		{
 			"spawn_at_raw",
 			condition = function (t)
@@ -249,6 +252,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},
+		--]]
 		{
 			"spawn_special",
 			breed_name = "skaven_poison_wind_globadier",
@@ -349,6 +353,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 				5
 			}
 		},
+		--[[
 		{
 			"spawn_at_raw",
 			condition = function (t)
@@ -357,6 +362,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},
+		--]]
 		{
 			"event_horde",
 			composition_type = "event_extra_spice_medium"
@@ -451,6 +457,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			"play_stinger",
 			stinger_name = "enemy_horde_stinger"
 		},
+		--[[
 		{
 			"spawn_at_raw",
 			condition = function (t)
@@ -459,6 +466,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},
+		--]]
 		{
 			"delay",
 			duration = {
@@ -541,6 +549,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 				5
 			}
 		},
+		--[[
 		{
 			"spawn_at_raw",
 			condition = function (t)
@@ -549,6 +558,7 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 			spawner_id = "onslaught_cemetery_entrance",
 			breed_name = "skaven_stormfiend"
 		},
+		--]]
 		{
 			"spawn_special",
 			breed_name = "skaven_ratling_gunner",
@@ -730,6 +740,11 @@ TerrorEventBlueprints.cemetery.cemetery_plague_brew_event_1_a = {
 		{
 			"delay",
 			duration = 10
+		},
+		{
+			"event_horde",
+			spawner_id = "cemetery_brew_event_chaos",
+			composition_type = "onslaught_chaos_warriors"
 		},
 		{
 			"continue_when",

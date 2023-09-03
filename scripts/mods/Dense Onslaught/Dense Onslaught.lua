@@ -15,14 +15,19 @@ mod:dofile("scripts/mods/Dense Onslaught/base/helper_functions")
 -- Save existing tables
 mod:dofile("scripts/mods/Dense Onslaught/base/save_tables")
 
+mod:disable_all_hooks()
+
 -- Activation and deactivation command:
-mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() mutator.toggle() end)
-	if not mutator.active then
+mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() 
+mutator.toggle()
+if not mutator.active then
 		mod:disable_all_hooks()
-	end
+end
+end)
 
 mutator.start = function()
 	mod:network_send("rpc_enable_white_sv", "all", true)
+	mod:network_send("rpc_disable_white_sv", "all", false)
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
 		mod.gain = 0.75
@@ -114,6 +119,50 @@ mutator.start = function()
 	-- Trail of Treachery
 	mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
 
+	--Steam Presence Difficulty display
+
+local diff_tisch = {
+	high = 3,
+	medium = 2,
+	low = 1
+}
+mod:hook(Presence, "set_presence", function(func, key, value)
+	if value == "#presence_modded" then
+        func(key, "#presence_modded_difficulty")
+    elseif key == "difficulty" then
+        local new_diff = value
+        if mutator.active then 
+            local difficulty_display_name = Managers.state.difficulty:get_difficulty_settings().display_name
+            new_diff = "Dense Onslaught"
+            if mod:get("giga_ambients") then
+                new_diff = "Giga"..new_diff
+            end
+        end
+        func(key, new_diff)
+    else
+        func(key, value)
+    end
+	-- return func(key, value)
+end)
+
+--In game difficulty display
+mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
+	if mutator.active == true and name ~= "" then
+		name = "Dense "..mod:get("difficulty_level")--.." "..name
+		if mod:get("giga_ambients") then
+			name = "Giga"..name
+		end
+		local dw = get_mod("catas")
+		if dw ~= nil then
+			local deathwish = dw:persistent_table("catas")
+			if deathwish.active == true and mutator.active == true then
+				name = "D"..mod:get("difficulty_level").." DWONS"
+			end
+		end
+	end
+    return func(self, name)
+end)
+
 	mod.create_weights()
 	mod:enable_all_hooks()
 	mutator.active = true
@@ -122,6 +171,7 @@ end
 mutator.stop = function()
 	-- Execute code to reset all values modified by this mod back to default:
 	mod:dofile("scripts/mods/Dense Onslaught/base/deactivate")
+	mod:network_send("rpc_enable_white_sv", "all", false)
 	mod:network_send("rpc_disable_white_sv", "all", true)
 	mod.create_weights()
 	mod:disable_all_hooks()
