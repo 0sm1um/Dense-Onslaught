@@ -7,6 +7,19 @@ local mod = get_mod("Dense Onslaught")
 	I want the exact same wave composition as Dutch.
 	I just want to increase the time players have to clear the wave.
 	--]]
+	local skaven_min_timer = 30
+	local skaven_max_timer = 72
+
+	local chaos_min_timer = 75
+	local chaos_max_timer = 95
+
+	if mod.difficulty_level == 0 then
+		local skaven_min_timer = mod:get("skaven_min_timer")
+		local skaven_max_timer = mod:get("skaven_max_timer")
+
+		local chaos_min_timer = mod:get("chaos_min_timer")
+		local chaos_max_timer = mod:get("chaos_max_timer")
+	end
 	
 	PacingSettings.default.peak_fade_threshold = 110                      -- Shared between all versions of Onslaught
 	PacingSettings.default.peak_intensity_threshold = 120				  -- Shared between all versions of Onslaught
@@ -54,3 +67,5 @@ local mod = get_mod("Dense Onslaught")
 	PacingSettings.beastmen.mini_patrol.frequency = { 6, 10 }
 
 	PacingSettings.beastmen.difficulty_overrides = nil
+
+	IntensitySettings.default.disabled = true

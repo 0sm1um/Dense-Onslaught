@@ -19,22 +19,23 @@ mod:disable_all_hooks()
 
 -- Activation and deactivation command:
 mod:command("dense_onslaught", "Toggle Dense Onslaught. Must be host and in the keep.", function() 
-mutator.toggle()
-if not mutator.active then
+	mutator.toggle()
+	if not mutator.active then
 		mod:disable_all_hooks()
-end
+	end
 end)
 
 mutator.start = function()
-	mod:network_send("rpc_enable_white_sv", "all", true)
-	mod:network_send("rpc_disable_white_sv", "all", false)
+	-- Variables
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
-		mod.gain = 0.75
+		mod.gain = 0.66
 	elseif mod.difficulty_level == 2 then
 		mod.gain = 1
+	elseif mod.difficulty_level == 3 then
+		mod.gain = 1.25
 	else
-		mod.gain = 1.5
+		mod.gain = mod:get("custom_gain")
 	end
 	-- Load Custom Spawners
 	mod:dofile("scripts/mods/Dense Onslaught/base/custom_spawners")
@@ -121,6 +122,7 @@ mutator.start = function()
 
 	--Steam Presence Difficulty display
 
+--[[
 local diff_tisch = {
 	high = 3,
 	medium = 2,
@@ -144,8 +146,10 @@ mod:hook(Presence, "set_presence", function(func, key, value)
     end
 	-- return func(key, value)
 end)
+--]]
 
 --In game difficulty display
+--[[
 mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
 	if mutator.active == true and name ~= "" then
 		name = "Dense "..mod:get("difficulty_level")--.." "..name
@@ -162,6 +166,7 @@ mod:hook(IngamePlayerListUI,"_set_difficulty_name" ,function (func, self, name)
 	end
     return func(self, name)
 end)
+--]]
 
 	mod.create_weights()
 	mod:enable_all_hooks()
@@ -171,8 +176,8 @@ end
 mutator.stop = function()
 	-- Execute code to reset all values modified by this mod back to default:
 	mod:dofile("scripts/mods/Dense Onslaught/base/deactivate")
-	mod:network_send("rpc_enable_white_sv", "all", false)
-	mod:network_send("rpc_disable_white_sv", "all", true)
+	--mod:network_send("rpc_enable_white_sv", "all", false)
+	--mod:network_send("rpc_disable_white_sv", "all", true)
 	mod.create_weights()
 	mod:disable_all_hooks()
 	mutator.active = false

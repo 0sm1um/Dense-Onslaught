@@ -316,7 +316,7 @@ end
 	--[[
 	These functions came from Core and pertain to adding buffs to bosses/entities.
 	--]]
-	
+
 function count_event_breed(breed_name)
 	return Managers.state.conflict:count_units_by_breed_during_event(breed_name)
 end
@@ -330,7 +330,7 @@ boss_pre_spawn_func = nil
 custom_grudge_boss = nil
 boss_pre_spawn_func = TerrorEventUtils.add_enhancements_for_difficulty
 custom_grudge_boss = TerrorEventUtils.generate_enhanced_breed_from_list
-
+--[[
 enhancement_list = {
 	["regenerating"] = true,
 	["unstaggerable"] = true
@@ -425,3 +425,4 @@ function nurgle_buff_spawn_function(unit, breed, optional_data)
 		buff_system:add_buff(unit, "gs_nurgle_decal", unit)
 	end
 end
+--]]

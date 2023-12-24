@@ -9,6 +9,15 @@ local mod = get_mod("Dense Onslaught")
 	local berzerker_scale = 1
 	local super_armor_scale = 1
 
+	if mod.difficulty_level == 0 then
+		mod.gain = mod:get("master_horde_scale")
+		trash_scale = mod:get("trash_scale")
+		shield_trash_scale = mod:get("shield_trash_scale")
+		elite_scale = mod:get("armor_scale")
+		shield_elite_scale = mod:get("shield_armor_scale")
+		super_armor_scale = mod:get("super_armor_scale")
+	end
+
 	local trash_entities = {"chaos_fanatic","chaos_marauder"}
 	local shield_trash_entities = {"chaos_marauder_with_shield"}
 	local elite_entities = {"chaos_raider"}
@@ -38,7 +47,7 @@ local mod = get_mod("Dense Onslaught")
         breeds = berzerker_entities,
     },
     {
-        scale_factor = super_armor_scale * mod.gain^2,
+        scale_factor = super_armor_scale * mod.gain,
         breeds = super_armor_entities,
     },
 }
@@ -60,27 +69,27 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					20,
-					26
+					32
 				},
 				"chaos_marauder",
 				{
 					10,
-					12
-				},
-				"chaos_raider",
-				{
-					1,
-					2
-				},
-				"chaos_berzerker",
-				{
-					1,
-					2
+					16
 				},
 				"chaos_warrior",
 				{
 					1,
 					1
+				},
+				"chaos_raider",
+				{
+					1,
+					3
+				},
+				"chaos_berzerker",
+				{
+					1,
+					3
 				}
 			}
 		},
@@ -100,23 +109,23 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_marauder",
 				{
 					10,
-					12
+					16
 				},
 				"chaos_marauder_with_shield",
 				{
 					4,
-					5
+					12
+				},
+				"chaos_berzerker",
+				{
+					1,
+					3
 				},
 				"chaos_raider",
 				{
 					1,
 					2
 				},
-				"chaos_berzerker",
-				{
-					1,
-					3
-				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -129,22 +138,27 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					20,
-					26
+					32
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
 				},
 				"chaos_marauder",
 				{
 					10,
-					12
+					16
 				},
 				"chaos_raider",
 				{
-					4,
+					3,
 					5
 				},
 				"chaos_warrior",
 				{
 					1,
-					2
+					1
 				}
 			}
 		},
@@ -157,26 +171,26 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 					16,
 					22
 				},
-				"chaos_marauder",
-				{
-					10,
-					12
-				},
 				"chaos_marauder_with_shield",
 				{
 					4,
-					5
-				},
-				"chaos_raider",
-				{
-					4,
-					5
+					12
 				},
 				"chaos_warrior",
 				{
 					1,
 					2
-				}
+				},
+				"chaos_marauder",
+				{
+					10,
+					16
+				},
+				"chaos_raider",
+				{
+					2,
+					5
+				},
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos
@@ -189,23 +203,23 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_fanatic",
 				{
 					20,
-					26
-				},
-				"chaos_marauder",
-				{
-					10,
-					12
+					32
 				},
 				"chaos_marauder_with_shield",
 				{
 					4,
-					5
+					12
 				},
 				"chaos_berzerker",
 				{
-					5,
-					8
-				}
+					4,
+					7
+				},
+				"chaos_marauder",
+				{
+					10,
+					16
+				},
 			}
 		},
 		{
@@ -217,26 +231,26 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 					16,
 					22
 				},
-				"chaos_marauder",
-				{
-					10,
-					12
-				},
 				"chaos_marauder_with_shield",
 				{
 					4,
-					5
+					12
+				},
+				"chaos_berzerker",
+				{
+					3,
+					6
+				},
+				"chaos_marauder",
+				{
+					10,
+					16
 				},
 				"chaos_raider",
 				{
 					1,
 					2
 				},
-				"chaos_berzerker",
-				{
-					3,
-					6
-				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.chaos

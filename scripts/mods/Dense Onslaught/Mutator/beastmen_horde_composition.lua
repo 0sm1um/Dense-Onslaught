@@ -4,10 +4,19 @@ local mod = get_mod("Dense Onslaught")
 
 	local trash_scale = 1
 	local shield_trash_scale = 1
-	local elite_scale = 1            -- This term is meant to convey it counts for Stormvermin and Mauler type enemies.
+	local elite_scale = 1
 	local shield_elite_scale = 1
 	local berzerker_scale = 1
 	local super_armor_scale = 1
+
+	if mod.difficulty_level == 0 then
+		mod.gain = mod:get("master_horde_scale")
+		trash_scale = mod:get("trash_scale")
+		shield_trash_scale = mod:get("shield_trash_scale")
+		elite_scale = mod:get("armor_scale")
+		shield_elite_scale = mod:get("shield_armor_scale")
+		super_armor_scale = mod:get("super_armor_scale")
+	end
 
 	local trash_entities = {"beastmen_ungor","beastmen_gor"}
 	local shield_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}

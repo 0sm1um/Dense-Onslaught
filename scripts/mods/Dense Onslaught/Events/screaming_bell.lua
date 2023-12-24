@@ -1,8 +1,40 @@
 local mod = get_mod("Dense Onslaught")
 
-require("scripts/mods/Dense Onslaught/Events/event_wave_composition")
+HordeCompositions.event_bell_monks = {
+	{
+		name = "plain",
+		weight = 7,
+		breeds = {
+			"skaven_plague_monk",
+			{
+				3,
+				4
+			}
+		}
+	}
+}
 
-	TerrorEventBlueprints.bell.canyon_bell_event = {
+HordeCompositions.event_bell_warriors = {
+	{
+		name = "plain",
+		weight = 7,
+		breeds = {
+			"chaos_warrior",
+			{
+				8,
+				8
+			},
+			"skaven_storm_vermin",
+			{
+				4,
+				4
+			}
+			
+		}
+	}	
+}
+
+TerrorEventBlueprints.bell.canyon_bell_event = {
 	{
 		"set_master_event_running",
 		name = "canyon_bell_event"
@@ -15,61 +47,127 @@ require("scripts/mods/Dense Onslaught/Events/event_wave_composition")
 		"set_time_challenge",
 		time_challenge_name = "bell_speed_event_cata"
 	},
+	{
+		"disable_kick"
+	},
+	{
+		"set_freeze_condition",
+		max_active_enemies = 100
+	},
+	{
+		"event_horde",
+		spawner_id = "canyon_bell_event",
+		composition_type = "event_medium"
+	},
+	{
+		"event_horde",
+		spawner_id = "canyon_bell_event",
+		composition_type = "event_extra_spice_large"
+	},
+	{
+		"delay",
+		duration = 5
+	},
+	{
+		"control_specials",
+		enable = true
+	},
+	{
+		"control_pacing",
+		enable = false
+	},
+	{
+		"event_horde",
+		spawner_id = "canyon_bell_event",
+		composition_type = "event_bell_monks"
+	},
+	{
+		"event_horde",
+		spawner_id = "canyon_bell_event",
+		composition_type = "event_bell_monks"
+	},
+	{
+		"delay",
+		duration = 5
+	},
+	{
+		"continue_when",
+		condition = function (t)
+			return count_event_breed("skaven_slave") < 25 and count_event_breed("skaven_clan_rat") < 20 and count_event_breed("skaven_clan_rat_with_shield") < 15 and count_event_breed("skaven_storm_vermin_commander") < 8 and count_event_breed("skaven_plague_monk") < 12
+		end
+	},
+	{
+		"flow_event",
+		flow_event_name = "canyon_bell_event_done"
+	}
 }
 
-	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_specials_enabled_and_pacing_disabled)
-	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_skaven_light)
-	table.merge(TerrorEventBlueprints.bell.canyon_bell_event, dn_high_threshold_continue_skaven)
-
-	TerrorEventBlueprints.bell.canyon_ogre_boss = {
-		{
-			"control_specials",
-			enable = false
-		},
-		{
-			"control_pacing",
-			enable = false
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "onslaught_second_ogre",
-			breed_name = "chaos_troll"
-		},
-		{
-			"delay",
-			duration = 6
-		},
-		{
-			"spawn_at_raw",
-			spawner_id = "canyon_ogre_boss",
-			breed_name = "skaven_rat_ogre"
-		},
-		{
-			"event_horde",
-			spawner_id = "canyon_bell_event",
-			composition_type = "dn_mixed_super_armor"
-		}
+TerrorEventBlueprints.bell.canyon_ogre_boss = {
+	{
+		"control_specials",
+		enable = false
+	},
+	{
+		"control_pacing",
+		enable = false
+	},
+	{
+		"spawn_at_raw",
+		spawner_id = "canyon_ogre_boss",
+		breed_name = "skaven_rat_ogre"
+	},
+	{
+		"delay",
+		duration = 2
+	},
+	{
+		"spawn_at_raw",
+		spawner_id = "onslaught_second_ogre",
+		breed_name = "chaos_troll"
+	},
+	{
+		"event_horde",
+		spawner_id = "canyon_bell_event",
+		composition_type = "event_bell_warriors"
 	}
+}
 
-	TerrorEventBlueprints.bell.canyon_escape_event = {
-		{
-			"set_master_event_running",
-			name = "canyon_escape_event"
-		},
-		{
-			"set_freeze_condition",
-			max_active_enemies = 100
-		},
-		{
-			"control_specials",
-			enable = false
-		},
-		{
-			"control_pacing",
-			enable = true
-		},
+TerrorEventBlueprints.bell.canyon_escape_event = {
+	{
+		"set_master_event_running",
+		name = "canyon_escape_event"
+	},
+	{
+		"set_freeze_condition",
+		max_active_enemies = 100
+	},
+	{
+		"event_horde",
+		limit_spawners = 2,
+		spawner_id = "canyon_escape_event",
+		composition_type = "onslaught_custom_specials_heavy_disabler"
+	},		
+	{
+		"event_horde",
+		spawner_id = "canyon_escape_event",
+		composition_type = "event_large"
+	},
+	{
+		"delay",
+		duration = 5
+	},
+	{
+		"control_specials",
+		enable = false
+	},
+	{
+		"control_pacing",
+		enable = true
+	},
+	{
+		"continue_when",
+		condition = function (t)
+			return count_event_breed("skaven_slave") < 15 and count_event_breed("skaven_clan_rat") < 10 and count_event_breed("skaven_clan_rat_with_shield") < 8 and count_event_breed("skaven_storm_vermin_commander") < 3 and count_event_breed("skaven_storm_vermin_with_shield") < 3
+		end
 	}
-
-	table.merge(TerrorEventBlueprints.bell.canyon_escape_event, dn_skaven_disabler_loop)
-	table.merge(TerrorEventBlueprints.bell.canyon_escape_event, dn_low_threshold_continue_skaven)
-
+}

@@ -15,9 +15,19 @@ local mod = get_mod("Dense Onslaught")
 	PacingSettings.skaven = PacingSettings.skaven
 	PacingSettings.beastmen = PacingSettings.beastmen
 
+	local special_slots = 7
+	local min_special_timer = 24
+	local max_special_timer = 60
+
+	if mod.difficulty_level == 0 then
+		local special_slots = mod:get("special_slots")
+		local min_special_timer = mod:get("min_special_timer")
+		local max_special_timer = mod:get("max_special_timer")
+	end
+
 	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
 	SpecialsSettings.default.methods.specials_by_slots = {
-		max_of_same = 2,                                         -- Same as Dutch
+		max_of_same = special_slots,                                         -- Same as Dutch
 		coordinated_attack_cooldown_multiplier = 0.5,
 		chance_of_coordinated_attack = 0.5,
 		select_next_breed = "get_random_breed",
@@ -26,8 +36,8 @@ local mod = get_mod("Dense Onslaught")
 			20
 		},
 		spawn_cooldown = {
-			32,													 -- Median of Ons+ and Dutch (Rounded Down)
-			60													 -- Median of Ons+ and Dutch
+			min_special_timer,													 -- 32
+			max_special_timer													 -- 60
 		}
 	}
 
@@ -38,7 +48,7 @@ local mod = get_mod("Dense Onslaught")
 	SpecialsSettings.chaos_light = SpecialsSettings.default
 	SpecialsSettings.beastmen = SpecialsSettings.default
 
-	if mod.gain == 1.25 then
+	if mod.difficulty_level == 3 then
 		SpecialsSettings.default.methods.specials_by_slots.max_of_same = 4
 		SpecialsSettings.beastmen.methods.specials_by_slots.max_of_same = 4
 	end
@@ -101,3 +111,5 @@ local mod = get_mod("Dense Onslaught")
 	SpecialsSettings.chaos_beastmen.difficulty_overrides.cataclysm = nil
 	SpecialsSettings.chaos_beastmen.difficulty_overrides.cataclysm_2 = nil
 	SpecialsSettings.chaos_beastmen.difficulty_overrides.cataclysm_3 = nil
+
+	

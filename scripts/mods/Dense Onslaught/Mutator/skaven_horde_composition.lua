@@ -15,13 +15,22 @@ local mod = get_mod("Dense Onslaught")
 	local berzerker_scale = 1
 	local super_armor_scale = 1
 
+	if mod.difficulty_level == 0 then
+		mod.gain = mod:get("master_horde_scale")
+		trash_scale = mod:get("trash_scale")
+		shield_trash_scale = mod:get("shield_trash_scale")
+		elite_scale = mod:get("armor_scale")
+		shield_elite_scale = mod:get("shield_armor_scale")
+		super_armor_scale = mod:get("super_armor_scale")
+	end
+
 	local trash_entities = {"skaven_slave","skaven_clan_rat"}
 	local shield_trash_entities = {"skaven_clan_rat_with_shield"}
 	local elite_entities = {"skaven_storm_vermin_commander"}
 	local shield_elite_entities = {"skaven_storm_vermin_with_shield"}
 	local berzerker_entities = {"skaven_plague_monk"}
 	local super_armor_entities = {"skaven_storm_vermin"}
-	
+
 	local scaling_data = {
     {
         scale_factor = trash_scale,
@@ -65,23 +74,23 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					28,
-					42
+					24,
+					36
 				},
 				"skaven_clan_rat",
 				{
 					16,
 					24
 				},
+				"skaven_clan_rat_with_shield",
+				{
+					2,
+					8
+				},
 				"skaven_storm_vermin_commander",
 				{
 					1,
-					2
-				},
-				"skaven_storm_vermin",
-				{
-					1,
-					1
+					4
 				},
 				"skaven_storm_vermin_with_shield",
 				{
@@ -91,7 +100,7 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_plague_monk",
 				{
 					1,
-					2
+					3
 				}
 			}
 		},
@@ -104,8 +113,13 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
+					24,
 					32
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
 				},
 				"skaven_clan_rat",
 				{
@@ -122,15 +136,10 @@ local mod = get_mod("Dense Onslaught")
 					1,
 					2
 				},
-				"skaven_storm_vermin",
-				{
-					1,
-					1
-				},
 				"skaven_plague_monk",
 				{
-					3,
-					5
+					2,
+					6
 				}
 			}
 		},
@@ -143,19 +152,24 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
+					24,
 					32
 				},
 				"skaven_clan_rat",
 				{
-					16,
-					24
+					8,
+					12
+				},
+				"skaven_clan_rat_with_shield",
+				{
+					4,
+					8
 				},
 				"skaven_storm_vermin_commander",
 				{
 					4,
-					7
-				}
+					8
+				},
 			}
 		},
 		{
@@ -164,13 +178,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
+					24,
 					32
-				},
-				"skaven_clan_rat",
-				{
-					10,
-					18
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -180,12 +189,22 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin_with_shield",
 				{
 					1,
-					2
+					4
+				},
+				"skaven_clan_rat_with_shield",
+				{
+					4,
+					9
+				},
+				"skaven_clan_rat",
+				{
+					10,
+					18
 				},
 				"skaven_storm_vermin_commander",
 				{
-					1,
-					5
+					2,
+					7
 				}
 			}
 		},
@@ -198,13 +217,8 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
+					24,
 					32
-				},
-				"skaven_clan_rat",
-				{
-					10,
-					18
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -214,13 +228,18 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_clan_rat_with_shield",
 				{
 					5,
-					7
+					9
 				},
 				"skaven_plague_monk",
 				{
 					5,
-					8
-				}
+					9
+				},
+				"skaven_clan_rat",
+				{
+					10,
+					18
+				},
 			}
 		},
 		{
@@ -229,13 +248,18 @@ local mod = get_mod("Dense Onslaught")
 			breeds = {
 				"skaven_slave",
 				{
-					20,
+					24,
 					32
 				},
 				"skaven_clan_rat",
 				{
 					10,
 					18
+				},
+				"skaven_storm_vermin_with_shield",
+				{
+					1,
+					2
 				},
 				"skaven_clan_rat_with_shield",
 				{
@@ -244,19 +268,14 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_plague_monk",
 				{
-					3,
+					2,
 					6
 				},
 				"skaven_storm_vermin_commander",
 				{
 					1,
-					2
+					3
 				},
-				"skaven_storm_vermin_with_shield",
-				{
-					1,
-					2
-				}
 			}
 		},
 		sound_settings = HordeCompositionsSoundSettings.skaven

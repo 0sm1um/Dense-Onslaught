@@ -12,7 +12,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 
 		return func(self, channel_id, lobby_id, friend_join, client_dlc_unlocked_array)
 	end)
-
+--[[
 	mod:network_register("rpc_enable_white_sv", function (sender, enable)
 		UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.min = 31
 		UnitVariationSettings.skaven_storm_vermin.material_variations.cloth_tint.max = 31
@@ -26,7 +26,6 @@ local mutator = mod:persistent_table("Dense Onslaught")
 		UnitVariationSettings.skaven_storm_vermin.material_variations.skin_tint.min = 0
 		UnitVariationSettings.skaven_storm_vermin.material_variations.skin_tint.max = 5
 	end)
-
 	mod:hook_safe("ChatManager", "_add_message_to_list", function (self, channel_id, message_sender, local_player_id, message, is_system_message, pop_chat, is_dev, message_type, link, data)
 		if message == JOIN_MESSAGE and not mutator.active then
 			mod:network_send("rpc_enable_white_sv", "local", true)
@@ -38,6 +37,7 @@ local mutator = mod:persistent_table("Dense Onslaught")
 			mod:network_send("rpc_enable_white_sv", player.peer_id, mutator.active)
 		end
 	end
+	--]]
 	
 -- Call when game state changes (e.g. StateLoading -> StateIngame)
 mod.on_game_state_changed = function(status, state)
@@ -73,7 +73,7 @@ mutator.toggle = function()
 			deathwish.start()
 			mod:chat_broadcast("Deathwish ENABLED.")
 		end
-		mod:network_send("rpc_enable_white_sv", "all", true)
+		--mod:network_send("rpc_enable_white_sv", "all", true)
 		if mod.difficulty_level == 1 then
 			mod:chat_broadcast("Dense Onslaught Level 1 ENABLED.")
 		elseif mod.difficulty_level == 2 then
@@ -96,7 +96,7 @@ mutator.toggle = function()
 	mod:set("dense_active", not toggled)
 	else
 		mutator.stop()
-		mod:network_send("rpc_disable_white_sv", "all", true)
+		--mod:network_send("rpc_disable_white_sv", "all", true)
 		mod:chat_broadcast("Dense Onslaught DISABLED.")
 	end
 end
