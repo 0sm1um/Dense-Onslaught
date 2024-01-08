@@ -14,7 +14,7 @@ local custom_difficulty_sub_menu = {
 	-- armor scale (slider)
 	-- shield armor scale (slider)
 	-- super armor scale (slider)
-	-- Special Slots 
+	-- Special Slots
 	-- Special Timers (min)
 	-- Special Timers (max)
 	-- Ambient Spawn Rate
@@ -65,7 +65,7 @@ local custom_difficulty_sub_menu = {
 		setting_id    = "skaven_min_timer", -- 7
 		type            = "numeric",
 		default_value   = 60,
-		range           = {30, 71},
+		range           = {30, 70},
 		decimals_number = 0
 	},
 	{
@@ -116,7 +116,7 @@ local custom_difficulty_sub_menu = {
 		setting_id    = "ambient_spawn_rate", -- 14
 		type            = "numeric",
 		default_value   = 0.075,
-		range           = {0.06, 0.09},
+		range           = {0.045, 0.12},
 		decimals_number = 3
 	},
 }

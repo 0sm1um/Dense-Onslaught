@@ -39,6 +39,8 @@ mutator.start = function()
 	end
 	-- Load Custom Spawners
 	mod:dofile("scripts/mods/Dense Onslaught/base/custom_spawners")
+	-- Horde Spawner Hooks
+	mod:dofile("scripts/mods/Dense Onslaught/base/horde_spawner")
 	-- Load Boss AI
 	mod:dofile("scripts/mods/Dense Onslaught/base/lord_ai")
 	-- Load Custom Breed Data
@@ -78,47 +80,49 @@ mutator.start = function()
 	-- Convocation of Decay
 	mod:dofile("scripts/mods/Dense Onslaught/Events/convocation_of_decay")
 	-- Hunger in the Dark
-	mod:dofile("scripts/mods/Dense Onslaught/Events/hunger_in_the_dark")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/hunger_in_the_dark")
 	-- Halescourge
 	mod:dofile("scripts/mods/Dense Onslaught/Events/halescourge")
 	-- Athel Yenlui
-	mod:dofile("scripts/mods/Dense Onslaught/Events/athel_yenlui")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/athel_yenlui")
 	-- Screaming Bell
-	mod:dofile("scripts/mods/Dense Onslaught/Events/screaming_bell")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/screaming_bell")
 	-- Fort Brachshit
-	mod:dofile("scripts/mods/Dense Onslaught/Events/fort_brachsenbrucke")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/fort_brachsenbrucke")
 	-- Into the Nest
 	mod:dofile("scripts/mods/Dense Onslaught/Events/into_the_nest")
 	-- Against the Grain
-	mod:dofile("scripts/mods/Dense Onslaught/Events/against_the_grain")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/against_the_grain")
 	--Empire in Flames
-	mod:dofile("scripts/mods/Dense Onslaught/Events/empire_in_flames")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/empire_in_flames")
 	-- Festering Ground
-	mod:dofile("scripts/mods/Dense Onslaught/Events/festering_ground")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/festering_ground")
 	-- Warcamp
 	mod:dofile("scripts/mods/Dense Onslaught/Events/warcamp")
 	-- Skittergate
-	mod:dofile("scripts/mods/Dense Onslaught/Events/skittergate")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/skittergate")
+	--]]
 	-- The Pit
 	mod:dofile("scripts/mods/Dense Onslaught/Events/the_pit")
 	-- Blightreaper
-	mod:dofile("scripts/mods/Dense Onslaught/Events/blightreaper")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/blightreaper")
 	-- Horn of Magnus
-	mod:dofile("scripts/mods/Dense Onslaught/Events/horn_of_magnus")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/horn_of_magnus")
 	-- Garden of Morr
-	mod:dofile("scripts/mods/Dense Onslaught/Events/garden_of_morr")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/garden_of_morr")
 	-- Engines of War
 	mod:dofile("scripts/mods/Dense Onslaught/Events/engines_of_war")
 	-- Dark Omens
-	mod:dofile("scripts/mods/Dense Onslaught/Events/dark_omens")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/dark_omens")
 	-- Old Haunts
-	mod:dofile("scripts/mods/Dense Onslaught/Events/old_haunts")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/old_haunts")
 	-- Blood in the Darkness
-	mod:dofile("scripts/mods/Dense Onslaught/Events/blood_in_the_darkness")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/blood_in_the_darkness")
 	-- Enchanter's lair
 	mod:dofile("scripts/mods/Dense Onslaught/Events/enchanters_lair")
 	-- Trail of Treachery
-	mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
+	--mod:dofile("scripts/mods/Dense Onslaught/Events/trail_of_treachery")
+	--]]
 
 	--Steam Presence Difficulty display
 
@@ -171,6 +175,7 @@ end)
 	mod.create_weights()
 	mod:enable_all_hooks()
 	mutator.active = true
+
 end
 
 mutator.stop = function()

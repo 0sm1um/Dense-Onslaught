@@ -84,12 +84,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					1,
-					3
+					4
 				},
 				"chaos_berzerker",
 				{
 					1,
-					3
+					4
 				}
 			}
 		},
@@ -119,12 +119,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_berzerker",
 				{
 					1,
-					3
+					4
 				},
 				"chaos_raider",
 				{
 					1,
-					2
+					3
 				},
 			}
 		},

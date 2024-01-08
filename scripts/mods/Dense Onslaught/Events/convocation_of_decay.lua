@@ -248,18 +248,23 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_pool_boss_1",
-			breed_name = "chaos_spawn"
+			breed_name = "chaos_spawn",
+			optional_data = {
+				max_health_modifier = 0.5
+			}
 		},
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_pool_boss_2",
-			breed_name = "chaos_troll"
+			breed_name = "skaven_rat_ogre",
+			optional_data = {
+				max_health_modifier = 0.5
+			}
 		},
 		{
 			"spawn_at_raw",
 			spawner_id = "onslaught_pool_boss_3",
 			breed_name = {
-				"skaven_rat_ogre",
 				"skaven_stormfiend"
 			}
 		}	

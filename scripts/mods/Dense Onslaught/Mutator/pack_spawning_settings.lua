@@ -14,7 +14,7 @@ local mod = get_mod("Dense Onslaught")
 	-- Note they are VERY sensitive
 
 local mean = 0.4
-local range = 0.1
+local range = 0.15
 
 	PackDistributions = {
 		periodical = {
@@ -48,20 +48,20 @@ local range = 0.1
 	local gain = 0
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
+		PackSpawningSettings.default.area_density_coefficient = 0.07
+		PackSpawningSettings.skaven.area_density_coefficient = 0.07
+		PackSpawningSettings.chaos.area_density_coefficient = 0.07
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.07
+	elseif mod.difficulty_level == 2 then
 		PackSpawningSettings.default.area_density_coefficient = 0.0725
 		PackSpawningSettings.skaven.area_density_coefficient = 0.0725
 		PackSpawningSettings.chaos.area_density_coefficient = 0.0725
 		PackSpawningSettings.beastmen.area_density_coefficient = 0.0725
-	elseif mod.difficulty_level == 2 then
-		PackSpawningSettings.default.area_density_coefficient = 0.075
-		PackSpawningSettings.skaven.area_density_coefficient = 0.075
-		PackSpawningSettings.chaos.area_density_coefficient = 0.075
-		PackSpawningSettings.beastmen.area_density_coefficient = 0.075
 	elseif mod.difficulty_level == 3 then
-		PackSpawningSettings.default.area_density_coefficient = 0.08
-		PackSpawningSettings.skaven.area_density_coefficient = 0.08
-		PackSpawningSettings.chaos.area_density_coefficient = 0.08
-		PackSpawningSettings.beastmen.area_density_coefficient = 0.08
+		PackSpawningSettings.default.area_density_coefficient = 0.0775
+		PackSpawningSettings.skaven.area_density_coefficient = 0.0775
+		PackSpawningSettings.chaos.area_density_coefficient = 0.0775
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.0775
 	elseif mod.difficulty_level == 0 then
 		PackSpawningSettings.default.area_density_coefficient = mod:get("ambient_spawn_rate")
 		PackSpawningSettings.skaven.area_density_coefficient = mod:get("ambient_spawn_rate")
@@ -69,8 +69,8 @@ local range = 0.1
 		PackSpawningSettings.beastmen.area_density_coefficient = mod:get("ambient_spawn_rate")
 	end
 
-	RecycleSettings.max_grunts = 225                                      -- Specific to Dense, raises upper cap to ambient spawning.
-	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            -- Same as Ons+
+	RecycleSettings.max_grunts = 200                                      
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            
 
 	PackSpawningSettings.default.roaming_set = {
 		breed_packs = "dense_standard",
