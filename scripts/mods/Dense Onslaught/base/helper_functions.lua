@@ -59,6 +59,9 @@ function scale_horde_composition(HordeCompositions,faction,scaling_data)
 											for _, enemy_name in pairs(scaling_data.breeds) do 
 												if name_of_enemy == enemy_name then -- If enemy name matches scaling factor name. Apply scaling.
 													breed_data[i] = math.floor(enemy_count * scaling_data.scale_factor)
+													if breed_data[i] == 0 then
+														breed_data[i] = 1
+													end
 												end
 											end
 										end

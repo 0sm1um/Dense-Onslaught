@@ -1,6 +1,45 @@
 local mod = get_mod("Dense Onslaught")
 
+local spawn_list_a = {}
+local spawn_list_b = {}
 
+local function D(...)
+	if script_data.debug_hordes then
+		printf(...)
+	end
+end
+
+local function copy_array(source, index_a, index_b, dest)
+	local j = 1
+
+	for i = index_a, index_b do
+		dest[j] = source[i]
+		j = j + 1
+	end
+end
+
+local spawn_list = {
+	"skaven_slave",
+	"skaven_clan_rat",
+	"skaven_slave",
+	"skaven_clan_rat",
+	"skaven_slave",
+	"skaven_clan_rat",
+	"skaven_slave",
+	"skaven_clan_rat",
+	"skaven_slave",
+	"skaven_clan_rat"
+}
+
+local spawn_list = {}
+local spawn_list_hidden = {}
+local copy_list = {}
+
+local ok_spawner_breeds = {
+	skaven_clan_rat = true,
+	skaven_slave = true
+}
+--[[
 mod:hook_origin(HordeSpawner, "compose_horde_spawn_list", function (self, variant)
     local i = 1
 
@@ -30,12 +69,10 @@ mod:hook_origin(HordeSpawner, "compose_horde_spawn_list", function (self, varian
 
 	return sum, sum_a, sum_b
 end)
-
-local spawn_list_a = {}
-local spawn_list_b = {}
+--]]
 
 mod:hook_origin(HordeSpawner, "compose_blob_horde_spawn_list", function (self, composition_type)
-    mod:echo("Blob Horde Spawning")
+    --mod:echo("Blob Horde Spawning")
     local composition = CurrentHordeSettings.compositions_pacing[composition_type]
 	local index = LoadedDice.roll_easy(composition.loaded_probs)
 	local variant = composition[index]

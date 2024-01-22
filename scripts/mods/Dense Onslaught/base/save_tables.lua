@@ -1,6 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 local mutator = mod:persistent_table("Dense Onslaught")
 
+-- Pacing
 if mod.OriginalDifficultySettings == nil and (DifficultySettings ~= nil) then
 	mod.OriginalDifficultySettings = table.clone(DifficultySettings)
 end
