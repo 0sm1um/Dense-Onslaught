@@ -49,9 +49,6 @@ mod.on_game_state_changed = function(status, state)
 end
 
 mutator.toggle = function()
-	mod.auto_enable_deathwish = mod:get("auto_enable_deathwish")
-	local deathwish_mod_name = "catas"
-	mod.is_mod_mutator_enabled(deathwish_mod_name, deathwish_mod_name)
 	if Managers.state.game_mode == nil or (Managers.state.game_mode._game_mode_key ~= "inn" and Managers.player.is_server) then
 		mod:echo("You must be in the keep to do that!")
 		return
@@ -59,13 +56,6 @@ mutator.toggle = function()
 	if Managers.matchmaking:_matchmaking_status() ~= "idle" then
 		mod:echo("You must cancel matchmaking before toggling this.")
 		return
-	end
-	-- Auto Enable Deathwish
-	if mod.auto_enable_deathwish and not mod.is_mod_mutator_enabled(deathwish_mod_name, deathwish_mod_name) then
-		local dw = get_mod("catas")
-		local deathwish = dw:persistent_table("catas")
-		deathwish.start()
-		mod:chat_broadcast("Deathwish ENABLED.")
 	end
 	if not mutator.active then
 		if not Managers.player.is_server then

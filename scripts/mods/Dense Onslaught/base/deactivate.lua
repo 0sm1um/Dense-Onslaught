@@ -1,8 +1,8 @@
 local mod = get_mod("Dense Onslaught")
 local mutator = mod:persistent_table("Dense Onslaught")
 
-mod:dofile("scripts/settings/breeds")
-EnemyPackageLoaderSettings.breed_path = "resource_packages/breeds/"
+--od:dofile("scripts/settings/breeds")
+--EnemyPackageLoaderSettings.breed_path = "resource_packages/breeds/"
 BreedPacks = table.clone(mod.OriginalBreedPacks)
 BreedPacksBySize = table.clone(mod.OriginalBreedPacksBySize)
 PackSpawningSettings = table.clone(mod.OriginalPackSpawningSettings)
@@ -26,4 +26,4 @@ UnitVariationSettings = table.clone(mod.OriginalUnitVariationSettings)
 --mod:dofile("scripts/settings/horde_compositions_pacing")
 --mod:dofile("scripts/settings/difficulty_tweak")
 --mod:dofile("scripts/settings/enemy_package_loader_settings")
-mod:dofile("scripts/settings/conflict_settings")
+--mod:dofile("scripts/settings/conflict_settings")
