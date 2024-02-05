@@ -29,11 +29,11 @@ mutator.start = function()
 	-- Variables
 	mod.difficulty_level = mod:get("difficulty_level")
 	if mod.difficulty_level == 1 then
-		mod.gain = 0.66
+		mod.gain = 0.75
 	elseif mod.difficulty_level == 2 then
 		mod.gain = 1
 	elseif mod.difficulty_level == 3 then
-		mod.gain = 1.25
+		mod.gain = 1.75
 	else
 		mod.gain = mod:get("custom_gain")
 	end

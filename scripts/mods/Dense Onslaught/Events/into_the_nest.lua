@@ -45,8 +45,52 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"event_horde",
+			spawner_id = "water_wheels_mid_event_1",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_2",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"delay",
+			duration = 5
+		},
+		-- Screening for packmasters
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_2",
+			composition_type = "dn_packmaster_spam" -- packmaster
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_1",
+			composition_type = "event_medium"
+		},
+		{
+			"delay",
+			duration = 4
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_1",
+			composition_type = "dn_packmaster_spam"
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_2",
+			composition_type = "dn_ratling_spam"
+		},
+		{
+			"delay",
+			duration = 5
+		},
+		-- Regular Event spawning
+		{
+			"event_horde",
 			spawner_id = "stronghold_horde_water_wheels",
-			composition_type = "event_smaller"
+			composition_type = "event_smaller" -- "event_smaller"
 		},
 		{
 			"event_horde",
@@ -57,6 +101,12 @@ local mod = get_mod("Dense Onslaught")
 			"event_horde",
 			spawner_id = "stronghold_horde_water_wheels",
 			composition_type = "event_stormvermin_shielders"
+		},
+		-- Added Ratlings
+		{
+			"event_horde",
+			spawner_id = "stronghold_horde_water_wheels",
+			composition_type = "dn_ratling_spam"
 		},
 		{
 			"delay",

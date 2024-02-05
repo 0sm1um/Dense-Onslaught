@@ -194,8 +194,14 @@ mod:hook(StateIngame, "on_enter", function (func, self)
 			setup_custom_raw_spawner(self.world, "Festering_escape_event", Vector3(-372.268, 178.556, 8.52977), Quaternion.from_elements(0, 0, 0.37137, -0.928485))
 		elseif level_key == "fort" then
 			setup_custom_raw_spawner(self.world, "Fort_Big_SV", Vector3(-30.5291, -26.5151, 11.1644), Quaternion.from_elements(0, 0, 0.21516, -0.976579))
+		elseif level_key == "skaven_stronghold" then
+			local dn_water_wheels_mid_event_1 = World.spawn_unit(self.world, "units/hub_elements/empty", Vector3(-144.851, 140.264, 36.55), Quaternion.from_elements(0, 0, 0.999997, -0.00242193))
+			local dn_water_wheels_mid_event_2 = World.spawn_unit(self.world, "units/hub_elements/empty", Vector3(-166.842, 140.903, 36.55), Quaternion.from_elements(0, 0, 0.999989, 0.00470192))
+			setup_custom_horde_spawner(dn_water_wheels_mid_event_1, "water_wheels_mid_event_1", true)
+			setup_custom_horde_spawner(dn_water_wheels_mid_event_2, "water_wheels_mid_event_2", true)
+			--setup_custom_raw_spawner(self.world, "water_wheels_mid_event_1", Vector3(-144.85794067382813, -140.76744079589844, 36.142051696777344), Quaternion.from_elements(0, 0, 1, 0))
+			--setup_custom_raw_spawner(self.world, "water_wheels_mid_event_2", Vector3(-167.02798461914063, 139.26585388183594, 36.142051696777344), Quaternion.from_elements(0, 0, 1, 0))
 		end
-
 		local entity_manager = Managers.state.entity
 		entity_manager:add_and_register_units(self.world, custom_spawners, #custom_spawners)
 	end

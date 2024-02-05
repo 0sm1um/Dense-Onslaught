@@ -429,3 +429,13 @@ function nurgle_buff_spawn_function(unit, breed, optional_data)
 	end
 end
 --]]
+mod:command("check_pos", "Returns position data for the player.", function()
+	local player_unit = Managers.player:local_player().player_unit
+    local position = Unit.local_position(player_unit, 0)
+    local rotation = Unit.local_rotation(player_unit, 0)
+	local current_level = Managers.state.game_mode:level_key()
+	local x, y, z = Vector3.to_elements(position)
+	mod:echo("Level Key: ".. current_level)
+	mod:echo(position)
+	mod:echo(rotation)
+end)

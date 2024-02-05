@@ -16,8 +16,8 @@ local mod = get_mod("Dense Onslaught")
 	PacingSettings.beastmen = PacingSettings.beastmen
 
 	local special_slots = 7
-	local min_special_timer = 24
-	local max_special_timer = 72
+    local min_special_timer = 20
+    local max_special_timer = 50
 
 	if mod.difficulty_level == 0 then
 		local special_slots = mod:get("special_slots")
@@ -56,6 +56,43 @@ local mod = get_mod("Dense Onslaught")
 	SpecialsSettings.beastmen_light = SpecialsSettings.beastmen
 	SpecialsSettings.skaven_beastmen = SpecialsSettings.beastmen
 	SpecialsSettings.chaos_beastmen = SpecialsSettings.beastmen
+--[[
+	get_weighted_random_breed = function (slots, specials_settings, method_data, state_data)
+		if state_data.override_breed_name then
+			return state_data.override_breed_name
+		end
+
+		local breeds = specials_settings.breeds
+		local num_breeds = #breeds
+
+		if num_breeds <= 0 then
+			return nil
+		end
+
+		local count = FrameTable.alloc_table()
+
+		for i = 1, #slots do
+			local slot = slots[i]
+
+			count[slot.breed] = (count[slot.breed] or 0) + 1
+		end
+
+		local max_tries = 20
+		local breed
+		local i = 0
+
+		repeat
+			local pick_index = Math.random(1, num_breeds)
+
+			breed = breeds[pick_index]
+			i = i + 1
+		until not count[breed] or count[breed] < method_data.max_of_same or max_tries <= i
+
+		return breed
+	end
+--]]
+
+
 
 	SpecialsSettings.default.difficulty_overrides.hard = nil
 	SpecialsSettings.default.difficulty_overrides.harder = nil

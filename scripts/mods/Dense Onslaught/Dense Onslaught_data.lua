@@ -124,13 +124,6 @@ local custom_difficulty_sub_menu = {
 menu.options = {}
 menu.options.widgets = {
 	{
-		setting_id    = "auto_enable_deathwish",
-		type          = "checkbox",
-		title		  = "auto_enable_deathwish",
-		tooltip       = "auto_enable_deathwish_tooltip",
-		default_value = false
-	},
-	{
 		setting_id = "difficulty_level",
 		type = "dropdown",
 		default_value = 2,

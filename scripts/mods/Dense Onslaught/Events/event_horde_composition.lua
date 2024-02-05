@@ -2521,3 +2521,31 @@ HordeCompositions.dn_specials_heavy_disabler = {
 		}
 	}
 }
+
+HordeCompositions.dn_ratling_spam = {
+	{
+		name = "ratling_guns",
+		weight = 10,
+		breeds = {
+			"skaven_ratling_gunner",
+			{
+				4,
+				8
+			}
+		}
+	}
+}
+
+HordeCompositions.dn_packmaster_spam = {
+	{
+		name = "packmasterz",
+		weight = 10,
+		breeds = {
+			"skaven_pack_master",
+			{
+				4,
+				6
+			}
+		}
+	}
+}

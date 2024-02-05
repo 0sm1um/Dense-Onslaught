@@ -68,4 +68,4 @@ local mod = get_mod("Dense Onslaught")
 
 	PacingSettings.beastmen.difficulty_overrides = nil
 
-	IntensitySettings.default.disabled = true
+	--IntensitySettings.default.disabled = true
