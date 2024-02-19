@@ -1,7 +1,9 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Dark Omens
-	
+
+	-- Ons+
+
 	local horde_sound_settings = {
 		skaven = {
 			stinger_sound_event = "enemy_horde_stinger",
@@ -55,7 +57,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"control_specials",
-			enable = false
+			enable = true
 		},
 		{
 			"event_horde",
@@ -64,10 +66,6 @@ local mod = get_mod("Dense Onslaught")
 			composition_type = "onslaught_custom_boss_minotaur",
 		},
 		{
-			"delay",
-			duration = 5
-		},
-		{
 			"event_horde",
 			limit_spawners = 3,
 			spawner_id = "crater_mid_event_door_horde_01",
@@ -78,13 +76,6 @@ local mod = get_mod("Dense Onslaught")
 			limit_spawners = 3,
 			spawner_id = "crater_mid_event_door_horde_02",
 			composition_type = "ungor_archers",
-		},
-		{
-			"continue_when",
-			duration = 25,
-			condition = function (t)
-				return count_event_breed("beastmen_minotaur") < 1 and count_breed("beastmen_ungor_archer") < 5
-			end
 		},
 		{
 			"delay",
@@ -106,13 +97,24 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 10
+			duration = 5
 		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "onslaught_crater_horde_behind",
+			composition_type = "event_beastmen_mix_small",
+			sound_settings = horde_sound_settings.beastmen
+		},
+		{
+			"delay",
+			duration = 4
+		},	
 		{
 			"continue_when",
 			duration = 40,
 			condition = function (t)
-				return count_event_breed("beastmen_gor") < 1 and count_breed("beastmen_ungor") < 1
+				return count_event_breed("beastmen_gor") < 4 and count_breed("beastmen_ungor") < 4
 			end
 		},
 		{
@@ -139,9 +141,13 @@ local mod = get_mod("Dense Onslaught")
 			duration = 5
 		},
 		{
+			"control_pacing",
+			enable = true
+		},
+		{
 			"continue_when",
 			condition = function (t)
-				return count_event_breed("beastmen_bestigor") < 1
+				return count_event_breed("beastmen_bestigor") < 3
 			end
 		},
 		{
@@ -156,6 +162,113 @@ local mod = get_mod("Dense Onslaught")
 			"flow_event",
 			flow_event_name = "crater_mid_event_done"
 		}
+	}
+	
+	TerrorEventBlueprints.crater.crater_detour_specials = {		
+		{
+			"control_specials",
+			enable = false
+		},
+		{
+			"control_pacing",
+			enable = false
+		},
+		{
+			"event_horde",
+			limit_spawners = 6,
+			spawner_id = "crater_detour_specials",
+			composition_type = "crater_detour"
+		},
+		{
+			"spawn_at_raw",
+			spawner_id = "onslaught_crater_secret_boss",
+			breed_name = "chaos_spawn",
+			optional_data = {
+				max_health_modifier = 0.5
+			}
+		},
+		{
+			"delay",
+			duration = 10
+		},
+		{
+			"play_stinger",
+			stinger_name = "enemy_horde_beastmen_stinger"
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "onslaught_crater_secret_rock_top_left",
+			composition_type = "beastmen_mix"
+		},
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "onslaught_crater_secret_rock_outside",
+			composition_type = "beastmen_mix"
+		},
+		{
+			"delay",
+			duration = 3
+		},	
+		{
+			"event_horde",
+			limit_spawners = 3,
+			spawner_id = "onslaught_crater_secret_top_behind",
+			composition_type = "beastmen_trash"
+		},
+		{
+			"delay",
+			duration = 10
+		},	
+		{
+			"continue_when",
+			duration = 70,
+			condition = function (t)
+				return count_breed("chaos_spawn") < 1 and count_breed("beastmen_bestigor") < 1 and count_breed("beastmen_gor") < 2
+			end
+		},
+		{
+			"control_specials",
+			enable = true
+		},
+		{
+			"play_stinger",
+			stinger_name = "enemy_horde_stinger"
+		},
+		{
+			"event_horde",
+			limit_spawners = 4,
+			spawner_id = "onslaught_crater_secret_top_behind",
+			composition_type = "onslaught_event_skaven_elite_adds"
+		},
+		{
+			"event_horde",
+			limit_spawners = 4,
+			spawner_id = "onslaught_crater_secret_rock_outside",
+			composition_type = "onslaught_event_military_courtyard_plague_monks"
+		},
+		{
+			"event_horde",
+			limit_spawners = 4,
+			spawner_id = "onslaught_crater_secret_rock_top_left",
+			composition_type = "event_extra_spice_large"
+		},
+		{
+			"delay",
+			duration = 5
+		},	
+		{
+			"continue_when",
+			duration = 45,
+			condition = function (t)
+				return num_spawned_enemies() < 8
+			end
+		},
+		{
+			"control_pacing",
+			enable = true
+		}	
 	}
 	
 	TerrorEventBlueprints.crater.crater_end_event_manual_spawns = {

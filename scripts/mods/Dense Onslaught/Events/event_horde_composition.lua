@@ -1393,6 +1393,152 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	HordeCompositions.onslaught_event_beastmen_medium = {
+		{
+			name = "trash",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					10,
+					12
+				},
+				"beastmen_ungor",
+				{
+					8,
+					9
+				}
+			}
+		},
+		{
+			name = "elite",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					8,
+					9
+				},
+				"beastmen_ungor",
+				{
+					6,
+					7
+				},
+				"beastmen_bestigor",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "banner",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					5,
+					6
+				},
+				"beastmen_ungor",
+				{
+					10,
+					12
+				},
+				"beastmen_bestigor",
+				{
+					1,
+					1
+				},
+				"beastmen_standard_bearer",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
+	HordeCompositions.onslaught_event_beastmen_large = {
+		{
+			name = "trash",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					20,
+					22
+				},
+				"beastmen_ungor",
+				{
+					16,
+					18
+				}
+			}
+		},
+		{
+			name = "elite",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					16,
+					18
+				},
+				"beastmen_ungor",
+				{
+					12,
+					14
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					2
+				}
+			}
+		},
+		{
+			name = "banner",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					10,
+					12
+				},
+				"beastmen_ungor",
+				{
+					23,
+					25
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					2
+				},
+				"beastmen_standard_bearer",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
+	HordeCompositions.onslaught_beastmen_bestigors = {
+		{
+			name = "elites",
+			weight = 10,
+			breeds = {
+				"beastmen_bestigor",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
 	---------------------
 	--Custom specials & bosses
 
@@ -1910,6 +2056,138 @@ local mod = get_mod("Dense Onslaught")
 			}
 		}
 	}
+
+	HordeCompositions.event_chaos_small_mix_elites = {
+		{
+			name = "plain",
+			weight = 5,
+			breeds = {
+				"chaos_fanatic",
+				{
+					11,
+					15
+				},
+				"chaos_marauder",
+				{
+					9,
+					11
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "shielders",
+			weight = 5,
+			breeds = {
+				"chaos_marauder_with_shield",
+				{
+					5,
+					7
+				},
+				"chaos_marauder",
+				{
+					3,
+					5
+				},
+				"chaos_fanatic",
+				{
+					7,
+					9
+				},
+				"chaos_raider",
+				{
+					2,
+					2
+				}
+			}
+		},
+		{
+			name = "leader",
+			weight = 4,
+			breeds = {
+				"chaos_fanatic",
+				{
+					8,
+					9
+				},
+				"chaos_marauder",
+				{
+					4,
+					5
+				},
+				"chaos_raider",
+				{
+					1,
+					1
+				},
+				"chaos_warrior",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "zerker",
+			weight = 5,
+			breeds = {
+				"chaos_marauder",
+				{
+					4,
+					6
+				},
+				"chaos_fanatic",
+				{
+					9,
+					11
+				},
+				"chaos_berzerker",
+				{
+					3,
+					4
+				},
+				"chaos_marauder_with_shield",
+				{
+					3,
+					4
+				}
+			}
+		}
+	}	
+
+	HordeCompositions.mines_boss = {
+		{
+			name = "plain",
+			weight = 10,
+			breeds = {
+				"chaos_warrior",
+				{
+					2,
+					2
+				},
+				"chaos_raider",
+				{
+					3,
+					3
+				},
+				"chaos_marauder_with_shield",
+				{
+					5,
+					7
+				},
+				"chaos_marauder",
+				{
+					4,
+					5
+				}
+			}
+		}
+	}
+
 
 -- Dense Skaven Compositions
 
@@ -2529,8 +2807,8 @@ HordeCompositions.dn_ratling_spam = {
 		breeds = {
 			"skaven_ratling_gunner",
 			{
-				4,
-				8
+				3,
+				6
 			}
 		}
 	}
@@ -2543,7 +2821,7 @@ HordeCompositions.dn_packmaster_spam = {
 		breeds = {
 			"skaven_pack_master",
 			{
-				4,
+				3,
 				6
 			}
 		}

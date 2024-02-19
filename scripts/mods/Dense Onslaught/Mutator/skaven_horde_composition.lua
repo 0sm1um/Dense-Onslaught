@@ -162,12 +162,12 @@ local mod = get_mod("Dense Onslaught")
 				},
 				"skaven_clan_rat_with_shield",
 				{
-					4,
+					3,
 					8
 				},
 				"skaven_storm_vermin_commander",
 				{
-					4,
+					3,
 					8
 				},
 			}
@@ -184,17 +184,12 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_clan_rat_with_shield",
 				{
 					4,
-					9
+					12
 				},
 				"skaven_storm_vermin_with_shield",
 				{
 					1,
-					4
-				},
-				"skaven_clan_rat_with_shield",
-				{
-					4,
-					9
+					3
 				},
 				"skaven_clan_rat",
 				{
@@ -204,7 +199,7 @@ local mod = get_mod("Dense Onslaught")
 				"skaven_storm_vermin_commander",
 				{
 					2,
-					7
+					6
 				}
 			}
 		},

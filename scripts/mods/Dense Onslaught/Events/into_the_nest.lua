@@ -55,7 +55,35 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
+			duration = 2
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_1",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_2",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"delay",
+			duration = 2
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_1",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"event_horde",
+			spawner_id = "water_wheels_mid_event_2",
+			composition_type = "dn_ratling_spam" -- ratling
+		},
+		{
+			"delay",
+			duration = 4
 		},
 		-- Screening for packmasters
 		{
@@ -70,7 +98,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 4
+			duration = 2
 		},
 		{
 			"event_horde",
@@ -84,7 +112,7 @@ local mod = get_mod("Dense Onslaught")
 		},
 		{
 			"delay",
-			duration = 5
+			duration = 4
 		},
 		-- Regular Event spawning
 		{

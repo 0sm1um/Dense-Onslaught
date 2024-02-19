@@ -69,8 +69,8 @@ local range = 0.15
 		PackSpawningSettings.beastmen.area_density_coefficient = mod:get("ambient_spawn_rate")
 	end
 
-	RecycleSettings.max_grunts = 200                                      
-	RecycleSettings.push_horde_if_num_alive_grunts_above = 200            
+	RecycleSettings.max_grunts = 180                                      
+	RecycleSettings.push_horde_if_num_alive_grunts_above = 180            
 
 	PackSpawningSettings.default.roaming_set = {
 		breed_packs = "dense_standard",

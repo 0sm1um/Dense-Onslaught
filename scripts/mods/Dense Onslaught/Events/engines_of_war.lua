@@ -1,7 +1,7 @@
 local mod = get_mod("Dense Onslaught")
 
 	--Engines of War
-	
+	--Ons+ Event
 	TerrorEventBlueprints.forest_ambush.forest_skaven_camp_loop = {
 		{
 			"enable_bots_in_carry_event"
@@ -524,7 +524,7 @@ local mod = get_mod("Dense Onslaught")
 			spawner_id = "onslaught_doomwheel_boss",
 			breed_name = {
 				"skaven_rat_ogre",
-				"skaven_stormfiend"
+				"chaos_spawn"
 			}
 		},
 		{
@@ -575,8 +575,8 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = {
-				10,
-				15
+				7,
+				10
 			}
 		},
 		{
@@ -761,8 +761,8 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = {
-				40,
-				45
+				30,
+				35
 			}
 		},
 		{
@@ -852,8 +852,8 @@ local mod = get_mod("Dense Onslaught")
 		{
 			"delay",
 			duration = {
-				38,
-				42
+				29,
+				33
 			}
 		},
 		{
