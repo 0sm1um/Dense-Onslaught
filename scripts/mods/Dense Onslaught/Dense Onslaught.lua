@@ -56,6 +56,8 @@ mutator.start = function()
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pack_spawning_settings")
 	-- Pacing Timers
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/pacing_settings")
+	-- Intensity Settings
+	mod:dofile("scripts/mods/Dense Onslaught/Mutator/intensity_settings")
 	-- Skaven Horde Composition
 	mod:dofile("scripts/mods/Dense Onslaught/Mutator/skaven_horde_composition")
 	-- Chaos Horde Composition
