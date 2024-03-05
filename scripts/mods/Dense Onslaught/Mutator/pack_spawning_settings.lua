@@ -16,34 +16,34 @@ local mod = get_mod("Dense Onslaught")
 local mean = 0.4
 local range = 0.15
 
-	PackDistributions = {
-		periodical = {
-			max_low_density = mean,
-			min_low_density = mean - range,
-			min_hi_density = mean,
-			max_hi_density = mean + range,
-			random_distribution = false,
-			zero_density_below = 0,
-			max_hi_dist = 3,
-			min_hi_dist = 2,
-			max_low_dist = 10,
-			min_low_dist = 7,
-			zero_clamp_max_dist = 5
-		},
-		random = {}
-	}
+PackDistributions = {
+	periodical = {
+		max_low_density = mean,
+		min_low_density = mean - range,
+		min_hi_density = mean,
+		max_hi_density = mean + range,
+		random_distribution = false,
+		zero_density_below = 0,
+		max_hi_dist = 3,
+		min_hi_dist = 2,
+		max_low_dist = 10,
+		min_low_dist = 7,
+		zero_clamp_max_dist = 5
+	},
+	random = {}
+}
 
-	PackSpawningDistribution = {
-		standard = {
-			goal_density = mean,
-			clamp_main_path_zone_area = 100,
-			length_density_coefficient = 0,
-			spawn_cycle_length = 350,
-			clamp_outer_zones_used = 1,
-			distribution_method = "periodical",
-			calculate_nearby_islands = false
-		}
+PackSpawningDistribution = {
+	standard = {
+		goal_density = mean,
+		clamp_main_path_zone_area = 100,
+		length_density_coefficient = 0,
+		spawn_cycle_length = 350,
+		clamp_outer_zones_used = 1,
+		distribution_method = "periodical",
+		calculate_nearby_islands = false
 	}
+}
 	
 	local gain = 0
 	mod.difficulty_level = mod:get("difficulty_level")

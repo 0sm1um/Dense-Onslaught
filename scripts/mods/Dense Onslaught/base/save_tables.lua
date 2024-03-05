@@ -11,12 +11,12 @@ end
 if mod.OriginalBreeds == nil and (Breeds ~= nil) then
 	mod.OriginalBreeds = table.clone(Breeds)
 end
-if mod.OriginalBreedPacks == nil and (BreedPacks ~= nil) then
-	mod.OriginalBreedPacks = table.clone(BreedPacks)
-end
-if mod.OriginalBreedPacksBySize == nil and (BreedPacksBySize ~= nil) then
-	mod.OriginalBreedPacksBySize = table.clone(BreedPacksBySize)
-end
+--if mod.OriginalBreedPacks == nil and (BreedPacks ~= nil) then
+--	mod.OriginalBreedPacks = table.clone(BreedPacks)
+--end
+--if mod.OriginalBreedPacksBySize == nil and (BreedPacksBySize ~= nil) then
+--	mod.OriginalBreedPacksBySize = table.clone(BreedPacksBySize)
+--end
 if mod.OriginalRoamingSettings == nil and (BreedPacksBySize ~= nil) then
 	mod.OriginalRoamingSettings = table.clone(RoamingSettings)
 end
@@ -58,10 +58,4 @@ if mod.OriginalBossSettings == nil and (BossSettings ~= nil) then
 end
 if mod.OriginalPatrolFormationSettings == nil and (PatrolFormationSettings ~= nil) then
 	mod.OriginalPatrolFormationSettings = table.clone(PatrolFormationSettings)
-end
-if mod.OriginalUnitVariationSettings == nil and (UnitVariationSettings ~= nil) then
-	mod.OriginalUnitVariationSettings = table.clone(UnitVariationSettings)
-end
-if mod.OriginalBreedActions == nil and (BreedActions ~= nil) then
-	mod.OriginalBreedActions = table.clone(BreedActions)
 end

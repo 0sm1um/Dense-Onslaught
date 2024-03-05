@@ -9,7 +9,7 @@ local super_armor_weight = 0.33
 
 local trash_entities = {"beastmen_ungor","beastmen_gor","skaven_slave","skaven_clan_rat","chaos_fanatic","chaos_marauder"}
 local shielded_trash_entities = {"chaos_marauder_with_shield","skaven_clan_rat_with_shield"}
-local elite_entities = {"beastmen_bestigor","chaos_raider","skaven_storm_vermin_commander","skaven_storm_vermin_with_shield"}
+local elite_entities = {"beastmen_bestigor","chaos_raider","storm_vermin_commander","skaven_storm_vermin_with_shield"}
 local shielded_elite_entities = {"skaven_storm_vermin_with_shield"}
 local berzerker_entities = {"chaos_berzerker","skaven_plague_monk"}
 local super_armor_entities = {"chaos_warrior","skaven_storm_vermin"}
@@ -136,7 +136,7 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
@@ -300,7 +300,7 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield
@@ -310,8 +310,8 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -320,8 +320,8 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -361,7 +361,7 @@ dense_standard = {
 		members_n = 4,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat
 		}
@@ -804,8 +804,8 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat,
@@ -818,8 +818,8 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat,
@@ -860,9 +860,9 @@ dense_standard = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -1061,7 +1061,7 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
@@ -1189,7 +1189,7 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield
@@ -1199,8 +1199,8 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -1209,8 +1209,8 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -1507,8 +1507,8 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat,
@@ -1521,8 +1521,8 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat,
@@ -1563,9 +1563,9 @@ dense_skaven = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat_with_shield,
 			Breeds.skaven_clan_rat,
@@ -2141,7 +2141,7 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 2,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.skaven_clan_rat_with_shield
 		}
 	},
@@ -2269,7 +2269,7 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.beastmen_gor,
 			Breeds.beastmen_gor,
 			Breeds.beastmen_gor
@@ -2279,8 +2279,8 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 4,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.beastmen_bestigor,
 			Breeds.skaven_clan_rat_with_shield
 		}
@@ -2320,7 +2320,7 @@ dense_beastmen = {
 		members_n = 4,
 		members = {
 			Breeds.beastmen_bestigor,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.chaos_marauder,
 			Breeds.beastmen_ungor
 		}
@@ -2487,8 +2487,8 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_ungor,
@@ -2516,7 +2516,7 @@ dense_beastmen = {
 		members_n = 8,
 		members = {
 			Breeds.skaven_storm_vermin_commander,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_ungor_archer,
@@ -2529,8 +2529,8 @@ dense_beastmen = {
 		spawn_weight = 0,
 		members_n = 8,
 		members = {
-			Breeds.skaven_storm_vermin,
-			Breeds.skaven_storm_vermin,
+			Breeds.skaven_storm_vermin_commander,
+			Breeds.skaven_storm_vermin_commander,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_bestigor,
 			Breeds.beastmen_ungor,

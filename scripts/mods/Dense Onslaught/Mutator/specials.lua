@@ -10,13 +10,38 @@ local mod = get_mod("Dense Onslaught")
 	slots by 1, and added more increased spawn timers.
 	--]]
 
+	mod:hook(Pacing, "disable", function (func, self)
+		self._threat_population = 1
+		self._specials_population = 1
+		self._horde_population = 0
+		self.pacing_state = "pacing_frozen"
+	end)
+	
+	mod:hook(TerrorEventMixer.init_functions, "control_specials", function (func, event, element, t)
+		local conflict_director = Managers.state.conflict
+		local specials_pacing = conflict_director.specials_pacing
+		local not_already_enabled = specials_pacing:is_disabled()
+	
+		if specials_pacing then
+			specials_pacing:enable(element.enable)
+	
+			if element.enable and not_already_enabled then
+				local delay = math.random(5, 12)
+				local per_unit_delay = math.random(8, 16)
+				local t = Managers.time:time("game")
+	
+				specials_pacing:delay_spawning(t, delay, per_unit_delay, true)
+			end
+		end
+	end)
+
 	PacingSettings.default.delay_specials_threat_value = nil
 	PacingSettings.chaos = PacingSettings.default
 	PacingSettings.skaven = PacingSettings.skaven
 	PacingSettings.beastmen = PacingSettings.beastmen
 
-	local special_slots = 7
-    local min_special_timer = 20
+	local special_slots = 8
+    local min_special_timer = 25
     local max_special_timer = 50
 
 	if mod.difficulty_level == 0 then
@@ -25,9 +50,9 @@ local mod = get_mod("Dense Onslaught")
 		local max_special_timer = mod:get("max_special_timer")
 	end
 
-	SpecialsSettings.default.max_specials = 7					 -- 2 More than Ons+, 1 Less than Dutch
+	SpecialsSettings.default.max_specials = special_slots
 	SpecialsSettings.default.methods.specials_by_slots = {
-		max_of_same = special_slots,                                      
+		max_of_same = 4,                                      
 		coordinated_attack_cooldown_multiplier = 0.5,
 		chance_of_coordinated_attack = 0.25,
 		select_next_breed = "get_random_breed",
@@ -51,6 +76,7 @@ local mod = get_mod("Dense Onslaught")
 	if mod.difficulty_level == 3 then
 		SpecialsSettings.default.methods.specials_by_slots.max_of_same = 4
 		SpecialsSettings.beastmen.methods.specials_by_slots.max_of_same = 4
+		SpecialsSettings.chaos.methods.specials_by_slots.max_of_same = 4
 	end
 
 	SpecialsSettings.beastmen_light = SpecialsSettings.beastmen

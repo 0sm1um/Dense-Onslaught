@@ -83,13 +83,13 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				},
 				"chaos_raider",
 				{
-					1,
-					4
+					2,
+					5
 				},
 				"chaos_berzerker",
 				{
-					1,
-					4
+					2,
+					5
 				}
 			}
 		},
@@ -119,12 +119,12 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_berzerker",
 				{
 					1,
-					4
+					5
 				},
 				"chaos_raider",
 				{
 					1,
-					3
+					4
 				},
 			}
 		},
@@ -153,7 +153,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					3,
-					5
+					6
 				},
 				"chaos_warrior",
 				{
@@ -189,7 +189,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					2,
-					5
+					6
 				},
 			}
 		},
@@ -213,7 +213,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_berzerker",
 				{
 					4,
-					7
+					8
 				},
 				"chaos_marauder",
 				{
@@ -249,7 +249,7 @@ HordeCompositionsPacing.chaos_huge = {	-- Normal Pacing Horde
 				"chaos_raider",
 				{
 					1,
-					2
+					3
 				},
 			}
 		},
