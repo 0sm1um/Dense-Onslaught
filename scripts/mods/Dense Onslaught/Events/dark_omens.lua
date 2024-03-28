@@ -27,15 +27,37 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 	
+	local function count_event_breed(breed_name)
+		return Managers.state.conflict:count_units_by_breed_during_event(breed_name)
+	end
+	
+	local function count_breed(breed_name)
+		return Managers.state.conflict:count_units_by_breed(breed_name)
+	end
+	
+	local function current_intensity()
+		return Managers.state.conflict.pacing:get_intensity()
+	end
+	
+	local function current_difficulty()
+		return Managers.state.difficulty.difficulty
+	end
+	
 	local function num_spawned_enemies()
-		local spawned_enemies = Managers.state.conflict:spawned_units()
-
+		local spawned_enemies = Managers.state.conflict:spawned_enemies()
+	
 		return #spawned_enemies
+	end
+	
+	local function num_spawned_enemies_during_event()
+		local spawned_enemies = Managers.state.conflict:enemies_spawned_during_event()
+	
+		return spawned_enemies
 	end
 	
 	local function num_alive_standards()
 		local alive_standards = Managers.state.conflict:alive_standards()
-
+	
 		return #alive_standards
 	end
 	

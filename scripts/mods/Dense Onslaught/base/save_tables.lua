@@ -5,12 +5,13 @@ local mutator = mod:persistent_table("Dense Onslaught")
 if mod.OriginalDifficultySettings == nil and (DifficultySettings ~= nil) then
 	mod.OriginalDifficultySettings = table.clone(DifficultySettings)
 end
-if mod.OriginalConflictDirectors == nil and (ConflictDirectors ~= nil) then
-	mod.OriginalConflictDirectors = table.clone(ConflictDirectors)
-end
-if mod.OriginalBreeds == nil and (Breeds ~= nil) then
-	mod.OriginalBreeds = table.clone(Breeds)
-end
+
+--if mod.OriginalConflictDirectors == nil and (ConflictDirectors ~= nil) then
+--	mod.OriginalConflictDirectors = table.clone(ConflictDirectors)
+--end
+--if mod.OriginalBreeds == nil and (Breeds ~= nil) then
+--	mod.OriginalBreeds = table.clone(Breeds)
+--end
 --if mod.OriginalBreedPacks == nil and (BreedPacks ~= nil) then
 --	mod.OriginalBreedPacks = table.clone(BreedPacks)
 --end

@@ -4,11 +4,11 @@ IntensitySettings = {
 	default = {
 		intensity_add_per_percent_dmg_taken = 0, -- 1
 		decay_delay = 1, -- 3
-		decay_per_second = 2, -- 2
-		intensity_add_knockdown = 50, -- 50
-		intensity_add_pounced_down = 10, -- 10
+		decay_per_second = 8, -- 2
+		intensity_add_knockdown = 25, -- 50
+		intensity_add_pounced_down = 5, -- 10
 		max_intensity = 100,
-		intensity_add_nearby_kill = 1,
+		intensity_add_nearby_kill = 0, -- 1
 		disabled = false,
 		difficulty_overrides = {
 			hard = {
@@ -25,15 +25,15 @@ IntensitySettings = {
 			},
 			cataclysm = {
 				intensity_add_per_percent_dmg_taken = 0, -- 0.2
-				decay_per_second = 6
+				decay_per_second = 6 -- 6
 			},
 			cataclysm_2 = {
 				intensity_add_per_percent_dmg_taken = 0, -- 0.2
-				decay_per_second = 6
+				decay_per_second = 6 -- 6
 			},
 			cataclysm_3 = {
 				intensity_add_per_percent_dmg_taken = 0, -- 0.2
-				decay_per_second = 6
+				decay_per_second = 8 -- 6
 			}
 		}
 	},

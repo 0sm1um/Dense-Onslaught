@@ -1539,6 +1539,77 @@ local mod = get_mod("Dense Onslaught")
 		}
 	}
 
+	HordeCompositions.event_beastmen_mix_small = {
+		{
+			name = "plain",
+			weight = 10,
+			breeds = {
+				"beastmen_ungor",
+				{
+					5,
+					6
+				},
+				"beastmen_gor",
+				{
+					5,
+					6
+				},
+				"beastmen_bestigor",
+				{
+					1,
+					1
+				}
+			}
+		},
+		{
+			name = "elite",
+			weight = 10,
+			breeds = {
+				"beastmen_ungor",
+				{
+					2,
+					3
+				},
+				"beastmen_gor",
+				{
+					2,
+					3
+				},
+				"beastmen_bestigor",
+				{
+					2,
+					3
+				}
+			}
+		},
+		{
+			name = "banner",
+			weight = 10,
+			breeds = {
+				"beastmen_gor",
+				{
+					2,
+					3
+				},
+				"beastmen_ungor",
+				{
+					2,
+					3
+				},
+				"beastmen_bestigor",
+				{
+					1,
+					2
+				},
+				"beastmen_standard_bearer",
+				{
+					1,
+					1
+				}
+			}
+		}
+	}
+
 	---------------------
 	--Custom specials & bosses
 

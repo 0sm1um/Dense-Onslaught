@@ -58,10 +58,10 @@ PackSpawningDistribution = {
 		PackSpawningSettings.chaos.area_density_coefficient = 0.0725
 		PackSpawningSettings.beastmen.area_density_coefficient = 0.0725
 	elseif mod.difficulty_level == 3 then
-		PackSpawningSettings.default.area_density_coefficient = 0.0775
-		PackSpawningSettings.skaven.area_density_coefficient = 0.0775
-		PackSpawningSettings.chaos.area_density_coefficient = 0.0775
-		PackSpawningSettings.beastmen.area_density_coefficient = 0.0775
+		PackSpawningSettings.default.area_density_coefficient = 0.075
+		PackSpawningSettings.skaven.area_density_coefficient = 0.075
+		PackSpawningSettings.chaos.area_density_coefficient = 0.075
+		PackSpawningSettings.beastmen.area_density_coefficient = 0.075
 	elseif mod.difficulty_level == 0 then
 		PackSpawningSettings.default.area_density_coefficient = mod:get("ambient_spawn_rate")
 		PackSpawningSettings.skaven.area_density_coefficient = mod:get("ambient_spawn_rate")

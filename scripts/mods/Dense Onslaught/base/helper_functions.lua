@@ -142,15 +142,30 @@ mod.generate_breed_pack_by_size = function(breed_packs, roaming_set_name)
 	return breed_pack_by_size
 end
 
-
 mod.get_with_override = function(settings, key, difficulty, fallback_difficulty)
 	local overrides = settings.difficulty_overrides
 	local override_settings = overrides and (overrides[difficulty] or overrides[fallback_difficulty])
 
 	return override_settings and override_settings[key] or settings[key]
 end
-
+--[[
 mod.add_breeds_from_breed_packs = function(breed_packs, difficulty, output)
+	if breed_packs.zone_checks == nil then
+		for i = 1, #breed_packs do
+			local pack = breed_packs[i]
+			if pack.members ~= nil then
+			local breed_members = pack.members
+
+				for j = 1, #breed_members do
+					local breed = breed_members[j]
+					local breed_name = breed.name
+					output[breed_name] = true
+				end
+			end
+		end
+		return  --WHATTHEFUCK???
+	end
+
 	local zone_checks = breed_packs.zone_checks
 	local REPLACEMENT_BREED_INDEX = 3
 	local clamp_breeds_low = zone_checks.clamp_breeds_low[difficulty]
@@ -184,6 +199,63 @@ mod.add_breeds_from_breed_packs = function(breed_packs, difficulty, output)
 		end
 	end
 end
+--]]
+
+mod.add_breeds_from_breed_packs = function(breed_packs, difficulty, output)
+	return
+	--[[
+	local zone_checks = breed_packs.zone_checks
+	if zone_checks == nil
+		for i = 1, #breed_packs do
+			local pack = breed_packs[i]
+			local breed_members = pack.members
+
+			for j = 1, #breed_members do
+				local breed = breed_members[j]
+				local breed_name = breed.name
+
+				output[breed_name] = true
+			end
+		end
+		return
+	end
+	local REPLACEMENT_BREED_INDEX = 3
+	local clamp_breeds_low = zone_checks.clamp_breeds_low[difficulty]
+
+	if clamp_breeds_low then
+		for i = 1, #clamp_breeds_low do
+			local clamp_breeds = clamp_breeds_low[i]
+			local replacement_breed_name = clamp_breeds[REPLACEMENT_BREED_INDEX].name
+
+			output[replacement_breed_name] = true
+		end
+	end
+
+	local clamp_breeds_hi = zone_checks.clamp_breeds_hi[difficulty]
+
+	if clamp_breeds_hi then
+		for i = 1, #clamp_breeds_hi do
+			local clamp_breeds = clamp_breeds_hi[i]
+			local replacement_breed_name = clamp_breeds[REPLACEMENT_BREED_INDEX].name
+
+			output[replacement_breed_name] = true
+		end
+	end
+
+	for i = 1, #breed_packs do
+		local pack = breed_packs[i]
+		local breed_members = pack.members
+
+		for j = 1, #breed_members do
+			local breed = breed_members[j]
+			local breed_name = breed.name
+
+			output[breed_name] = true
+		end
+	end
+	--]]
+end
+
 
 mod.add_breeds_from_special_settings = function(special_settings, difficulty, fallback_difficulty, output)
 	local breeds = get_with_override(special_settings, "breeds", difficulty, fallback_difficulty)
@@ -220,9 +292,9 @@ end
 mod.add_breeds_from_pack_spawning_settings = function(pack_spawning_settings, difficulty, fallback_difficulty, output)
 	local roaming_set = mod.get_with_override(pack_spawning_settings, "roaming_set", difficulty, fallback_difficulty)
 	local breed_packs_name = roaming_set.breed_packs
-	-- local breed_packs = BreedPacks[breed_packs_name]
+	local breed_packs = BreedPacks[breed_packs_name]
 
-	mod.add_breeds_from_breed_packs(BreedPacks[breed_packs_name], difficulty, output)
+	mod.add_breeds_from_breed_packs(breed_packs, difficulty, output)
 
 	local PACK_OVERRIDE_BREED_INDEX = 1
 	local breed_packs_override = roaming_set.breed_packs_override
@@ -327,7 +399,6 @@ end
 function count_breed(breed_name)
 	return Managers.state.conflict:count_units_by_breed(breed_name)
 end
-
 
 boss_pre_spawn_func = nil
 custom_grudge_boss = nil

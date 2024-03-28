@@ -40,9 +40,11 @@ local mod = get_mod("Dense Onslaught")
 	PacingSettings.skaven = PacingSettings.skaven
 	PacingSettings.beastmen = PacingSettings.beastmen
 
-	local special_slots = 8
-    local min_special_timer = 25
-    local max_special_timer = 50
+	local special_slots = 800
+    local min_special_timer = 20
+    local max_special_timer = 55
+	-- n/120*(max+min) ~ specials per min
+
 
 	if mod.difficulty_level == 0 then
 		local special_slots = mod:get("special_slots")
